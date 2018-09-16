@@ -19,6 +19,10 @@
 
 ## Version Released
 
+* 0.1.1
+  * add license
+  * use travis-ci build
+  * delete some unused-vars
 * 0.1.0
   * First Released
 
