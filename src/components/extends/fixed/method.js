@@ -1,7 +1,7 @@
 const fixedMethods = {
-    translatePos: function () {
-        return this.imgEl.getBoundingClientRect();
-    },
+    // translatePos: function () {
+    //     return this.imgEl.getBoundingClientRect();
+    // },
     wrapPos: function() {
         return this.wrapEl.getBoundingClientRect();
     },

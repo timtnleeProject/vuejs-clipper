@@ -25,8 +25,7 @@
 </template>
 <script>
 import { basicMethods, rxEventListeners, pluginMethods } from "./extends/clippo";
-import np from "../namespace";
-import { Subject, Subscription ,fromEvent } from "rxjs";
+import { Subject } from "rxjs";
 import {
   map,
   filter,
@@ -310,7 +309,6 @@ export default {
         src: this.src,
         bgColor:this.bgColor
       })
-      const area = this.areaPos();
       this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
       this.initWHTL$.next(0);
     }

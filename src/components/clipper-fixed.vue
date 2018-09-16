@@ -36,12 +36,10 @@ import {
   startWith,
   concatMap,
   merge,
-  mergeMap,
   scan,
   takeUntil
 } from "rxjs/operators";
-import { Subject, fromEvent } from "rxjs";
-import np from "../namespace";
+import { Subject } from "rxjs";
 export default {
   extends: {
     methods: fixedMethods,
