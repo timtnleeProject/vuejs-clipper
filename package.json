@@ -1,15 +1,15 @@
 {
   "name": "vuejs-clipper",
   "version": "0.1.0",
-  "private": true,
+  "main": "./dist/vuejs-clipper.umd.js",
+  "module": "./src/clipper.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "build": "vue-cli-service build --target lib --name vuejs-clipper ./src/clipper.js",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue-rx": "^6.0.1",
+    "rxjs": "^6.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
