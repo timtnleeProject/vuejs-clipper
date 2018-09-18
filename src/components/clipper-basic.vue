@@ -3,7 +3,7 @@
       <canvas class="hidden-canvas"></canvas>
         <div class="clip-area" :style="areaStyle">
           <div class="img-scale" :style="scaleStyle">
-            <img :src="src" class="img" @load="imgLoaded" :style="rotateStyle">
+            <img :src="src" class="img" @load="imgLoaded();emit('load',$event)" @error="emit('error',$event)" :style="rotateStyle">
           </div>
             <div class="zoom-area shadow" :style="posObj">
                 <div class="extend outer" :style="exOuterStyle"></div>

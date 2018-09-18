@@ -6,7 +6,7 @@
             <canvas class="stem-bg"></canvas>
             <div class='img-scale' :style='scaleStyle'>
             <div class='img-translate' :style='translateStyle'>
-              <img :src='src' class='img' @load='imgLoaded' :style='bgStyle'>
+              <img :src='src' class='img' @load="imgLoaded; emit('load',$event)" @error="emit('error',$event)" :style='bgStyle'>
             </div>
           </div>
           </div>

@@ -62,6 +62,9 @@ const pluginMethods = {
                 p[method](...arg);
             });
         },
+        emit: function(name, arg) {
+            this.$emit(name, arg)
+        },
     }
 }
 
