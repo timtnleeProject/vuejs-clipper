@@ -1,6 +1,6 @@
 {
   "name": "vuejs-clipper",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "./dist/vuejs-clipper.umd.js",
   "module": "./src/clipper.js",
   "scripts": {
