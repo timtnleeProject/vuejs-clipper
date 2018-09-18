@@ -4,7 +4,6 @@ Vue.js image clipping components using vue-rx.
 
 [![not found](https://api.travis-ci.org/timtnleeProject/vuejs-clipper.svg?branch=master)](https://travis-ci.org/timtnleeProject/vuejs-clipper#)
 
-* Vue.js image clipping components using [vue-rx](https://github.com/vuejs/vue-rx).
 * Add image clipping components to your vue application in nothing flat.
 * Touch devices supported and fully responsive.
 
@@ -22,6 +21,10 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.0
+  * new component clipper-upload
+  * add error/load event to clipper-basic/clipper-fixed
+  * correct and update readme
 * 0.1.1
   * add license
   * use travis-ci build
@@ -311,4 +314,4 @@ use `v-model` binding data with `clipper-upload`
 
 | Prop|Type|default|Description |
 |-|-:|-:|:-|
-|check|boolean|true|check if upload file is a image.|
+|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get error event on clipping component.|

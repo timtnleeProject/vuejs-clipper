@@ -2,6 +2,8 @@ import clipperPreview from './components/clipper-preview.vue'
 import clipperRange from './components/clipper-range.vue'
 import clipperBasic from './components/clipper-basic.vue'
 import clipperFixed from './components/clipper-fixed.vue'
+import clipperUpload from './components/clipper-upload.vue'
+
 import VueRx from 'vue-rx'
 import np from "./namespace"
 
@@ -25,6 +27,10 @@ const install = function (Vue, options) {
         clipperFixed: {
             component: clipperFixed,
             name: 'clipper-fixed'
+        },
+        clipperUpload: {
+            component: clipperUpload,
+            name: 'clipper-upload'
         }
     }
     const registerComponent = (name) => {
@@ -59,4 +65,4 @@ if (GlobalVue) {
 	GlobalVue.use(plugin);
 }
 
-export { clipperBasic, clipperFixed, clipperPreview, clipperRange }
+export { clipperBasic, clipperFixed, clipperPreview, clipperRange, clipperUpload }
