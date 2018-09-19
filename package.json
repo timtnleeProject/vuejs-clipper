@@ -1,11 +1,15 @@
 {
   "name": "vuejs-clipper",
   "version": "0.2.2",
-  "main": "./dist/vuejs-clipper.umd.js",
-  "module": "./src/clipper.js",
-  "scripts": {
-    "build": "vue-cli-service build --target lib --name vuejs-clipper ./src/clipper.js",
-    "lint": "vue-cli-service lint"
+  "author": "timtnlee",
+  "homepage":"https://timtnleeproject.github.io/vuejs-clipper/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timtnleeProject/vuejs-clipper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timtnleeProject/vuejs-clipper/issues"
   },
   "keywords": [
     "vue",
@@ -15,7 +19,12 @@
     "clipper",
     "cropper"
   ],
-  "license": "MIT",
+  "main": "./dist/vuejs-clipper.umd.js",
+  "module": "./src/clipper.js",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name vuejs-clipper ./src/clipper.js",
+    "lint": "vue-cli-service lint"
+  },
   "dependencies": {
     "vue-rx": "^6.0.1",
     "rxjs": "^6.3.2"
