@@ -2,7 +2,7 @@
   "name": "vuejs-clipper",
   "version": "0.2.2",
   "author": "timtnlee",
-  "homepage":"https://timtnleeproject.github.io/vuejs-clipper/",
+  "homepage": "https://timtnleeproject.github.io/vuejs-clipper/",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -26,8 +26,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue-rx": "^6.0.1",
-    "rxjs": "^6.3.2"
+    "rxjs": "^6.3.2",
+    "vue-rx": "^6.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
