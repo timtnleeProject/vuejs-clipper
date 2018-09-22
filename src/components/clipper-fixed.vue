@@ -55,7 +55,7 @@ export default {
       map(this.prevent),
       map(this.dragDownPos),
       concatMap(
-        e => this.mousemove$.pipe(map(this.prevent), takeUntil(this.mouseup$)),
+        () => this.mousemove$.pipe(map(this.prevent), takeUntil(this.mouseup$)),
         (down, move) => {
           return { down, move };
         }
@@ -68,7 +68,7 @@ export default {
       map(e => e.touches[0]),
       map(this.dragDownPos),
       concatMap(
-        e =>
+        () =>
           this.touchmove$.pipe(
             takeUntil(this.touchend$),
             filter(e => e.touches.length === 1)
@@ -91,7 +91,7 @@ export default {
       map(this.towPointsTouches),
       map(this.setOrigin),
       concatMap(
-        e =>
+        () =>
           this.touchmove$.pipe(
             takeUntil(this.touchend$),
             filter(e => e.touches.length === 2),

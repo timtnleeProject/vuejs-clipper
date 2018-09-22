@@ -56,7 +56,7 @@ export default {
       }), //deal with down, we want to calc down just for once.
       map(e => this.eInZoom(e)), //點擊時zoom的position,rect
       concatMap(//將down (zoom rect), move交給後續
-        e => this.mousemove$.pipe(takeUntil(this.mouseup$)),
+        () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
         (down, move) => {
           return { down, move };
         }
@@ -71,7 +71,7 @@ export default {
       }), //deal with down, we want to calc down just for once.
       map(e => this.eInZoom(e.touches[0])),
       concatMap(
-        e =>
+        () =>
           this.touchmove$.pipe(
             takeUntil(this.touchend$),
             filter(e => e.touches.length === 1), //單指
@@ -91,7 +91,7 @@ export default {
       }),
       map(this.setDownPosition),
       concatMap(
-        e => this.mousemove$.pipe(takeUntil(this.mouseup$)),
+        () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
         (down, move) => {
           return { down, move };
         }
@@ -106,7 +106,7 @@ export default {
       }),
       map(this.setDownPosition),
       concatMap(
-        e =>
+        () =>
           this.touchmove$.pipe(
             takeUntil(this.touchend$),
             filter(e => e.touches.length === 1),
@@ -123,13 +123,13 @@ export default {
       }),
       filter(this.isTwoPointZoomElement),
       map(this.prevent),
-      map(e => {
+      map(() => {
         this.stop$.next(0); //stop drag create event
         const freezeZoom = this.zoomPos(); //get zoom position at down
         return { event, zoom: freezeZoom };
       }),
       concatMap(
-        e =>
+        () =>
           this.touchmove$.pipe(
             filter(e => e.touches.length === 2),
             map(this.prevent),
@@ -145,7 +145,7 @@ export default {
       map(this.prevent),
       map(this.getFakeDown),
       concatMap(
-        down => this.mousemove$.pipe(takeUntil(this.mouseup$)),
+        () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
         (down, move) => {
           return { down, move };
         }
@@ -157,12 +157,12 @@ export default {
       map(e => e.touches[0]),
       map(this.getFakeDown),
       concatMap(
-        down =>
+        () =>
           this.touchmove$.pipe(
             takeUntil(this.touchend$),
             takeUntil(this.stop$), //兩指事件觸發時停止
             filter(e => e.touches.length === 1), //單指
-            filter(e => this.touchCreate)
+            filter(() => this.touchCreate)
           ),
         (down, move) => {
           //down is fake

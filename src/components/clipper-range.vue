@@ -26,7 +26,7 @@ export default {
         e.event.preventDefault();
         return e.event;
       }),
-      concatMap(e =>
+      concatMap(() =>
         this.mousemove$.pipe(takeUntil(this.mouseup$), map(e => e.clientX))
       ),
       merge(this.mousedown$.pipe(map(e=>e.event.clientX)))
@@ -36,7 +36,7 @@ export default {
         e.event.preventDefault();
         return e.event;
       }),
-      concatMap(e =>
+      concatMap(() =>
         this.touchmove$.pipe(
           takeUntil(this.touchend$),
           map(e => e.touches[0].clientX)
@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     this.initVal();
-    this.$subscribeTo(this.dragSubject$, val => {
+    this.$subscribeTo(this.dragSubject$, () => {
       this.$emit("input", this.val);
     });
   },
