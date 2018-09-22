@@ -21,8 +21,10 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.3
+  * update package.json
 * 0.2.2
-  * Fixed clipper-fixed bug: load event not call.
+  * Fixed clipper-fixed bug: load event not call
 * 0.2.1
   * new component clipper-upload
   * add error/load event to clipper-basic/clipper-fixed
