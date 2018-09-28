@@ -39,7 +39,7 @@ const clipperMethods = {
     },
     /* 拖曳drag */
     isDragElement: function (e) {
-        return e.target===this.$el.querySelector('.drag-inset')
+        return e.target === this.$el.querySelector('.drag-inset')
     },
     dragMoving: function ({ down, move }) {
         const left = this.toX(this.eToArea(move, "left") - down.left),
@@ -123,8 +123,8 @@ const clipperMethods = {
          * @argument wh percentage {width, height}
          */
         return {
-            width : Math.max(wh.width, 1),
-            height : Math.max(wh.height, 1)
+            width: Math.max(wh.width, 1),
+            height: Math.max(wh.height, 1)
         }
     },
     $set_ratioWH: function ({ width, height, maxWidth, maxHeight }) {
@@ -141,14 +141,13 @@ const clipperMethods = {
         return { width, height }
     },
     $set_initWHTL: function () {
-        let width = 50, height = 50, left, top;
-        if (this.ratio >= 1) {
-            height = width/this.ratio*this.imgRatio;
-        } else if(this.ratio<1&&this.ratio>0) {
-            width = height*this.ratio/this.imgRatio;
+        let width = 50, height = 50,left, top;
+        if (this.ratio) {
+            if(this.ratio > this.imgRatio) 
+                height = width/this.ratio*this.imgRatio
+            else
+                width = height*this.ratio/this.imgRatio
         }
-        width = Math.min(width, 100);
-        height = Math.min(height, 100);
         left = (100-width)/2;
         top = (100-height)/2;
         this.setTL$.next({ left, top });
@@ -165,8 +164,7 @@ const clipperMethods = {
     },
     /* 拖曳縮放 */
     isZoomElement: function (e) {
-        return this.zoomEl.contains(e.target) && e.target!= this.$el.querySelector('.drag-inset')
-        //return e.target === this.$el.querySelector(".extend.inner") || e.target === this.$el.querySelector(".extend.outer") || e.target === this.$el.querySelector(".corner")
+        return this.zoomEl.contains(e.target) && e.target != this.$el.querySelector('.drag-inset')
     },
     judgeArea: function (e) {
         const zoom = this.zoomPos();
@@ -241,33 +239,33 @@ const clipperMethods = {
     isCreateElement: function (e) {
         return e.target === this.$el.querySelector(".clip-area") || e.target === this.$el.querySelector(".img")
     },
-    getFakeDown: function(e) {
+    getFakeDown: function (e) {
         return {
             target: e.target,
             clientX: e.clientX,
             clientY: e.clientY
         }
     },
-    reverseDownPos: function({down, move}){
-        if(this.mode==='normal') return { down, move }
-        
-        if(down.target!==null&&down.target=== this.$el.querySelector(".img")) { //this is dragCreate, first time dont count
+    reverseDownPos: function ({ down, move }) {
+        if (this.mode === 'normal') return { down, move }
+
+        if (down.target !== null && down.target === this.$el.querySelector(".img")) { //this is dragCreate, first time dont count
             down.target = null;
-            return {down ,move}
-        } 
+            return { down, move }
+        }
         //處理反向
         const judge = this.judgeArea(down);
         const zoom = this.zoomPos();
         //左右反向
-        if(judge.l && move.clientX < down.clientX){
+        if (judge.l && move.clientX < down.clientX) {
             down.clientX = zoom.right
-        } else if(judge.r && move.clientX > down.clientX) {
+        } else if (judge.r && move.clientX > down.clientX) {
             down.clientX = zoom.left
         }
         //上下反向
-        if(judge.t && move.clientY < down.clientY){
+        if (judge.t && move.clientY < down.clientY) {
             down.clientY = zoom.bottom;
-        } else if(judge.b && move.clientY > down.clientY){
+        } else if (judge.b && move.clientY > down.clientY) {
             down.clientY = zoom.top;
         }
         return { down, move }
@@ -276,7 +274,7 @@ const clipperMethods = {
         //判斷移動方向
         let x = (move.clientX > down.clientX) ? 'r' : 'l';
         let y = (move.clientY > down.clientY) ? 'b' : 't';
-       
+
         const pos = {
             top: down.clientY,
             right: down.clientX,
@@ -298,14 +296,14 @@ const clipperMethods = {
         const viewW = img.width,
             viewL = zoom.left - img.left + this.border,
             viewT = zoom.top - img.top + this.border,
-            zWidth = zoom.width - this.border*2,
-            zHeight = zoom.height - this.border*2;
+            zWidth = zoom.width - this.border * 2,
+            zHeight = zoom.height - this.border * 2;
         const rate = imgW / viewW;
         const translate = {
-            rotateX: (img.left + img.width/2 - (zoom.left+ this.border))*rate,
-            rotateY: (img.top + img.height/2 - (zoom.top+ this.border))*rate,
-            drawX: (img.left - (zoom.left+this.border))*rate,
-            drawY: (img.top - (zoom.top+this.border))*rate,
+            rotateX: (img.left + img.width / 2 - (zoom.left + this.border)) * rate,
+            rotateY: (img.top + img.height / 2 - (zoom.top + this.border)) * rate,
+            drawX: (img.left - (zoom.left + this.border)) * rate,
+            drawY: (img.top - (zoom.top + this.border)) * rate,
         }
 
         // const translate = {
@@ -322,8 +320,8 @@ const clipperMethods = {
             dwidth: zWidth * rate,//dWidth
             dheight: zHeight * rate//dHeight
         }
-        pos[Symbol.iterator] = function *(){
-            for(let k in pos){
+        pos[Symbol.iterator] = function* () {
+            for (let k in pos) {
                 yield pos[k]
             }
         };
