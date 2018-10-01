@@ -145,7 +145,7 @@ export default {
   },
   data: () => {
     return {
-      imgRatio: 1
+      imgRatio: NaN
     };
   },
   props: {

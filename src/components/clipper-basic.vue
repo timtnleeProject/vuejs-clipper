@@ -281,7 +281,7 @@ export default {
   },
   data: () => {
     return {
-      imgRatio: 1
+      imgRatio: NaN
     };
   },
   mounted() {
@@ -310,7 +310,7 @@ export default {
         bgColor:this.bgColor
       })
       this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
-      this.initWHTL$.next(0);
+      this.initWHTL$.next(true);
     }
   },
   computed: {
@@ -379,9 +379,10 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.clipper-basic {
-  width: 100%;
-}
+// .clipper-basic {
+//   // width: 100%;
+//   // height: 100%;
+// }
 .clip-area {
   position: relative;
   width: 100%;

@@ -22,6 +22,9 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.4
+  * Fixed clipper-basic initial clip area size over the container.
+  * Update readme (imgRatio).
 * 0.2.3
   * update package.json
 * 0.2.2
@@ -208,8 +211,22 @@ const canvas = this.$refs.clipper.clip()
 |load|$event|image onload|
 |error|$error|image onerror|
 
+usage :
+
 ```html
 <clipper-basic @error="errorCb" @load="loadCb"></clipper-basic>
+```
+
+* Data
+
+|data |type | default|description|
+|-|-|-|-|
+|imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
+
+usage :
+
+```javascript
+this.$refs.clipper.imgRatio
 ```
 
 * Slot
@@ -259,6 +276,12 @@ import { clipperFixed } from 'vuejs-clipper'
 |-|-|-|
 |load|$event|image onload|
 |error|$error|image onerror|
+
+* Data
+
+|data |type | default|description|
+|-|-|-|-|
+|imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
 
 * Slot
 

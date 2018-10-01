@@ -19,10 +19,10 @@
     "clipper",
     "cropper"
   ],
-  "main": "./dist/vuejs-clipper.umd.js",
-  "module": "./src/clipper.js",
+  "main": "dist/vuejs-clipper.umd.js",
+  "module": "src/clipper.js",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name vuejs-clipper ./src/clipper.js",
+    "build": "vue-cli-service build --target lib --name vuejs-clipper src/clipper.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
