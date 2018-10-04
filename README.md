@@ -22,6 +22,9 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.5
+  * Clipper-upload will call `URL.revokeObjectURL` to release memory.
+  * Fixed clipper-range two way binding.
 * 0.2.4
   * Fixed clipper-basic initial clip area size over the container.
   * Update readme (imgRatio).

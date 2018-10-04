@@ -22,7 +22,8 @@ export default {
     },
     data: ()=>{
         return {
-            uploadEl: null
+            uploadEl: null,
+            DomString: ''
         }
     },
     methods: {
@@ -30,7 +31,10 @@ export default {
             if(e.target.files.length!==1) return;
             const file = e.target.files[0];
             if (this.check && !file.type.startsWith('image/')) return;
-            this.$emit('input', window.URL.createObjectURL(file)) 
+            if(this.DomString)
+                window.URL.revokeObjectURL(this.DomString)
+            this.DomString = window.URL.createObjectURL(file)
+            this.$emit('input', this.DomString) 
         },
         triggerInput: function(){
             if(this.uploadEl) this.uploadEl.click();
