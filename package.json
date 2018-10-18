@@ -50,7 +50,12 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "indent": [
+        "warn",
+        2
+     ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

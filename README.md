@@ -22,6 +22,8 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.7
+  * fixed build scripts.
 * 0.2.6
   * clipper-fixed has new prop: round.
   * clipper-upload will still emit `input`, when uploading same file.

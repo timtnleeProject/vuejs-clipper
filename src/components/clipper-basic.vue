@@ -355,7 +355,7 @@ export default {
       return {
         borderWidth: _outline, 
         transform:`translate(-${_outline},-${_outline})`
-        }
+      }
     },
     exInnerStyle :function(){
       const _inline = this.outline + 'px'
