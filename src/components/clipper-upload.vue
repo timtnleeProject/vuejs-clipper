@@ -1,8 +1,8 @@
 <template>
-  <button @click="triggerInput">
+  <div @click="triggerInput">
       <slot></slot>
-      <input type="file" class="upload" @change="upload($event)" style="display:none">
-  </button>    
+      <input type="file" class="upload" @input="upload($event)" @click="clear($event)" style="display:none">
+  </div>    
 </template>
 
 <script>
@@ -35,6 +35,9 @@ export default {
                 window.URL.revokeObjectURL(this.DomString)
             this.DomString = window.URL.createObjectURL(file)
             this.$emit('input', this.DomString) 
+        },
+        clear: function(e){
+            e.target.value = null;
         },
         triggerInput: function(){
             if(this.uploadEl) this.uploadEl.click();

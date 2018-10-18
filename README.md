@@ -22,6 +22,10 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.6
+  * clipper-fixed has new prop: round.
+  * clipper-upload will still emit `input`, when uploading same file.
+  * update examples at homepage.
 * 0.2.5
   * Clipper-upload will call `URL.revokeObjectURL` to release memory.
   * Fixed clipper-range two way binding.
@@ -263,6 +267,7 @@ import { clipperFixed } from 'vuejs-clipper'
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
 | grid   | boolean| true  | show grid layout|
+| round | boolean | false | Use a round clipping area, this only effect the component layout, clipping results are still rectangular. |
 | bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
