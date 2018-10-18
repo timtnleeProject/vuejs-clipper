@@ -1,6 +1,6 @@
 {
   "name": "vuejs-clipper",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "timtnlee",
   "homepage": "https://timtnleeproject.github.io/vuejs-clipper/",
   "license": "MIT",
@@ -54,7 +54,7 @@
       "indent": [
         "warn",
         2
-     ]
+      ]
     },
     "parserOptions": {
       "parser": "babel-eslint"
