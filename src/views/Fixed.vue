@@ -53,7 +53,7 @@
         <label for="upload" class="btn">upload image</label> 
         <input id="upload" type="file" @change="upload($event)" >
         <div class="flex">
-          <div>
+          <div class="flex">
             <span class="label">border: </span><input type="number" v-model.number="border">
           </div>
         </div>

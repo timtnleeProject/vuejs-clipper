@@ -40,10 +40,10 @@
                     <button class="btn"><clipper-upload v-model="imgUrl">upload image</clipper-upload></button>
                 </div>
                     <div class="flex">
-                        <div>
+                        <div class="flex">
                             <span class="label">outline</span><input v-model.number="outline" type="number" min="1">
                         </div>
-                            <div>
+                            <div class="flex">
                                 <span  class="label">border</span><input v-model.number="border" type="number" min="1">
                             </div>
                             </div>
