@@ -1,11 +1,11 @@
 # vuejs-clipper
 
-Vue.js image clipping components using vue-rx.
+Vue.js image clipping components using Vue-Rx.
 
 [![not found](https://img.shields.io/npm/v/vuejs-clipper.svg)](https://www.npmjs.com/package/vuejs-clipper)
 [![not found](https://api.travis-ci.org/timtnleeProject/vuejs-clipper.svg?branch=master)](https://travis-ci.org/timtnleeProject/vuejs-clipper#)
 
-* Add image clipping components to your vue application in nothing flat.
+* Add image clipping components to your Vue application in nothing flat.
 * Touch devices supported and fully responsive.
 
 ## Demo
@@ -26,8 +26,8 @@ Vue.js image clipping components using vue-rx.
   * fixed build scripts.
 * 0.2.6
   * clipper-fixed has new prop: round.
-  * clipper-upload will still emit `input`, when uploading same file.
-  * update examples at homepage.
+  * clipper-upload will still emit `input` when uploading the same file.
+  * update examples at the homepage.
 * 0.2.5
   * Clipper-upload will call `URL.revokeObjectURL` to release memory.
   * Fixed clipper-range two way binding.
@@ -51,13 +51,13 @@ Vue.js image clipping components using vue-rx.
 
 ## Notice
 
-Before using the plugin & compoenets, here's something you should know :
+Before using the plugin & components, here's something you should know :
 
 * It's based on **vue-rx**.
 * Use vuejs-clipper plugin also add **vue-rx** plugin to vue.
 * Components are responsive base on **width** instead of height.
-* You can clip your own images (local uploaded images or images served on your site) ,but you cannot clip a cross origin image.
-* Components' **input** is a image URL, **ouput** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
+* You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image.
+* Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
 
 ## Installation
 
@@ -252,7 +252,7 @@ this.$refs.clipper.imgRatio
 
 ### clipper-fixed
 
-a image clipping component
+an image clipping component
 
 ```javascript
 import { clipperFixed } from 'vuejs-clipper'
@@ -338,9 +338,9 @@ use `v-model` binding data with `clipper-range`
 
 ### clipper-upload
 
-new component in 0.2.0
+a new component in 0.2.0
 
-a upload button that transform image files to URL
+an upload button that transform image files to URL
 
 ```javascript
 import { clipperUpload } from 'vuejs-clipper'
@@ -352,4 +352,4 @@ use `v-model` binding data with `clipper-upload`
 
 | Prop|Type|default|Description |
 |-|-:|-:|:-|
-|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get error event on clipping component.|
+|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
