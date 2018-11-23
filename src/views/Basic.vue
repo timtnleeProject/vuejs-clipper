@@ -25,7 +25,7 @@
             <ul>
                 <li>Zoom and drag clipping area to clip the image.</li>
                 <li>It is recommended to use it to clip image without ratio.</li>
-                <li>Supported rotate, scale and ratio but they are not default features.</li>
+                <li>Supported rotate, scale and ratio but they do not default features.</li>
             </ul>
         </div>
         <h4>demo</h4>

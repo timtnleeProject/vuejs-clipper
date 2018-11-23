@@ -3,12 +3,12 @@
         <div class="area">
             <h2>Canvas to Image</h2>
             <p>Since clipper component's result is only a canvas element, you might want to transform canvas to image for more usages.</p>
-            <p>There's many ways you can transform canvas to image (image URL), here are some examples.</p>      
+            <p>There are many ways you can transform canvas into images (image URL), here are some examples.</p>      
         </div>
         <div class="area">
-            <p>First we get the result (canvas) from clipping component, and save it as <i>const canvas</i></p>
+            <p>First, we get the result (canvas) from clipping component and save it as <i>const canvas</i></p>
             <pre v-highlightjs="code.const"><code class="javascript"></code></pre>
-            <p>If you don't know how to get the result from from clipping component, see <router-link to="/examples/quick-start">quick start</router-link>.</p>
+            <p>If you don't know how to get the result from clipping component, see the <router-link to="/examples/quick-start">quick start</router-link>.</p>
         </div>
         <div class="area">
             <h3>canvas.toDataURL</h3>

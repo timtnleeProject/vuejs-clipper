@@ -7,7 +7,7 @@
         <div class="tab">
           <ul>
           <li>Vue.js image clipping components using vue-rx.</li>
-          <li>Add image clipping components to your vue application in nothing flat.</li>
+          <li>Add image clipping components to your Vue application in nothing flat.</li>
           <li>Touch devices supported and fully responsive.</li>
         </ul>
         </div>

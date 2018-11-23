@@ -24,9 +24,9 @@
     <div class="area">
       <ul>
         <li>Drag and scale image to clip.</li>
-        <li>It is recommended to use it to clip image in fixed ratio, like profile picture.</li>
+        <li>It is recommended to use it to clip image in a fixed ratio, as the profile picture.</li>
         <li>Scale and ratio are default features, and also support rotate.</li>
-        <li>It's height is auto adjust by ratio, you can only set width of this component.</li>
+        <li>Its height is auto adjust by ratio, you can only set the width of this component.</li>
       </ul>
     </div>
     

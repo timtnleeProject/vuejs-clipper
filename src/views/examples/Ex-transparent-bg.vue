@@ -2,8 +2,8 @@
     <div class="list-content content">
         <div class="area">
             <h2>Transparent Background</h2>
-            <p>To get a image with transparent background,</p>
-            <p>upload a png which has transparent background,</p>
+            <p>To get an image with a transparent background,</p>
+            <p>upload a png which has a transparent background,</p>
             <p>set clipper component's "bgColor" to transparent color.</p>
             <!-- <clipper-upload v-model="src">upload</clipper-upload> -->
             <clipper-fixed class="sample" ref="clipper" :src="src" bgColor="rgba(0,0,0,0)"></clipper-fixed>
