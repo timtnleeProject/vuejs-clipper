@@ -334,7 +334,7 @@ use `v-model` binding data with `clipper-range`
 | Prop|Type|default|Description |
 |--------|-------:|------:|:-----|
 | max | number | 10 | maximum value of range |
-| min | number | 10 | minimum value of range |
+| min | number | 0 | minimum value of range |
 
 ### clipper-upload
 
