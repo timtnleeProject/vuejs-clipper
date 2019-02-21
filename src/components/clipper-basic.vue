@@ -10,7 +10,8 @@
                 <div class="extend inner" :style="exInnerStyle">
                    <div class="drag-inset"></div>
                 </div>
-                <div v-if="corner" v-for="index in 4" :key="'corner'+index" class="corner" :class="`corner${index}`">
+                <div v-if="corner">
+                  <div v-for="index in 4" :key="'corner'+index" class="corner" :class="`corner${index}`"></div>
                 </div>
                 <div v-if="grid" class="grid">
                   <div v-for="index in 4" :key="'gridItem'+index" class="grid-item"></div>
@@ -379,10 +380,6 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-// .clipper-basic {
-//   // width: 100%;
-//   // height: 100%;
-// }
 .clip-area {
   position: relative;
   width: 100%;
