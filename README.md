@@ -22,6 +22,9 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
+* 0.2.8
+  * new prop `accept` for clipper-upload ([issue #1][issue1])
+  * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
 * 0.2.7
   * fixed build scripts.
 * 0.2.6
@@ -353,3 +356,8 @@ use `v-model` binding data with `clipper-upload`
 | Prop|Type|default|Description |
 |-|-:|-:|:-|
 |check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
+|accept|string|'*'|Bind `accept` attribute to file input tag.|
+|exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
+
+[issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
+[issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
