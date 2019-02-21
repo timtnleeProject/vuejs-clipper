@@ -8,48 +8,48 @@ import VueRx from 'vue-rx'
 import np from "./namespace"
 
 const install = function (Vue, options) {
-    //vue-rx
-    Vue.use(VueRx)
+  //vue-rx
+  Vue.use(VueRx)
     
-    const components = {
-        clipperBasic: {
-            component: clipperBasic,
-            name: 'clipper-basic'
-        },
-        clipperPreview: {
-            component: clipperPreview,
-            name: 'clipper-preview'
-        },
-        clipperRange: {
-            component: clipperRange,
-            name: 'clipper-range'
-        },
-        clipperFixed: {
-            component: clipperFixed,
-            name: 'clipper-fixed'
-        },
-        clipperUpload: {
-            component: clipperUpload,
-            name: 'clipper-upload'
-        }
+  const components = {
+    clipperBasic: {
+      component: clipperBasic,
+      name: 'clipper-basic'
+    },
+    clipperPreview: {
+      component: clipperPreview,
+      name: 'clipper-preview'
+    },
+    clipperRange: {
+      component: clipperRange,
+      name: 'clipper-range'
+    },
+    clipperFixed: {
+      component: clipperFixed,
+      name: 'clipper-fixed'
+    },
+    clipperUpload: {
+      component: clipperUpload,
+      name: 'clipper-upload'
     }
-    const registerComponent = (name) => {
-        Vue.component(components[name].name, components[name].component)
-    }
+  }
+  const registerComponent = (name) => {
+    Vue.component(components[name].name, components[name].component)
+  }
 
-    options = options || {}
-    np.parentPropName = options.parentPropName || np.parentPropName
-    np.globMethodName = options.globMethodName || np.globMethodName
-    options.components = (options.components === undefined) ? components : options.components;//if no components property, register all component
-    for (let k in options.components) {
-        if (!components[k]) throw `Invalid components "${k}" in vurjs-clipper plugin`
-        components[k].name = (typeof options.components[k] === 'string') ? options.components[k] : components[k].name;
-        registerComponent(k)
-    }
+  options = options || {}
+  np.parentPropName = options.parentPropName || np.parentPropName
+  np.globMethodName = options.globMethodName || np.globMethodName
+  options.components = (options.components === undefined) ? components : options.components;//if no components property, register all component
+  for (let k in options.components) {
+    if (!components[k]) throw `Invalid components "${k}" in vurjs-clipper plugin`
+    components[k].name = (typeof options.components[k] === 'string') ? options.components[k] : components[k].name;
+    registerComponent(k)
+  }
 }
 
 const plugin = {
-    install
+  install
 }
 
 export default plugin;
@@ -57,12 +57,12 @@ export default plugin;
 //script include auto plugin
 let GlobalVue = null;
 if (typeof window !== 'undefined') {
-	GlobalVue = window.Vue;
+  GlobalVue = window.Vue;
 } else if (typeof global !== 'undefined') {
-	GlobalVue = global.Vue;
+  GlobalVue = global.Vue;
 }
 if (GlobalVue) {
-	GlobalVue.use(plugin);
+  GlobalVue.use(plugin);
 }
 
 export { clipperBasic, clipperFixed, clipperPreview, clipperRange, clipperUpload }

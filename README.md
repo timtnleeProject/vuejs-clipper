@@ -1,10 +1,11 @@
 # vuejs-clipper
 
-Vue.js image clipping components using vue-rx.
+Vue.js image clipping components using Vue-Rx.
 
+[![not found](https://img.shields.io/npm/v/vuejs-clipper.svg)](https://www.npmjs.com/package/vuejs-clipper)
 [![not found](https://api.travis-ci.org/timtnleeProject/vuejs-clipper.svg?branch=master)](https://travis-ci.org/timtnleeProject/vuejs-clipper#)
 
-* Add image clipping components to your vue application in nothing flat.
+* Add image clipping components to your Vue application in nothing flat.
 * Touch devices supported and fully responsive.
 
 ## Demo
@@ -21,6 +22,21 @@ Vue.js image clipping components using vue-rx.
 
 ## Version Released
 
+* 0.2.8
+  * new prop `accept` for clipper-upload ([issue #1][issue1])
+  * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
+* 0.2.7
+  * fixed build scripts.
+* 0.2.6
+  * clipper-fixed has new prop: round.
+  * clipper-upload will still emit `input` when uploading the same file.
+  * update examples at the homepage.
+* 0.2.5
+  * Clipper-upload will call `URL.revokeObjectURL` to release memory.
+  * Fixed clipper-range two way binding.
+* 0.2.4
+  * Fixed clipper-basic initial clip area size over the container.
+  * Update readme (imgRatio).
 * 0.2.3
   * update package.json
 * 0.2.2
@@ -38,13 +54,13 @@ Vue.js image clipping components using vue-rx.
 
 ## Notice
 
-Before using the plugin & compoenets, here's something you should know :
+Before using the plugin & components, here's something you should know :
 
 * It's based on **vue-rx**.
 * Use vuejs-clipper plugin also add **vue-rx** plugin to vue.
 * Components are responsive base on **width** instead of height.
-* You can clip your own images (local uploaded images or images served on your site) ,but you cannot clip a cross origin image.
-* Components' **input** is a image URL, **ouput** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
+* You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image.
+* Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
 
 ## Installation
 
@@ -207,8 +223,22 @@ const canvas = this.$refs.clipper.clip()
 |load|$event|image onload|
 |error|$error|image onerror|
 
+usage :
+
 ```html
 <clipper-basic @error="errorCb" @load="loadCb"></clipper-basic>
+```
+
+* Data
+
+|data |type | default|description|
+|-|-|-|-|
+|imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
+
+usage :
+
+```javascript
+this.$refs.clipper.imgRatio
 ```
 
 * Slot
@@ -225,7 +255,7 @@ const canvas = this.$refs.clipper.clip()
 
 ### clipper-fixed
 
-a image clipping component
+an image clipping component
 
 ```javascript
 import { clipperFixed } from 'vuejs-clipper'
@@ -242,6 +272,7 @@ import { clipperFixed } from 'vuejs-clipper'
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
 | grid   | boolean| true  | show grid layout|
+| round | boolean | false | Use a round clipping area, this only effect the component layout, clipping results are still rectangular. |
 | bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
@@ -258,6 +289,12 @@ import { clipperFixed } from 'vuejs-clipper'
 |-|-|-|
 |load|$event|image onload|
 |error|$error|image onerror|
+
+* Data
+
+|data |type | default|description|
+|-|-|-|-|
+|imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
 
 * Slot
 
@@ -300,13 +337,13 @@ use `v-model` binding data with `clipper-range`
 | Prop|Type|default|Description |
 |--------|-------:|------:|:-----|
 | max | number | 10 | maximum value of range |
-| min | number | 10 | minimum value of range |
+| min | number | 0 | minimum value of range |
 
 ### clipper-upload
 
-new component in 0.2.0
+a new component in 0.2.0
 
-a upload button that transform image files to URL
+an upload button that transform image files to URL
 
 ```javascript
 import { clipperUpload } from 'vuejs-clipper'
@@ -318,4 +355,9 @@ use `v-model` binding data with `clipper-upload`
 
 | Prop|Type|default|Description |
 |-|-:|-:|:-|
-|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get error event on clipping component.|
+|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
+|accept|string|'*'|Bind `accept` attribute to file input tag.|
+|exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
+
+[issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
+[issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
