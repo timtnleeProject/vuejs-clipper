@@ -1,7 +1,7 @@
 <template>
   <div @click="triggerInput">
       <slot></slot>
-      <input type="file" class="upload" @input="upload($event)" @click="clear($event)" style="display:none">
+      <input type="file" class="upload" :accept="accept" @input="upload($event)" @click="clear($event)" style="display:none">
   </div>    
 </template>
 
@@ -11,6 +11,10 @@ export default {
     this.uploadEl = this.$el.querySelector('.upload')
   },
   props: {
+    accept: {
+      type: String,
+      default: 'image/*'
+    },
     value: {
       type: String,
       default: ''
@@ -45,6 +49,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
