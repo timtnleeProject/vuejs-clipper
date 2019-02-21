@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "deploy": "npm run build & gh-pages -d dist",
+    "deploy": "npm run build & gh-pages -d docs",
     "package": "vue-cli-service build --target lib --name Clipper ./src/clipper.js",
     "test:unit": "vue-cli-service test:unit"
   },
