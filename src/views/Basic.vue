@@ -41,10 +41,12 @@
                 </div>
                     <div class="flex">
                         <div class="flex">
-                            <span class="label">outline</span><input v-model.number="outline" type="number" min="1">
+                            <span class="label">outline</span>
+                            <span><input v-model.number="outline" type="number" min="1"></span>
                         </div>
                             <div class="flex">
-                                <span  class="label">border</span><input v-model.number="border" type="number" min="1">
+                                <span  class="label">border</span>
+                                <span><input v-model.number="border" type="number" min="1"></span>
                             </div>
                             </div>
                             <div class="flex">
@@ -157,6 +159,7 @@ export default {
 
 <style lang="scss" scoped>
 input {
+  margin-left: 3px;
   width: 50px;
 }
 

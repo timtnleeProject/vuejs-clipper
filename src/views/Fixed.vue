@@ -27,6 +27,7 @@
         <li>It is recommended to use it to clip image in a fixed ratio, as the profile picture.</li>
         <li>Scale and ratio are default features, and also support rotate.</li>
         <li>Its height is auto adjust by ratio, you can only set the width of this component.</li>
+        <li style="color:blue">This demo using normal input to upload files so it won't transform EXIF image.</li>
       </ul>
     </div>
     
@@ -54,7 +55,8 @@
         <input id="upload" type="file" @change="upload($event)" >
         <div class="flex">
           <div class="flex">
-            <span class="label">border: </span><input type="number" v-model.number="border">
+            <span class="label">border: </span>
+            <span><input type="number" v-model.number="border"></span>
           </div>
         </div>
         <div class="flex">

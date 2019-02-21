@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
+    "deploy": "npm run build & gh-pages -d dist",
     "package": "vue-cli-service build --target lib --name Clipper ./src/clipper.js",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -21,6 +22,7 @@
     "babel-core": "^6.26.3",
     "chai": "^4.1.2",
     "eslint-plugin-vue": "^5.0.0-beta.3",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.16"
