@@ -238,7 +238,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | src    |  string|       | image src |
 | preview| string |       | matches `clipper-preview`'s name to show preview image.|
 | ratio  | number |   1   | ratio of clipping area (width/height). ex: `1`, `4/3` .|
-| zoomRate| number | 0.04 | zooming faster if this value is larger|
+| zoom-rate| number | 0.04 | zooming faster if this value is larger|
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
 | grid   | boolean| true  | show grid layout|
