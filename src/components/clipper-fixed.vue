@@ -145,7 +145,7 @@ export default {
   },
   data: () => {
     return {
-      imgRatio: 1
+      imgRatio: NaN
     };
   },
   props: {
@@ -187,6 +187,10 @@ export default {
     shadow: {
       type: String,
       default: "rgba(0, 0, 0, 0.4)"
+    },
+    round: {
+      type: Boolean,
+      default: false
     },
     preview: {
       type: String
@@ -234,7 +238,8 @@ export default {
         color: this.shadow,
         borderWidth: this.border + "px",
         borderColor: this.borderColor,
-        boxShadow: "0 0 0 " + this._shadow
+        boxShadow: "0 0 0 " + this._shadow,
+        borderRadius: (this.round)?'50%':'',
       };
       this.ratio >= 1 ? (style.width = "50%") : (style.height = "50%");
       return style;

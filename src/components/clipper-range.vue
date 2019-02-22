@@ -112,6 +112,11 @@ export default {
       const pos = this.getPos();
       this.init$.next(percent * pos.maxLeft / pos.stickPos.width);
     }
+  },
+  watch: {
+    value : function(){
+      this.initVal()
+    }
   }
 };
 </script>

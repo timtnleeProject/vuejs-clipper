@@ -283,7 +283,7 @@ export default {
   },
   data: () => {
     return {
-      imgRatio: 1
+      imgRatio: NaN
     };
   },
   mounted() {
@@ -312,7 +312,7 @@ export default {
         bgColor:this.bgColor
       })
       this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
-      this.initWHTL$.next(0);
+      this.initWHTL$.next(true);
     }
   },
   computed: {
@@ -357,7 +357,7 @@ export default {
       return {
         borderWidth: _outline, 
         transform:`translate(-${_outline},-${_outline})`
-        }
+      }
     },
     exInnerStyle :function(){
       const _inline = this.outline + 'px'
@@ -381,9 +381,6 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.clipper-basic {
-  width: 100%;
-}
 .clip-area {
   position: relative;
   width: 100%;
