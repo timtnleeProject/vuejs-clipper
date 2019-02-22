@@ -24,6 +24,7 @@ Vue.js image clipping components using Vue-Rx.
 
 * beta
   * New prop `border-color` for `clipper-fixed`
+  * remove unused properties in plugin option.
 * 0.2.8
   * New prop `accept` for clipper-upload ([issue #1][issue1])
   * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
@@ -82,9 +83,9 @@ $npm install -D sass-loader node-sass
 
 #### (1) use vuejs-clipper plugin
 
-use vuejs-clipper plugin also add **vue-rx** plugin to Vue.
+Use vuejs-clipper plugin also add **vue-rx** plugin to Vue.
 
-register all components to Vue global scope
+By default it will register **all components** to Vue global scope.
 
 ```javascript
 import Vue from 'vue'
@@ -97,10 +98,10 @@ register some components to global with default component name
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    components: {
-        clipperBasic: true,
-        clipperPreview: true
-    }
+　components: {
+    clipperBasic: true,
+    clipperPreview: true
+　}
 })
 ```
 
@@ -108,10 +109,10 @@ with customized component name
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    components: {
-        clipperBasic: 'image-clipper-basic',
-        clipperPreview: 'my-preview'
-    }
+　components: {
+　　clipperBasic: 'image-clipper-basic',
+　　clipperPreview: 'my-preview'
+　}
 })
 ```
 
@@ -119,10 +120,17 @@ not register any components, but with some plugin options
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    parentPropName: 'myCustomerName',
-    components: null
+　parentPropName: 'myCustomerName',
+　components: null
 })
 ```
+
+possible plugin option properties
+
+||type|default|description|
+|-|-|-|-|
+|components|opbject or null|undefined|Set components registration rule (see above).|
+|parentPropName|string|'_imgPreviewLists'|Add property to Vue instance to store `clipper-preview` list. You can change the property name,|
 
 #### (2) separately import components
 
@@ -171,6 +179,12 @@ Include vuejs-clipper umd script after Vue.js.
 ```
 
 ## Components
+
+* clipperBasic
+* clipperFixed
+* clipperPreview
+* clipperUpload
+* clipperRange
 
 See detail [examples](https://timtnleeproject.github.io/vuejs-clipper/#/examples).
 

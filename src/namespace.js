@@ -1,8 +1,5 @@
 const namespace = {
-  globMethodName: '$' + 'imageClipper',
-  parentPropName: '_imgPreviewLists',
-  parentDataName: '_imagePreviewData'
+  parentPropName: '_imgPreviewLists'
 }
-// const globMethodName = namespace.globMethodName;
-// const parentPropName = namespace.parentPropName;
+
 export default namespace;

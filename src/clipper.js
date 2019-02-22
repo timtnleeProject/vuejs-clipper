@@ -39,7 +39,6 @@ const install = function (Vue, options) {
 
   options = options || {}
   np.parentPropName = options.parentPropName || np.parentPropName
-  np.globMethodName = options.globMethodName || np.globMethodName
   options.components = (options.components === undefined) ? components : options.components;//if no components property, register all component
   for (let k in options.components) {
     if (!components[k]) throw `Invalid components "${k}" in vurjs-clipper plugin`
