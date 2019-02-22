@@ -22,33 +22,35 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
+* beta
+  * New prop `border-color` for `clipper-fixed`
 * 0.2.8
-  * new prop `accept` for clipper-upload ([issue #1][issue1])
+  * New prop `accept` for clipper-upload ([issue #1][issue1])
   * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
 * 0.2.7
-  * fixed build scripts.
+  * Fixed build scripts.
 * 0.2.6
-  * clipper-fixed has new prop: round.
-  * clipper-upload will still emit `input` when uploading the same file.
+  * `clipper-fixed` has new prop: round.
+  * `clipper-upload` will still emit `input` when uploading the same file.
   * update examples at the homepage.
 * 0.2.5
-  * Clipper-upload will call `URL.revokeObjectURL` to release memory.
+  * `clipper-upload` will call `URL.revokeObjectURL` to release memory.
   * Fixed clipper-range two way binding.
 * 0.2.4
   * Fixed clipper-basic initial clip area size over the container.
   * Update readme (imgRatio).
 * 0.2.3
-  * update package.json
+  * Update package.json
 * 0.2.2
   * Fixed clipper-fixed bug: load event not call
 * 0.2.1
-  * new component clipper-upload
-  * add error/load event to clipper-basic/clipper-fixed
-  * correct and update readme
+  * New component clipper-upload
+  * Add error/load event to clipper-basic/clipper-fixed
+  * Correct and update readme
 * 0.1.1
-  * add license
-  * use travis-ci build
-  * delete some unused-vars
+  * Add license
+  * Use travis-ci build
+  * Delete some unused-vars
 * 0.1.0
   * First Released
 
@@ -271,6 +273,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | zoom-rate| number | 0.04 | zooming faster if this value is larger|
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
+|borderColor|string|'white'|border color|
 | grid   | boolean| true  | show grid layout|
 | round | boolean | false | Use a round clipping area, this only effect the component layout, clipping results are still rectangular. |
 | bg-color |string  | 'white' | background color|
