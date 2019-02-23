@@ -9,6 +9,7 @@ export default {
               if (this.clipResult) URL.revokeObjectURL(this.clipResult);
               this.clipResult = URL.createObjectURL(blob);
               this.link = this.clipResult;
+              this.resultDone()
               res()
             },
             'image/png', 1
@@ -16,6 +17,7 @@ export default {
         } else {
           this.clipResult = canvas.toDataURL('image/png', 1);
           this.link = this.clipResult;
+          this.resultDone()
           res()
         }
       })

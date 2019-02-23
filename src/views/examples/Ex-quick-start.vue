@@ -42,9 +42,9 @@
             </div>
             <div class="tab">
                 <div class="title">Result (use clipper-upload)</div>
-                <button>
+                <div class="btn">
                     <clipper-upload v-model="imgURL[0]">upload image</clipper-upload>
-                </button>
+                </div>
                 <clipper-basic class="my-clipper" :src="imgURL[0]">
                     <div class="placeholder" slot="placeholder">No image</div>
                 </clipper-basic>
@@ -63,10 +63,10 @@
                 <div>Add getResult method</div>
                 <pre v-highlightjs="code.result.js"><code class="javascript"></code></pre>
                 <div class="title">Result</div>
-                 <button>
+                <div class="btn">
                     <clipper-upload v-model="imgURL[1]">upload image</clipper-upload>
-                </button>
-                <button @click="getResult(1)">clip image</button>
+                </div>
+                <button class="btn" @click="getResult(1)">clip image</button>
                 <clipper-basic class="my-clipper" :src="imgURL[1]" :ref="refs[1]">
                     <div class="placeholder" slot="placeholder">No image</div>
                 </clipper-basic>
@@ -86,10 +86,10 @@
                 <div>Add preview prop to clipper-basic that matches clipper-preview's name</div>
                 <pre v-highlightjs="code.preview.html"><code class="html"></code></pre>
                 <div class="title">Result</div>
-                <button>
+                <div class="btn">
                     <clipper-upload v-model="imgURL[2]">upload image</clipper-upload>
-                </button>
-                <button @click="getResult(2)">clip image</button>
+                </div>
+                <button class="btn" @click="getResult(2)">clip image</button>
                 <clipper-basic 
                     class="my-clipper" 
                     :ref="refs[2]" 

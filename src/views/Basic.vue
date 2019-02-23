@@ -4,7 +4,7 @@
         <div class="popup-content">
             <div class="flow">
             <loader :done="done">Converting</loader>
-            <img :src="clipResult" class="img" @load="resultDone">
+            <img :src="clipResult" class="img">
             <div class="flex-center">
                 <div class="flex-center">
                     <input type="text" v-model="filename">
@@ -37,7 +37,9 @@
                 <h4>settings</h4>
                 <div class="flex">
                     <button @click="clip" class="btn">clip image</button>
-                    <button class="btn"><clipper-upload v-model="imgUrl">upload image</clipper-upload></button>
+                    <div>
+                      <clipper-upload class="btn" v-model="imgUrl">upload image</clipper-upload>
+                    </div>
                 </div>
                     <div class="flex">
                         <div class="flex">

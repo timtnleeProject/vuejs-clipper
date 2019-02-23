@@ -17,7 +17,7 @@
             <h3 class="tc">Edit Profile</h3>
             <div class="flex center">
                 <div class="pic-con">
-                    <img :src="clipResult" @load="resultDone">
+                    <img :src="clipResult">
                     <clipper-upload class="upload" v-model="src" @input="open"><span>upload image</span></clipper-upload>
                     <div v-if="!done" class="flex-center cen">
                       <loader>Converting</loader>
@@ -64,7 +64,7 @@ export default {
       clipResult: 'profile.png',
       src: '',
       link: '',
-      done: false,
+      done: true,
       code
     };
   },

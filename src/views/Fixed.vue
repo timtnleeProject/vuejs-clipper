@@ -4,7 +4,7 @@
     <div class="popup-content">
       <div class="flow">
         <loader :done="done">Converting</loader>
-        <img :src="clipResult" class="img" @load="resultDone">
+        <img :src="clipResult" class="img">
         <div class="flex-center">
           <div class="flex-center">
             <input type="text" v-model="filename">
