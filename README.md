@@ -22,38 +22,12 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
-* beta
+* 0.2.9
   * New prop `border-color` for `clipper-fixed`
-  * remove unused properties in plugin option.
+  * Fixed [issue #4][issue4]
 * 0.2.8
   * New prop `accept` for clipper-upload ([issue #1][issue1])
   * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
-* 0.2.7
-  * Fixed build scripts.
-* 0.2.6
-  * `clipper-fixed` has new prop: round.
-  * `clipper-upload` will still emit `input` when uploading the same file.
-  * update examples at the homepage.
-* 0.2.5
-  * `clipper-upload` will call `URL.revokeObjectURL` to release memory.
-  * Fixed clipper-range two way binding.
-* 0.2.4
-  * Fixed clipper-basic initial clip area size over the container.
-  * Update readme (imgRatio).
-* 0.2.3
-  * Update package.json
-* 0.2.2
-  * Fixed clipper-fixed bug: load event not call
-* 0.2.1
-  * New component clipper-upload
-  * Add error/load event to clipper-basic/clipper-fixed
-  * Correct and update readme
-* 0.1.1
-  * Add license
-  * Use travis-ci build
-  * Delete some unused-vars
-* 0.1.0
-  * First Released
 
 ## Notice
 
@@ -155,10 +129,10 @@ then import in your components (SFC)
 import { clipperBasic, clipperPreview } from 'vuejs-clipper'
 
 export default {
-    components: {
-      clipperBasic,
-      clipperPreview
-    }
+  components: {
+    clipperBasic,
+    clipperPreview
+  }
 }
 ```
 
@@ -378,3 +352,4 @@ use `v-model` binding data with `clipper-upload`
 
 [issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
 [issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
+[issue4]:https://github.com/timtnleeProject/vuejs-clipper/issues/4
