@@ -2,7 +2,7 @@
   <div @click="triggerInput">
       <slot></slot>
       <img class="stem" :src="DomString" style="display:none">
-      <input type="file" class="upload" :accept="accept" @input="upload($event)" @click="clear($event)" style="display:none">
+      <input type="file" class="upload" :accept="accept" @change="upload($event)" @click="clear($event)" style="display:none">
   </div>    
 </template>
 
@@ -42,11 +42,9 @@ export default {
       if(e.target.files.length!==1) return;
       this.file = e.target.files[0];
       if (this.check && !this.file.type.startsWith('image/')) return;
-      
-      if(this.DomString)
+      if(this.DomString && /^blob:/.test(this.DomString))
         window.URL.revokeObjectURL(this.DomString)
       this.DomString = window.URL.createObjectURL(this.file)
-
       this.checkEXIF().then(()=>{
         this.$emit('input', this.DomString)
       })
