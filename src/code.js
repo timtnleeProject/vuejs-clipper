@@ -195,3 +195,13 @@ canvas.toBlob(function(blob){
     reader.readAsDataURL(blob);
 })`
 export { trans }
+
+const zoom = {}
+
+zoom.ex1 = `<clipper-fixed 
+  src="ex2.jpg" 
+  shadow="transparent" 
+  border-color="transparent"
+  :grid="false"></clipper-fixed>`
+
+export {zoom}

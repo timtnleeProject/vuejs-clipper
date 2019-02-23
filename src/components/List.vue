@@ -35,6 +35,10 @@ export default {
           path: "transparent-bg"
         },
         {
+          name: "Use as Image zoom-in component",
+          path: "image-zoomin"
+        },
+        {
           name: "Profile Photo",
           path: "profile-photo"
         }
