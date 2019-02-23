@@ -94,17 +94,16 @@ not register any components, but with some plugin options
 
 ```javascript
 Vue.use(VuejsClipper ,{
-　parentPropName: 'myCustomerName',
-　components: null
+  components: null,
+　parentPropName: 'myCustomerName'
+  /*
+  　parentPropName:
+    Add property to Vue instance to store `clipper-preview` list.
+    You can change the property name
+    default: '_imgPreviewLists'
+  */
 })
 ```
-
-possible plugin option properties
-
-||type|default|description|
-|-|-|-|-|
-|components|opbject or null|undefined|Set components registration rule (see above).|
-|parentPropName|string|'_imgPreviewLists'|Add property to Vue instance to store `clipper-preview` list. You can change the property name,|
 
 #### (2) separately import components
 
@@ -261,7 +260,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | zoom-rate| number | 0.04 | zooming faster if this value is larger|
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
-|borderColor|string|'white'|border color|
+|border-color|string|'white'|border color|
 | grid   | boolean| true  | show grid layout|
 | round | boolean | false | Use a round clipping area, this only effect the component layout, clipping results are still rectangular. |
 | bg-color |string  | 'white' | background color|
