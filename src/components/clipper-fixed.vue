@@ -176,13 +176,17 @@ export default {
       type: Number,
       default: 1
     },
+    borderColor: {
+      type: String,
+      default: "white"
+    },
     grid: {
       type: Boolean,
       default: true
     },
     shadow: {
       type: String,
-      default: 'rgba(0, 0, 0, 0.4)'
+      default: "rgba(0, 0, 0, 0.4)"
     },
     round: {
       type: Boolean,
@@ -233,6 +237,7 @@ export default {
       const style = {
         color: this.shadow,
         borderWidth: this.border + "px",
+        borderColor: this.borderColor,
         boxShadow: "0 0 0 " + this._shadow,
         borderRadius: (this.round)?'50%':'',
       };
@@ -354,7 +359,6 @@ $grid-width: 1px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-color: white;
   border-style: solid;
 }
 .stem-area {

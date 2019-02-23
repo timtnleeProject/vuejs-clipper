@@ -22,35 +22,12 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
+* 0.2.9
+  * New prop `border-color` for `clipper-fixed`
+  * Fixed [issue #4][issue4]
 * 0.2.8
-  * new prop `accept` for clipper-upload ([issue #1][issue1])
+  * New prop `accept` for clipper-upload ([issue #1][issue1])
   * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
-* 0.2.7
-  * fixed build scripts.
-* 0.2.6
-  * clipper-fixed has new prop: round.
-  * clipper-upload will still emit `input` when uploading the same file.
-  * update examples at the homepage.
-* 0.2.5
-  * Clipper-upload will call `URL.revokeObjectURL` to release memory.
-  * Fixed clipper-range two way binding.
-* 0.2.4
-  * Fixed clipper-basic initial clip area size over the container.
-  * Update readme (imgRatio).
-* 0.2.3
-  * update package.json
-* 0.2.2
-  * Fixed clipper-fixed bug: load event not call
-* 0.2.1
-  * new component clipper-upload
-  * add error/load event to clipper-basic/clipper-fixed
-  * correct and update readme
-* 0.1.1
-  * add license
-  * use travis-ci build
-  * delete some unused-vars
-* 0.1.0
-  * First Released
 
 ## Notice
 
@@ -80,9 +57,9 @@ $npm install -D sass-loader node-sass
 
 #### (1) use vuejs-clipper plugin
 
-use vuejs-clipper plugin also add **vue-rx** plugin to Vue.
+Use vuejs-clipper plugin also add **vue-rx** plugin to Vue.
 
-register all components to Vue global scope
+By default it will register **all components** to Vue global scope.
 
 ```javascript
 import Vue from 'vue'
@@ -95,10 +72,10 @@ register some components to global with default component name
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    components: {
-        clipperBasic: true,
-        clipperPreview: true
-    }
+　components: {
+    clipperBasic: true,
+    clipperPreview: true
+　}
 })
 ```
 
@@ -106,10 +83,10 @@ with customized component name
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    components: {
-        clipperBasic: 'image-clipper-basic',
-        clipperPreview: 'my-preview'
-    }
+　components: {
+　　clipperBasic: 'image-clipper-basic',
+　　clipperPreview: 'my-preview'
+　}
 })
 ```
 
@@ -117,8 +94,14 @@ not register any components, but with some plugin options
 
 ```javascript
 Vue.use(VuejsClipper ,{
-    parentPropName: 'myCustomerName',
-    components: null
+  components: null,
+　parentPropName: 'myCustomerName'
+  /*
+  　parentPropName:
+    Add property to Vue instance to store `clipper-preview` list.
+    You can change the property name
+    default: '_imgPreviewLists'
+  */
 })
 ```
 
@@ -145,10 +128,10 @@ then import in your components (SFC)
 import { clipperBasic, clipperPreview } from 'vuejs-clipper'
 
 export default {
-    components: {
-      clipperBasic,
-      clipperPreview
-    }
+  components: {
+    clipperBasic,
+    clipperPreview
+  }
 }
 ```
 
@@ -169,6 +152,12 @@ Include vuejs-clipper umd script after Vue.js.
 ```
 
 ## Components
+
+* clipperBasic
+* clipperFixed
+* clipperPreview
+* clipperUpload
+* clipperRange
 
 See detail [examples](https://timtnleeproject.github.io/vuejs-clipper/#/examples).
 
@@ -268,9 +257,10 @@ import { clipperFixed } from 'vuejs-clipper'
 | src    |  string|       | image src |
 | preview| string |       | matches `clipper-preview`'s name to show preview image.|
 | ratio  | number |   1   | ratio of clipping area (width/height). ex: `1`, `4/3` .|
-| zoomRate| number | 0.04 | zooming faster if this value is larger|
+| zoom-rate| number | 0.04 | zooming faster if this value is larger|
 |min-scale | number| 0.1 | minimum transform scale |
 | border |  number|   1   | border width |
+|border-color|string|'white'|border color|
 | grid   | boolean| true  | show grid layout|
 | round | boolean | false | Use a round clipping area, this only effect the component layout, clipping results are still rectangular. |
 | bg-color |string  | 'white' | background color|
@@ -361,3 +351,4 @@ use `v-model` binding data with `clipper-upload`
 
 [issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
 [issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
+[issue4]:https://github.com/timtnleeProject/vuejs-clipper/issues/4
