@@ -9,7 +9,7 @@
         </div>
         <div class="area">
             <p>Now it act like an image zoom-in component.</p>
-            <p><a href="https://timtnleeproject.github.io/vuejs-static-blog/#/article/mongodb%20windows" target="_blank">Here</a> is an example, click the pictures in the article to see the effect.</p>
+            <p><a href="https://timtnleeproject.github.io/blog/#/article/mongodb%20windows" target="_blank">Here</a> is an example, click the pictures in the article to see the effect.</p>
         </div>
     </div>
 </template>
