@@ -168,38 +168,5 @@ input {
 .preview-sm {
   width: 100px;
 }
-
-// input {
-//   width: 50px;
-// }
-
-// span {
-//   display: inline-block;
-//   padding: 10px;
-// }
-// .flex-center {
-//   margin-bottom: 10px;
-// }
-// #upload {
-//   display: none;
-// }
-// .settings {
-//   padding-left: 10px;
-// }
-// .fixed {
-//   padding: 20px;
-// }
-// .preview {
-//   flex-basis: 0;
-// }
-// .preview-lg {
-//   flex-grow: 5;
-// }
-// .preview-md {
-//   flex-grow: 3;
-// }
-// .preview-sm {
-//   flex-grow: 2;
-// }
 </style>
 
