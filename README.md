@@ -22,6 +22,8 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
+* 0.2.10
+  * Use passive event listener on wheel event ([issue #8][issue8]).
 * 0.2.9
   * New prop `border-color` for `clipper-fixed`
   * Fixed [issue #4][issue4]
@@ -352,3 +354,4 @@ use `v-model` binding data with `clipper-upload`
 [issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
 [issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
 [issue4]:https://github.com/timtnleeProject/vuejs-clipper/issues/4
+[issue8]:https://github.com/timtnleeProject/vuejs-clipper/issues/8
