@@ -28,7 +28,7 @@ const rxEventListeners = {
 
 const rxWheelListeners = {
   beforeCreate() {
-    this.wheel$ = fromEvent(window, 'wheel')
+    this.wheel$ = fromEvent(window, 'wheel', { passive: false })
   }
 }
 export { rxEventListeners }
