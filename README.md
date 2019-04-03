@@ -319,7 +319,7 @@ import { clipperPreview } from 'vuejs-clipper'
 a simple input range component
 
 ```javascript
-import { clipperPreview } from 'vuejs-clipper'
+import { clipperRange } from 'vuejs-clipper'
 ```
 
 use `v-model` binding data with `clipper-range`
