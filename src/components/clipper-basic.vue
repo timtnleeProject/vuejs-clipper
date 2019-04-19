@@ -44,6 +44,7 @@ export default {
   subscriptions() {
     this.onchange$ = new Subject();
     //set value
+    this.setWH$ = new Subject();
     this.setTL$ = new Subject();
     this.initWHTL$ = new Subject().pipe(map(this.$set_initWHTL));
     //interupter
@@ -219,6 +220,7 @@ export default {
       map(this.toPercentage),
       startWith({ width: 0, height: 0 }),
       merge(this.initWHTL$),
+      merge(this.setWH$),
       map(wh => this.$set_minWH(wh)) //width,height -> 1%
     );
 
