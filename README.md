@@ -22,6 +22,8 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Version Released
 
+* 0.2.11
+  * Expose rxjs subject that can set position and layout of the movable area.
 * 0.2.10
   * Use passive event listener on wheel event ([issue #8][issue8]).
 * 0.2.9
@@ -173,7 +175,7 @@ import { clipperBasic } from 'vuejs-clipper'
 
 * Props
 
-|Prop|Type|default|Description|
+|Prop|Type|default|description|
 |--------|-------:|------:|:-----|
 | src    |  string|       | image src |
 | preview| string |       | matches `clipper-preview`'s name to show preview image.|
@@ -191,7 +193,7 @@ import { clipperBasic } from 'vuejs-clipper'
 
 * Methods
 
-| method | argument | return| Description |
+| method | argument | return| description |
 |-|-|-|-|
 | clip | | canvas element |get clipping canvas element|
 
@@ -209,7 +211,7 @@ const canvas = this.$refs.clipper.clip()
 
 * Event
 
-|event|parameters|Description|
+|event|parameters|description|
 |-|-|-|
 |load|$event|image onload|
 |error|$error|image onerror|
@@ -234,7 +236,7 @@ this.$refs.clipper.imgRatio
 
 * Slot
 
-|slot|Description|
+|slot|description|
 |-|-|
 |placeholder|if no `src` provided, show placeholder|
 
@@ -242,6 +244,20 @@ this.$refs.clipper.imgRatio
 <clipper-basic src="">
   <div slot="placeholder">No image</div>
 </clipper-basic>
+```
+
+* rxjs Subject
+
+|subject|description|
+|-|-|
+|setTL$|Set the top and left of the zooming area.|
+|setWH$|Set the width and height of the zooming area.|
+
+usage:
+
+```javascript
+this.$ref.clipper.setTL$.next({left: 0, top: 0}) // percentage 0%
+this.$ref.clipper.setWH$.next({width: 100, height: 100}) // percentage 100%
 ```
 
 ### clipper-fixed
@@ -254,7 +270,7 @@ import { clipperFixed } from 'vuejs-clipper'
 
 * Props
 
-| Prop   |   Type |default|Description |
+| Prop   |   Type |default|description |
 |:--------|-------:|------:|:-----|
 | src    |  string|       | image src |
 | preview| string |       | matches `clipper-preview`'s name to show preview image.|
@@ -271,13 +287,13 @@ import { clipperFixed } from 'vuejs-clipper'
 
 * Method
 
-| method | argument | return| Description |
+| method | argument | return| description |
 |-|-|-|-|
 | clip | | canvas element |get clipping canvas element|
 
 * Event
 
-|event|parameters|Description|
+|event|parameters|description|
 |-|-|-|
 |load|$event|image onload|
 |error|$error|image onerror|
@@ -290,9 +306,23 @@ import { clipperFixed } from 'vuejs-clipper'
 
 * Slot
 
-|slot|Description|
+|slot|description|
 |-|-|
 |placeholder|if no `src` provided, show placeholder|
+
+* rxjs Subject
+
+|subject|description|
+|-|-|
+|setTL$|Set the top and left of the image.|
+|setWH$|Set the sizing(scaling) of the image.|
+
+usage:
+
+```javascript
+this.$ref.clipper.setTL$.next({left: 50, top: 50}) // percentage 0%
+this.$ref.clipper.setWH$.next(0.6) // transform scale(0.6)
+```
 
 ### clipper-preview
 
@@ -304,13 +334,13 @@ import { clipperPreview } from 'vuejs-clipper'
 
 * Props
 
-| Prop   |   Type |default|Description |
+| Prop   |   Type |default|description |
 |--------|-------:|------:|:-----|
 | name | string | | name that matches clipper component's preview property |
 
 * Slot
 
-|slot|Description|
+|slot|description|
 |-|-|
 |placeholder|if no `src` provided, show placeholder|
 
@@ -326,7 +356,7 @@ use `v-model` binding data with `clipper-range`
 
 * Props
 
-| Prop|Type|default|Description |
+| Prop|Type|default|description |
 |--------|-------:|------:|:-----|
 | max | number | 10 | maximum value of range |
 | min | number | 0 | minimum value of range |
@@ -345,7 +375,7 @@ use `v-model` binding data with `clipper-upload`
 
 * Props
 
-| Prop|Type|default|Description |
+| Prop|Type|default|description |
 |-|-:|-:|:-|
 |check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
 |accept|string|'*'|Bind `accept` attribute to file input tag.|

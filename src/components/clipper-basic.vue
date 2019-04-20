@@ -42,7 +42,8 @@ export default {
     mixins: [ rxEventListeners,pluginMethods]//mousedown$,mousemove$...
   },
   subscriptions() {
-    this.onchange$ = new Subject();
+    this.change$ = new Subject();
+    this.onChange$ = new Subject();
     //set value
     this.setWH$ = new Subject();
     this.setTL$ = new Subject();
@@ -295,7 +296,13 @@ export default {
     this.zoomEl = this.$el.querySelector(".clipper-basic .zoom-area");
     this.scaleEl = this.$el.querySelector('.img-scale');
     if (this.preview) {
-      this.$subscribeTo(this.dragSubject$.pipe(merge(this.onchange$)), () => {
+      this.$subscribeTo(this.dragSubject$.pipe(merge(this.change$)), () => {
+        this.onChange$.next({
+          top: this.zoomTL$.top,
+          left: this.zoomTL$.left,
+          width: this.zoomWH.width,
+          height: this.zoomWH$.height
+        })
         this.$nextTick(() => {
           //wait for vue render dom.
           const result = this.getDrawPos().pos;
@@ -333,13 +340,13 @@ export default {
       return style;
     },
     scaleStyle: function(){
-      this.onchange$.next(0)
+      this.change$.next(0)
       return {
         transform: `scale(${this.scale})`
       }
     },
     rotateStyle: function(){
-      this.onchange$.next(0)
+      this.change$.next(0)
       return {
         transform: `rotate(${this.rotate}deg)`
       }
