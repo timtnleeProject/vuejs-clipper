@@ -23,7 +23,7 @@ Vue.js image clipping components using Vue-Rx.
 ## Version Released
 
 * 0.2.11
-  * Expose rxjs subject that can set position and layout of the movable area.
+  * Expose rxjs subjects that can [set position and layout of the movable area](https://timtnleeproject.github.io/vuejs-clipper/#/examples/set-layout).
 * 0.2.10
   * Use passive event listener on wheel event ([issue #8][issue8]).
 * 0.2.9
@@ -227,11 +227,14 @@ usage :
 |data |type | default|description|
 |-|-|-|-|
 |imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
+|zoomTL$|object||clipping area's position(%), can be top/bottom and left/right.|
+|zoomWH$|object||clipping area's width and height(%)|
 
 usage :
 
 ```javascript
 this.$refs.clipper.imgRatio
+this.$refs.clipper.zoomWH$.width
 ```
 
 * Slot
@@ -250,13 +253,14 @@ this.$refs.clipper.imgRatio
 
 |subject|description|
 |-|-|
-|setTL$|Set the top and left of the zooming area.|
+|setTL$|Set the position of the zooming area.|
 |setWH$|Set the width and height of the zooming area.|
 
 usage:
 
 ```javascript
 this.$ref.clipper.setTL$.next({left: 0, top: 0}) // percentage 0%
+this.$ref.clipper.setTL$.next({right: 0, bottom: 10})
 this.$ref.clipper.setWH$.next({width: 100, height: 100}) // percentage 100%
 ```
 
@@ -303,6 +307,8 @@ import { clipperFixed } from 'vuejs-clipper'
 |data |type | default|description|
 |-|-|-|-|
 |imgRatio|number|NaN|upload image's ratio (image naturalWidth/natrualHeight). Default value is NaN, after the load event the value will be set.|
+|bgTL$|object||image's translate(X,Y)|
+|bgWH$|number||image's scaling|
 
 * Slot
 

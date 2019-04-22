@@ -48,7 +48,7 @@ export default {
   subscriptions() {
     this.setWH$ = new Subject();
     this.setTL$ = new Subject();
-    this.onchange$ = new Subject();
+    this.change$ = new Subject();
     /** basic */
     this.mousedownDrag$ = this.mousedown$.pipe(
       filter(this.isDragElement),
@@ -138,6 +138,13 @@ export default {
         )
       )
     );
+
+    this.onChange$ = new Subject().pipe(
+      merge(this.zoomSubject$),
+      merge(this.dragSubject$),
+      merge(this.change$)
+    )
+
     return {
       bgWH$: this.zoomSubject$,
       bgTL$: this.dragSubject$
@@ -205,7 +212,7 @@ export default {
     this.stemEl = this.$el.querySelector(".stem-bg");
     this.canvasEl = this.$el.querySelector(".hidden-canvas");
     this.$subscribeTo(
-      this.zoomSubject$.pipe(merge(this.dragSubject$), merge(this.onchange$)),
+      this.onChange$,
       () => {
         this.$nextTick(() => {
           const result = this.getDrawPos().pos;
@@ -258,7 +265,7 @@ export default {
       };
     },
     bgStyle: function() {
-      this.onchange$.next(0);
+      this.change$.next(0);
       return {
         transform: `rotate(${this.rotate}deg)`
       };

@@ -43,7 +43,6 @@ export default {
   },
   subscriptions() {
     this.change$ = new Subject();
-    this.onChange$ = new Subject();
     //set value
     this.setWH$ = new Subject();
     this.setTL$ = new Subject();
@@ -224,7 +223,10 @@ export default {
       merge(this.setWH$),
       map(wh => this.$set_minWH(wh)) //width,height -> 1%
     );
-
+    this.onChange$ = new Subject().pipe(
+      merge(this.dragSubject$),
+      merge(this.change$)
+    )
     return {
       //subscriptions
       zoomTL$: this.dragSubject$,
@@ -296,13 +298,7 @@ export default {
     this.zoomEl = this.$el.querySelector(".clipper-basic .zoom-area");
     this.scaleEl = this.$el.querySelector('.img-scale');
     if (this.preview) {
-      this.$subscribeTo(this.dragSubject$.pipe(merge(this.change$)), () => {
-        this.onChange$.next({
-          top: this.zoomTL$.top,
-          left: this.zoomTL$.left,
-          width: this.zoomWH.width,
-          height: this.zoomWH$.height
-        })
+      this.$subscribeTo(this.onChange$, () => {
         this.$nextTick(() => {
           //wait for vue render dom.
           const result = this.getDrawPos().pos;
