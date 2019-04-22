@@ -205,3 +205,15 @@ zoom.ex1 = `<clipper-fixed
   :grid="false"></clipper-fixed>`
 
 export {zoom}
+
+const pos = {}
+
+pos.basicHtml = '<clipper-basic ref="clipper" src="ex2.jpg"></clipper-basic>'
+
+pos.basic = '//click buttons'
+
+pos.fixed = '//click buttons'
+// after the image is loaded
+
+
+export {pos}

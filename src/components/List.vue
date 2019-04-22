@@ -35,6 +35,10 @@ export default {
           path: "transparent-bg"
         },
         {
+          name: "Set clipping components position",
+          path: "set-layout"
+        },
+        {
           name: "Use as Image zoom-in component",
           path: "image-zoomin"
         },
