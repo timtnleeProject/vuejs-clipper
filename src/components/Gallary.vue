@@ -31,6 +31,10 @@ export default {
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
+  height: 150px;
+  @media screen and(max-width:596px) {
+    height: 100px;
+  }
   .wrap {
     height: 100%;
     padding: 1px;

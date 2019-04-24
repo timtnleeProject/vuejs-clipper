@@ -31,7 +31,7 @@
       </ul>
     </div>
     <h3>gallary</h3>     
-    <gallary :gallary="gallary" style="height: 100px;" v-model="imgUrl"></gallary>
+    <gallary :gallary="gallary" v-model="imgUrl"></gallary>
     <div class="flex-center">
       <div>
         <h4>demo</h4>

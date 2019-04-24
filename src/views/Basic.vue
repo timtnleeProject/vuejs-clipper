@@ -29,7 +29,7 @@
             </ul>
         </div>
         <h3>gallary</h3>
-        <gallary :gallary="gallary" style="height: 100px;" v-model="imgUrl"></gallary>
+        <gallary :gallary="gallary" v-model="imgUrl"></gallary>
         <h4>demo</h4>
         <clipper-basic class="basic-sample" ref="clipper" :style="basicStyle" @load="imgLoad" :src="imgUrl" :outline="outline||0" :border="border" :rotate="rotate" :ratio="ratio" :scale="scale" :corner="corner" :grid="grid" :bgColor="bgColor" :shadow="shadow" :mode="mode" preview="my-preview">
             <div slot="placeholder">No image uploaded</div>
