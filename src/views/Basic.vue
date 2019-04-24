@@ -28,6 +28,8 @@
                 <li>Supported rotate, scale and ratio but they do not default features.</li>
             </ul>
         </div>
+        <h3>gallary</h3>
+        <gallary :gallary="gallary" style="height: 100px;" v-model="imgUrl"></gallary>
         <h4>demo</h4>
         <clipper-basic class="basic-sample" ref="clipper" :style="basicStyle" @load="imgLoad" :src="imgUrl" :outline="outline||0" :border="border" :rotate="rotate" :ratio="ratio" :scale="scale" :corner="corner" :grid="grid" :bgColor="bgColor" :shadow="shadow" :mode="mode" preview="my-preview">
             <div slot="placeholder">No image uploaded</div>
@@ -107,9 +109,10 @@
 <script>
 import clipToURL from "@/clip.js";
 import Loader from "@/components/Loader.vue";
+import Gallary from "@/components/Gallary.vue";
 export default {
   components: {
-    Loader
+    Gallary
   },
   extends: {
     mixins: [clipToURL]
@@ -132,7 +135,8 @@ export default {
       link: null,
       filename: "clip",
       done: false,
-      maxWidth: 850
+      maxWidth: 850,
+      gallary: ['dawn.jpg','long.jpg','ex1.jpg','profile.png']
     };
   },
   methods: {

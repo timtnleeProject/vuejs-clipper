@@ -30,7 +30,8 @@
         <li style="color:blue">This demo using normal input to upload files so it won't transform EXIF image.</li>
       </ul>
     </div>
-    
+    <h3>gallary</h3>     
+    <gallary :gallary="gallary" style="height: 100px;" v-model="imgUrl"></gallary>
     <div class="flex-center">
       <div>
         <h4>demo</h4>
@@ -102,12 +103,14 @@
 <script>
 import clipToURL from "@/clip.js";
 import Loader from '@/components/Loader.vue'
+import Gallary from '@/components/Gallary.vue'
 export default {
   extends: {
     mixins: [clipToURL]
   },
   components: {
-    Loader
+    Loader,
+    Gallary
   },
   data: () => {
     return {
@@ -123,7 +126,8 @@ export default {
       done: false,
       clipResult: null,
       link: null,
-      filename: "clip"
+      filename: "clip",
+      gallary: ['tanya.jpg','lily.jpg','long.jpg','ex3.jpg']
     };
   },
   methods: {
