@@ -13,25 +13,12 @@ Vue.js image clipping components using Vue-Rx.
 * [live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
 * [try it on codepen](https://codepen.io/timtnlee/pen/vzzqRM)
 
-## Menu
+## Table of Contents
 
-* [Version Released](#version-released)
 * [Notice](#notice)
 * [Installation](#installation)
 * [Components](#components)
-
-## Version Released
-
-* 0.2.11
-  * Expose rxjs subjects that can [set position and layout of the movable area](https://timtnleeproject.github.io/vuejs-clipper/#/examples/set-layout).
-* 0.2.10
-  * Use passive event listener on wheel event ([issue #8][issue8]).
-* 0.2.9
-  * New prop `border-color` for `clipper-fixed`
-  * Fixed [issue #4][issue4]
-* 0.2.8
-  * New prop `accept` for clipper-upload ([issue #1][issue1])
-  * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
+* [Changelog](#changelog)
 
 ## Notice
 
@@ -387,7 +374,23 @@ use `v-model` binding data with `clipper-upload`
 |accept|string|'*'|Bind `accept` attribute to file input tag.|
 |exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
 
+## Changelog
+
+* 0.2.12
+  * Fixed [issue #13][issue13]
+* 0.2.11
+  * Expose rxjs subjects that can [set position and layout of the movable area](https://timtnleeproject.github.io/vuejs-clipper/#/examples/set-layout).
+* 0.2.10
+  * Use passive event listener on wheel event ([issue #8][issue8]).
+* 0.2.9
+  * New prop `border-color` for `clipper-fixed`
+  * Fixed [issue #4][issue4]
+* 0.2.8
+  * New prop `accept` for clipper-upload ([issue #1][issue1])
+  * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
+
 [issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
 [issue2]:https://github.com/timtnleeProject/vuejs-clipper/issues/2
 [issue4]:https://github.com/timtnleeProject/vuejs-clipper/issues/4
 [issue8]:https://github.com/timtnleeProject/vuejs-clipper/issues/8
+[issue13]:https://github.com/timtnleeProject/vuejs-clipper/issues/13
