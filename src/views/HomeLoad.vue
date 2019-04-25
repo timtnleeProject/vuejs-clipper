@@ -18,23 +18,24 @@ const testPromise = new Promise((resolve, reject) => {
   setTimeout(resolve, 16);
 });
 const imgList = [
-  "dawn.jpg",
-  "ex1.jpg",
-  "ex2.jpg",
-  "ex3.jpg",
-  "lily.jpg",
-  "long.jpg",
-  "profile.png"
+  'dawn.jpg',
+  'ex1.jpg',
+  'ex2.jpg',
+  'ex3.jpg',
+  'lily.jpg',
+  'long.jpg',
+  'profile.png',
+  'tanya.jpg'
 ];
 function imgLoadPromise(list) {
   const promises = [];
   list.forEach(src => {
     promises.push(
-      new Promise((resolve, reject) => {
-        let div = document.createElement("DIV");
-        let img = document.createElement("IMG");
+      new Promise((resolve, _reject) => {
+        let div = document.createElement('DIV');
+        let img = document.createElement('IMG');
         div.appendChild(img);
-        div.style.display = "none";
+        div.style.display = 'none';
         img.src = src;
         img.onload = function() {
           resolve();
@@ -52,13 +53,13 @@ function imgLoadPromise(list) {
 import Loader from '@/components/Loader.vue'
 export default {
   components: {
-      Loader
+    Loader
   },
   mounted() {
     const promises = imgLoadPromise(imgList);
     Promise.all([...promises, testPromise]).then(() => {
       this.done = true;
-      this.$emit("load");
+      this.$emit('load');
     });
   },
   data: () => {

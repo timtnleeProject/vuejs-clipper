@@ -117,20 +117,20 @@
 </template>
 
 <script>
-import { code } from "@/code";
+import { code } from '@/code';
 export default {
   data: () => {
     return {
       code,
-      refs: ["clipper1", "clipper2", "clipper3"],
-      imgURL: ["", "", ""],
-      resultURL: ["", "", ""]
+      refs: ['clipper1', 'clipper2', 'clipper3'],
+      imgURL: ['', '', ''],
+      resultURL: ['', '', '']
     };
   },
   methods: {
     getResult: function(index) {
       const canvas = this.$refs[this.refs[index]].clip(); //call component's clip method
-      this.$set(this.resultURL, index, canvas.toDataURL("image/jpg", 1)); //canvas->image
+      this.$set(this.resultURL, index, canvas.toDataURL('image/jpg', 1)); //canvas->image
     }
   }
 };

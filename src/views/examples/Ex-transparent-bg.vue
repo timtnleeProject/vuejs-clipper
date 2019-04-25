@@ -34,23 +34,23 @@
 <script>
 import clipToURL from '@/clip.js'
 export default {
-    extends: {
+  extends: {
     mixins: [clipToURL]  
-    },
-    data: () =>{
-        return {
-            src: 'icon/smile.png',
-            clipResult: '',
-        }
-    },
-    methods: {
-        // getResult: function(){
-        //     this.$refs.clipper.clip().toBlob(blob=>{
-        //         if(this.resultURL) URL.revokeObjectURL(this.resultURL)
-        //         this.resultURL = URL.createObjectURL(blob)
-        //     })
-        // }
+  },
+  data: () =>{
+    return {
+      src: 'icon/smile.png',
+      clipResult: '',
     }
+  },
+  methods: {
+    // getResult: function(){
+    //     this.$refs.clipper.clip().toBlob(blob=>{
+    //         if(this.resultURL) URL.revokeObjectURL(this.resultURL)
+    //         this.resultURL = URL.createObjectURL(blob)
+    //     })
+    // }
+  }
 }
 </script>
 

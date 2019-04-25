@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { trans as code } from "@/code.js";
+import { trans as code } from '@/code.js';
 import clipToURL from '@/clip.js'
 export default {
   extends: {
@@ -46,8 +46,8 @@ export default {
   },
   data: () => {
     return {
-      src: "ex1.jpg",
-      clipResult: "",
+      src: 'ex1.jpg',
+      clipResult: '',
       code
     };
   },

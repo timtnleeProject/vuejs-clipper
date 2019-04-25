@@ -15,7 +15,7 @@
 </div>
 </template>
 <script>
-import myList from "@/components/List.vue";
+import myList from '@/components/List.vue';
 export default {
   components: {
     myList

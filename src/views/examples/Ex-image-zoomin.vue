@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { zoom as code } from "@/code.js";
+import { zoom as code } from '@/code.js';
 import clipToURL from '@/clip.js'
 export default {
   extends: {
@@ -23,8 +23,8 @@ export default {
   },
   data: () => {
     return {
-      src: "ex1.jpg",
-      clipResult: "",
+      src: 'ex1.jpg',
+      clipResult: '',
       code
     };
   },

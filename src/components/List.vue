@@ -14,50 +14,50 @@
 
 <script>
 export default {
-  props: ["value"],
+  props: ['value'],
   data: () => {
     return {
       list: [
         {
-          name: "Quick Start",
-          path: "quick-start"
+          name: 'Quick Start',
+          path: 'quick-start'
         },
         {
-          name: "Vertical images",
-          path: "verticle-images"
+          name: 'Vertical images',
+          path: 'verticle-images'
         },
         {
-          name: "Canvas to Image",
-          path: "canvas-to-image"
+          name: 'Canvas to Image',
+          path: 'canvas-to-image'
         },
         {
-          name: "Transparent Background",
-          path: "transparent-bg"
+          name: 'Transparent Background',
+          path: 'transparent-bg'
         },
         {
-          name: "Set clipping components position",
-          path: "set-layout"
+          name: 'Set clipping components position',
+          path: 'set-layout'
         },
         {
-          name: "Use as Image zoom-in component",
-          path: "image-zoomin"
+          name: 'Use as Image zoom-in component',
+          path: 'image-zoomin'
         },
         {
-          name: "Profile Photo",
-          path: "profile-photo"
+          name: 'Profile Photo',
+          path: 'profile-photo'
         }
       ]
     };
   },
   computed: {
-      show : function(){
-          return this.value
-      }
+    show : function(){
+      return this.value
+    }
   },
   methods: {
-      toggle: function(){
-          this.$emit('input' ,!this.show)
-      },
+    toggle: function(){
+      this.$emit('input' ,!this.show)
+    },
   }
 };
 </script>

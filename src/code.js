@@ -168,7 +168,7 @@ export { verti }
 
 const trans = {}
 
-trans.const = `const canvas = this.$refs.clipper.clip();`
+trans.const = 'const canvas = this.$refs.clipper.clip();'
 trans.durl = `const jpgURL = canvas.toDataURL("image/jpeg")//to jpg
 const pngURL = canvas.toDataURL("image/png", 1)//to png`
 trans.blob = `canvas.toBlob(function(blob) {

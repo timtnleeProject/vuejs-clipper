@@ -8,11 +8,11 @@
 
 <script>
 export default {
-    data: ()=> {
-        return {
-            src:''
-        }
+  data: ()=> {
+    return {
+      src:''
     }
+  }
 }
 </script>
 

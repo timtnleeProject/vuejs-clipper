@@ -46,6 +46,7 @@
           :bgColor="bgColor" 
           :shadow="shadow"
           :round="round"
+          @load="imgLoad"
           preview="preview">
     </clipper-fixed>
       </div>
@@ -101,7 +102,7 @@
 </template>
 
 <script>
-import clipToURL from "@/clip.js";
+import clipToURL from '@/clip.js';
 import Loader from '@/components/Loader.vue'
 import Gallary from '@/components/Gallary.vue'
 export default {
@@ -114,19 +115,19 @@ export default {
   },
   data: () => {
     return {
-      imgUrl: "tanya.jpg",
+      imgUrl: 'tanya.jpg',
       border: 1,
       ratio: 1,
       rotate: 0,
       grid: true,
-      bgColor: "#000000",
-      shadow: "rgba(0,0,0,0.4)",
+      bgColor: '#000000',
+      shadow: 'rgba(0,0,0,0.4)',
       round: false,
       popup: false,
       done: false,
       clipResult: null,
       link: null,
-      filename: "clip",
+      filename: 'clip',
       gallary: ['tanya.jpg','lily.jpg','long.jpg','ex3.jpg']
     };
   },
@@ -142,6 +143,10 @@ export default {
       this.clipResult = null
       this.clipToURL()
     },
+    imgLoad: function() {
+      if (!this.gallary.find(g=>g===this.imgUrl))
+        this.gallary.push(this.imgUrl)
+    }
   }
 };
 </script>

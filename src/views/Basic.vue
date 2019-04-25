@@ -107,9 +107,8 @@
 </template>
 
 <script>
-import clipToURL from "@/clip.js";
-import Loader from "@/components/Loader.vue";
-import Gallary from "@/components/Gallary.vue";
+import clipToURL from '@/clip.js';
+import Gallary from '@/components/Gallary.vue';
 export default {
   components: {
     Gallary
@@ -119,21 +118,21 @@ export default {
   },
   data: () => {
     return {
-      imgUrl: "dawn.jpg",
+      imgUrl: 'dawn.jpg',
       popup: false,
       ratio: 0,
       rotate: 0,
       scale: 1,
       outline: 10,
       border: 1,
-      mode: "normal",
-      bgColor: "#000000",
-      shadow: "rgba(0,0,0,0.4)",
+      mode: 'normal',
+      bgColor: '#000000',
+      shadow: 'rgba(0,0,0,0.4)',
       corner: true,
       grid: true,
       clipResult: null,
       link: null,
-      filename: "clip",
+      filename: 'clip',
       done: false,
       maxWidth: 850,
       gallary: ['dawn.jpg','long.jpg','ex1.jpg','profile.png']
@@ -149,14 +148,16 @@ export default {
     imgLoad: function() {
       const maxHeight = 500;
       const imgRatio = this.$refs.clipper.imgRatio;
-      if (imgRatio < 1) this.maxWidth = 500 * imgRatio;
+      if (imgRatio < 1) this.maxWidth = maxHeight * imgRatio;
       else this.maxWidth = 700;
+      if (!this.gallary.find(g=>g===this.imgUrl))
+        this.gallary.push(this.imgUrl)
     }
   },
   computed: {
     basicStyle: function() {
       return {
-        maxWidth: this.maxWidth + "px"
+        maxWidth: this.maxWidth + 'px'
       };
     }
   }

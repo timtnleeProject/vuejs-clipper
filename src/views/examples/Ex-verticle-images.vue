@@ -38,31 +38,31 @@
 </template>
 
 <script>
-import { verti as code } from "@/code.js";
+import { verti as code } from '@/code.js';
 export default {
-   data: () => {
-        return {
-            code,
-            src: 'long.jpg',
-            maxWidth: 700,
-            maxHeight: 500,
-            based: 850
-        };
+  data: () => {
+    return {
+      code,
+      src: 'long.jpg',
+      maxWidth: 700,
+      maxHeight: 500,
+      based: 850
+    };
+  },
+  methods: {
+    imgLoad: function() {
+      const imgRatio = this.$refs.clipper.imgRatio;
+      if(imgRatio < 1) this.based =  this.maxHeight*imgRatio;
+      else this.based = this.maxWidth;
     },
-    methods: {
-        imgLoad: function() {
-            const imgRatio = this.$refs.clipper.imgRatio;
-            if(imgRatio < 1) this.based =  this.maxHeight*imgRatio;
-            else this.based = this.maxWidth;
-        },
-    },
-    computed: {
-        basicStyle : function() {
-            return {
-                maxWidth: this.based + 'px'
-            }
-        }
+  },
+  computed: {
+    basicStyle : function() {
+      return {
+        maxWidth: this.based + 'px'
+      }
     }
+  }
 };
 </script>
 
