@@ -1,30 +1,30 @@
 const commonMethods = {
   /* 通用 common */
   prevent: function (e) {
-    e.preventDefault();
-    return e;
+    e.preventDefault()
+    return e
   },
   eTo: function (e, direction, element) {
-    const area = this[element + 'Pos']();
-    let length = 0;
+    const area = this[element + 'Pos']()
+    let length = 0
     switch (direction) {
-    case 'top':
-      length = e.clientY - area.top
-      break;
-    case 'left':
-      length = e.clientX - area.left
-      break;
-    case 'right':
-      length = area.right - e.clientX
-      break;
-    case 'bottom':
-      length = area.bottom - e.clientY
-      break;
+      case 'top':
+        length = e.clientY - area.top
+        break
+      case 'left':
+        length = e.clientX - area.left
+        break
+      case 'right':
+        length = area.right - e.clientX
+        break
+      case 'bottom':
+        length = area.bottom - e.clientY
+        break
     }
-    return length;
+    return length
   },
   toPercentage: function (pos) {
-    const result = {};
+    const result = {}
     const table = {
       left: 'toX',
       right: 'toX',
@@ -34,14 +34,14 @@ const commonMethods = {
       height: 'toY'
     }
     for (let k in pos) {
-      const fn = table[k];
-      if (!fn || pos[k] === undefined) continue;
-      result[k] = this[fn](pos[k]);
+      const fn = table[k]
+      if (!fn || pos[k] === undefined) continue
+      result[k] = this[fn](pos[k])
     }
-    return result;
+    return result
   },
-  invalidDrawPos: function (pos) { //true if invalid
-    return (pos.swidth === 0 || pos.sheight === 0);
+  invalidDrawPos: function (pos) { // true if invalid
+    return (pos.swidth === 0 || pos.sheight === 0)
   }
 }
 

@@ -2,4 +2,4 @@ const namespace = {
   parentPropName: '_imgPreviewLists'
 }
 
-export default namespace;
+export default namespace

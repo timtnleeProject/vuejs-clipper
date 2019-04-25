@@ -96,17 +96,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "010a":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_acd0539e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a9ea");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_acd0539e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_acd0539e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_acd0539e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "01f9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -200,12 +189,12 @@ module.exports = function (it, key) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"038d2ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-preview.vue?vue&type=template&id=2a70d6c1&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c13bff6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-preview.vue?vue&type=template&id=0468ef20&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"preview"},[_c('div',{staticClass:"wrap",style:(_vm.wrapStyle)},[_c('canvas',{staticClass:"shim",attrs:{"width":_vm.outerWidth,"height":_vm.outerHeight}}),_c('div',{staticClass:"img-pos",style:(_vm.styleObj)},[_c('div',{staticClass:"img-rotate",style:(_vm.rotateStyle)},[_c('img',{staticClass:"img",attrs:{"src":_vm.src},on:{"load":_vm.imgLoaded}})])])]),_c('div',{staticClass:"placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-preview.vue?vue&type=template&id=2a70d6c1&scoped=true&
+// CONCATENATED MODULE: ./src/components/clipper-preview.vue?vue&type=template&id=0468ef20&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
@@ -231,11 +220,33 @@ var namespace = __webpack_require__("0f53");
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ var clipper_previewvue_type_script_lang_js_ = ({
-  mounted: function mounted() {
-    this.imgEl = this.$el.querySelector(".img");
-    this.initListener();
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
   },
   data: function data() {
     return {
@@ -249,38 +260,6 @@ var namespace = __webpack_require__("0f53");
       pos: {},
       rotate: 0
     };
-  },
-  props: {
-    name: {
-      type: String,
-      required: true
-    }
-  },
-  methods: {
-    initListener: function initListener() {
-      //set listener on parent
-      var parent = this.$parent;
-      var parentPropName = namespace["a" /* default */].parentPropName;
-      if (!parent[parentPropName]) parent[parentPropName] = {};
-      if (!parent[parentPropName][this.name]) parent[parentPropName][this.name] = [];
-      var listeners = parent[parentPropName][this.name];
-      listeners.push(this);
-    },
-    setData: function setData(datasets) {
-      for (var k in datasets) {
-        this[k] = datasets[k];
-      }
-    },
-    imgLoaded: function imgLoaded() {
-      this.imgWidth = this.imgEl.naturalWidth;
-      this.imgHeight = this.imgEl.naturalHeight;
-    },
-    locateImage: function locateImage(pos, rotate) {
-      this.rotate = rotate;
-      this.outerWidth = pos.swidth;
-      this.outerHeight = pos.sheight;
-      this.pos = pos;
-    }
   },
   computed: {
     styleObj: function styleObj() {
@@ -308,12 +287,46 @@ var namespace = __webpack_require__("0f53");
         display: this.src ? 'none' : 'block'
       };
     }
+  },
+  mounted: function mounted() {
+    this.imgEl = this.$el.querySelector('.img');
+    this.initListener();
+  },
+  methods: {
+    initListener: function initListener() {
+      // set listener on parent
+      var parent = this.$parent;
+      var parentPropName = namespace["a" /* default */].parentPropName;
+      if (!parent[parentPropName]) parent[parentPropName] = {};
+
+      if (!parent[parentPropName][this.name]) {
+        parent[parentPropName][this.name] = [];
+      }
+
+      var listeners = parent[parentPropName][this.name];
+      listeners.push(this);
+    },
+    setData: function setData(datasets) {
+      for (var k in datasets) {
+        this[k] = datasets[k];
+      }
+    },
+    imgLoaded: function imgLoaded() {
+      this.imgWidth = this.imgEl.naturalWidth;
+      this.imgHeight = this.imgEl.naturalHeight;
+    },
+    locateImage: function locateImage(pos, rotate) {
+      this.rotate = rotate;
+      this.outerWidth = pos.swidth;
+      this.outerHeight = pos.sheight;
+      this.pos = pos;
+    }
   }
 });
 // CONCATENATED MODULE: ./src/components/clipper-preview.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_clipper_previewvue_type_script_lang_js_ = (clipper_previewvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/clipper-preview.vue?vue&type=style&index=0&id=2a70d6c1&lang=scss&scoped=true&
-var clipper_previewvue_type_style_index_0_id_2a70d6c1_lang_scss_scoped_true_ = __webpack_require__("1cf3");
+// EXTERNAL MODULE: ./src/components/clipper-preview.vue?vue&type=style&index=0&id=0468ef20&lang=scss&scoped=true&
+var clipper_previewvue_type_style_index_0_id_0468ef20_lang_scss_scoped_true_ = __webpack_require__("7119");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -333,7 +346,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "2a70d6c1",
+  "0468ef20",
   null
   
 )
@@ -841,17 +854,6 @@ module.exports = function (it, S) {
 
 /***/ }),
 
-/***/ "1cf3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_2a70d6c1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("60a4");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_2a70d6c1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_2a70d6c1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_2a70d6c1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "1ec9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -871,12 +873,12 @@ module.exports = function (it) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"038d2ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-upload.vue?vue&type=template&id=23f74308&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c13bff6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-upload.vue?vue&type=template&id=1095ffca&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{on:{"click":_vm.triggerInput}},[_vm._t("default"),_c('img',{staticClass:"stem",staticStyle:{"display":"none"},attrs:{"src":_vm.DomString}}),_c('input',{staticClass:"upload",staticStyle:{"display":"none"},attrs:{"type":"file","accept":_vm.accept},on:{"change":function($event){return _vm.upload($event)},"click":function($event){return _vm.clear($event)}}})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-upload.vue?vue&type=template&id=23f74308&
+// CONCATENATED MODULE: ./src/components/clipper-upload.vue?vue&type=template&id=1095ffca&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/promise.js
 var promise = __webpack_require__("795b");
@@ -900,11 +902,19 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ var clipper_uploadvue_type_script_lang_js_ = ({
-  mounted: function mounted() {
-    this.uploadEl = this.$el.querySelector('.upload');
-  },
   props: {
     accept: {
       type: String,
@@ -929,6 +939,9 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
       DomString: ''
     };
   },
+  mounted: function mounted() {
+    this.uploadEl = this.$el.querySelector('.upload');
+  },
   methods: {
     upload: function upload(e) {
       var _this = this;
@@ -936,7 +949,11 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
       if (e.target.files.length !== 1) return;
       this.file = e.target.files[0];
       if (this.check && !this.file.type.startsWith('image/')) return;
-      if (this.DomString && /^blob:/.test(this.DomString)) window.URL.revokeObjectURL(this.DomString);
+
+      if (this.DomString && /^blob:/.test(this.DomString)) {
+        window.URL.revokeObjectURL(this.DomString);
+      }
+
       this.DomString = window.URL.createObjectURL(this.file);
       this.checkEXIF().then(function () {
         _this.$emit('input', _this.DomString);
@@ -945,9 +962,9 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
     checkEXIF: function checkEXIF() {
       var _this2 = this;
 
-      return new promise_default.a(function (res, rej) {
-        if (!_this2.exif) return rej();
-        res();
+      return new promise_default.a(function (resolve, reject) {
+        if (!_this2.exif) return reject(new Error());
+        resolve();
       }).then(function () {
         return _this2.getEXIF();
       }).then(function (orientation) {
@@ -960,43 +977,45 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
             orientation: orientation
           });
         }).catch(function () {
-          return promise_default.a.reject();
+          return promise_default.a.reject(new Error());
         });
       }).then(this.tranformCanvas).catch(function () {
         return promise_default.a.resolve();
-      }); //just use catch to escape chains
+      }); // just use catch to escape chains
     },
     getEXIF: function getEXIF() {
       var _this3 = this;
 
-      return new promise_default.a(function (res, rej) {
+      return new promise_default.a(function (resolve, reject) {
         exif_default.a.getData(_this3.file, function () {
           var orientation = this.exifdata.Orientation;
-          if (orientation === undefined || orientation === 1) rej();
-          res(orientation);
+          if (orientation === undefined || orientation === 1) reject(new Error());
+          resolve(orientation);
         });
       });
     },
     getImageRect: function getImageRect() {
       var _this4 = this;
 
-      return new promise_default.a(function (res, rej) {
+      return new promise_default.a(function (resolve, reject) {
         var img = _this4.$el.querySelector('.stem');
 
-        if (img.complete) return res({
-          width: img.naturalWidth,
-          height: img.naturalHeight
-        });
+        if (img.complete) {
+          return resolve({
+            width: img.naturalWidth,
+            height: img.naturalHeight
+          });
+        }
 
         img.onload = function () {
-          res({
+          resolve({
             width: this.naturalWidth,
             height: this.naturalHeight
           });
         };
 
         img.onerror = function () {
-          rej();
+          reject(new Error('img on load error'));
         };
       });
     },
@@ -1005,12 +1024,12 @@ var exif_default = /*#__PURE__*/__webpack_require__.n(exif);
           height = _ref2.height,
           orientation = _ref2.orientation;
 
-      /**This piece of code is referenced to 
+      /** This piece of code is referenced to
        * https://stackoverflow.com/questions/20600800/js-client-side-exif-orientation-rotate-and-mirror-jpeg-images */
       var canvas = document.createElement('canvas');
-      var ctx = canvas.getContext("2d"); // set proper canvas dimensions before transform & export
+      var ctx = canvas.getContext('2d'); // set proper canvas dimensions before transform & export
 
-      if (4 < orientation && orientation < 9) {
+      if (orientation > 4 && orientation < 9) {
         canvas.width = height;
         canvas.height = width;
       } else {
@@ -2241,6 +2260,13 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "3ab1":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "3c11":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2266,6 +2292,13 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   );
 } });
 
+
+/***/ }),
+
+/***/ "3e17":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -2500,6 +2533,17 @@ module.exports = function (bitmap, value) {
   };
 };
 
+
+/***/ }),
+
+/***/ "47f0":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_297acede_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("3ab1");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_297acede_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_297acede_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_range_vue_vue_type_style_index_0_id_297acede_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -2969,12 +3013,12 @@ module.exports = function (that, target, C) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"038d2ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-range.vue?vue&type=template&id=acd0539e&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c13bff6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-range.vue?vue&type=template&id=297acede&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clipper-range"},[_c('div',{directives:[{name:"stream",rawName:"v-stream:mousedown",value:(_vm.mousedown$),expression:"mousedown$",arg:"mousedown"},{name:"stream",rawName:"v-stream:touchstart",value:(_vm.touchstart$),expression:"touchstart$",arg:"touchstart"}],staticClass:"wrap"},[_c('div',{staticClass:"stick"}),_c('div',{staticClass:"bar",style:(_vm.barStyle)})])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-range.vue?vue&type=template&id=acd0539e&scoped=true&
+// CONCATENATED MODULE: ./src/components/clipper-range.vue?vue&type=template&id=297acede&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -3014,20 +3058,24 @@ var fromEvent = __webpack_require__("6e77");
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ var clipper_rangevue_type_script_lang_js_ = ({
-  domStreams: ["mousedown$", "touchstart$"],
+  domStreams: ['mousedown$', 'touchstart$'],
   subscriptions: function subscriptions() {
     var _this = this;
 
     this.init$ = new Subject["a" /* Subject */]();
-    this.mouseup$ = Object(fromEvent["a" /* fromEvent */])(window, "mouseup");
-    this.mousemove$ = Object(fromEvent["a" /* fromEvent */])(window, "mousemove");
-    this.touchmove$ = Object(fromEvent["a" /* fromEvent */])(window, "touchmove", {
+    this.mouseup$ = Object(fromEvent["a" /* fromEvent */])(window, 'mouseup');
+    this.mousemove$ = Object(fromEvent["a" /* fromEvent */])(window, 'mousemove');
+    this.touchmove$ = Object(fromEvent["a" /* fromEvent */])(window, 'touchmove', {
       passive: false
     });
-    this.touchend$ = Object(fromEvent["a" /* fromEvent */])(window, "touchend", {
+    this.touchend$ = Object(fromEvent["a" /* fromEvent */])(window, 'touchend', {
       passive: false
     });
     this.mouseEvent$ = this.mousedown$.pipe(Object(map["a" /* map */])(function (e) {
@@ -3055,14 +3103,6 @@ var fromEvent = __webpack_require__("6e77");
       x$: this.dragSubject$
     };
   },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    this.initVal();
-    this.$subscribeTo(this.dragSubject$, function () {
-      _this2.$emit("input", _this2.val);
-    });
-  },
   props: {
     value: {
       type: Number,
@@ -3086,15 +3126,28 @@ var fromEvent = __webpack_require__("6e77");
     val: function val() {
       var range = this.max - this.min;
       var pos = this.getPos();
-      var stickPos = pos.stickPos,
-          maxLeft = pos.maxLeft;
+      var stickPos = pos.stickPos;
+      var maxLeft = pos.maxLeft;
       return this.x$ * stickPos.width / maxLeft * range + this.min;
     }
   },
+  watch: {
+    value: function value() {
+      this.initVal();
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.initVal();
+    this.$subscribeTo(this.dragSubject$, function () {
+      _this2.$emit('input', _this2.val);
+    });
+  },
   methods: {
     getPos: function getPos() {
-      var stickPos = this.$el.querySelector(".stick").getBoundingClientRect();
-      var barPos = this.$el.querySelector(".bar").getBoundingClientRect();
+      var stickPos = this.$el.querySelector('.stick').getBoundingClientRect();
+      var barPos = this.$el.querySelector('.bar').getBoundingClientRect();
       return {
         maxLeft: stickPos.width - barPos.width,
         stickPos: stickPos,
@@ -3102,8 +3155,8 @@ var fromEvent = __webpack_require__("6e77");
       };
     },
     getLeftPercent: function getLeftPercent(x) {
-      var stickPos = this.$el.querySelector(".stick").getBoundingClientRect();
-      var barPos = this.$el.querySelector(".bar").getBoundingClientRect();
+      var stickPos = this.$el.querySelector('.stick').getBoundingClientRect();
+      var barPos = this.$el.querySelector('.bar').getBoundingClientRect();
       var maxLeft = stickPos.width - barPos.width;
       var left = Math.max(Math.min(x - stickPos.left, maxLeft), 0);
       return left / stickPos.width;
@@ -3114,17 +3167,12 @@ var fromEvent = __webpack_require__("6e77");
       var pos = this.getPos();
       this.init$.next(percent * pos.maxLeft / pos.stickPos.width);
     }
-  },
-  watch: {
-    value: function value() {
-      this.initVal();
-    }
   }
 });
 // CONCATENATED MODULE: ./src/components/clipper-range.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_clipper_rangevue_type_script_lang_js_ = (clipper_rangevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/clipper-range.vue?vue&type=style&index=0&id=acd0539e&lang=scss&scoped=true&
-var clipper_rangevue_type_style_index_0_id_acd0539e_lang_scss_scoped_true_ = __webpack_require__("010a");
+// EXTERNAL MODULE: ./src/components/clipper-range.vue?vue&type=style&index=0&id=297acede&lang=scss&scoped=true&
+var clipper_rangevue_type_style_index_0_id_297acede_lang_scss_scoped_true_ = __webpack_require__("47f0");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -3144,19 +3192,12 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "acd0539e",
+  "297acede",
   null
   
 )
 
 /* harmony default export */ var clipper_range = __webpack_exports__["a"] = (component.exports);
-
-/***/ }),
-
-/***/ "60a4":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -3369,7 +3410,7 @@ module.exports = function (it) {
 
 
 var install = function install(Vue, options) {
-  //vue-rx
+  // vue-rx
   Vue.use(vue_rx__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"]);
   var components = {
     clipperBasic: {
@@ -3400,10 +3441,10 @@ var install = function install(Vue, options) {
 
   options = options || {};
   _namespace__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"].parentPropName = options.parentPropName || _namespace__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"].parentPropName;
-  options.components = options.components === undefined ? components : options.components; //if no components property, register all component
+  options.components = options.components === undefined ? components : options.components; // if no components property, register all component
 
   for (var k in options.components) {
-    if (!components[k]) throw "Invalid components \"".concat(k, "\" in vurjs-clipper plugin");
+    if (!components[k]) throw new Error("Invalid components \"".concat(k, "\" in vurjs-clipper plugin"));
     components[k].name = typeof options.components[k] === 'string' ? options.components[k] : components[k].name;
     registerComponent(k);
   }
@@ -3412,7 +3453,7 @@ var install = function install(Vue, options) {
 var plugin = {
   install: install
 };
-/* harmony default export */ __webpack_exports__["f"] = (plugin); //script include auto plugin
+/* harmony default export */ __webpack_exports__["f"] = (plugin); // script include auto plugin
 
 var GlobalVue = null;
 
@@ -3510,6 +3551,13 @@ for (var i = 0; i < DOMIterables.length; i++) {
   Iterators[NAME] = Iterators.Array;
 }
 
+
+/***/ }),
+
+/***/ "6da7":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -4654,6 +4702,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function() {
 
 /***/ }),
 
+/***/ "7119":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_0468ef20_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6da7");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_0468ef20_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_0468ef20_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_preview_vue_vue_type_style_index_0_id_0468ef20_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "71c1":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4683,12 +4742,12 @@ module.exports = function (TO_STRING) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"038d2ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=5b52721b&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c13bff6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=7410e494&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clipper-basic"},[_c('canvas',{staticClass:"hidden-canvas"}),_c('div',{staticClass:"clip-area",style:(_vm.areaStyle)},[_c('div',{staticClass:"img-scale",style:(_vm.scaleStyle)},[_c('img',{staticClass:"img",style:(_vm.rotateStyle),attrs:{"src":_vm.src},on:{"load":function($event){_vm.imgLoaded();_vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})]),_c('div',{staticClass:"zoom-area shadow",style:(_vm.posObj)},[_c('div',{staticClass:"extend outer",style:(_vm.exOuterStyle)}),_c('div',{staticClass:"extend inner",style:(_vm.exInnerStyle)},[_c('div',{staticClass:"drag-inset"})]),(_vm.corner)?_c('div',_vm._l((4),function(index){return _c('div',{key:'corner'+index,staticClass:"corner",class:("corner" + index)})}),0):_vm._e(),(_vm.grid)?_c('div',{staticClass:"grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"grid-item"})}),0):_vm._e(),_vm._t("area")],2)]),_c('div',{staticClass:"placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=template&id=5b52721b&scoped=true&
+// CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=template&id=7410e494&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -4746,36 +4805,71 @@ var startWith = __webpack_require__("a744");
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ var clipper_basicvue_type_script_lang_js_ = ({
   extends: {
     methods: clippo["a" /* basicMethods */],
-    mixins: [clippo["d" /* rxEventListeners */], clippo["c" /* pluginMethods */]] //mousedown$,mousemove$...
+    mixins: [clippo["d" /* rxEventListeners */], clippo["c" /* pluginMethods */]] // mousedown$,mousemove$...
 
   },
   subscriptions: function subscriptions() {
     var _this = this;
 
-    this.change$ = new Subject["a" /* Subject */](); //set value
+    this.change$ = new Subject["a" /* Subject */](); // set value
 
     this.setWH$ = new Subject["a" /* Subject */]();
     this.setTL$ = new Subject["a" /* Subject */]();
-    this.initWHTL$ = new Subject["a" /* Subject */]().pipe(Object(map["a" /* map */])(this.$set_initWHTL)); //interupter
+    this.initWHTL$ = new Subject["a" /* Subject */]().pipe(Object(map["a" /* map */])(this.$set_initWHTL)); // interupter
 
     this.stop$ = new Subject["a" /* Subject */]();
     /* events */
 
-    this.mousedownDrag$ = new Subject["a" /* Subject */]().pipe( //moving left, top
+    this.mousedownDrag$ = new Subject["a" /* Subject */]().pipe( // moving left, top
     Object(merge["a" /* merge */])(this.mousedown$), Object(filter["a" /* filter */])(this.isDragElement), Object(map["a" /* map */])(function (e) {
       e.preventDefault();
       return e;
-    }), //deal with down, we want to calc down just for once.
+    }), // deal with down, we want to calc down just for once.
     Object(map["a" /* map */])(function (e) {
       return _this.eInZoom(e);
-    }), //點擊時zoom的position,rect
-    Object(concatMap["a" /* concatMap */])( //將down (zoom rect), move交給後續
+    }), // 點擊時zoom的position,rect
+    Object(concatMap["a" /* concatMap */])( // 將down (zoom rect), move交給後續
     function () {
       return _this.mousemove$.pipe(Object(takeUntil["a" /* takeUntil */])(_this.mouseup$));
     }, function (down, move) {
@@ -4786,17 +4880,17 @@ var startWith = __webpack_require__("a744");
     }));
     this.touchdownDrag$ = this.touchstart$.pipe(Object(filter["a" /* filter */])(this.isDragElement), Object(filter["a" /* filter */])(function (e) {
       return e.touches.length === 1;
-    }), //單指
+    }), // 單指
     Object(map["a" /* map */])(function (e) {
       e.preventDefault();
       return e;
-    }), //deal with down, we want to calc down just for once.
+    }), // deal with down, we want to calc down just for once.
     Object(map["a" /* map */])(function (e) {
       return _this.eInZoom(e.touches[0]);
     }), Object(concatMap["a" /* concatMap */])(function () {
       return _this.touchmove$.pipe(Object(takeUntil["a" /* takeUntil */])(_this.touchend$), Object(filter["a" /* filter */])(function (e) {
         return e.touches.length === 1;
-      }), //單指
+      }), // 單指
       Object(map["a" /* map */])(function (e) {
         return e.touches[0];
       }));
@@ -4837,10 +4931,10 @@ var startWith = __webpack_require__("a744");
     this.touchTwoFingersZoom$ = this.touchstart$.pipe(Object(filter["a" /* filter */])(function (e) {
       return e.touches.length === 2;
     }), Object(filter["a" /* filter */])(this.isTwoPointZoomElement), Object(map["a" /* map */])(this.prevent), Object(map["a" /* map */])(function () {
-      _this.stop$.next(0); //stop drag create event
+      _this.stop$.next(0); // stop drag create event
 
 
-      var freezeZoom = _this.zoomPos(); //get zoom position at down
+      var freezeZoom = _this.zoomPos(); // get zoom position at down
 
 
       return {
@@ -4865,35 +4959,35 @@ var startWith = __webpack_require__("a744");
     this.touchstartCreate$ = this.touchstart$.pipe(Object(filter["a" /* filter */])(this.isCreateElement), Object(map["a" /* map */])(this.prevent), Object(map["a" /* map */])(function (e) {
       return e.touches[0];
     }), Object(map["a" /* map */])(this.getFakeDown), Object(concatMap["a" /* concatMap */])(function () {
-      return _this.touchmove$.pipe(Object(takeUntil["a" /* takeUntil */])(_this.touchend$), Object(takeUntil["a" /* takeUntil */])(_this.stop$), //兩指事件觸發時停止
+      return _this.touchmove$.pipe(Object(takeUntil["a" /* takeUntil */])(_this.touchend$), Object(takeUntil["a" /* takeUntil */])(_this.stop$), // 兩指事件觸發時停止
       Object(filter["a" /* filter */])(function (e) {
         return e.touches.length === 1;
-      }), //單指
+      }), // 單指
       Object(filter["a" /* filter */])(function () {
         return _this.touchCreate;
       }));
     }, function (down, move) {
-      //down is fake
+      // down is fake
       return {
         down: down,
         move: move.touches[0]
       };
     }));
-    /***************MAIN SUBJECT (1)************
-     position: left, top, right, bottom (2 of 4)*/
+    /** *************MAIN SUBJECT (1)************
+     position: left, top, right, bottom (2 of 4) */
 
     this.dragSubject$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.mousedownDrag$), Object(merge["a" /* merge */])(this.touchdownDrag$), Object(map["a" /* map */])(this.dragMoving)
-    /* @down: eInZoom. @move: mouse/touch move event*/
-    , Object(map["a" /* map */])(this.repositionDrag), //validate & reposition @down
-    Object(merge["a" /* merge */])(this.setTL$), //this must be validate pos!!!! (in range)
+    /* @down: eInZoom. @move: mouse/touch move event */
+    , Object(map["a" /* map */])(this.repositionDrag), // validate & reposition @down
+    Object(merge["a" /* merge */])(this.setTL$), // this must be validate pos!!!! (in range)
     Object(startWith["a" /* startWith */])({
       left: 0,
       top: 0
-    }) //vm view not init yet (this.zoomEl===null). To prevent "cannot read 'left' of undefined"
+    }) // vm view not init yet (this.zoomEl===null). To prevent "cannot read 'left' of undefined"
     );
-    /***************MAIN SUBJECT (3)************
-    Subject 3, 起始event不同，處理後傳給zoomSubject$ 
-    直接subscribe() 
+    /** *************MAIN SUBJECT (3)************
+    Subject 3, 起始event不同，處理後傳給zoomSubject$
+    直接subscribe()
     */
 
     this.dragCreateSubject$ = this.mousedownCreate$.pipe(Object(merge["a" /* merge */])(this.touchstartCreate$), Object(map["a" /* map */])(function (_ref) {
@@ -4903,26 +4997,26 @@ var startWith = __webpack_require__("a744");
         down: down,
         move: move
       };
-    })); //.subscribe(); //直接subscribe
+    })); // .subscribe(); //直接subscribe
 
-    /***************MAIN SUBJECT (2)************
-     width, height*/
+    /** *************MAIN SUBJECT (2)************
+     width, height */
 
-    this.zoomSubject$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.mousedownZoom$), //mouse event
+    this.zoomSubject$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.mousedownZoom$), // mouse event
     Object(merge["a" /* merge */])(this.touchdownZoom$), // touch event 1 finger
-    Object(merge["a" /* merge */])(this.dragCreateSubject$), //dragCreateSubject$
+    Object(merge["a" /* merge */])(this.dragCreateSubject$), // dragCreateSubject$
     Object(map["a" /* map */])(this.reverseDownPos), Object(map["a" /* map */])(function (_ref2) {
       var down = _ref2.down,
           move = _ref2.move;
 
-      var fakeDown = _this.getCreatePos(down, move); //根據down, move,創造一個zoom rect (不限於一開始狀態))
+      var fakeDown = _this.getCreatePos(down, move); // 根據down, move,創造一個zoom rect (不限於一開始狀態))
 
 
-      return _this.zoomingPosition(fakeDown, move); //用創造的zoom rect去計算拖拉後的位置
+      return _this.zoomingPosition(fakeDown, move); // 用創造的zoom rect去計算拖拉後的位置
     }), Object(merge["a" /* merge */])(this.touchTwoFingersZoom$)
-    /* touch event 2 fingers(兩指縮放)*  和上面事件分開，算法不同*/
+    /* touch event 2 fingers(兩指縮放)*  和上面事件分開，算法不同 */
     , Object(map["a" /* map */])(this.splitPos), Object(map["a" /* map */])(function (pos) {
-      //set position
+      // set position
       _this.setTL$.next(_this.toPercentage(pos.tl));
 
       return pos.wh;
@@ -4931,22 +5025,23 @@ var startWith = __webpack_require__("a744");
       height: 0
     }), Object(merge["a" /* merge */])(this.initWHTL$), Object(merge["a" /* merge */])(this.setWH$), Object(map["a" /* map */])(function (wh) {
       return _this.$set_minWH(wh);
-    }) //width,height -> 1%
+    }) // width,height -> 1%
     );
     this.onChange$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.dragSubject$), Object(merge["a" /* merge */])(this.change$));
     return {
-      //subscriptions
+      // subscriptions
       zoomTL$: this.dragSubject$,
       zoomWH$: this.zoomSubject$
     };
   },
   props: {
     preview: {
-      type: String
+      type: String,
+      default: ''
     },
     src: {
       type: String,
-      default: ""
+      default: ''
     },
     border: {
       type: Number,
@@ -4966,13 +5061,14 @@ var startWith = __webpack_require__("a744");
     },
     mode: {
       type: String,
-      default: "normal"
+      default: 'normal'
     },
     ratio: {
-      type: Number
+      type: Number,
+      default: NaN
     },
     touchCreate: {
-      //enable/disable create new zoom area in touch device;
+      // enable/disable create new zoom area in touch device;
       type: Boolean,
       default: true
     },
@@ -4998,52 +5094,20 @@ var startWith = __webpack_require__("a744");
       imgRatio: NaN
     };
   },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    this.imgEl = this.$el.querySelector(".clipper-basic .img");
-    this.canvasEl = this.$el.querySelector(".clipper-basic .hidden-canvas");
-    this.areaEl = this.$el.querySelector(".clipper-basic .clip-area");
-    this.zoomEl = this.$el.querySelector(".clipper-basic .zoom-area");
-    this.scaleEl = this.$el.querySelector('.img-scale');
-
-    if (this.preview) {
-      this.$subscribeTo(this.onChange$, function () {
-        _this2.$nextTick(function () {
-          //wait for vue render dom.
-          var result = _this2.getDrawPos().pos;
-
-          var rotate = _this2.rotate;
-          if (_this2.invalidDrawPos(result)) return;
-
-          _this2.callPreview("locateImage", result, rotate);
-        });
-      });
-    }
-  },
-  methods: {
-    imgLoaded: function imgLoaded() {
-      //reset
-      this.callPreview('setData', {
-        src: this.src,
-        bgColor: this.bgColor
-      });
-      this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
-      this.initWHTL$.next(true);
-    }
-  },
   computed: {
     posObj: function posObj() {
       var style = {
         borderWidth: this.border + 'px',
-        width: this.zoomWH$.width + "%",
-        height: this.zoomWH$.height + "%",
+        width: this.zoomWH$.width + '%',
+        height: this.zoomWH$.height + '%',
         color: this.shadow,
-        boxShadow: "0 0 0 " + this._shadow
+        boxShadow: '0 0 0 ' + this._shadow
       };
 
       for (var k in this.zoomTL$) {
-        if (typeof this.zoomTL$[k] === "number") style[k] = this.zoomTL$[k] + "%";
+        if (typeof this.zoomTL$[k] === 'number') {
+          style[k] = this.zoomTL$[k] + '%';
+        }
       }
 
       return style;
@@ -5093,7 +5157,7 @@ var startWith = __webpack_require__("a744");
       };
     },
     _shadow: function _shadow() {
-      return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + "vw";
+      return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + 'vw';
     },
     watchPreData: function watchPreData() {
       this.callPreview('setData', {
@@ -5103,12 +5167,46 @@ var startWith = __webpack_require__("a744");
         bgColor: this.bgColor
       };
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.imgEl = this.$el.querySelector('.clipper-basic .img');
+    this.canvasEl = this.$el.querySelector('.clipper-basic .hidden-canvas');
+    this.areaEl = this.$el.querySelector('.clipper-basic .clip-area');
+    this.zoomEl = this.$el.querySelector('.clipper-basic .zoom-area');
+    this.scaleEl = this.$el.querySelector('.img-scale');
+
+    if (this.preview) {
+      this.$subscribeTo(this.onChange$, function () {
+        _this2.$nextTick(function () {
+          // wait for vue render dom.
+          var result = _this2.getDrawPos().pos;
+
+          var rotate = _this2.rotate;
+          if (_this2.invalidDrawPos(result)) return;
+
+          _this2.callPreview('locateImage', result, rotate);
+        });
+      });
+    }
+  },
+  methods: {
+    imgLoaded: function imgLoaded() {
+      // reset
+      this.callPreview('setData', {
+        src: this.src,
+        bgColor: this.bgColor
+      });
+      this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
+      this.initWHTL$.next(true);
+    }
   }
 });
 // CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_clipper_basicvue_type_script_lang_js_ = (clipper_basicvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/clipper-basic.vue?vue&type=style&index=0&id=5b52721b&lang=scss&scoped=true&
-var clipper_basicvue_type_style_index_0_id_5b52721b_lang_scss_scoped_true_ = __webpack_require__("9a25");
+// EXTERNAL MODULE: ./src/components/clipper-basic.vue?vue&type=style&index=0&id=7410e494&lang=scss&scoped=true&
+var clipper_basicvue_type_style_index_0_id_7410e494_lang_scss_scoped_true_ = __webpack_require__("7c9d");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -5128,19 +5226,12 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "5b52721b",
+  "7410e494",
   null
   
 )
 
 /* harmony default export */ var clipper_basic = __webpack_exports__["a"] = (component.exports);
-
-/***/ }),
-
-/***/ "76e3":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -5210,6 +5301,17 @@ module.exports = function (exec) {
   }
 };
 
+
+/***/ }),
+
+/***/ "7c9d":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_7410e494_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9628");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_7410e494_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_7410e494_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_7410e494_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -5498,6 +5600,13 @@ module.exports = !$assign || __webpack_require__("294c")(function () {
   } return T;
 } : $assign;
 
+
+/***/ }),
+
+/***/ "9628":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -6226,17 +6335,6 @@ module.exports = !$assign || __webpack_require__("294c")(function () {
   })() || Function("return this")()
 );
 
-
-/***/ }),
-
-/***/ "9a25":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_5b52721b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e0e5");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_5b52721b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_5b52721b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_5b52721b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -7312,13 +7410,6 @@ function startWith() {
 
 /***/ }),
 
-/***/ "a9ea":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "aa77":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7706,7 +7797,7 @@ var commonMethods = {
     return result;
   },
   invalidDrawPos: function invalidDrawPos(pos) {
-    //true if invalid
+    // true if invalid
     return pos.swidth === 0 || pos.sheight === 0;
   }
 };
@@ -7749,7 +7840,7 @@ var clipperMethods = {
     };
   },
   zoomInArea: function zoomInArea() {
-    //zoom rect & zoom pos related to area
+    // zoom rect & zoom pos related to area
     var areaPos = this.areaEl.getBoundingClientRect();
     var zoomPos = this.zoomEl.getBoundingClientRect();
     return assign_default()(zoomPos, {
@@ -7760,7 +7851,7 @@ var clipperMethods = {
     });
   },
   toX: function toX(value) {
-    //to X axis percentage 0~100 !
+    // to X axis percentage 0~100 !
     var area = this.areaPos();
     return Math.min(Math.max(value / area.width * 100, 0), 100);
   },
@@ -7777,8 +7868,8 @@ var clipperMethods = {
   dragMoving: function dragMoving(_ref) {
     var down = _ref.down,
         move = _ref.move;
-    var left = this.toX(this.eToArea(move, "left") - down.left),
-        top = this.toY(this.eToArea(move, "top") - down.top); //set max position
+    var left = this.toX(this.eToArea(move, 'left') - down.left);
+    var top = this.toY(this.eToArea(move, 'top') - down.top); // set max position
 
     return {
       left: left,
@@ -7792,7 +7883,7 @@ var clipperMethods = {
         top = _ref2.top,
         down = _ref2.down,
         move = _ref2.move;
-    //validate @left, @top, and reposition @down if nedded.
+    // validate @left, @top, and reposition @down if nedded.
     var zoom = this.zoomInArea();
     var maxLeft = this.toX(zoom.maxLeft);
     var maxTop = this.toY(zoom.maxTop);
@@ -7800,13 +7891,13 @@ var clipperMethods = {
     top = Math.min(top, maxTop);
 
     if (left === maxLeft || left === 0) {
-      //轉換拖曳點X
+      // 轉換拖曳點X
       var eInZoom = this.eInZoom(move);
       down.left = Math.max(Math.min(eInZoom.left, eInZoom.width), 0);
     }
 
     if (top === maxTop || top === 0) {
-      //轉換拖曳點Y
+      // 轉換拖曳點Y
       var _eInZoom = this.eInZoom(move);
 
       down.top = Math.max(Math.min(_eInZoom.top, _eInZoom.height), 0);
@@ -7818,15 +7909,15 @@ var clipperMethods = {
     };
   },
 
-  /* 縮放計算*/
+  /* 縮放計算 */
   ratioPos: function ratioPos(newRect) {
     /**
          * @argument e - moving event
          */
     var zoom = this.zoomPos();
-    var xGrow = newRect.width - zoom.width,
-        yGrow = newRect.height - zoom.height,
-        horizon = xGrow > yGrow;
+    var xGrow = newRect.width - zoom.width;
+    var yGrow = newRect.height - zoom.height;
+    var horizon = xGrow > yGrow;
     return {
       x: horizon,
       y: !horizon
@@ -7855,7 +7946,7 @@ var clipperMethods = {
 
     if (down.b === true) {
       // zoom right&bottom
-      top = down.offsetTop; //calc new pos
+      top = down.offsetTop; // calc new pos
 
       maxHeight = area.height - top;
       height = move.clientY - down.top;
@@ -7896,9 +7987,9 @@ var clipperMethods = {
         maxHeight = _ref3.maxHeight;
     if (!this.ratio) return {
       width: width,
-      height: height
-    }; //有設定比例的話進行調整
+      height: height // 有設定比例的話進行調整
 
+    };
     var ratioPos = this.ratioPos({
       width: width,
       height: height
@@ -7918,13 +8009,17 @@ var clipperMethods = {
     };
   },
   $set_initWHTL: function $set_initWHTL() {
-    var width = 50,
-        height = 50,
-        left,
-        top;
+    var width = 50;
+    var height = 50;
+    var left;
+    var top;
 
     if (this.ratio) {
-      if (this.ratio > this.imgRatio) height = width / this.ratio * this.imgRatio;else width = height * this.ratio / this.imgRatio;
+      if (this.ratio > this.imgRatio) {
+        height = width / this.ratio * this.imgRatio;
+      } else {
+        width = height * this.ratio / this.imgRatio;
+      }
     }
 
     left = (100 - width) / 2;
@@ -7969,14 +8064,14 @@ var clipperMethods = {
 
   /* 拖曳縮放 */
   isZoomElement: function isZoomElement(e) {
-    return this.zoomEl.contains(e.target) && e.target != this.$el.querySelector('.drag-inset');
+    return this.zoomEl.contains(e.target) && e.target !== this.$el.querySelector('.drag-inset');
   },
   judgeArea: function judgeArea(e) {
     var zoom = this.zoomPos();
-    var md = zoom.left + zoom.width / 2,
-        vh = zoom.top + zoom.height / 2,
-        mouseX = e.clientX,
-        mouseY = e.clientY;
+    var md = zoom.left + zoom.width / 2;
+    var vh = zoom.top + zoom.height / 2;
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
     return {
       l: mouseX < md,
       r: mouseX > md,
@@ -7985,7 +8080,7 @@ var clipperMethods = {
     };
   },
   setDownPosition: function setDownPosition(e) {
-    //use in zoomWH$
+    // use in zoomWH$
     var judge = this.judgeArea(e);
     var zoom = this.zoomPos();
     var clientY = judge.t ? zoom.bottom : zoom.top;
@@ -7999,11 +8094,11 @@ var clipperMethods = {
 
   /* 兩指縮放 */
   isTwoPointZoomElement: function isTwoPointZoomElement(e) {
-    //in .area
+    // in .area
     return this.areaEl.contains(e.touches[0].target) && this.areaEl.contains(e.touches[1].target);
   },
   getTwoTouchesPos: function getTwoTouchesPos(start, move, originZoom) {
-    /* p[0]----| 
+    /* p[0]----|
             |---- p[1]
         */
     var area = this.areaPos();
@@ -8026,7 +8121,7 @@ var clipperMethods = {
       bottom: normalSY ? 1 : 0
     };
     var LMove = start.touches[pointStart.left].clientX - move.touches[point.left].clientX;
-    var TMove = start.touches[pointStart.top].clientY - move.touches[point.top].clientY; //這裡的left,top要先validate否則maxWidth,maxHeight會算錯
+    var TMove = start.touches[pointStart.top].clientY - move.touches[point.top].clientY; // 這裡的left,top要先validate否則maxWidth,maxHeight會算錯
 
     var left = Math.max(originZoom.left - area.left - LMove, 0);
     var top = Math.max(originZoom.top - area.top - TMove, 0);
@@ -8048,7 +8143,7 @@ var clipperMethods = {
 
   /* 拖曳重新劃定區域 */
   isCreateElement: function isCreateElement(e) {
-    return e.target === this.$el.querySelector(".clip-area") || e.target === this.$el.querySelector(".img");
+    return e.target === this.$el.querySelector('.clip-area') || e.target === this.$el.querySelector('.img');
   },
   getFakeDown: function getFakeDown(e) {
     return {
@@ -8065,24 +8160,24 @@ var clipperMethods = {
       move: move
     };
 
-    if (down.target !== null && down.target === this.$el.querySelector(".img")) {
-      //this is dragCreate, first time dont count
+    if (down.target !== null && down.target === this.$el.querySelector('.img')) {
+      // this is dragCreate, first time dont count
       down.target = null;
       return {
         down: down,
         move: move
       };
-    } //處理反向
+    } // 處理反向
 
 
     var judge = this.judgeArea(down);
-    var zoom = this.zoomPos(); //左右反向
+    var zoom = this.zoomPos(); // 左右反向
 
     if (judge.l && move.clientX < down.clientX) {
       down.clientX = zoom.right;
     } else if (judge.r && move.clientX > down.clientX) {
       down.clientX = zoom.left;
-    } //上下反向
+    } // 上下反向
 
 
     if (judge.t && move.clientY < down.clientY) {
@@ -8097,7 +8192,7 @@ var clipperMethods = {
     };
   },
   getCreatePos: function getCreatePos(down, move) {
-    //判斷移動方向
+    // 判斷移動方向
     var x = move.clientX > down.clientX ? 'r' : 'l';
     var y = move.clientY > down.clientY ? 'b' : 't';
     var pos = {
@@ -8112,16 +8207,16 @@ var clipperMethods = {
     pos[y] = true;
     return pos;
   },
-  //DRAW
+  // DRAW
   getDrawPos: function getDrawPos() {
-    var zoom = this.zoomPos(),
-        img = this.scaleEl.getBoundingClientRect();
+    var zoom = this.zoomPos();
+    var img = this.scaleEl.getBoundingClientRect();
     var imgW = this.imgEl.naturalWidth;
-    var viewW = img.width,
-        viewL = zoom.left - img.left + this.border,
-        viewT = zoom.top - img.top + this.border,
-        zWidth = zoom.width - this.border * 2,
-        zHeight = zoom.height - this.border * 2;
+    var viewW = img.width;
+    var viewL = zoom.left - img.left + this.border;
+    var viewT = zoom.top - img.top + this.border;
+    var zWidth = zoom.width - this.border * 2;
+    var zHeight = zoom.height - this.border * 2;
     var rate = imgW / viewW;
     var translate = {
       rotateX: (img.left + img.width / 2 - (zoom.left + this.border)) * rate,
@@ -8135,20 +8230,20 @@ var clipperMethods = {
     };
     var pos = {
       sx: viewL * rate,
-      //sx
+      // sx
       sy: viewT * rate,
-      //sy
+      // sy
       swidth: zWidth * rate,
-      //sWidth
+      // sWidth
       sheight: zHeight * rate,
-      //sHeight
+      // sHeight
       dx: 0,
-      //dx
+      // dx
       dy: 0,
-      //dy
+      // dy
       dwidth: zWidth * rate,
-      //dWidth
-      dheight: zHeight * rate //dHeight
+      // dWidth
+      dheight: zHeight * rate // dHeight
 
     };
     pos[iterator_default.a] =
@@ -8208,7 +8303,7 @@ var fixedMethods = {
     return this.translateEl.getBoundingClientRect();
   },
   toX: function toX(value) {
-    //to X axis percentage 0~100 !
+    // to X axis percentage 0~100 !
     var scale = this.scalePos();
     return value / scale.width * 100;
   },
@@ -8269,11 +8364,11 @@ var fixedMethods = {
     }
   },
   getDrawPos: function getDrawPos() {
-    var areaPos = this.areaEl.getBoundingClientRect(),
-        translatePos = this.translatePos();
+    var areaPos = this.areaEl.getBoundingClientRect();
+    var translatePos = this.translatePos();
     var imgW = this.imgEl.naturalWidth;
-    var viewL = areaPos.left - translatePos.left + this.border,
-        viewT = areaPos.top - translatePos.top + this.border;
+    var viewL = areaPos.left - translatePos.left + this.border;
+    var viewT = areaPos.top - translatePos.top + this.border;
     var rate = imgW / translatePos.width;
     var translate = {
       rotateX: (translatePos.left + translatePos.width / 2 - (areaPos.left + this.border)) * rate,
@@ -8283,20 +8378,20 @@ var fixedMethods = {
     };
     var pos = {
       sx: viewL * rate,
-      //sx
+      // sx
       sy: viewT * rate,
-      //sy
+      // sy
       swidth: (areaPos.width - this.border * 2) * rate,
-      //sWidth
+      // sWidth
       sheight: (areaPos.height - this.border * 2) * rate,
-      //sHeight
+      // sHeight
       dx: 0,
-      //dx
+      // dx
       dy: 0,
-      //dy
+      // dy
       dwidth: (areaPos.width - this.border * 2) * rate,
-      //dWidth
-      dheight: (areaPos.height - this.border * 2) * rate //dHeight
+      // dWidth
+      dheight: (areaPos.height - this.border * 2) * rate // dHeight
 
     };
     pos[iterator_default.a] =
@@ -8334,6 +8429,16 @@ var fixedMethods = {
       pos: pos,
       translate: translate
     };
+  },
+  calcWheelScaling: function calcWheelScaling(delta) {
+    var origin = this.bgWH$;
+    var rate = this.zoomRate * Math.max(origin, 0.8) * delta;
+    return Math.max(origin + rate, this.minScale);
+  },
+  calcTouchScaling: function calcTouchScaling(delta) {
+    var origin = this.bgWH$;
+    var rate = Math.max(origin, 0.8) * delta;
+    return Math.max(origin + rate, this.minScale);
   } // validateTL: function ({ left, top }) {
   //     return {
   //         left: Math.max(Math.min(left, 100), -100),
@@ -8358,7 +8463,7 @@ var namespace = __webpack_require__("0f53");
 
 
 
-/* 
+/*
     * methods for calculating position layout,
     * extended by clipper-basic-component
 */
@@ -8366,10 +8471,11 @@ var namespace = __webpack_require__("0f53");
 
 
 
+
+
 var basicMethods = assign_default()(basic_method, common_method);
 
 var clippo_fixedMethods = assign_default()(fixed_method, common_method);
-
 
 
 
@@ -8400,15 +8506,14 @@ var rxWheelListeners = {
 };
 
 
-
 var pluginMethods = {
   methods: {
     clip: function clip() {
       var drawPos = this.getDrawPos();
       var ctx = this.canvasEl.getContext('2d');
-      var width = drawPos.pos.swidth; //sw
+      var width = drawPos.pos.swidth; // sw
 
-      var height = drawPos.pos.sheight; //sh
+      var height = drawPos.pos.sheight; // sh
 
       this.canvasEl.width = width;
       this.canvasEl.height = height;
@@ -8427,10 +8532,10 @@ var pluginMethods = {
 
       var parentPropName = namespace["a" /* default */].parentPropName;
       if (!this.preview) return;
-      if (!this.$parent[parentPropName]) return; //"You register to use clipper-preview But No clipper-view Component detected.";
+      if (!this.$parent[parentPropName]) return; // "You register to use clipper-preview But No clipper-view Component detected.";
 
       var previews = this.$parent[parentPropName][this.preview];
-      if (!previews) return; //`preview with name "${this.preview}" not found`;
+      if (!previews) return; // `preview with name "${this.preview}" not found`;
 
       previews.forEach(function (p) {
         p[method].apply(p, arg);
@@ -9443,17 +9548,6 @@ function subscribeToResult(outerSubscriber, result, outerValue, outerIndex, dest
 
 /***/ }),
 
-/***/ "d23f":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_a9d83316_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("76e3");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_a9d83316_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_a9d83316_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_a9d83316_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "d2c8":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9602,13 +9696,6 @@ var store = global[SHARED] || (global[SHARED] = {});
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 
-
-/***/ }),
-
-/***/ "e0e5":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -9971,12 +10058,12 @@ var MapSubscriber = /*@__PURE__*/ (function (_super) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"038d2ac4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-fixed.vue?vue&type=template&id=a9d83316&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c13bff6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-fixed.vue?vue&type=template&id=95ab110e&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clipper-fixed"},[_c('div',{staticClass:"wrap",style:(_vm.wrapStyle)},[_c('canvas',{staticClass:"stem-outer",attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),_c('div',{staticClass:"img-center"},[_c('canvas',{staticClass:"stem-bg"}),_c('div',{staticClass:"img-scale",style:(_vm.scaleStyle)},[_c('div',{staticClass:"img-translate",style:(_vm.translateStyle)},[_c('img',{staticClass:"img",style:(_vm.bgStyle),attrs:{"src":_vm.src},on:{"load":function($event){_vm.imgLoaded(); _vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})])])]),_c('div',{staticClass:"cover"},[_c('div',{staticClass:"area",style:(_vm.areaStyle)},[_c('canvas',{staticClass:"stem-area",style:(_vm.stemStyle),attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),(_vm.grid)?_c('div',{staticClass:"grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"grid-item"})}),0):_vm._e()])])]),_c('canvas',{staticClass:"hidden-canvas"})])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-fixed.vue?vue&type=template&id=a9d83316&scoped=true&
+// CONCATENATED MODULE: ./src/components/clipper-fixed.vue?vue&type=template&id=95ab110e&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -10002,90 +10089,45 @@ var startWith = __webpack_require__("a744");
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/merge.js + 1 modules
 var merge = __webpack_require__("4d82");
 
-// EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.js
-var tslib_es6 = __webpack_require__("9ab4");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subscriber.js
-var Subscriber = __webpack_require__("1453");
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/scan.js
-/** PURE_IMPORTS_START tslib,_Subscriber PURE_IMPORTS_END */
-
-
-function scan(accumulator, seed) {
-    var hasSeed = false;
-    if (arguments.length >= 2) {
-        hasSeed = true;
-    }
-    return function scanOperatorFunction(source) {
-        return source.lift(new ScanOperator(accumulator, seed, hasSeed));
-    };
-}
-var ScanOperator = /*@__PURE__*/ (function () {
-    function ScanOperator(accumulator, seed, hasSeed) {
-        if (hasSeed === void 0) {
-            hasSeed = false;
-        }
-        this.accumulator = accumulator;
-        this.seed = seed;
-        this.hasSeed = hasSeed;
-    }
-    ScanOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new scan_ScanSubscriber(subscriber, this.accumulator, this.seed, this.hasSeed));
-    };
-    return ScanOperator;
-}());
-var scan_ScanSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib_es6["a" /* __extends */](ScanSubscriber, _super);
-    function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
-        var _this = _super.call(this, destination) || this;
-        _this.accumulator = accumulator;
-        _this._seed = _seed;
-        _this.hasSeed = hasSeed;
-        _this.index = 0;
-        return _this;
-    }
-    Object.defineProperty(ScanSubscriber.prototype, "seed", {
-        get: function () {
-            return this._seed;
-        },
-        set: function (value) {
-            this.hasSeed = true;
-            this._seed = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ScanSubscriber.prototype._next = function (value) {
-        if (!this.hasSeed) {
-            this.seed = value;
-            this.destination.next(value);
-        }
-        else {
-            return this._tryNext(value);
-        }
-    };
-    ScanSubscriber.prototype._tryNext = function (value) {
-        var index = this.index++;
-        var result;
-        try {
-            result = this.accumulator(this.seed, value, index);
-        }
-        catch (err) {
-            this.destination.error(err);
-        }
-        this.seed = result;
-        this.destination.next(result);
-    };
-    return ScanSubscriber;
-}(Subscriber["a" /* Subscriber */]));
-//# sourceMappingURL=scan.js.map
-
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subject.js + 2 modules
 var Subject = __webpack_require__("2bd2");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-fixed.vue?vue&type=script&lang=js&
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10171,21 +10213,15 @@ var Subject = __webpack_require__("2bd2");
     }), Object(map["a" /* map */])(this.twoPointsDelta));
     /** Zoom Subject */
 
-    this.wheelZoom$ = new Subject["a" /* Subject */]().pipe(Object(startWith["a" /* startWith */])(1), Object(merge["a" /* merge */])(this.wheelEvent$), scan(function (origin, delta) {
-      var rate = _this.zoomRate * Math.max(origin, 0.8) * delta;
-      return Math.max(origin + rate, _this.minScale);
-    }));
-    this.touchZoom$ = new Subject["a" /* Subject */]().pipe(Object(startWith["a" /* startWith */])(1), Object(merge["a" /* merge */])(this.touchTwoFinger$), scan(function (origin, delta) {
-      var rate = Math.max(origin, 0.8) * delta;
-      return Math.max(origin + rate, _this.minScale);
-    }));
+    this.wheelZoom$ = new Subject["a" /* Subject */]().pipe(Object(startWith["a" /* startWith */])(1), Object(merge["a" /* merge */])(this.wheelEvent$), Object(map["a" /* map */])(this.calcWheelScaling));
+    this.touchZoom$ = new Subject["a" /* Subject */]().pipe(Object(startWith["a" /* startWith */])(1), Object(merge["a" /* merge */])(this.touchTwoFinger$), Object(map["a" /* map */])(this.calcTouchScaling));
     this.zoomSubject$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.setWH$), Object(merge["a" /* merge */])(this.wheelZoom$), Object(merge["a" /* merge */])(this.touchZoom$));
     /** Drag Subject */
 
     this.dragSubject$ = new Subject["a" /* Subject */]().pipe(Object(startWith["a" /* startWith */])({
       left: 0,
       top: 0
-    }), Object(merge["a" /* merge */])(this.setTL$), Object(merge["a" /* merge */])(this.mousedownDrag$.pipe(Object(merge["a" /* merge */])(this.touchdownDrag$), Object(map["a" /* map */])(this.delta), Object(map["a" /* map */])(this.toPercentage) //map(this.validateTL)
+    }), Object(merge["a" /* merge */])(this.setTL$), Object(merge["a" /* merge */])(this.mousedownDrag$.pipe(Object(merge["a" /* merge */])(this.touchdownDrag$), Object(map["a" /* map */])(this.delta), Object(map["a" /* map */])(this.toPercentage) // map(this.validateTL)
     )));
     this.onChange$ = new Subject["a" /* Subject */]().pipe(Object(merge["a" /* merge */])(this.zoomSubject$), Object(merge["a" /* merge */])(this.dragSubject$), Object(merge["a" /* merge */])(this.change$));
     return {
@@ -10193,14 +10229,10 @@ var Subject = __webpack_require__("2bd2");
       bgTL$: this.dragSubject$
     };
   },
-  data: function data() {
-    return {
-      imgRatio: NaN
-    };
-  },
   props: {
     src: {
-      type: String
+      type: String,
+      default: ''
     },
     rotate: {
       type: Number,
@@ -10220,7 +10252,7 @@ var Subject = __webpack_require__("2bd2");
     },
     bgColor: {
       type: String,
-      default: "white"
+      default: 'white'
     },
     border: {
       type: Number,
@@ -10228,7 +10260,7 @@ var Subject = __webpack_require__("2bd2");
     },
     borderColor: {
       type: String,
-      default: "white"
+      default: 'white'
     },
     grid: {
       type: Boolean,
@@ -10236,66 +10268,32 @@ var Subject = __webpack_require__("2bd2");
     },
     shadow: {
       type: String,
-      default: "rgba(0, 0, 0, 0.4)"
+      default: 'rgba(0, 0, 0, 0.4)'
     },
     round: {
       type: Boolean,
       default: false
     },
     preview: {
-      type: String
+      type: String,
+      default: ''
     }
   },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    this.imgEl = this.$el.querySelector(".img");
-    this.wrapEl = this.$el.querySelector(".wrap");
-    this.areaEl = this.$el.querySelector(".area");
-    this.scaleEl = this.$el.querySelector(".img-scale");
-    this.translateEl = this.$el.querySelector(".img-translate");
-    this.stemEl = this.$el.querySelector(".stem-bg");
-    this.canvasEl = this.$el.querySelector(".hidden-canvas");
-    this.$subscribeTo(this.onChange$, function () {
-      _this2.$nextTick(function () {
-        var result = _this2.getDrawPos().pos;
-
-        var rotate = _this2.rotate;
-        if (_this2.invalidDrawPos(result)) return;
-
-        _this2.callPreview("locateImage", result, rotate);
-      });
-    });
-  },
-  methods: {
-    imgLoaded: function imgLoaded() {
-      this.resetData();
-      this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
-      this.stemEl.width = this.imgEl.naturalWidth;
-      this.stemEl.height = this.imgEl.naturalHeight;
-      this.callPreview("setData", {
-        src: this.src,
-        bgColor: this.bgColor
-      });
-    },
-    resetData: function resetData() {
-      this.setTL$.next({
-        left: 0,
-        top: 0
-      });
-      this.setWH$.next(1);
-    }
+  data: function data() {
+    return {
+      imgRatio: NaN
+    };
   },
   computed: {
     areaStyle: function areaStyle() {
       var style = {
         color: this.shadow,
-        borderWidth: this.border + "px",
+        borderWidth: this.border + 'px',
         borderColor: this.borderColor,
-        boxShadow: "0 0 0 " + this._shadow,
+        boxShadow: '0 0 0 ' + this._shadow,
         borderRadius: this.round ? '50%' : ''
       };
-      this.ratio >= 1 ? style.width = "50%" : style.height = "50%";
+      this.ratio >= 1 ? style.width = '50%' : style.height = '50%';
       return style;
     },
     scaleStyle: function scaleStyle() {
@@ -10330,26 +10328,66 @@ var Subject = __webpack_require__("2bd2");
     },
     stemStyle: function stemStyle() {
       var style = {};
-      this.ratio >= 1 ? style.width = "100%" : style.height = "100%";
+      this.ratio >= 1 ? style.width = '100%' : style.height = '100%';
       return style;
     },
     _shadow: function _shadow() {
-      return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + "vw";
+      return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + 'vw';
     },
     watchPreData: function watchPreData() {
-      this.callPreview("setData", {
+      this.callPreview('setData', {
         bgColor: this.bgColor
       });
       return {
         bgColor: this.bgColor
       };
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.imgEl = this.$el.querySelector('.img');
+    this.wrapEl = this.$el.querySelector('.wrap');
+    this.areaEl = this.$el.querySelector('.area');
+    this.scaleEl = this.$el.querySelector('.img-scale');
+    this.translateEl = this.$el.querySelector('.img-translate');
+    this.stemEl = this.$el.querySelector('.stem-bg');
+    this.canvasEl = this.$el.querySelector('.hidden-canvas');
+    this.$subscribeTo(this.onChange$, function () {
+      _this2.$nextTick(function () {
+        var result = _this2.getDrawPos().pos;
+
+        var rotate = _this2.rotate;
+        if (_this2.invalidDrawPos(result)) return;
+
+        _this2.callPreview('locateImage', result, rotate);
+      });
+    });
+  },
+  methods: {
+    imgLoaded: function imgLoaded() {
+      this.resetData();
+      this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight;
+      this.stemEl.width = this.imgEl.naturalWidth;
+      this.stemEl.height = this.imgEl.naturalHeight;
+      this.callPreview('setData', {
+        src: this.src,
+        bgColor: this.bgColor
+      });
+    },
+    resetData: function resetData() {
+      this.setTL$.next({
+        left: 0,
+        top: 0
+      });
+      this.setWH$.next(1);
+    }
   }
 });
 // CONCATENATED MODULE: ./src/components/clipper-fixed.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_clipper_fixedvue_type_script_lang_js_ = (clipper_fixedvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/clipper-fixed.vue?vue&type=style&index=0&id=a9d83316&lang=scss&scoped=true&
-var clipper_fixedvue_type_style_index_0_id_a9d83316_lang_scss_scoped_true_ = __webpack_require__("d23f");
+// EXTERNAL MODULE: ./src/components/clipper-fixed.vue?vue&type=style&index=0&id=95ab110e&lang=scss&scoped=true&
+var clipper_fixedvue_type_style_index_0_id_95ab110e_lang_scss_scoped_true_ = __webpack_require__("f476");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -10369,7 +10407,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "a9d83316",
+  "95ab110e",
   null
   
 )
@@ -10391,6 +10429,17 @@ module.exports = function (O, D) {
   return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
 };
 
+
+/***/ }),
+
+/***/ "f476":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_95ab110e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("3e17");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_95ab110e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_95ab110e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_index_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_fixed_vue_vue_type_style_index_0_id_95ab110e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -10416,6 +10465,49 @@ $export($export.P + $export.F * __webpack_require__("5147")(STARTS_WITH), 'Strin
       : that.slice(index, index + search.length) === search;
   }
 });
+
+
+/***/ }),
+
+/***/ "f6fd":
+/***/ (function(module, exports) {
+
+// document.currentScript polyfill by Adam Miller
+
+// MIT license
+
+(function(document){
+  var currentScript = "currentScript",
+      scripts = document.getElementsByTagName('script'); // Live NodeList collection
+
+  // If browser needs currentScript polyfill, add get currentScript() to the document object
+  if (!(currentScript in document)) {
+    Object.defineProperty(document, currentScript, {
+      get: function(){
+
+        // IE 6-10 supports script readyState
+        // IE 10+ support stack trace
+        try { throw new Error(); }
+        catch (err) {
+
+          // Find the second match for the "at" string to get file src url from stack.
+          // Specifically works with the format of stack traces in IE.
+          var i, res = ((/.*at [^\(]*\((.*):.+:.+\)$/ig).exec(err.stack) || [false])[1];
+
+          // For all scripts on the page, if src matches or if ready state is interactive, return the script tag
+          for(i in scripts){
+            if(scripts[i].src == res || scripts[i].readyState == "interactive"){
+              return scripts[i];
+            }
+          }
+
+          // If no match, return null
+          return null;
+        }
+      }
+    });
+  }
+})(document);
 
 
 /***/ }),
@@ -10490,6 +10582,10 @@ __webpack_require__.r(__webpack_exports__);
 // This file is imported into lib/wc client bundles.
 
 if (typeof window !== 'undefined') {
+  if (true) {
+    __webpack_require__("f6fd")
+  }
+
   var i
   if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
     __webpack_require__.p = i[1] // eslint-disable-line

@@ -5,12 +5,12 @@ import clipperFixed from './components/clipper-fixed.vue'
 import clipperUpload from './components/clipper-upload.vue'
 
 import VueRx from 'vue-rx'
-import np from "./namespace"
+import np from './namespace'
 
 const install = function (Vue, options) {
-  //vue-rx
+  // vue-rx
   Vue.use(VueRx)
-    
+
   const components = {
     clipperBasic: {
       component: clipperBasic,
@@ -39,10 +39,10 @@ const install = function (Vue, options) {
 
   options = options || {}
   np.parentPropName = options.parentPropName || np.parentPropName
-  options.components = (options.components === undefined) ? components : options.components;//if no components property, register all component
+  options.components = (options.components === undefined) ? components : options.components// if no components property, register all component
   for (let k in options.components) {
-    if (!components[k]) throw `Invalid components "${k}" in vurjs-clipper plugin`
-    components[k].name = (typeof options.components[k] === 'string') ? options.components[k] : components[k].name;
+    if (!components[k]) throw new Error(`Invalid components "${k}" in vurjs-clipper plugin`)
+    components[k].name = (typeof options.components[k] === 'string') ? options.components[k] : components[k].name
     registerComponent(k)
   }
 }
@@ -51,17 +51,17 @@ const plugin = {
   install
 }
 
-export default plugin;
+export default plugin
 
-//script include auto plugin
-let GlobalVue = null;
+// script include auto plugin
+let GlobalVue = null
 if (typeof window !== 'undefined') {
-  GlobalVue = window.Vue;
+  GlobalVue = window.Vue
 } else if (typeof global !== 'undefined') {
-  GlobalVue = global.Vue;
+  GlobalVue = global.Vue
 }
 if (GlobalVue) {
-  GlobalVue.use(plugin);
+  GlobalVue.use(plugin)
 }
 
 export { clipperBasic, clipperFixed, clipperPreview, clipperRange, clipperUpload }
