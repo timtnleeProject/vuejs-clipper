@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import { trans as code } from '@/code.js';
 import clipToURL from '@/clip.js';
 import Loader from '@/components/Loader.vue';
 export default {
@@ -64,8 +63,7 @@ export default {
       clipResult: 'profile.png',
       src: '',
       link: '',
-      done: true,
-      code
+      done: true
     };
   },
   methods: {
@@ -111,14 +109,18 @@ export default {
 
 .edit-area > div {
   word-wrap: nowrap;
+  display: flex;
 }
 
-input {
+.edit-area input {
   width: 150px;
+  font-size: 16px;
   border: 1px solid gray;
   border-radius: 3px;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-left: 10px;
+  flex-grow: 1;
 }
 
 input[type="textarea"] {

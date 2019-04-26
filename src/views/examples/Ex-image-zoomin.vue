@@ -5,7 +5,7 @@
             <p>You can use clipper-fixed as an image zoom-in component since version 0.2.9 has prop border-color.</p>
             <p>Set the border-color and shadow to transparent and disable the grid.</p>      
             <pre v-highlightjs="code.ex1"><code class="html"></code></pre>
-            <clipper-fixed src="ex2.jpg" shadow="transparent" border-color="transparent" bg-color="lightgray" :grid="false"></clipper-fixed>
+            <clipper-fixed src="ex2.jpg" style="max-width:500px" shadow="transparent" border-color="transparent" bg-color="lightgray" :grid="false"></clipper-fixed>
         </div>
         <div class="area">
             <p>Now it act like an image zoom-in component.</p>

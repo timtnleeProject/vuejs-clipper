@@ -30,7 +30,7 @@
         <li style="color:blue">This demo using normal input to upload files so it won't transform EXIF image.</li>
       </ul>
     </div>
-    <h3>gallary</h3>     
+    <h4>gallary</h4>     
     <gallary :gallary="gallary" v-model="imgUrl"></gallary>
     <div class="flex-center">
       <div>

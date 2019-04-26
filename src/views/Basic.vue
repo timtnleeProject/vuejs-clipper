@@ -28,7 +28,7 @@
                 <li>Supported rotate, scale and ratio but they do not default features.</li>
             </ul>
         </div>
-        <h3>gallary</h3>
+        <h4>gallary</h4>
         <gallary :gallary="gallary" v-model="imgUrl"></gallary>
         <h4>demo</h4>
         <clipper-basic class="basic-sample" ref="clipper" :style="basicStyle" @load="imgLoad" :src="imgUrl" :outline="outline||0" :border="border" :rotate="rotate" :ratio="ratio" :scale="scale" :corner="corner" :grid="grid" :bgColor="bgColor" :shadow="shadow" :mode="mode" preview="my-preview">
