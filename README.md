@@ -144,11 +144,13 @@ Include vuejs-clipper umd script after Vue.js.
 
 ## Components
 
-* clipperBasic
-* clipperFixed
-* clipperPreview
-* clipperUpload
-* clipperRange
+![404](https://timtnleeproject.github.io/vuejs-clipper/doc-components.png)
+
+* [clipperBasic](#clipper-basic)
+* [clipperFixed](#clipper-fixed)
+* [clipperPreview](#clipper-preview)
+* [clipperUpload](#clipper-upload)
+* [clipperRange](#clipper-range)
 
 See detail [examples](https://timtnleeproject.github.io/vuejs-clipper/#/examples).
 
