@@ -156,7 +156,7 @@ See detail [examples](https://timtnleeproject.github.io/vuejs-clipper/#/examples
 
 ### clipper-basic
 
-a image clipping component
+an image clipping component
 
 ```javascript
 import { clipperBasic } from 'vuejs-clipper'
@@ -372,7 +372,7 @@ use `v-model` binding data with `clipper-upload`
 
 | Prop|Type|default|description |
 |-|-:|-:|:-|
-|check|boolean|true|Check if upload file is a image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
+|check|boolean|true|Check if upload file is an image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
 |accept|string|'*'|Bind `accept` attribute to file input tag.|
 |exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
 
