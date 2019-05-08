@@ -385,6 +385,11 @@ export default {
       }
     }
   },
+  watch: {
+    ratio () {
+      this.initWHTL$.next(0)
+    }
+  },
   mounted () {
     this.imgEl = this.$el.querySelector('.clipper-basic .img')
     this.canvasEl = this.$el.querySelector('.clipper-basic .hidden-canvas')

@@ -95,7 +95,7 @@ export default {
       let listeners = parent[parentPropName][this.name]
       listeners.push(this)
     },
-    setData: function (datasets) {
+    setData: function (datasets) { // Called from outside
       for (let k in datasets) {
         this[k] = datasets[k]
       }

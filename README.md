@@ -244,13 +244,18 @@ this.$refs.clipper.zoomWH$.width
 |-|-|
 |setTL$|Set the position of the zooming area.|
 |setWH$|Set the width and height of the zooming area.|
+|onChange$|Subject that subscribe to zooming, moving and rotating subjects.|
 
 usage:
 
 ```javascript
-this.$ref.clipper.setTL$.next({left: 0, top: 0}) // percentage 0%
-this.$ref.clipper.setTL$.next({right: 0, bottom: 10})
-this.$ref.clipper.setWH$.next({width: 100, height: 100}) // percentage 100%
+this.$refs.clipper.setTL$.next({ left: 0, top: 0 }) // percentage 0%
+this.$refs.clipper.setTL$.next({ right: 0, bottom: 10 })
+this.$refs.clipper.setWH$.next({ width: 100, height: 100 }) // percentage 100%
+
+this.$refs.cliiper.onChange$.subscribe(() => {
+  // This happens whenever zooming, moving and rotating occur.
+})
 ```
 
 ### clipper-fixed
@@ -311,12 +316,17 @@ import { clipperFixed } from 'vuejs-clipper'
 |-|-|
 |setTL$|Set the top and left of the image.|
 |setWH$|Set the sizing(scaling) of the image.|
+|onChange$|Subject that subscribe to zooming, moving and rotating subjects.|
 
 usage:
 
 ```javascript
-this.$ref.clipper.setTL$.next({left: 50, top: 50}) // percentage 0%
-this.$ref.clipper.setWH$.next(0.6) // transform scale(0.6)
+this.$refs.clipper.setTL$.next({ left: 50, top: 50 }) // percentage 0%
+this.$refs.clipper.setWH$.next(0.6) // transform scale(0.6)
+
+this.$refs.cliiper.onChange$.subscribe(() => {
+  // This happens whenever zooming, moving and rotating occur.
+})
 ```
 
 ### clipper-preview

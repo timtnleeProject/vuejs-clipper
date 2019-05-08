@@ -282,11 +282,16 @@ export default {
     _shadow: function () {
       return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + 'vw'
     },
-    watchPreData: function () {
+    watchPreData: function () { // use computed watch bgColor
       this.callPreview('setData', { bgColor: this.bgColor })
       return {
         bgColor: this.bgColor
       }
+    }
+  },
+  watch: {
+    ratio () {
+      this.change$.next(0)
     }
   },
   mounted () {
