@@ -77,7 +77,7 @@ export default {
 }
 .my-list {
   transform: translateX(-100%);
-  box-shadow: 3px 0px 3px lightgray;
+  // box-shadow: 3px 0px 3px lightgray;
   position: fixed;
   width: 180px;
   height: 100vh;

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <my-header></my-header>
+    <notification></notification>
     <home-loader v-if="!done" @load="loaded"></home-loader>
     <router-view v-if="done"/>
     <go-top></go-top>
@@ -9,6 +10,7 @@
 </template>
 <script>
 import HomeLoader from './views/HomeLoad.vue'
+import Notification from './components/Notification.vue'
 import myHeader from './components/Header.vue'
 import myFooter from './components/Footer.vue'
 import goTop from './components/GoTop.vue'
@@ -20,6 +22,7 @@ export default {
   },
   components: {
     myHeader,
+    Notification,
     myFooter,
     goTop,
     HomeLoader
