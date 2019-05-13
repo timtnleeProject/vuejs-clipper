@@ -1,7 +1,10 @@
 {
   "name": "vuejs-clipper",
   "version": "0.2.12-beta.1",
-  "author": "timtnlee",
+  "author": {
+    "name": "timtnlee",
+    "email": "litingen1995@gmail.com"
+  },
   "homepage": "https://timtnleeproject.github.io/vuejs-clipper/",
   "license": "MIT",
   "repository": {
