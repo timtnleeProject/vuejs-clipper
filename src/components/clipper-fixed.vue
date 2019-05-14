@@ -413,37 +413,37 @@ $grid-width: 1px;
   top: 0;
   left: 0;
   pointer-events: none;
-  & .grid-item {
-    position: absolute;
-    border-color: rgba(255, 255, 255, 0.7);
-    border-style: dashed;
-    width: 50%;
-    height: 50%;
-    box-sizing: border-box;
-  }
-  & .grid-item:nth-child(1) {
-    top: 0;
-    left: 0;
-    border-width: 0 $grid-width $grid-width 0;
-    transform: translate($grid-width/2, $grid-width/2);
-  }
-  & .grid-item:nth-child(2) {
-    top: 0;
-    right: 0;
-    border-width: 0 0 $grid-width 0;
-    transform: translate(-$grid-width/2, $grid-width/2);
-  }
-  & .grid-item:nth-child(3) {
-    bottom: 0;
-    left: 0;
-    border-width: 0 $grid-width 0 0;
-    transform: translate($grid-width/2, -$grid-width/2);
-  }
-  & .grid-item:nth-child(4) {
-    bottom: 0;
-    right: 0;
-    border-width: 0;
-    transform: translate(-$grid-width/2, -$grid-width/2);
-  }
+}
+.grid-item {
+  position: absolute;
+  border-color: rgba(255, 255, 255, 0.7);
+  border-style: dashed;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+}
+.grid-item:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-width: 0 $grid-width $grid-width 0;
+  transform: translate($grid-width/2, $grid-width/2);
+}
+.grid-item:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-width: 0 0 $grid-width 0;
+  transform: translate(-$grid-width/2, $grid-width/2);
+}
+.grid-item:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-width: 0 $grid-width 0 0;
+  transform: translate($grid-width/2, -$grid-width/2);
+}
+.grid-item:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  border-width: 0;
+  transform: translate(-$grid-width/2, -$grid-width/2);
 }
 </style>

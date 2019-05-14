@@ -454,84 +454,84 @@ $grid-width: 1px; //dive 2
   border-style: solid;
   border-color: $border_color;
   overflow: visible;
-  & .corner {
+}
+.corner {
+  position: absolute;
+  // background-color: white;
+  border-color: white;
+  border-style: solid;
+  width: 10px;
+  height: 10px;
+  opacity: 0.7;
+}
+.corner:hover {
+  opacity: 1;
+}
+.corner1 {
+  top: 0;
+  left: 0;
+  border-width: 3px 0px 0px 3px;
+  cursor: nwse-resize;
+}
+.corner2 {
+  top: 0;
+  right: 0;
+  border-width: 3px 3px 0px 0px;
+  cursor: nesw-resize;
+}
+.corner3 {
+  bottom: 0;
+  right: 0;
+  border-width: 0px 3px 3px 0px;
+  cursor: nwse-resize;
+}
+.corner4 {
+  bottom: 0;
+  left: 0;
+  border-width: 0px 0px 3px 3px;
+  cursor: nesw-resize;
+}
+.extend {
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  &.outer {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    // background-color: white;
-    border-color: white;
     border-style: solid;
-    width: 10px;
-    height: 10px;
-    opacity: 0.7;
-    &:hover {
-      opacity: 1;
-    }
-    &.corner1 {
-      top: 0;
-      left: 0;
-      border-width: 3px 0px 0px 3px;
-      cursor: nwse-resize;
-    }
-    &.corner2 {
-      top: 0;
-      right: 0;
-      border-width: 3px 3px 0px 0px;
-      cursor: nesw-resize;
-    }
-    &.corner3 {
-      bottom: 0;
-      right: 0;
-      border-width: 0px 3px 3px 0px;
-      cursor: nwse-resize;
-    }
-    &.corner4 {
-      bottom: 0;
-      left: 0;
-      border-width: 0px 0px 3px 3px;
-      cursor: nesw-resize;
-    }
-  }
-  & .extend {
-    color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: move;
-    &.outer {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border-style: solid;
-      box-sizing: content-box;
-      opacity: 0;
-      transition: opacity $hover_sec;
-      &:hover {
-        opacity: 0.3;
-      }
-    }
-    &.inner {
-      position: relative;
-      box-sizing: border-box;
-      overflow: hidden;
-      &:hover .drag-inset {
-        opacity: 0.3;
-      }
-      &:hover .drag-inset:hover.drag-inset {
-        opacity: 0;
-      }
-    }
-  }
-  & .drag-inset {
-    position: relative;
-    box-shadow: 0px 0px 0px 4080px white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: grab;
+    box-sizing: content-box;
     opacity: 0;
     transition: opacity $hover_sec;
+    &:hover {
+      opacity: 0.3;
+    }
   }
+  &.inner {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    &:hover .drag-inset {
+      opacity: 0.3;
+    }
+    &:hover .drag-inset:hover.drag-inset {
+      opacity: 0;
+    }
+  }
+}
+.drag-inset {
+  position: relative;
+  box-shadow: 0px 0px 0px 4080px white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  opacity: 0;
+  transition: opacity $hover_sec;
 }
 .grid {
   width: 100%;
@@ -540,37 +540,37 @@ $grid-width: 1px; //dive 2
   top: 0;
   left: 0;
   pointer-events: none;
-  & .grid-item {
-    position: absolute;
-    border-color: rgba(255, 255, 255, 0.7);
-    border-style: dashed;
-    width: 50%;
-    height: 50%;
-    box-sizing: border-box;
-  }
-  & .grid-item:nth-child(1) {
-    top: 0;
-    left: 0;
-    border-width: 0 $grid-width $grid-width 0;
-    transform: translate($grid-width/2,$grid-width/2);
-  }
-  & .grid-item:nth-child(2) {
-    top: 0;
-    right: 0;
-    border-width: 0 0 $grid-width 0;
-    transform: translate(-$grid-width/2,$grid-width/2);
-  }
-  & .grid-item:nth-child(3) {
-    bottom: 0;
-    left: 0;
-    border-width: 0 $grid-width 0 0;
-    transform: translate($grid-width/2,-$grid-width/2);
-  }
-  & .grid-item:nth-child(4) {
-    bottom: 0;
-    right: 0;
-    border-width: 0;
-    transform: translate(-$grid-width/2,-$grid-width/2);
-  }
+}
+.grid-item {
+  position: absolute;
+  border-color: rgba(255, 255, 255, 0.7);
+  border-style: dashed;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+}
+.grid-item:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-width: 0 $grid-width $grid-width 0;
+  transform: translate($grid-width/2,$grid-width/2);
+}
+.grid-item:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-width: 0 0 $grid-width 0;
+  transform: translate(-$grid-width/2,$grid-width/2);
+}
+.grid-item:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-width: 0 $grid-width 0 0;
+  transform: translate($grid-width/2,-$grid-width/2);
+}
+.grid-item:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  border-width: 0;
+  transform: translate(-$grid-width/2,-$grid-width/2);
 }
 </style>
