@@ -392,7 +392,7 @@ use `v-model` binding data with `clipper-upload`
 
 * 0.2.13
   * Decrease css specificity
-  * Fix vulnerabilities
+  * Fix vulnerabilities: [node-sass -> node-gyp -> tar](https://github.com/sass/node-sass/issues/2625)
 * 0.2.12
   * Fixed [issue #13][issue13]
 * 0.2.11
