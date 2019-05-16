@@ -185,6 +185,7 @@ import { clipperBasic } from 'vuejs-clipper'
 | method | argument | return| description |
 |-|-|-|-|
 | clip | | canvas element |get clipping canvas element|
+|getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
 
 set ref to use component methods
 
@@ -288,6 +289,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | method | argument | return| description |
 |-|-|-|-|
 | clip | | canvas element |get clipping canvas element|
+|getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
 
 * Event
 
@@ -388,6 +390,9 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 0.2.13
+  * Decrease css specificity
+  * Fix vulnerabilities
 * 0.2.12
   * Fixed [issue #13][issue13]
 * 0.2.11
