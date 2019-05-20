@@ -245,7 +245,7 @@ const clipperMethods = {
   reverseDownPos: function ({ down, move }) {
     if (this.mode === 'normal') return { down, move }
 
-    if (down.target !== null && down.target === this.$el.querySelector('.img')) { // this is dragCreate, first time dont count
+    if (down.target !== null && down.target === this.$el.querySelector('.clip-area')) { // this is dragCreate, first time dont count
       down.target = null
       return { down, move }
     }
@@ -253,15 +253,15 @@ const clipperMethods = {
     const judge = this.judgeArea(down)
     const zoom = this.zoomPos()
     // 左右反向
-    if (judge.l && move.clientX < down.clientX) {
+    if (judge.l && move.clientX <= down.clientX) {
       down.clientX = zoom.right
-    } else if (judge.r && move.clientX > down.clientX) {
+    } else if (judge.r && move.clientX >= down.clientX) {
       down.clientX = zoom.left
     }
     // 上下反向
-    if (judge.t && move.clientY < down.clientY) {
+    if (judge.t && move.clientY <= down.clientY) {
       down.clientY = zoom.bottom
-    } else if (judge.b && move.clientY > down.clientY) {
+    } else if (judge.b && move.clientY >= down.clientY) {
       down.clientY = zoom.top
     }
     return { down, move }
