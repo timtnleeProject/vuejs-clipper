@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-      msg: 'NOTICE: These pages using the latest version components on GitHub that is fixing or migrating to upcoming version instead of the published version of NPM.',
+      msg: 'NOTICE: These pages might use the latest version components on GitHub that is fixing or migrating to upcoming version instead of the published version of NPM.',
       cancel: false
     }
   },
