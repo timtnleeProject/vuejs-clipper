@@ -3,6 +3,7 @@
     <canvas class="hidden-canvas" />
     <div
       class="clip-area"
+      :class="{ vertical: isVertical }"
       :style="areaStyle"
     >
       <canvas
@@ -15,23 +16,18 @@
         :style="{'padding': areaStyle.padding}"
       >
         <div
-          class="center"
+          class="img-scale"
+          :style="scaleStyle"
         >
-          <div
-            class="img-scale"
-            :style="scaleStyle"
+          <img
+            :src="src"
+            class="img"
+            :style="rotateStyle"
+            @load="imgLoaded();emit('load',$event)"
+            @error="emit('error',$event)"
           >
-            <img
-              :src="src"
-              class="img"
-              :style="rotateStyle"
-              @load="imgLoaded();emit('load',$event)"
-              @error="emit('error',$event)"
-            >
-          </div>
         </div>
       </div>
-      
       <div
         class="zoom-area shadow"
         :style="posObj"
@@ -408,6 +404,10 @@ export default {
         }
       } else return {}
     },
+    isVertical: function () {
+      if (!this.ratio) return false
+      return this.imgRatio < this.ratio
+    },
     watchPreData: function () {
       this.callPreview('setData', { bgColor: this.bgColor })
       return {
@@ -458,7 +458,7 @@ $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
 .vertical {
-  .clip-area .img, .center, .img-scale {
+  &.clip-area .img, .img-scale {
     width: auto;
     height: 100%
   }
@@ -491,15 +491,10 @@ $grid-width: 1px; //dive 2
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-}
-.center {
-  width: 100%;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
 }
 .img-scale {
   pointer-events: none;
