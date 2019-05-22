@@ -5,18 +5,33 @@
       class="clip-area"
       :style="areaStyle"
     >
+      <canvas
+        class="stem-canvas"
+        :width="stemArea.width"
+        :height="stemArea.height"
+      />
       <div
-        class="img-scale"
-        :style="scaleStyle"
+        class="in-pad"
+        :style="{'padding': areaStyle.padding}"
       >
-        <img
-          :src="src"
-          class="img"
-          :style="rotateStyle"
-          @load="imgLoaded();emit('load',$event)"
-          @error="emit('error',$event)"
+        <div
+          class="center"
         >
+          <div
+            class="img-scale"
+            :style="scaleStyle"
+          >
+            <img
+              :src="src"
+              class="img"
+              :style="rotateStyle"
+              @load="imgLoaded();emit('load',$event)"
+              @error="emit('error',$event)"
+            >
+          </div>
+        </div>
       </div>
+      
       <div
         class="zoom-area shadow"
         :style="posObj"
@@ -220,7 +235,6 @@ export default {
     )
     /** *************MAIN SUBJECT (3)************
     Subject 3, 起始event不同，處理後傳給zoomSubject$
-    直接subscribe()
     */
     this.dragCreateSubject$ = this.mousedownCreate$
       .pipe(
@@ -229,34 +243,29 @@ export default {
           return { down, move }
         })
       )
-      // .subscribe(); //直接subscribe
-
     /** *************MAIN SUBJECT (2)************
      width, height */
     this.zoomSubject$ = new Subject().pipe(
       merge(this.mousedownZoom$), // mouse event
       merge(this.touchdownZoom$), // touch event 1 finger
       merge(this.dragCreateSubject$), // dragCreateSubject$
-      map(this.reverseDownPos),
-      map(({ down, move }) => {
-        const fakeDown = this.getCreatePos(down, move) // 根據down, move,創造一個zoom rect (不限於一開始狀態))
-        return this.zoomingPosition(fakeDown, move) // 用創造的zoom rect去計算拖拉後的位置
-      }),
-      merge(
-        this.touchTwoFingersZoom$
-      ) /* touch event 2 fingers(兩指縮放)*  和上面事件分開，算法不同 */,
-      map(this.splitPos),
-      map(pos => {
-        // set position
-        this.setTL$.next(this.toPercentage(pos.tl))
-        return pos.wh
-      }),
-      map(this.$set_ratioWH),
+      map(this.reverseDownPos), // mode 'switch'
+      map(this.getCreatePos), // 根據down, move,創造一個zoom rect (不限於一開始狀態))
+      map(this.zoomingPosition), // 用創造的zoom rect去計算拖拉後的位置
+      merge(this.touchTwoFingersZoom$), /* touch event 2 fingers(兩指縮放)*  和上面事件分開，算法不同 */
+      // { down, move } => { width, height, maxWidth, maxHeight, left, top, right, bottom }
+      map(this.setRatioWH),
       map(this.toPercentage),
+      map(this.splitPos),
+      map(split => {
+        const pos = split.tl
+        const size = split.wh
+        this.setTL$.next(pos)
+        return size
+      }),
       startWith({ width: 0, height: 0 }),
       merge(this.initWHTL$),
-      merge(this.setWH$),
-      map(wh => this.$set_minWH(wh)) // width,height -> 1%
+      merge(this.setWH$)
     )
     this.onChange$ = new Subject().pipe(
       merge(this.dragSubject$),
@@ -321,6 +330,14 @@ export default {
     scale: {
       type: Number,
       default: 1
+    },
+    minWidth: {
+      type: Number,
+      default: 1
+    },
+    minHeight: {
+      type: Number,
+      default: 1
     }
   },
   data: () => {
@@ -378,6 +395,19 @@ export default {
     _shadow: function () {
       return (this.imgRatio >= 1 ? 100 : (100 / this.imgRatio)) + 'vw'
     },
+    stemArea: function () {
+      if (this.ratio) {
+        return {
+          width: 100 * this.ratio,
+          height: 100
+        }
+      } else if (this.imgRatio) {
+        return {
+          width: this.imgEl.naturalWidth,
+          height: this.imgEl.naturalHeight
+        }
+      } else return {}
+    },
     watchPreData: function () {
       this.callPreview('setData', { bgColor: this.bgColor })
       return {
@@ -427,6 +457,12 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
+.vertical {
+  .clip-area .img, .center, .img-scale {
+    width: auto;
+    height: 100%
+  }
+}
 .clip-area {
   position: relative;
   width: 100%;
@@ -442,6 +478,28 @@ $grid-width: 1px; //dive 2
 }
 .hidden-canvas {
   display: none;
+}
+.stem-canvas {
+  pointer-events: none;
+  display: block;
+  width: 100%;
+}
+.in-pad {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.center {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 .img-scale {
   pointer-events: none;

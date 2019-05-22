@@ -82,52 +82,63 @@ const clipperMethods = {
       y: !horizon
     }
   },
-  zoomingPosition: function (down, move) {
-    /**
-         * @augments down: zoomPos when click down,
-         * @argument move: moving event
-         */
+  zoomingPosition: function ({ down, move }) {
+    // 判斷移動方向
+    let x = (move.clientX > down.clientX) ? 'r' : 'l'
+    let y = (move.clientY > down.clientY) ? 'b' : 't'
+
+    const getTop = () => this.eToArea(down, 'top')
+    const getLeft = () => this.eToArea(down, 'left')
+
     const area = this.areaPos()
-    let left, top, right, bottom, width, height
+    let left, top, right, bottom
+    let width = 0
+    let height = 0
     let maxWidth, maxHeight
-    if (down.r === true) {
-      left = down.offsetLeft
+    const minWidth = this.minWidth * area.width / 100
+    const minHeight = (this.ratio)
+      ? minWidth / this.ratio
+      : this.minHeight * area.height / 100
+    // horizontal
+    if (x === 'r') {
+      if (getLeft() + minWidth > area.width) {
+        /* clip area will overlay, reset down position */
+        down.clientX = area.right - minWidth
+      }
+      left = getLeft()
       maxWidth = area.width - left
-      width = move.clientX - down.left
-    }
-    if (down.l === true) {
-      right = area.right - down.right
+      width = move.clientX - down.clientX
+    } else if (x === 'l') {
+      if (getLeft() < minWidth) {
+        /* clip area will overlay, reset down position */
+        down.clientX = area.left + minWidth
+      }
+      right = area.right - down.clientX
       maxWidth = area.width - right
-      width = down.right - move.clientX
+      width = down.clientX - move.clientX
     }
-    if (down.b === true) { // zoom right&bottom
-      top = down.offsetTop
-      // calc new pos
+    // vertical
+    if (y === 'b') {
+      if (getTop() + minHeight > area.height) {
+        down.clientY = area.bottom - minHeight
+      }
+      top = getTop()
       maxHeight = area.height - top
-      height = move.clientY - down.top
-    }
-    if (down.t === true) {
-      bottom = area.bottom - down.bottom
+      height = move.clientY - down.clientY
+    } else if (y === 't') {
+      if (getTop() < minHeight) {
+        down.clientY = area.top + minHeight
+      }
+      bottom = area.bottom - down.clientY
       maxHeight = area.height - bottom
-      height = down.bottom - move.clientY
+      height = down.clientY - move.clientY
     }
-
-    width = Math.min(width, maxWidth)
-    height = Math.min(height, maxHeight)
-
+    width = Math.max(Math.min(width, maxWidth), minWidth)
+    height = Math.max(Math.min(height, maxHeight), minHeight)
     return { width, height, top, left, right, bottom, maxWidth, maxHeight }
   },
-  $set_minWH: function (wh) {
-    /**
-         * @argument wh percentage {width, height}
-         */
-    return {
-      width: Math.max(wh.width, 1),
-      height: Math.max(wh.height, 1)
-    }
-  },
-  $set_ratioWH: function ({ width, height, maxWidth, maxHeight }) {
-    if (!this.ratio) return { width, height }
+  setRatioWH: function ({ width, height, maxWidth, maxHeight, left, top, right, bottom }) {
+    if (!this.ratio) return { width, height, left, top, right, bottom }
     // 有設定比例的話進行調整
     const ratioPos = this.ratioPos({ width, height })
     if (ratioPos.x) {
@@ -137,13 +148,16 @@ const clipperMethods = {
       width = Math.min(height * this.ratio, maxWidth)
       height = (width === maxWidth) ? width / this.ratio : height
     }
-    return { width, height }
+    return { width, height, left, top, right, bottom }
   },
   $set_initWHTL: function () {
-    let width = 50; let height = 50; let left; let top
-    if (this.ratio) {
-      if (this.ratio > this.imgRatio) { height = width / this.ratio * this.imgRatio } else { width = height * this.ratio / this.imgRatio }
-    }
+    let width = 50
+    let height = 50
+    let left, top
+    // if (this.ratio) {
+    //   if (this.ratio > this.imgRatio) { height = width / this.ratio * this.imgRatio }
+    //   else { width = Math.max(height * this.ratio / this.imgRatio, this.minWidth) }
+    // }
     left = (100 - width) / 2
     top = (100 - height) / 2
     this.setTL$.next({ left, top })
@@ -220,15 +234,20 @@ const clipperMethods = {
     }
     const LMove = start.touches[pointStart.left].clientX - move.touches[point.left].clientX
     const TMove = start.touches[pointStart.top].clientY - move.touches[point.top].clientY
+    const minWidth = this.minWidth * area.width / 100
+    const minHeight = (this.ratio)
+      ? minWidth / this.ratio
+      : this.minHeight * area.height / 100
     // 這裡的left,top要先validate否則maxWidth,maxHeight會算錯
-    const left = Math.max(originZoom.left - area.left - LMove, 0)
-    const top = Math.max(originZoom.top - area.top - TMove, 0)
+    const left = Math.min(originZoom.left - area.left - LMove, area.width - minWidth)
+    const top = Math.min(originZoom.top - area.top - TMove, area.height - minHeight)
     const maxWidth = area.width - left
     const maxHeight = area.height - top
+    
     const overRight = (start.touches[pointStart.right].clientX - originZoom.right)
     const overTop = (start.touches[pointStart.bottom].clientY - originZoom.bottom)
-    const width = Math.min(move.touches[point.right].clientX - area.left - left - overRight, maxWidth)
-    const height = Math.min(move.touches[point.bottom].clientY - top - area.top - overTop, maxHeight)
+    const width = Math.max(Math.min(move.touches[point.right].clientX - area.left - left - overRight, maxWidth), minWidth)
+    const height = Math.max(Math.min(move.touches[point.bottom].clientY - top - area.top - overTop, maxHeight), minHeight)
     return { width, height, top, left, maxWidth, maxHeight }
   },
   /* 拖曳重新劃定區域 */
@@ -266,12 +285,12 @@ const clipperMethods = {
     }
     return { down, move }
   },
-  getCreatePos: function (down, move) {
+  getCreatePos: function ({ down, move }) {
     // 判斷移動方向
     let x = (move.clientX > down.clientX) ? 'r' : 'l'
     let y = (move.clientY > down.clientY) ? 'b' : 't'
 
-    const pos = {
+    const fake = {
       top: down.clientY,
       right: down.clientX,
       bottom: down.clientY,
@@ -279,10 +298,9 @@ const clipperMethods = {
       offsetTop: this.eToArea(down, 'top'),
       offsetLeft: this.eToArea(down, 'left')
     }
-    pos[x] = true
-    pos[y] = true
-
-    return pos
+    fake[x] = true
+    fake[y] = true
+    return { down, move }
   },
   // DRAW
   getDrawPos: function () {
