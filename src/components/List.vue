@@ -68,12 +68,14 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 150;
-  display: none;
+  pointer-events: none;
   top: 0;
   left: 0;
+  transition: all 1s;
 }
 .show .full {
-  display: block;
+  pointer-events: auto;
+  background-color: rgba(0,0,0,0.2);
 }
 .my-list {
   transform: translateX(-100%);

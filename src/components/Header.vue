@@ -1,15 +1,17 @@
 <template>
 <div>
    <header>
-      <h1>vuejs-clipper</h1>
-    <ul class="flex">
-      <li><router-link to="/">Home</router-link></li>
-      <!-- <li><a href="" target="blank">NPM</a></li> -->
-      <li><a href="https://github.com/timtnleeProject/vuejs-clipper" target="_blank">GitHub</a></li>
-      <li><router-link to="/basic">clipper-basic</router-link></li>
-      <li><router-link to="/fixed">clipper-fixed</router-link></li>
-      <li><a href="" @click.prevent="show=!show">Examples</a></li>
-    </ul>
+     <div class="wrap">
+        <h2>vuejs-clipper</h2>
+        <div class="flex">
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/basic">clipper-basic</router-link></li>
+          <li><router-link to="/fixed">clipper-fixed</router-link></li>
+          <li><a href="" @click.prevent="show=!show">Examples</a></li>
+        </div>
+      <span class="gh-issue"></span>
+      <span class="gh-stars"></span>
+     </div>
     </header>
     <my-list class="list" v-model="show"></my-list>
 </div>
@@ -17,6 +19,10 @@
 <script>
 import myList from '@/components/List.vue';
 export default {
+  mounted () {
+    this.$el.querySelector('.gh-issue').appendChild(document.querySelector('#github-issue'))
+    this.$el.querySelector('.gh-stars').appendChild(document.querySelector('#github-stars'))
+  },
   components: {
     myList
   },
@@ -28,8 +34,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.wrap{
+  width: 100%;
+  max-width: 700px;
+}
 header {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   background-color: black;
   color: white;
   padding: 20px;
@@ -44,10 +55,12 @@ header {
   & a:hover {
     opacity: 0.7;
   }
+  span {
+    padding-right: 5px;
+  }
   & li {
     color: #02f252;
     font-size: 1.2rem;
-    margin-right: 20px;
   }
 }
 
@@ -55,7 +68,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
+  // justify-content: center;
+  * {
+    padding-right: 5px;
+  }
 }
 @media only screen and(max-width: 596px) {
   header li{
