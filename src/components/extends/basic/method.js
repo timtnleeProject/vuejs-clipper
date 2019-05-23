@@ -90,6 +90,9 @@ const clipperMethods = {
     const getTop = () => this.eToArea(down, 'top')
     const getLeft = () => this.eToArea(down, 'left')
 
+    const originTop = getTop()
+    const originLeft = getLeft()
+
     const area = this.areaPos()
     let left, top, right, bottom
     let width = 0
@@ -101,15 +104,17 @@ const clipperMethods = {
       : this.minHeight * area.height / 100
     // horizontal
     if (x === 'r') {
-      if (getLeft() + minWidth > area.width) {
+      if (originLeft + minWidth > area.width) {
         /* clip area will overlay, reset down position */
         down.clientX = area.right - minWidth
+        left = originLeft
+      } else {
+        left = getLeft()
       }
-      left = getLeft()
       maxWidth = area.width - left
       width = move.clientX - down.clientX
     } else if (x === 'l') {
-      if (getLeft() < minWidth) {
+      if (originLeft < minWidth) {
         /* clip area will overlay, reset down position */
         down.clientX = area.left + minWidth
       }
@@ -119,22 +124,26 @@ const clipperMethods = {
     }
     // vertical
     if (y === 'b') {
-      if (getTop() + minHeight > area.height) {
+      if (originTop + minHeight > area.height) {
         down.clientY = area.bottom - minHeight
+        top = originTop
+      } else {
+        top = getTop()
       }
-      top = getTop()
       maxHeight = area.height - top
       height = move.clientY - down.clientY
     } else if (y === 't') {
-      if (getTop() < minHeight) {
+      if (originTop < minHeight) {
         down.clientY = area.top + minHeight
       }
       bottom = area.bottom - down.clientY
       maxHeight = area.height - bottom
       height = down.clientY - move.clientY
     }
+
     width = Math.max(Math.min(width, maxWidth), minWidth)
     height = Math.max(Math.min(height, maxHeight), minHeight)
+
     return { width, height, top, left, right, bottom, maxWidth, maxHeight }
   },
   setRatioWH: function ({ width, height, maxWidth, maxHeight, left, top, right, bottom }) {
@@ -150,23 +159,15 @@ const clipperMethods = {
     }
     return { width, height, left, top, right, bottom }
   },
-  $set_initWHTL: function () {
+  initWHTL: function () {
     let width = 50
     let height = 50
-    let left, top
-    // if (this.ratio) {
-    //   if (this.ratio > this.imgRatio) { height = width / this.ratio * this.imgRatio }
-    //   else { width = Math.max(height * this.ratio / this.imgRatio, this.minWidth) }
-    // }
-    left = (100 - width) / 2
-    top = (100 - height) / 2
+    let left = 25
+    let top = 25
     this.setTL$.next({ left, top })
     return { width, height }
   },
   splitPos: function ({ top, left, right, bottom, width, height, maxWidth, maxHeight }) {
-    /* @pos: {
-            left || right,  top || bottom, width, height
-          } */
     return {
       tl: { left, top, right, bottom },
       wh: { width, height, maxWidth, maxHeight }
@@ -243,7 +244,6 @@ const clipperMethods = {
     const top = Math.min(originZoom.top - area.top - TMove, area.height - minHeight)
     const maxWidth = area.width - left
     const maxHeight = area.height - top
-    
     const overRight = (start.touches[pointStart.right].clientX - originZoom.right)
     const overTop = (start.touches[pointStart.bottom].clientY - originZoom.bottom)
     const width = Math.max(Math.min(move.touches[point.right].clientX - area.left - left - overRight, maxWidth), minWidth)

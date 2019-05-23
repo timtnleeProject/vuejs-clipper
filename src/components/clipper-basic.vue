@@ -92,7 +92,7 @@ export default {
     // set value
     this.setWH$ = new Subject()
     this.setTL$ = new Subject()
-    this.initWHTL$ = new Subject().pipe(map(this.$set_initWHTL))
+    this.initWHTL$ = new Subject().pipe(map(this.initWHTL))
     // interupter
     this.stop$ = new Subject()
     /* events */
@@ -254,9 +254,9 @@ export default {
       map(this.toPercentage),
       map(this.splitPos),
       map(split => {
-        const pos = split.tl
+        const position = split.tl
         const size = split.wh
-        this.setTL$.next(pos)
+        this.setTL$.next(position)
         return size
       }),
       startWith({ width: 0, height: 0 }),

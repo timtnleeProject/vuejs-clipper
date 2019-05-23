@@ -161,7 +161,6 @@ export default {
           merge(this.touchdownDrag$),
           map(this.delta),
           map(this.toPercentage)
-          // map(this.validateTL)
         )
       )
     )
