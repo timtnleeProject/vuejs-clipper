@@ -10,6 +10,8 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Demo
 
+You can find the source code of examples under `examples` branch.
+
 * [live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
 * [try it on codepen](https://codepen.io/timtnlee/pen/vzzqRM)
 
@@ -178,6 +180,8 @@ import { clipperBasic } from 'vuejs-clipper'
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 |scale  | number | 1 | transform scale |
+|minWidth|number|1|minimum width(%) of clipping box related to clipping component's width|
+|minHeight|number|1|minimum height(%) of clipping box related to clipping component's height|
 |touch-create| boolean | true | enable/disable create new clipping area on touch device |
 
 * Methods
