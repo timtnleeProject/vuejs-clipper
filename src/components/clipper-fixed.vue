@@ -161,7 +161,6 @@ export default {
           merge(this.touchdownDrag$),
           map(this.delta),
           map(this.toPercentage)
-          // map(this.validateTL)
         )
       )
     )
@@ -270,8 +269,8 @@ export default {
     },
     stemArea: function () {
       return {
-        width: 10,
-        height: 10 / this.ratio
+        width: 100,
+        height: 100 / this.ratio
       }
     },
     stemStyle: function () {

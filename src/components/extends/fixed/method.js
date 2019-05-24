@@ -105,12 +105,6 @@ const fixedMethods = {
     let rate = Math.max(origin, 0.8) * delta
     return Math.max(origin + rate, this.minScale)
   }
-  // validateTL: function ({ left, top }) {
-  //     return {
-  //         left: Math.max(Math.min(left, 100), -100),
-  //         top: Math.max(Math.min(top, 100), -100)
-  //     }
-  // }
 }
 
 export default fixedMethods
