@@ -394,6 +394,9 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.0.0
+  * Change the `clipper-basic` design, it will judge layout depends on the ratio.
+  * Production version.
 * 0.2.13
   * Decrease css specificity
 * 0.2.12
@@ -406,7 +409,7 @@ use `v-model` binding data with `clipper-upload`
   * New prop `border-color` for `clipper-fixed`
   * Fixed [issue #4][issue4]
 * 0.2.8
-  * New prop `accept` for clipper-upload ([issue #1][issue1])
+  * New prop `accept` for `clipper-upload` ([issue #1][issue1])
   * Add EXIF image transformation feature to clipper-upload ([issue #2][issue2])
 
 [issue1]:https://github.com/timtnleeProject/vuejs-clipper/issues/1
