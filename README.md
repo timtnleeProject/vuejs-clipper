@@ -24,7 +24,7 @@ You can find the source code of examples under `examples` branch.
 
 ## Notice
 
-Before using the plugin & components, here's something you should know :
+**Before using the plugin & components, here's something you should know :**
 
 * It's based on **vue-rx**.
 * Use vuejs-clipper plugin also add **vue-rx** plugin to vue.

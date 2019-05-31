@@ -1,6 +1,5 @@
 <template>
   <div class="clipper-basic">
-    <canvas class="hidden-canvas" />
     <div
       class="clip-area"
       :class="{ vertical: isVertical }"
@@ -422,7 +421,7 @@ export default {
   },
   mounted () {
     this.imgEl = this.$el.querySelector('.clipper-basic .img')
-    this.canvasEl = this.$el.querySelector('.clipper-basic .hidden-canvas')
+    this.canvasEl = document.createElement('CANVAS')
     this.areaEl = this.$el.querySelector('.clipper-basic .clip-area')
     this.zoomEl = this.$el.querySelector('.clipper-basic .zoom-area')
     this.scaleEl = this.$el.querySelector('.img-scale')
@@ -475,9 +474,6 @@ $grid-width: 1px; //dive 2
     display: block;
     pointer-events: none;
   }
-}
-.hidden-canvas {
-  display: none;
 }
 .stem-canvas {
   pointer-events: none;

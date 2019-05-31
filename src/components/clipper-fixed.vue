@@ -53,7 +53,6 @@
         </div>
       </div>
     </div>
-    <canvas class="hidden-canvas" />
   </div>
 </template>
 
@@ -300,7 +299,7 @@ export default {
     this.scaleEl = this.$el.querySelector('.img-scale')
     this.translateEl = this.$el.querySelector('.img-translate')
     this.stemEl = this.$el.querySelector('.stem-bg')
-    this.canvasEl = this.$el.querySelector('.hidden-canvas')
+    this.canvasEl = document.createElement('CANVAS')
     this.$subscribeTo(
       this.onChange$,
       () => {
@@ -334,9 +333,6 @@ export default {
 <style lang='scss' scoped>
 $grid-width: 1px;
 
-.hidden-canvas {
-  display: none;
-}
 .wrap {
   position: relative;
   overflow: hidden;
