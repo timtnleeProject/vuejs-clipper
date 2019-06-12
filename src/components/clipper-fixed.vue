@@ -289,6 +289,7 @@ export default {
   },
   watch: {
     ratio () {
+      this.resetData()
       this.change$.next(0)
     }
   },
@@ -326,7 +327,7 @@ export default {
     resetData: function () {
       this.setTL$.next({ left: 0, top: 0 })
       const scale = (this.ratio > this.imgRatio)
-        ? 0.5
+        ? this.imgRatio / this.ratio
         : 1
       this.setWH$.next(scale)
     }
