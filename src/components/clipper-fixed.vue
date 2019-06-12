@@ -314,10 +314,10 @@ export default {
   },
   methods: {
     imgLoaded: function () {
-      this.resetData()
       this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight
       this.stemEl.width = this.imgEl.naturalWidth
       this.stemEl.height = this.imgEl.naturalHeight
+      this.resetData()
       this.callPreview('setData', {
         src: this.src,
         bgColor: this.bgColor
@@ -325,7 +325,10 @@ export default {
     },
     resetData: function () {
       this.setTL$.next({ left: 0, top: 0 })
-      this.setWH$.next(1)
+      const scale = (this.ratio > this.imgRatio)
+        ? 0.5
+        : 1
+      this.setWH$.next(scale)
     }
   }
 }
