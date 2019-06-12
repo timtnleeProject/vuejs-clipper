@@ -3,7 +3,6 @@
     <div class="popup" v-if="popup">
       <div class="popup-content">
         <div class="flow">
-          <loader :done="done">Converting</loader>
           <img :src="clipResult" class="img">
           <div class="flex-center">
             <div class="flex-center">
@@ -211,7 +210,7 @@ export default {
       link: null,
       filename: 'clip',
       done: false,
-      maxWidth: 850,
+      maxWidth: 700,
       gallary: ['dawn.jpg', 'long.jpg', 'ex1.jpg', 'profile.png']
     };
   },
@@ -226,6 +225,7 @@ export default {
       const maxHeight = 500;
       const imgRatio = this.$refs.clipper.imgRatio;
       if (!this.ratio && imgRatio < 1) this.maxWidth = maxHeight * imgRatio;
+      else if (this.ratio <= 1) this.maxWidth = 500;
       else this.maxWidth = 700;
       if (!this.gallary.find(g => g === this.imgUrl))
         this.gallary.push(this.imgUrl);
@@ -236,6 +236,11 @@ export default {
       return {
         maxWidth: this.maxWidth + 'px'
       };
+    }
+  },
+  watch: {
+    ratio () {
+      this.imgLoad()
     }
   }
 };

@@ -9,8 +9,11 @@
           <li><router-link to="/fixed">clipper-fixed</router-link></li>
           <li><a href="" @click.prevent="show=!show">Examples</a></li>
         </div>
-      <span class="gh-issue"></span>
-      <span class="gh-stars"></span>
+        <a href="https://www.npmjs.com/package/vuejs-clipper" target="_blank">
+          <img src="https://img.shields.io/npm/v/vuejs-clipper.svg" alt="vuejs-clipper">
+        </a>
+        <span class="gh-issue"></span>
+        <span class="gh-stars"></span>
      </div>
     </header>
     <my-list class="list" v-model="show"></my-list>
@@ -44,7 +47,7 @@ header {
   background-color: black;
   color: white;
   padding: 20px;
-  & a {
+  & li a {
     text-decoration: none;
     display: block;
     border-left: 1px solid white;
@@ -52,11 +55,11 @@ header {
     margin: 1px;
     color: inherit;
   }
-  & a:hover {
+  & li a:hover {
     opacity: 0.7;
   }
   span {
-    padding-right: 5px;
+    margin-left: 10px;
   }
   & li {
     color: #02f252;
