@@ -42,8 +42,11 @@
         :border="border"
         :minWidth="minWidth"
         :minHeight="minHeight"
+        :initWidth="initWidth"
+        :initHeight="initHeight"
         :rotate="rotate"
         :ratio="ratio"
+        :wrapRatio="wrapRatio"
         :scale="scale"
         :corner="corner"
         :grid="grid"
@@ -88,6 +91,16 @@
             </span>
           </div>
           <div class="flex">
+            <span class="label">initWidth(%)</span>
+            <span>
+              <input v-model.number="initWidth" type="number" min="1" max="100">
+            </span>
+            <span class="label">initHeight(%)</span>
+            <span>
+              <input v-model.number="initHeight" type="number" min="1" max="100">
+            </span>
+          </div>
+          <div class="flex">
             <span class="label">layout:</span>
             <span>
               <input type="checkbox" name="corner" v-model="corner">corner
@@ -109,6 +122,21 @@
             </span>
             <span>
               <input type="radio" name="ratio" :value="2/3" v-model.number="ratio">2:3
+            </span>
+          </div>
+          <div class="flex">
+            <span class="label">wrapRatio:</span>
+            <span>
+              <input type="radio" name="wrapRatio" :value="NaN" v-model.number="wrapRatio">no ratio
+            </span>
+            <span>
+              <input type="radio" name="wrapRatio" :value="1" v-model.number="wrapRatio">1:1
+            </span>
+            <span>
+              <input type="radio" name="wrapRatio" :value="4/3" v-model.number="wrapRatio">4:3
+            </span>
+            <span>
+              <input type="radio" name="wrapRatio" :value="16/9" v-model.number="wrapRatio">16:9
             </span>
           </div>
           <div class="flex">
@@ -196,8 +224,11 @@ export default {
       popup: false,
       ratio: 0,
       rotate: 0,
+      wrapRatio: NaN,
       minWidth: 1,
       minHeight: 1,
+      initWidth: 50,
+      initHeight: 50,
       scale: 1,
       outline: 10,
       border: 1,
@@ -210,7 +241,7 @@ export default {
       link: null,
       filename: 'clip',
       done: false,
-      maxWidth: 700,
+      maxWidth: 500,
       gallary: ['dawn.jpg', 'long.jpg', 'ex1.jpg', 'profile.png']
     };
   },
@@ -222,11 +253,6 @@ export default {
       this.clipToURL();
     },
     imgLoad: function() {
-      const maxHeight = 500;
-      const imgRatio = this.$refs.clipper.imgRatio;
-      if (!this.ratio && imgRatio < 1) this.maxWidth = maxHeight * imgRatio;
-      else if (this.ratio <= 1) this.maxWidth = 500;
-      else this.maxWidth = 700;
       if (!this.gallary.find(g => g === this.imgUrl))
         this.gallary.push(this.imgUrl);
     }
@@ -236,11 +262,6 @@ export default {
       return {
         maxWidth: this.maxWidth + 'px'
       };
-    }
-  },
-  watch: {
-    ratio () {
-      this.imgLoad()
     }
   }
 };
