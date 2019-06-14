@@ -305,6 +305,10 @@ export default {
       type: Number,
       default: NaN
     },
+    wrapRatio: {
+      type: Number,
+      default: NaN
+    },
     touchCreate: {
       // enable/disable create new zoom area in touch device;
       type: Boolean,
@@ -333,6 +337,14 @@ export default {
     minHeight: {
       type: Number,
       default: 1
+    },
+    initWidth: {
+      type: Number,
+      default: 50
+    },
+    initHeight: {
+      type: Number,
+      default: 50
     }
   },
   data: () => {
@@ -391,9 +403,10 @@ export default {
       return (this.imgRatio >= 1 ? 100 : (100 / this.imgRatio)) + 'vw'
     },
     stemArea: function () {
-      if (this.ratio) {
+      const ratio = this.wrapRatio || this.ratio
+      if (ratio) {
         return {
-          width: 100 * this.ratio,
+          width: 100 * ratio,
           height: 100
         }
       } else if (this.imgRatio) {
@@ -404,8 +417,10 @@ export default {
       } else return {}
     },
     isVertical: function () {
-      if (!this.ratio) return false
-      return this.imgRatio < this.ratio
+      // Prevent img from overflowing
+      const ratio = this.wrapRatio || this.ratio
+      if (!ratio) return false
+      return this.imgRatio < ratio
     },
     watchPreData: function () {
       this.callPreview('setData', { bgColor: this.bgColor })
@@ -416,7 +431,10 @@ export default {
   },
   watch: {
     ratio () {
-      this.initWHTL$.next(0)
+      this.resetData()
+    },
+    wrapRatio () {
+      this.resetData()
     }
   },
   mounted () {
@@ -445,6 +463,9 @@ export default {
         bgColor: this.bgColor
       })
       this.imgRatio = this.imgEl.naturalWidth / this.imgEl.naturalHeight
+      this.resetData()
+    },
+    resetData: function () {
       this.initWHTL$.next(true)
     }
   }

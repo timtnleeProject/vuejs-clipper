@@ -160,10 +160,30 @@ const clipperMethods = {
     return { width, height, left, top, right, bottom }
   },
   initWHTL: function () {
-    let width = 50
-    let height = 50
-    let left = 25
-    let top = 25
+    let width = this.initWidth
+    let height = this.initHeight
+    let left = (100 - this.initWidth) / 2
+    let top = (100 - this.initHeight) / 2
+    if (this.wrapRatio && this.ratio) {
+      const calcH = () => {
+        height = Math.max(width / this.ratio * this.wrapRatio, this.minHeight)
+        top = (100 - height) / 2
+      }
+      const calcW = () => {
+        width = Math.max(height * this.ratio / this.wrapRatio, this.minWidth)
+        left = (100 - width) / 2
+      }
+      if (this.wrapRatio <= this.ratio) {
+        calcH()
+        if (this.minHeight === height) calcW()
+        if (width > 100) throw new Error('Invalid ratio, wrapRatop, minWidth combination')
+
+      } else {
+        calcW()
+        if (this.minWidth === width) calcH()
+        if (height > 100) throw new Error('Invalid ratio, wrapRatop, minWidth combination')
+      }
+    }
     this.setTL$.next({ left, top })
     return { width, height }
   },
