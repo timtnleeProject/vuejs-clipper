@@ -175,14 +175,19 @@ import { clipperBasic } from 'vuejs-clipper'
 | corner | boolean| true  | show corner layout |
 | grid   | boolean| true  | show grid layout|
 | ratio  | number |       | ratio of clipping area (width/height). ex: `1`, `4/3` .|
+| wrapRatio | number | NaN |ratio of clipping container (width/height). ex: `1`, `4/3` .|
 | mode   | 'normal'/'switch' | 'normal' | if ratio is set, this prop will affect how clipping area zoom.|
 |bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 |scale  | number | 1 | transform scale |
 |minWidth|number|1|minimum width(%) of clipping box related to clipping component's width|
-|minHeight|number|1|minimum height(%) of clipping box related to clipping component's height|
+|minHeight|number|1|minimum height(%) of clipping box related to clipping component's height.|
+|initWidth|number|50|clipping area's width(%) when the image loaded.|
+|initHeight|number|50|clipping area's height(%) when the image loaded.|
 |touch-create| boolean | true | enable/disable create new clipping area on touch device |
+
+For more detail about the layout settings, pleases see [Component layout in depth](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout-in-depth).
 
 * Methods
 
@@ -194,7 +199,7 @@ import { clipperBasic } from 'vuejs-clipper'
 set ref to use component methods
 
 ```html
-<clipper-basic ref="clipper"></clipper-basic>
+<clipper-basic ref="clipper" />
 ```
 
 in your Vue instance methods
@@ -213,7 +218,7 @@ const canvas = this.$refs.clipper.clip()
 usage :
 
 ```html
-<clipper-basic @error="errorCb" @load="loadCb"></clipper-basic>
+<clipper-basic @error="errorCb" @load="loadCb" />
 ```
 
 * Data
@@ -394,6 +399,9 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.0.1
+  * Fixed `clipper-fixed` loading images overflow.
+  * Add `wrapRatio`, `initWidth` and `initHeight` props to `clipper-basic`
 * 1.0.0
   * Change the `clipper-basic` design, it will judge layout depends on the ratio.
   * Production version.
