@@ -258,7 +258,7 @@ this.$refs.clipper.setTL$.next({ left: 0, top: 0 }) // percentage 0%
 this.$refs.clipper.setTL$.next({ right: 0, bottom: 10 })
 this.$refs.clipper.setWH$.next({ width: 100, height: 100 }) // percentage 100%
 
-this.$refs.cliiper.onChange$.subscribe(() => {
+this.$refs.clipper.onChange$.subscribe(() => {
   // This happens whenever zooming, moving and rotating occur.
 })
 ```
@@ -330,7 +330,7 @@ usage:
 this.$refs.clipper.setTL$.next({ left: 50, top: 50 }) // percentage 0%
 this.$refs.clipper.setWH$.next(0.6) // transform scale(0.6)
 
-this.$refs.cliiper.onChange$.subscribe(() => {
+this.$refs.clipper.onChange$.subscribe(() => {
   // This happens whenever zooming, moving and rotating occur.
 })
 ```
