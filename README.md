@@ -8,12 +8,14 @@ Vue.js image clipping components using Vue-Rx.
 * Add image clipping components to your Vue application in nothing flat.
 * Touch devices supported and fully responsive.
 
-## Demo
+## Demo/Document
 
 You can find the source code of examples under `examples` branch.
 
 * [live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
 * [try it on codepen](https://codepen.io/timtnlee/pen/vzzqRM)
+* [README](https://github.com/timtnleeProject/vuejs-clipper#vuejs-clipper)
+* [vuejs-clipper wiki](https://github.com/timtnleeProject/vuejs-clipper/wiki)
 
 ## Table of Contents
 

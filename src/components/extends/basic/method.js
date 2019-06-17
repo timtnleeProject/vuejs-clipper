@@ -184,7 +184,6 @@ const clipperMethods = {
         calcH()
         if (this.minHeight === height) calcW()
         if (width > 100) throw new Error('Invalid ratio, wrapRatop, minWidth combination')
-
       } else {
         calcW()
         if (this.minWidth === width) calcH()
