@@ -97,9 +97,13 @@ export default {
   text-shadow: 1px 1px 1px lightgray;
   transition: all 0.4s;
   margin: 7px 0px;
+  a {
+    text-decoration: none;
+  }
 }
 .el:hover {
   text-shadow: 2px 2px 1px lightgray;
-  transform: translateX(5px);
+  opacity: 0.5;
+  //transform: translateX(5px);
 }
 </style>

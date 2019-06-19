@@ -1,7 +1,7 @@
 const code = {}
 code.initapp = {}
 code.initapp.html = `<div id="app">
-  <clipper-basic class="my-clipper" src="example.jpg"></clipper-basic>
+  <clipper-basic class="my-clipper" src="example.jpg" />
 </div>`
 code.initapp.js = `new Vue({
   el: '#app'
@@ -202,13 +202,14 @@ zoom.ex1 = `<clipper-fixed
   src="ex2.jpg" 
   shadow="transparent" 
   border-color="transparent"
-  :grid="false"></clipper-fixed>`
+  :grid="false"
+/>`
 
 export {zoom}
 
 const pos = {}
 
-pos.basicHtml = '<clipper-basic ref="clipper" src="ex2.jpg"></clipper-basic>'
+pos.basicHtml = '<clipper-basic ref="clipper" src="ex2.jpg" />'
 
 pos.basic = '//click buttons'
 

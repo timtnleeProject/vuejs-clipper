@@ -4,7 +4,7 @@
           <div> vuejs-clipper</div>
           <div>
             <a href="mailto:litingen1995@gmail.com">litingen1995@gmail.com</a>
-            <a href="https://paypal.me/timtnlee?locale.x=zh_TW" target="_blank">Buy me a coffee</a>
+            <!-- <a href="https://paypal.me/timtnlee?locale.x=zh_TW" target="_blank">Buy me a coffee</a> -->
           </div>
         </div>
     </footer>
