@@ -401,10 +401,9 @@ export default {
       return (this.imgRatio >= 1 ? 100 : (100 / this.imgRatio)) + 'vw'
     },
     stemArea: function () {
-      const ratio = this.wrapRatio || this.ratio
-      if (ratio) {
+      if (this.wrapRatio) {
         return {
-          width: 100 * ratio,
+          width: 100 * this.wrapRatio,
           height: 100
         }
       } else if (this.imgRatio) {

@@ -164,23 +164,20 @@ const clipperMethods = {
     let height = this.initHeight
     let left = (100 - this.initWidth) / 2
     let top = (100 - this.initHeight) / 2
-    if (!this.wrapRatio && !this.ratio) {
+    if (!this.ratio) {
       if (width < this.minWidth) throw new Error('Invalid initWidth, minWidth combination')
       if (height < this.minHeight) throw new Error('Invalid initHeight, minHeight combination')
-    } else if (!this.wrapRatio && this.ratio) {
-      if (width < this.minWidth) throw new Error('Invalid initWidth, minWidth combination')
-      height = width
-      top = (100 - height) / 2
-    } else if (this.wrapRatio && this.ratio) {
+    } else if (this.ratio) {
+      const wrapRatio = this.wrapRatio || this.imgRatio
       const calcH = () => {
-        height = Math.max(width / this.ratio * this.wrapRatio, this.minHeight)
+        height = Math.max(width / this.ratio * wrapRatio, this.minHeight)
         top = (100 - height) / 2
       }
       const calcW = () => {
-        width = Math.max(height * this.ratio / this.wrapRatio, this.minWidth)
+        width = Math.max(height * this.ratio / wrapRatio, this.minWidth)
         left = (100 - width) / 2
       }
-      if (this.wrapRatio <= this.ratio) {
+      if (wrapRatio <= this.ratio) {
         calcH()
         if (this.minHeight === height) calcW()
         if (width > 100) throw new Error('Invalid ratio, wrapRatop, minWidth combination')
