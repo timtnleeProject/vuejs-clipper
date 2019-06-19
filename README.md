@@ -402,7 +402,7 @@ use `v-model` binding data with `clipper-upload`
 ## Changelog
 
 * 1.0.2
-  * Fixed `clipper-basic` props `ratio` and `wrapRatio` behaviors, now `ratio` will not affect clipper's layout.
+  * Fixed `clipper-basic` props `ratio` and `wrapRatio` behaviors, now `ratio` will not affect clipper's layout since there's `wrapRatio` to control the layout.
 * 1.0.1
   * Fixed `clipper-fixed` loading images overflow.
   * Add `wrapRatio`, `initWidth` and `initHeight` props to `clipper-basic`
