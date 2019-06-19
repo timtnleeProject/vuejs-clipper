@@ -347,7 +347,7 @@ export default {
       default: 50
     }
   },
-  data: () => {
+  data () {
     return {
       imgRatio: NaN
     }
@@ -367,13 +367,11 @@ export default {
       return style
     },
     scaleStyle: function () {
-      this.change$.next(0)
       return {
         transform: `scale(${this.scale})`
       }
     },
     rotateStyle: function () {
-      this.change$.next(0)
       return {
         transform: `rotate(${this.rotate}deg)`
       }
@@ -381,7 +379,7 @@ export default {
     areaStyle: function () {
       const _border = this.border + 'px'
       const display = (this.src) ? 'block' : 'none'
-      const backgroundColor = this.watchPreData.bgColor
+      const backgroundColor = this.bgColor
       return { padding: _border, display, backgroundColor }
     },
     eptStyle: function () {
@@ -421,12 +419,6 @@ export default {
       const ratio = this.wrapRatio || this.ratio
       if (!ratio) return false
       return this.imgRatio < ratio
-    },
-    watchPreData: function () {
-      this.callPreview('setData', { bgColor: this.bgColor })
-      return {
-        bgColor: this.bgColor
-      }
     }
   },
   watch: {
@@ -435,6 +427,15 @@ export default {
     },
     wrapRatio () {
       this.resetData()
+    },
+    bgColor () {
+      this.callPreview('setData', { bgColor: this.bgColor })
+    },
+    scaleStyle () {
+      this.change$.next(0)
+    },
+    rotateStyle () {
+      this.change$.next(0)
     }
   },
   mounted () {

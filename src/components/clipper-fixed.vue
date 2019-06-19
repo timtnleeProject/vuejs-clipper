@@ -225,7 +225,7 @@ export default {
       default: ''
     }
   },
-  data: () => {
+  data () {
     return {
       imgRatio: NaN
     }
@@ -256,14 +256,13 @@ export default {
       }
     },
     bgStyle: function () {
-      this.change$.next(0)
       return {
         transform: `rotate(${this.rotate}deg)`
       }
     },
     wrapStyle: function () {
       return {
-        backgroundColor: this.watchPreData.bgColor
+        backgroundColor: this.bgColor
       }
     },
     stemArea: function () {
@@ -279,17 +278,17 @@ export default {
     },
     _shadow: function () {
       return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + 'vw'
-    },
-    watchPreData: function () { // use computed watch bgColor
-      this.callPreview('setData', { bgColor: this.bgColor })
-      return {
-        bgColor: this.bgColor
-      }
     }
   },
   watch: {
     ratio () {
       this.resetData()
+      this.change$.next(0)
+    },
+    bgColor () {
+      this.callPreview('setData', { bgColor: this.bgColor })
+    },
+    bgStyle () {
       this.change$.next(0)
     }
   },
