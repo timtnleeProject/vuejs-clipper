@@ -2,9 +2,9 @@
     * methods for calculating position layout,
     * extended by clipper-basic-component
 */
-import _commonMethods from './common/method'
-import _basicMethods from './basic/method'
-import _fixedMethods from './fixed/method'
+import _commonMethods from './common-methods'
+import _basicMethods from './basic-methods'
+import _fixedMethods from './fixed-methods'
 
 import { fromEvent } from 'rxjs'
 
