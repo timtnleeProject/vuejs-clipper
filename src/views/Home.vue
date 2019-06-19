@@ -17,12 +17,12 @@
         <div class="tab">
           <h4>PC</h4>
         <ul>
-          <li>mouse<img src="icon/mouse.png" class="icon">: Drag & Zoom clipping area/Create new clipping area.</li>
+          <li>mouse<img src="icon/mouse.png" alt="vuejs-clipper" class="icon">: Drag & Zoom clipping area/Create new clipping area.</li>
         </ul>
         <h4>Mobile</h4>
         <ul>
-          <li>touch<img src="icon/touch.png" class="icon">: Drag & Zoom clipping area/Create new clipping area.</li>
-          <li>two fingers<img src="icon/twofinger.png" class="icon">: Zoom clipping area.</li>
+          <li>touch<img src="icon/touch.png" alt="vuejs-clipper" class="icon">: Drag & Zoom clipping area/Create new clipping area.</li>
+          <li>two fingers<img src="icon/twofinger.png" alt="vuejs-clipper" class="icon">: Zoom clipping area.</li>
         </ul>
         </div>
         <div class="flex2">
@@ -39,13 +39,13 @@
         <div class="tab">
         <h4>PC</h4>
         <ul>
-          <li>mouse<img src="icon/mouse.png" class="icon">: Drag image.</li>
-          <li>mouse wheel<img src="icon/wheel.png" class="icon">: Zoom image.</li>
+          <li>mouse<img src="icon/mouse.png" alt="vuejs-clipper" class="icon">: Drag image.</li>
+          <li>mouse wheel<img src="icon/wheel.png" alt="vuejs-clipper" class="icon">: Zoom image.</li>
         </ul>
         <h4>Mobile</h4>
         <ul>
-          <li>touch<img src="icon/touch.png" class="icon">: Drag image.</li>
-          <li>two fingers<img src="icon/twofinger.png" class="icon">: Zoom image.</li>
+          <li>touch<img src="icon/touch.png" alt="vuejs-clipper" class="icon">: Drag image.</li>
+          <li>two fingers<img src="icon/twofinger.png" alt="vuejs-clipper" class="icon">: Zoom image.</li>
         </ul>
         </div>
         <div class="flex2">
