@@ -23,6 +23,7 @@
     "cropper"
   ],
   "main": "dist/vuejs-clipper.umd.js",
+  "types": "types/index.d.ts",
   "module": "src/clipper.js",
   "scripts": {
     "build": "vue-cli-service build --target lib --name vuejs-clipper src/clipper.js",
