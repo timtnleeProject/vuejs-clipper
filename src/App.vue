@@ -192,6 +192,11 @@ h4 {
   justify-content: center;
   align-items: center;
 }
+pre>code {
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid brown;
+}
 @media only screen and(max-width:596px) {
   .flex-center {
     & div {

@@ -138,10 +138,10 @@ const verti = {}
 
 verti.html = `<clipper-basicref="clipper" 
   ref="clipper"
-  @load="imgLoad" 
   :style="basicStyle" 
-  src="long.jpg">
-</clipper-basic>`
+  src="long.jpg"
+  @load="imgLoad" 
+/>`
 verti.js =`data: () => {
   return {
       maxWidth: 700,
@@ -164,6 +164,10 @@ computed: {
   }
 }`
 
+verti.html2 = `<clipper-basic
+  src="long.jpg"
+  :wrapRatio="1"
+/>`
 export { verti }
 
 const trans = {}

@@ -3,7 +3,7 @@
         <div class="area">
             <h2>Verticle images</h2>
             <p>Clipper-basic, which acts as an <i>image</i> element, will automatically set its height <b>based on width</b>.</p>
-            <p>Clipper-basic will set its layout ratio same as the image.</p>
+            <p>Clipper-basic will set its layout ratio same as the image or the “wrapRatio”</p>
             <p>Clipper-fixed will set its layout ratio same as its “ratio” attribute.</p>
             <p>For example, you set both clipper-basic and clipper-fixed to have max-width 500 pixels, 
                 upload an image which width and height are <u>4:3</u>, then clipper-basic will be <u>500 x 375</u>.</p>
@@ -31,6 +31,11 @@
             <pre v-highlightjs="code.js"><code class="javascript"></code></pre>
             <clipper-upload class="btn" v-model="src">upload image</clipper-upload>
             <clipper-basic ref="clipper" :style="basicStyle" @load="imgLoad" :src="src">
+                <div slot="placeholder">No image</div>
+            </clipper-basic>
+            <p>Or you could set “wrapRatio” to make clipper-basic a fixed layout.</p>
+            <pre v-highlightjs="code.html2"><code class="html"></code></pre>
+            <clipper-basic class="sample" @load="imgLoad" :src="src" :wrapRatio="1">
                 <div slot="placeholder">No image</div>
             </clipper-basic>
         </div>
@@ -69,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .sample{
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
 }
 .pic{
     height: 50vh;
