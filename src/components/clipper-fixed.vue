@@ -53,6 +53,12 @@
         </div>
       </div>
     </div>
+    <div
+      class="placeholder"
+      :style="eptStyle"
+    >
+      <slot name="placeholder" />
+    </div>
   </div>
 </template>
 
@@ -262,13 +268,23 @@ export default {
     },
     wrapStyle: function () {
       return {
-        backgroundColor: this.bgColor
+        backgroundColor: this.bgColor,
+        display: (this.src)
+          ? 'block'
+          : 'none'
       }
     },
     stemArea: function () {
       return {
         width: 100,
         height: 100 / this.ratio
+      }
+    },
+    eptStyle: function () {
+      return {
+        display: (this.src)
+          ? 'none'
+          : 'block'
       }
     },
     stemStyle: function () {

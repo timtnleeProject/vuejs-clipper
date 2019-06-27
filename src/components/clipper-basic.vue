@@ -477,8 +477,8 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.vertical {
-  &.clip-area .img, .img-scale {
+.vertical.clip-area {
+  &, .img, .img-scale {
     width: auto;
     height: 100%
   }

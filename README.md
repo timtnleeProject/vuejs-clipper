@@ -28,9 +28,9 @@ You can find the source code of examples under `examples` branch.
 
 **Before using the plugin & components, here's something you should know :**
 
-* It's based on **vue-rx**.
+* It's based on [**vue-rx**](https://github.com/vuejs/vue-rx).
 * Use vuejs-clipper plugin also add **vue-rx** plugin to vue.
-* Components are responsive base on **width** instead of height.
+* Components are responsive base on **width** instead of height, see [Component Layout](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout).
 * You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image.
 * Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
 

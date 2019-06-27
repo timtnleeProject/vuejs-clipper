@@ -1,7 +1,3 @@
-interface clipper {}
-
-export default clipper
-
 export interface clipperBasic {}
 export interface clipperFixed {}
 export interface clipperUpload {}
