@@ -401,6 +401,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.1.1
+  * Add `clipper-fixed` placeholder slot.
 * 1.1.0
   * Fixed `clipper-basic` props `ratio` and `wrapRatio` behaviors, now `ratio` will not affect clipper's layout since there's `wrapRatio` to control the layout.
 * 1.0.1
