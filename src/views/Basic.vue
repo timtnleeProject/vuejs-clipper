@@ -7,7 +7,7 @@
           <div class="flex-center">
             <div class="flex-center">
               <input type="text" v-model="filename">
-              <span>.png</span>
+              <span>.jpeg</span>
             </div>
           </div>
           <div class="flex-center">

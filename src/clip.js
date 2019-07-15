@@ -1,8 +1,10 @@
 export default {
   methods: {
     clipToURL: function () {
+      const type = 'image/jpeg'
+      const quality = 1
       return new Promise((res, rej) => {
-        const canvas = this.$refs.clipper.clip();
+        const canvas = this.$refs.clipper.clip({ maxWPixel: 1920 });
         if (canvas.toBlob) {
           canvas.toBlob(
             (blob) => {
@@ -12,10 +14,10 @@ export default {
               this.resultDone()
               res()
             },
-            'image/png', 1
+            type, quality
           );
         } else {
-          this.clipResult = canvas.toDataURL('image/png', 1);
+          this.clipResult = canvas.toDataURL(type, quality);
           this.link = this.clipResult;
           this.resultDone()
           res()
