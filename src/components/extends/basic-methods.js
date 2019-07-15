@@ -326,7 +326,8 @@ const clipperMethods = {
     return { down, move }
   },
   // DRAW
-  getDrawPos: function () {
+  getDrawPos: function (opt) {
+    const { wPixel, maxWPixel } = opt || {}
     const zoom = this.zoomPos()
     const img = this.scaleEl.getBoundingClientRect()
     const imgW = this.imgEl.naturalWidth
@@ -336,6 +337,9 @@ const clipperMethods = {
     const zWidth = zoom.width - this.border * 2
     const zHeight = zoom.height - this.border * 2
     const rate = imgW / viewW
+    const dWidth = (maxWPixel)
+      ? Math.min((wPixel || zWidth * rate), maxWPixel)
+      : wPixel || zWidth * rate
     const translate = {
       rotateX: (img.left + img.width / 2 - (zoom.left + this.border)) * rate,
       rotateY: (img.top + img.height / 2 - (zoom.top + this.border)) * rate,
@@ -343,10 +347,6 @@ const clipperMethods = {
       drawY: (img.top - (zoom.top + this.border)) * rate
     }
 
-    // const translate = {
-    //     x: (img.left - (zoom.left+this.border))*rate,
-    //     y: (img.top - (zoom.top+this.border))*rate
-    // }
     const pos = {
       sx: viewL * rate, // sx
       sy: viewT * rate, // sy
@@ -354,8 +354,8 @@ const clipperMethods = {
       sheight: zHeight * rate, // sHeight
       dx: 0, // dx
       dy: 0, // dy
-      dwidth: zWidth * rate, // dWidth
-      dheight: zHeight * rate// dHeight
+      dwidth: dWidth, // dWidth
+      dheight: dWidth * zHeight / zWidth// dHeight
     }
     pos[Symbol.iterator] = function * () {
       for (let k in pos) {

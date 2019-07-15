@@ -37,11 +37,11 @@ export { rxEventListeners }
 export { rxWheelListeners }
 const pluginMethods = {
   methods: {
-    clip: function () {
-      const drawPos = this.getDrawPos()
+    clip: function (opt) {
+      const drawPos = this.getDrawPos(opt)
       const ctx = this.canvasEl.getContext('2d')
-      const width = drawPos.pos.swidth // sw
-      const height = drawPos.pos.sheight// sh
+      const width = drawPos.pos.swidth // dw
+      const height = drawPos.pos.sheight// dh
       this.canvasEl.width = width
       this.canvasEl.height = height
       ctx.fillStyle = this.bgColor
@@ -50,7 +50,15 @@ const pluginMethods = {
       ctx.rotate(this.rotate * Math.PI / 180)
       ctx.translate(drawPos.translate.drawX - drawPos.translate.rotateX, drawPos.translate.drawY - drawPos.translate.rotateY)
       ctx.drawImage(this.imgEl, 0, 0)
-      return this.canvasEl
+      if (opt) {
+        const canvas = document.createElement('CANVAS')
+        canvas.width = drawPos.pos.dwidth
+        canvas.height = drawPos.pos.dheight
+        canvas.getContext('2d').drawImage(this.canvasEl, 0, 0, drawPos.pos.dwidth, drawPos.pos.dheight)
+        return canvas
+      } else {
+        return this.canvasEl
+      }
     },
     callPreview: function (method, ...arg) {
       const parentPropName = np.parentPropName

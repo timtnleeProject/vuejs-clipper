@@ -62,7 +62,8 @@ const fixedMethods = {
       return y / wrapPos.height
     }
   },
-  getDrawPos: function () {
+  getDrawPos: function (opt) {
+    const { wPixel, maxWPixel } = opt || {}
     const areaPos = this.areaEl.getBoundingClientRect()
     const translatePos = this.translatePos()
     const imgW = this.imgEl.naturalWidth
@@ -75,15 +76,20 @@ const fixedMethods = {
       drawX: (translatePos.left - (areaPos.left + this.border)) * rate,
       drawY: (translatePos.top - (areaPos.top + this.border)) * rate
     }
+    const swidth = areaPos.width - this.border * 2
+    const sheight = areaPos.height - this.border * 2
+    const dwidth = (maxWPixel)
+      ? Math.min((wPixel || swidth * rate), maxWPixel)
+      : wPixel || swidth * rate
     const pos = {
       sx: viewL * rate, // sx
       sy: viewT * rate, // sy
-      swidth: (areaPos.width - this.border * 2) * rate, // sWidth
-      sheight: (areaPos.height - this.border * 2) * rate, // sHeight
+      swidth: swidth * rate, // sWidth
+      sheight: sheight * rate, // sHeight
       dx: 0, // dx
       dy: 0, // dy
-      dwidth: (areaPos.width - this.border * 2) * rate, // dWidth
-      dheight: (areaPos.height - this.border * 2) * rate// dHeight
+      dwidth: dwidth, // dWidth
+      dheight: dwidth * sheight / swidth// dHeight
     }
     pos[Symbol.iterator] = function * () {
       for (let k in pos) {

@@ -195,8 +195,15 @@ For more detail about the layout settings, pleases see [Component layout in dept
 
 | method | argument | return| description |
 |-|-|-|-|
-| clip | | canvas element |get clipping canvas element|
+| clip | options | canvas element |get clipping canvas element|
 |getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
+
+`clip()` arguments
+
+|name|type|default|description|
+|-|-|-|-|
+|options.wPixel|number|undefined|Set the the width (pixel) of result canvas.|
+|options.maxWPixel|number|undefined|Set the the maximum width (pixel) of result canvas.|
 
 set ref to use component methods
 
@@ -299,8 +306,15 @@ import { clipperFixed } from 'vuejs-clipper'
 
 | method | argument | return| description |
 |-|-|-|-|
-| clip | | canvas element |get clipping canvas element|
+| clip | options | canvas element |get clipping canvas element.|
 |getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
+
+`clip()` arguments
+
+|name|type|default|description|
+|-|-|-|-|
+|options.wPixel|number|undefined|Set the the width (pixel) of result canvas.|
+|options.maxWPixel|number|undefined|Set the the maximum width (pixel) of result canvas.|
 
 * Event
 
@@ -401,6 +415,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.1.2
+  * Set pixel of `clip` result canvas. `clip({ wPixel, maxWPixel })`
 * 1.1.1
   * Add `clipper-fixed` placeholder slot.
 * 1.1.0
