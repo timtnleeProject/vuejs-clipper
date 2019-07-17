@@ -12,8 +12,9 @@ Vue.js image clipping components using Vue-Rx.
 
 You can find the source code of examples under `examples` branch.
 
-* [live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
-* [try it on codepen](https://codepen.io/timtnlee/pen/vzzqRM)
+* [Live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
+* [Quick Start](https://timtnleeproject.github.io/vuejs-clipper/#/examples/quick-start)
+* [Try it on codepen](https://codepen.io/timtnlee/pen/vzzqRM)
 * [README](https://github.com/timtnleeProject/vuejs-clipper#vuejs-clipper)
 * [vuejs-clipper wiki](https://github.com/timtnleeProject/vuejs-clipper/wiki)
 
@@ -140,7 +141,7 @@ Include vuejs-clipper umd script after Vue.js.
 <link rel="stylesheet" href="./dist/vuejs-clipper.css">
 ```
 
-### Use in html/template
+Use in html/template
 
 ```html
 <clipper-basic src="example.jpg"></clipper-basic>
@@ -196,9 +197,11 @@ For more detail about the layout settings, pleases see [Component layout in dept
 | method | argument | return| description |
 |-|-|-|-|
 | clip | options | canvas element |get clipping canvas element|
-|getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
+|getDrawPos||`{pos, translate}`: positions and transformation|get result canvas information|
 
 `clip()` arguments
+
+[Resulting-canvas-size](https://github.com/timtnleeProject/vuejs-clipper/wiki/Resulting-canvas-size)
 
 |name|type|default|description|
 |-|-|-|-|
@@ -307,7 +310,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | method | argument | return| description |
 |-|-|-|-|
 | clip | options | canvas element |get clipping canvas element.|
-|getDrawPos||`{pos, translate}`: positions and trnasformation|get result canvas information|
+|getDrawPos||`{pos, translate}`: positions and transformation|get result canvas information|
 
 `clip()` arguments
 
