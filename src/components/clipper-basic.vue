@@ -391,10 +391,10 @@ export default {
       return { display }
     },
     exOuterStyle: function () {
-      const _outline = `${this.outline + this.border}px !important`
+      const _outline = `${this.outline + this.border}px`
       return {
-        borderWidth: _outline,
-        transform: `translate(-${_outline},-${_outline}) !important`
+        'border-width': `${_outline} !important`,
+        'transform': `translate(-${_outline},-${_outline}) !important`
       }
     },
     exInnerStyle: function () {
