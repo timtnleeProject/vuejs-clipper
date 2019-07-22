@@ -239,39 +239,37 @@ export default {
   computed: {
     areaStyle: function () {
       const style = {
-        color: this.shadow,
-        borderWidth: `${this.border}px`,
-        borderColor: this.borderColor,
-        boxShadow: `0 0 0 ${this._shadow}`,
-        borderRadius: (this.round) ? '50%' : ''
+        'color': this.shadow,
+        'border-width': `${this.border}px !important`,
+        'border-color': `${this.borderColor} !important`,
+        'box-shadow': `0 0 0 ${this._shadow} !important`,
+        'border-radius': `${(this.round) ? '50%' : ''} !important`
       }
-      this.ratio >= 1 ? (style.width = '50%') : (style.height = '50%')
+      this.ratio >= 1 ? (style.width = '50% !important') : (style.height = '50% !important')
       return style
     },
     scaleStyle: function () {
       let width = this.bgWH$
       return {
-        transform: `scale(${width})`
+        transform: `scale(${width}) !important`
       }
     },
     translateStyle: function () {
       let left = this.bgTL$.left
       let top = this.bgTL$.top
       return {
-        transform: `translate(${left}%,${top}%)`
+        transform: `translate(${left}%,${top}%) !important`
       }
     },
     bgStyle: function () {
       return {
-        transform: `rotate(${this.rotate}deg)`
+        transform: `rotate(${this.rotate}deg) !important`
       }
     },
     wrapStyle: function () {
       return {
-        backgroundColor: this.bgColor,
-        display: (this.src)
-          ? 'block'
-          : 'none'
+        'background-color': `${this.bgColor} !important`,
+        'display': `${(this.src) ? 'block' : 'none'} !important`
       }
     },
     stemArea: function () {
@@ -282,18 +280,16 @@ export default {
     },
     eptStyle: function () {
       return {
-        display: (this.src)
-          ? 'none'
-          : 'block'
+        display: `${(this.src) ? 'none' : 'block'} !important`
       }
     },
     stemStyle: function () {
       const style = {}
-      this.ratio >= 1 ? (style.width = '100%') : (style.height = '100%')
+      this.ratio >= 1 ? (style.width = '100% !important') : (style.height = '100% !important')
       return style
     },
     _shadow: function () {
-      return (this.imgRatio >= 1 ? 100 : 100 / this.imgRatio) + 'vw'
+      return `${(this.imgRatio >= 1 ? 100 : 100 / this.imgRatio)}vw`
     }
   },
   watch: {
@@ -353,72 +349,72 @@ export default {
 $grid-width: 1px;
 
 .wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
   cursor: grab;
 }
 .stem-outer {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: block;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  display: block !important;
 }
 .stem-bg {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 .img-center {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100% !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
 .img-scale {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
+  position: absolute !important;
+  top: 0% !important;
+  left: 0% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 .img-translate {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
+  position: absolute !important;
+  top: 0% !important;
+  left: 0% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 .img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: block;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  display: block !important;
 }
 .cover {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
 }
 .area {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
   border-style: solid;
 }
 .stem-area {
-  display: block;
-  position: relative;
+  display: block !important;
+  position: relative !important;
 }
 .grid {
   width: 100%;

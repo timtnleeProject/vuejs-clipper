@@ -355,50 +355,54 @@ export default {
   computed: {
     posObj: function () {
       let style = {
-        borderWidth: `${this.border}px`,
-        width: `${this.zoomWH$.width}%`,
-        height: `${this.zoomWH$.height}%`,
-        color: this.shadow,
-        boxShadow: `0 0 0 ${this._shadow}`
+        'border-width': `${this.border}px !important`,
+        'width': `${this.zoomWH$.width}% !important`,
+        'height': `${this.zoomWH$.height}% !important`,
+        'color': `${this.shadow} !important`,
+        'box-shadow': `0 0 0 ${this._shadow} !important`
       }
       for (let k in this.zoomTL$) {
-        if (typeof this.zoomTL$[k] === 'number') { style[k] = `${this.zoomTL$[k]}%` }
+        if (typeof this.zoomTL$[k] === 'number') { style[k] = `${this.zoomTL$[k]}% !important` }
       }
       return style
     },
     scaleStyle: function () {
       return {
-        transform: `scale(${this.scale})`
+        transform: `scale(${this.scale}) !important`
       }
     },
     rotateStyle: function () {
       return {
-        transform: `rotate(${this.rotate}deg)`
+        transform: `rotate(${this.rotate}deg) !important`
       }
     },
     areaStyle: function () {
-      const _border = `${this.border}px`
-      const display = (this.src) ? 'block' : 'none'
-      const backgroundColor = this.bgColor
-      return { padding: _border, display, backgroundColor }
+      const _border = `${this.border}px !important`
+      const display = `${(this.src) ? 'block' : 'none'} !important`
+      const backgroundColor = `${this.bgColor} !important`
+      return {
+        padding: _border,
+        display,
+        'background-color': backgroundColor
+      }
     },
     eptStyle: function () {
-      const display = (this.src) ? 'none' : 'block'
+      const display = `${(this.src) ? 'none' : 'block'} !important`
       return { display }
     },
     exOuterStyle: function () {
-      const _outline = `${this.outline + this.border}px`
+      const _outline = `${this.outline + this.border}px !important`
       return {
         borderWidth: _outline,
-        transform: `translate(-${_outline},-${_outline})`
+        transform: `translate(-${_outline},-${_outline}) !important`
       }
     },
     exInnerStyle: function () {
-      const _inline = `${this.outline}px`
+      const _inline = `${this.outline}px !important`
       return { padding: _inline }
     },
     _shadow: function () {
-      return (this.imgRatio >= 1 ? 100 : (100 / this.imgRatio)) + 'vw'
+      return `${(this.imgRatio >= 1 ? 100 : (100 / this.imgRatio))}vw`
     },
     stemArea: function () {
       if (this.wrapRatio) {
@@ -479,55 +483,54 @@ $grid-width: 1px; //dive 2
 
 .vertical.clip-area {
   &, .img, .img-scale {
-    width: auto;
-    height: 100%
+    width: auto !important;
+    height: 100% !important;
   }
 }
 .clip-area {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
   cursor: crosshair;
   & .img {
-    position: relative;
-    width: 100%;
-    display: block;
-    pointer-events: none;
+    position: relative !important;
+    width: 100% !important;
+    display: block !important;
+    pointer-events: none !important;
   }
 }
 .stem-canvas {
-  pointer-events: none;
-  display: block;
-  width: 100%;
+  pointer-events: none !important;
+  display: block !important;
+  width: 100% !important;
 }
 .in-pad {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 .img-scale {
-  pointer-events: none;
-  position: relative;
-  width: 100%;
+  pointer-events: none !important;
+  position: relative !important;
+  width: 100% !important;
 }
 .zoom-area {
-  position: absolute;
-  box-sizing: border-box; //! don't change
+  position: absolute !important;
+  box-sizing: border-box !important; //! don't change
   border-style: solid;
   border-color: $border_color;
-  overflow: visible;
+  overflow: visible !important;
 }
 .corner {
   position: absolute;
-  // background-color: white;
   border-color: white;
   border-style: solid;
   width: 10px;
