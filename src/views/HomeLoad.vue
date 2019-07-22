@@ -22,9 +22,6 @@ const imgList = [
   'ex1.jpg',
   'ex2.jpg',
   'ex3.jpg',
-  'lily.jpg',
-  'long.jpg',
-  'profile.png',
   'tanya.jpg'
 ];
 function imgLoadPromise(list) {

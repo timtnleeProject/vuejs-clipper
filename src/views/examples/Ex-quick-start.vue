@@ -2,6 +2,9 @@
     <div class="list-content content">
         <div class="area">
             <h2>Quick Start</h2>
+            <i>
+                This example use umd script.
+            </i>
             <h3>First setup</h3>
             <div class="p">Use components after <a href="https://www.npmjs.com/package/vuejs-clipper" target="_blank">installation</a>.</div>
             <div class="tab">
@@ -22,6 +25,9 @@
                 You can use clipper-upload directly or implement by yourself.
             </div>
             <h4>(1) implement by yourself</h4>
+            <div class="tab">
+                <i>Transform file to image url.</i>
+            </div>
             <div class="tab">
                 <div class="title">Html</div>
                 <div>add a file input</div>

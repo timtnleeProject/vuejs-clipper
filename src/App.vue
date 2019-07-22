@@ -107,6 +107,7 @@ h4 {
 }
 .tab {
   padding-left: 15px;
+  padding-bottom: 15px;
 }
 .pd {
   padding: 10px 0px;
