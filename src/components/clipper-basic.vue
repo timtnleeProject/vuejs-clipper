@@ -355,14 +355,14 @@ export default {
   computed: {
     posObj: function () {
       let style = {
-        borderWidth: this.border + 'px',
-        width: this.zoomWH$.width + '%',
-        height: this.zoomWH$.height + '%',
+        borderWidth: `${this.border}px`,
+        width: `${this.zoomWH$.width}%`,
+        height: `${this.zoomWH$.height}%`,
         color: this.shadow,
-        boxShadow: '0 0 0 ' + this._shadow
+        boxShadow: `0 0 0 ${this._shadow}`
       }
       for (let k in this.zoomTL$) {
-        if (typeof this.zoomTL$[k] === 'number') { style[k] = this.zoomTL$[k] + '%' }
+        if (typeof this.zoomTL$[k] === 'number') { style[k] = `${this.zoomTL$[k]}%` }
       }
       return style
     },
@@ -377,7 +377,7 @@ export default {
       }
     },
     areaStyle: function () {
-      const _border = this.border + 'px'
+      const _border = `${this.border}px`
       const display = (this.src) ? 'block' : 'none'
       const backgroundColor = this.bgColor
       return { padding: _border, display, backgroundColor }
@@ -387,14 +387,14 @@ export default {
       return { display }
     },
     exOuterStyle: function () {
-      const _outline = this.outline + this.border + 'px'
+      const _outline = `${this.outline + this.border}px`
       return {
         borderWidth: _outline,
         transform: `translate(-${_outline},-${_outline})`
       }
     },
     exInnerStyle: function () {
-      const _inline = this.outline + 'px'
+      const _inline = `${this.outline}px`
       return { padding: _inline }
     },
     _shadow: function () {

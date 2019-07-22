@@ -240,9 +240,9 @@ export default {
     areaStyle: function () {
       const style = {
         color: this.shadow,
-        borderWidth: this.border + 'px',
+        borderWidth: `${this.border}px`,
         borderColor: this.borderColor,
-        boxShadow: '0 0 0 ' + this._shadow,
+        boxShadow: `0 0 0 ${this._shadow}`,
         borderRadius: (this.round) ? '50%' : ''
       }
       this.ratio >= 1 ? (style.width = '50%') : (style.height = '50%')
