@@ -416,8 +416,22 @@ use `v-model` binding data with `clipper-upload`
 |accept|string|'*'|Bind `accept` attribute to file input tag.|
 |exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
 
+* Event
+
+|event|parameters|description|
+|-|-|-|
+|input|$event|Result domgstring on change|
+
+* Data
+
+|data|type|default|description|
+|-|-|-|-|
+|file|File Object|null|Uploaded file's original File Object.|
+
 ## Changelog
 
+* 1.1.3
+  * Add `!important` statements to components' style.
 * 1.1.2
   * Set pixel of `clip` result canvas. `clip({ wPixel, maxWPixel })`
 * 1.1.1

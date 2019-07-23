@@ -42,6 +42,7 @@ export default {
   data: () => {
     return {
       uploadEl: null,
+      file: null,
       DomString: ''
     }
   },
