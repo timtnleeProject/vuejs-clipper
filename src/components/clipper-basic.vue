@@ -22,6 +22,7 @@
             :src="src"
             class="img"
             :style="rotateStyle"
+            :crossorigin="crossOrigin"
             @load="imgLoaded();emit('load',$event)"
             @error="emit('error',$event)"
           >
@@ -345,6 +346,10 @@ export default {
     initHeight: {
       type: Number,
       default: 50
+    },
+    crossOrigin: {
+      type: String,
+      default: undefined
     }
   },
   data () {

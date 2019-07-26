@@ -23,6 +23,7 @@
               :src="src"
               class="img"
               :style="bgStyle"
+              :crossorigin="crossOrigin"
               @load="imgLoaded(); emit('load',$event)"
               @error="emit('error',$event)"
             >
@@ -229,6 +230,10 @@ export default {
     preview: {
       type: String,
       default: ''
+    },
+    crossOrigin: {
+      type: String,
+      default: undefined
     }
   },
   data () {

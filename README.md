@@ -32,7 +32,7 @@ You can find the source code of examples under `examples` branch.
 * It's based on [**vue-rx**](https://github.com/vuejs/vue-rx).
 * Use vuejs-clipper plugin also add **vue-rx** plugin to vue.
 * Components are responsive base on **width** instead of height, see [Component Layout](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout).
-* You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image.
+* You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image unless the image server set the CORS headers.
 * Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
 
 ## Installation
@@ -189,6 +189,7 @@ import { clipperBasic } from 'vuejs-clipper'
 |initWidth|number|50|clipping area's width(%) when the image loaded.|
 |initHeight|number|50|clipping area's height(%) when the image loaded.|
 |touch-create| boolean | true | enable/disable create new clipping area on touch device |
+|crossOrigin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
 
 For more detail about the layout settings, pleases see [Component layout in depth](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout-in-depth).
 
@@ -304,6 +305,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
+|crossOrigin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
 
 * Method
 
@@ -430,6 +432,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.1.4
+  * Add `crossorigin` attribute biding for `<img/>` in clipper (`crossOrigin` prop).
 * 1.1.3
   * Add `!important` statements to components' style.
 * 1.1.2
