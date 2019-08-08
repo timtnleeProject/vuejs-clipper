@@ -39,6 +39,10 @@ export default {
           path: 'set-layout'
         },
         {
+          name: 'Set pixel(width) of result canvas',
+          path: 'result-pixel'
+        },
+        {
           name: 'Use as Image zoom-in component',
           path: 'image-zoomin'
         },

@@ -67,6 +67,9 @@ body {
     background-color: red;
   }
 }
+.btn-block {
+  width: 100%;
+}
 ul {
   padding-left: 25px;
 }

@@ -222,3 +222,9 @@ pos.fixed = '//click buttons'
 
 
 export {pos}
+
+const pixel = {}
+
+pixel.script = `const canvas = this.$refs.clipper.clip({ wPixel: <pixel> })`
+
+export { pixel }
