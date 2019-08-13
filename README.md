@@ -45,7 +45,7 @@ install vuejs-clipper
 $npm install vuejs-clipper --save
 ```
 
-need sass-loader, if you haven't installed :
+need css loader, ex: `sass-loader`, if you haven't installed :
 
 ```bash
 $npm install -D sass-loader node-sass
