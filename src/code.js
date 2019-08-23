@@ -64,7 +64,7 @@ code.result.js1 = `data: {
 }`
 code.result.js = `getResult: function () {
   const canvas = this.$refs.clipper.clip();//call component's clip method
-  this.resultURL = canvas.toDataURL("image/jpg", 1);//canvas->image
+  this.resultURL = canvas.toDataURL("image/jpeg", 1);//canvas->image
 }`
 code.preview = {}
 code.preview.html = `<clipper-basic 
@@ -115,7 +115,7 @@ code.full =
         methods: {
             getResult: function () {
                 const canvas = this.$refs.clipper.clip();//call component's clip method
-                this.resultURL = canvas.toDataURL("image/jpg", 1);//canvas->image
+                this.resultURL = canvas.toDataURL("image/jpeg", 1);//canvas->image
             }
         }
     })

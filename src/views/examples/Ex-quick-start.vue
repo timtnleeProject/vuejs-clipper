@@ -136,7 +136,7 @@ export default {
   methods: {
     getResult: function(index) {
       const canvas = this.$refs[this.refs[index]].clip(); //call component's clip method
-      this.$set(this.resultURL, index, canvas.toDataURL('image/jpg', 1)); //canvas->image
+      this.$set(this.resultURL, index, canvas.toDataURL('image/jpeg', 1)); //canvas->image
     }
   }
 };
