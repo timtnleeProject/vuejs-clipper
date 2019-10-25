@@ -234,6 +234,10 @@ export default {
     crossOrigin: {
       type: String,
       default: undefined
+    },
+    area: {
+      type: Number,
+      default: 50
     }
   },
   data () {
@@ -250,7 +254,7 @@ export default {
         'box-shadow': `0 0 0 ${this._shadow} !important`,
         'border-radius': `${(this.round) ? '50%' : ''} !important`
       }
-      this.ratio >= 1 ? (style.width = '50% !important') : (style.height = '50% !important')
+      this.ratio >= 1 ? (style.width = `${this.area}% !important`) : (style.height = `${this.area}% !important`)
       return style
     },
     scaleStyle: function () {

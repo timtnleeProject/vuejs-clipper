@@ -305,6 +305,7 @@ import { clipperFixed } from 'vuejs-clipper'
 | bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
+| area | number | 50 | width or height (%) of clipping box(depends on ratio). |
 |crossOrigin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
 
 * Method
