@@ -128,7 +128,7 @@ export default {
       clipResult: null,
       link: null,
       filename: 'clip',
-      gallary: ['tanya.jpg','lily.jpg','long.jpg','ex3.jpg']
+      gallary: ['lily.jpg','long.jpg','ex3.jpg']
     };
   },
   methods: {
