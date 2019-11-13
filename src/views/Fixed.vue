@@ -115,7 +115,7 @@ export default {
   },
   data: () => {
     return {
-      imgUrl: 'tanya.jpg',
+      imgUrl: 'lily.jpg',
       border: 1,
       ratio: 1,
       rotate: 0,
