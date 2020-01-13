@@ -67,7 +67,7 @@ Vue.use(VuejsClipper)
 register some components to global with default component name
 
 ```javascript
-Vue.use(VuejsClipper ,{
+Vue.use(VuejsClipper, {
 　components: {
     clipperBasic: true,
     clipperPreview: true
@@ -78,7 +78,7 @@ Vue.use(VuejsClipper ,{
 with customized component name
 
 ```javascript
-Vue.use(VuejsClipper ,{
+Vue.use(VuejsClipper, {
 　components: {
 　　clipperBasic: 'image-clipper-basic',
 　　clipperPreview: 'my-preview'
@@ -89,7 +89,7 @@ Vue.use(VuejsClipper ,{
 not register any components, but with some plugin options
 
 ```javascript
-Vue.use(VuejsClipper ,{
+Vue.use(VuejsClipper, {
   components: null,
 　parentPropName: 'myCustomerName'
   /*
@@ -433,6 +433,10 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 1.1.6
+  * Update dependencies.
+* 1.1.5
+  * Add new prop `area` for `clipper-fixed`.
 * 1.1.4
   * Add `crossorigin` attribute biding for `<img/>` in clipper (`crossOrigin` prop).
 * 1.1.3
