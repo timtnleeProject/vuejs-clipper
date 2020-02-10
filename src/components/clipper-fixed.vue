@@ -72,6 +72,7 @@ import {
 } from './extends/clippo'
 import {
   map,
+  tap,
   filter,
   startWith,
   concatMap,
@@ -91,10 +92,10 @@ export default {
     /** basic */
     this.mousedownDrag$ = this.mousedown$.pipe(
       filter(this.isDragElement),
-      map(this.prevent),
+      tap(this.prevent),
       map(this.dragDownPos),
       concatMap(
-        () => this.mousemove$.pipe(map(this.prevent), takeUntil(this.mouseup$)),
+        () => this.mousemove$.pipe(tap(this.prevent), takeUntil(this.mouseup$)),
         (down, move) => {
           return { down, move }
         }
@@ -102,7 +103,7 @@ export default {
     )
     this.touchdownDrag$ = this.touchstart$.pipe(
       filter(this.isDragElement),
-      map(this.prevent),
+      tap(this.prevent),
       filter(e => e.touches.length === 1),
       map(e => e.touches[0]),
       map(this.dragDownPos),
@@ -119,14 +120,14 @@ export default {
     )
     this.wheelEvent$ = this.wheel$.pipe(
       filter(this.isDragElement),
-      map(this.prevent),
+      tap(this.prevent),
       map(e => e.deltaY),
       map(deltaY => (deltaY >= 0 ? -1 : 1))
     )
     this.touchTwoFinger$ = this.touchstart$.pipe(
       filter(this.isDragElement),
       filter(e => e.touches.length === 2),
-      map(this.prevent),
+      tap(this.prevent),
       map(this.towPointsTouches),
       map(this.setOrigin),
       concatMap(

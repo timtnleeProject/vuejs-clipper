@@ -5,7 +5,7 @@ dist/vuejs-clipper.common.js
 dist/vuejs-clipper.common.js.map
 dist/vuejs-clipper.umd.js.map
 dist/vuejs-clipper.umd.min.js.map
-
+docs
 # local env files
 .env.local
 .env.*.local

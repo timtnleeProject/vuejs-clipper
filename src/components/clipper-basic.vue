@@ -76,6 +76,7 @@ import { basicMethods, rxEventListeners, pluginMethods } from './extends/clippo'
 import { Subject } from 'rxjs'
 import {
   map,
+  tap,
   filter,
   takeUntil,
   concatMap,
@@ -99,10 +100,7 @@ export default {
     this.mousedownDrag$ = new Subject().pipe(// moving left, top
       merge(this.mousedown$),
       filter(this.isDragElement),
-      map(e => {
-        e.preventDefault()
-        return e
-      }), // deal with down, we want to calc down just for once.
+      tap(this.prevent), // deal with down, we want to calc down just for once.
       map(e => this.eInZoom(e)), // 點擊時zoom的position,rect
       concatMap(// 將down (zoom rect), move交給後續
         () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
@@ -114,10 +112,7 @@ export default {
     this.touchdownDrag$ = this.touchstart$.pipe(
       filter(this.isDragElement),
       filter(e => e.touches.length === 1), // 單指
-      map(e => {
-        e.preventDefault()
-        return e
-      }), // deal with down, we want to calc down just for once.
+      tap(this.prevent), // deal with down, we want to calc down just for once.
       map(e => this.eInZoom(e.touches[0])),
       concatMap(
         () =>
@@ -134,10 +129,7 @@ export default {
     this.mousedownZoom$ = new Subject().pipe(
       merge(this.mousedown$),
       filter(this.isZoomElement),
-      map(e => {
-        e.preventDefault()
-        return e
-      }),
+      tap(this.prevent),
       map(this.setDownPosition),
       concatMap(
         () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
@@ -149,10 +141,7 @@ export default {
     this.touchdownZoom$ = this.touchstart$.pipe(
       filter(this.isZoomElement),
       filter(e => e.touches.length === 1),
-      map(e => {
-        e.preventDefault()
-        return e.touches[0]
-      }),
+      tap(this.prevent),
       map(this.setDownPosition),
       concatMap(
         () =>
@@ -171,7 +160,7 @@ export default {
         return e.touches.length === 2
       }),
       filter(this.isTwoPointZoomElement),
-      map(this.prevent),
+      tap(this.prevent),
       map(() => {
         this.stop$.next(0) // stop drag create event
         const freezeZoom = this.zoomPos() // get zoom position at down
@@ -181,7 +170,7 @@ export default {
         () =>
           this.touchmove$.pipe(
             filter(e => e.touches.length === 2),
-            map(this.prevent),
+            tap(this.prevent),
             takeUntil(this.touchend$)
           ),
         (down, move) => {
@@ -191,7 +180,7 @@ export default {
     )
     this.mousedownCreate$ = this.mousedown$.pipe(
       filter(this.isCreateElement),
-      map(this.prevent),
+      tap(this.prevent),
       map(this.getFakeDown),
       concatMap(
         () => this.mousemove$.pipe(takeUntil(this.mouseup$)),
@@ -202,7 +191,7 @@ export default {
     )
     this.touchstartCreate$ = this.touchstart$.pipe(
       filter(this.isCreateElement),
-      map(this.prevent),
+      tap(this.prevent),
       map(e => e.touches[0]),
       map(this.getFakeDown),
       concatMap(

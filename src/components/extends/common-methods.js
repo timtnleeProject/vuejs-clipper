@@ -2,7 +2,6 @@ const commonMethods = {
   /* 通用 common */
   prevent: function (e) {
     e.preventDefault()
-    return e
   },
   eTo: function (e, direction, element) {
     const area = this[element + 'Pos']()
