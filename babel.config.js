@@ -1,6 +1,6 @@
 module.exports = {
   presets: [
-    ['@vue/app',{
+    ['@vue/cli-plugin-babel/preset',{
       polyfills: [
         'es6.promise',
         'es6.symbol'
