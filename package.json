@@ -5,42 +5,27 @@
     "name": "timtnlee",
     "email": "litingen1995@gmail.com"
   },
-  "homepage": "https://timtnleeproject.github.io/vuejs-clipper/",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/timtnleeProject/vuejs-clipper.git"
-  },
-  "bugs": {
-    "url": "https://github.com/timtnleeProject/vuejs-clipper/issues"
-  },
-  "keywords": [
-    "vue",
-    "image",
-    "clip",
-    "crop",
-    "clipper",
-    "cropper"
-  ],
-  "main": "dist/vuejs-clipper.umd.js",
-  "types": "types/index.d.ts",
-  "module": "src/clipper.js",
   "scripts": {
     "build": "vue-cli-service build --target lib --name vuejs-clipper src/clipper.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },
+  "main": "dist/vuejs-clipper.umd.js",
+  "module": "src/clipper.js",
   "dependencies": {
+    "core-js": "^3.6.4",
     "exif-js": "^2.3.0",
     "rxjs": "^6.5.2",
     "vue-rx": "^6.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@vue/cli-plugin-babel": "~4.2.2",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-plugin-unit-mocha": "^3.7.0",
     "@vue/cli-service": "^4.1.1",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-eslint": "^10.0.3",
     "chai": "^4.1.2",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
@@ -50,7 +35,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.12.0",
-    "sass-loader": "^7.0.1",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.10",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
@@ -78,5 +63,23 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/timtnleeProject/vuejs-clipper/issues"
+  },
+  "homepage": "https://timtnleeproject.github.io/vuejs-clipper/",
+  "keywords": [
+    "vue",
+    "image",
+    "clip",
+    "crop",
+    "clipper",
+    "cropper"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timtnleeProject/vuejs-clipper.git"
+  },
+  "types": "types/index.d.ts"
 }
