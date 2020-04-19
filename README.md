@@ -178,18 +178,18 @@ import { clipperBasic } from 'vuejs-clipper'
 | corner | boolean| true  | show corner layout |
 | grid   | boolean| true  | show grid layout|
 | ratio  | number |       | ratio of clipping area (width/height). ex: `1`, `4/3` .|
-| wrapRatio | number | NaN |ratio of clipping container (width/height). ex: `1`, `4/3` .|
+| wrap-ratio | number | NaN |ratio of clipping container (width/height). ex: `1`, `4/3` .|
 | mode   | 'normal'/'switch' | 'normal' | if ratio is set, this prop will affect how clipping area zoom.|
 |bg-color |string  | 'white' | background color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 |scale  | number | 1 | transform scale |
-|minWidth|number|1|minimum width(%) of clipping box related to clipping component's width|
-|minHeight|number|1|minimum height(%) of clipping box related to clipping component's height.|
-|initWidth|number|50|clipping area's width(%) when the image loaded.|
-|initHeight|number|50|clipping area's height(%) when the image loaded.|
+|min-width|number|1|minimum width(%) of clipping box related to clipping component's width|
+|min-height|number|1|minimum height(%) of clipping box related to clipping component's height.|
+|init-width|number|50|clipping area's width(%) when the image loaded.|
+|init-height|number|50|clipping area's height(%) when the image loaded.|
 |touch-create| boolean | true | enable/disable create new clipping area on touch device |
-|crossOrigin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
+|cross-origin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
 
 For more detail about the layout settings, pleases see [Component layout in depth](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout-in-depth).
 
@@ -306,7 +306,7 @@ import { clipperFixed } from 'vuejs-clipper'
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 | area | number | 50 | width or height (%) of clipping box(depends on ratio). |
-|crossOrigin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
+|cross-origin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
 
 * Method
 

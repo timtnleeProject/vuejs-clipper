@@ -350,7 +350,7 @@ export default {
       const scale = (this.ratio > this.imgRatio)
         ? this.imgRatio / this.ratio
         : 1
-      this.setWH$.next(scale)
+      this.setWH$.next(Math.max(scale, this.minScale))
     }
   }
 }
