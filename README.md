@@ -433,6 +433,11 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 2.0.0
+  * Change css naming to BEM.
+
+---
+
 * 1.1.6
   * Update dependencies.
 * 1.1.5
@@ -453,6 +458,8 @@ use `v-model` binding data with `clipper-upload`
 * 1.0.0
   * Change the `clipper-basic` design, it will judge layout depends on the ratio.
   * Production version.
+---
+
 * 0.2.13
   * Decrease css specificity
 * 0.2.12
