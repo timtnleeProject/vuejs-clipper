@@ -1,26 +1,26 @@
 <template>
-  <div class="clipper-basic">
+  <div class="js-clipper-basic">
     <div
-      class="clip-area"
+      class="vuejs-clipper-basic__clip-area js-clip-area"
       :class="{ vertical: isVertical }"
       :style="areaStyle"
     >
       <canvas
-        class="stem-canvas"
+        class="vuejs-clipper-basic__stem-canvas"
         :width="stemArea.width"
         :height="stemArea.height"
       />
       <div
-        class="in-pad"
+        class="vuejs-clipper-basic__in-pad"
         :style="{'padding': areaStyle.padding}"
       >
         <div
-          class="img-scale"
+          class="vuejs-clipper-basic__img-scale js-img-scale"
           :style="scaleStyle"
         >
           <img
             :src="src"
-            class="img"
+            class="vuejs-clipper-basic__img js-img"
             :style="rotateStyle"
             :crossorigin="crossOrigin"
             @load="imgLoaded();emit('load',$event)"
@@ -29,42 +29,42 @@
         </div>
       </div>
       <div
-        class="zoom-area shadow"
+        class="vuejs-clipper-basic__zoom-area js-zoom-area"
         :style="posObj"
       >
         <div
-          class="extend outer"
+          class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer"
           :style="exOuterStyle"
         />
         <div
-          class="extend inner"
+          class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner"
           :style="exInnerStyle"
         >
-          <div class="drag-inset" />
+          <div class="vuejs-clipper-basic__drag-inset js-drag-inset" />
         </div>
         <div v-if="corner">
           <div
             v-for="index in 4"
             :key="'corner'+index"
-            class="corner"
-            :class="`corner${index}`"
+            class="vuejs-clipper-basic__corner"
+            :class="`vuejs-clipper-basic__corner${index}`"
           />
         </div>
         <div
           v-if="grid"
-          class="grid"
+          class="vuejs-clipper-basic__grid"
         >
           <div
             v-for="index in 4"
             :key="'gridItem'+index"
-            class="grid-item"
+            class="vuejs-clipper-basic__grid-item"
           />
         </div>
-        <slot name="area" />
+        <slot name="vuejs-clipper-basic__area" />
       </div>
     </div>
     <div
-      class="placeholder"
+      class="vuejs-clipper-basic__placeholder"
       :style="eptStyle"
     >
       <slot name="placeholder" />
@@ -436,11 +436,12 @@ export default {
     }
   },
   mounted () {
-    this.imgEl = this.$el.querySelector('.clipper-basic .img')
+    this.imgEl = this.$el.querySelector('.js-clipper-basic .js-img')
     this.canvasEl = document.createElement('CANVAS')
-    this.areaEl = this.$el.querySelector('.clipper-basic .clip-area')
-    this.zoomEl = this.$el.querySelector('.clipper-basic .zoom-area')
-    this.scaleEl = this.$el.querySelector('.img-scale')
+    this.areaEl = this.$el.querySelector('.js-clipper-basic .js-clip-area')
+    this.zoomEl = this.$el.querySelector('.js-clipper-basic .js-zoom-area')
+    this.scaleEl = this.$el.querySelector('.js-clipper-basic .js-img-scale')
+    this.dragEl = this.$el.querySelector('.js-clipper-basic .js-drag-inset')
     if (this.preview) {
       this.$subscribeTo(this.onChange$, () => {
         this.$nextTick(() => {
@@ -475,31 +476,31 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.vertical.clip-area {
-  &, .img, .img-scale {
+.vuejs-clipper-basic__clip-area {
+  &, .vuejs-clipper-basic__img, .vuejs-clipper-basic__img-scale {
     width: auto !important;
     height: 100% !important;
   }
 }
-.clip-area {
+.vuejs-clipper-basic__clip-area {
   position: relative !important;
   width: 100% !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
   cursor: crosshair;
-  & .img {
+  & .vuejs-clipper-basic__img {
     position: relative !important;
     width: 100% !important;
     display: block !important;
     pointer-events: none !important;
   }
 }
-.stem-canvas {
+.vuejs-clipper-basic__stem-canvas {
   pointer-events: none !important;
   display: block !important;
   width: 100% !important;
 }
-.in-pad {
+.vuejs-clipper-basic__in-pad {
   pointer-events: none !important;
   position: absolute !important;
   top: 0 !important;
@@ -511,19 +512,19 @@ $grid-width: 1px; //dive 2
   justify-content: center !important;
   box-sizing: border-box !important;
 }
-.img-scale {
+.vuejs-clipper-basic__img-scale {
   pointer-events: none !important;
   position: relative !important;
   width: 100% !important;
 }
-.zoom-area {
+.vuejs-clipper-basic__zoom-area {
   position: absolute !important;
   box-sizing: border-box !important; //! don't change
   border-style: solid;
   border-color: $border_color;
   overflow: visible !important;
 }
-.corner {
+.vuejs-clipper-basic__corner {
   position: absolute;
   border-color: white;
   border-style: solid;
@@ -531,41 +532,41 @@ $grid-width: 1px; //dive 2
   height: 10px;
   opacity: 0.7;
 }
-.corner:hover {
+.vuejs-clipper-basic__corner:hover {
   opacity: 1;
 }
-.corner1 {
+.vuejs-clipper-basic__corner1 {
   top: 0;
   left: 0;
   border-width: 3px 0px 0px 3px;
   cursor: nwse-resize;
 }
-.corner2 {
+.vuejs-clipper-basic__corner2 {
   top: 0;
   right: 0;
   border-width: 3px 3px 0px 0px;
   cursor: nesw-resize;
 }
-.corner3 {
+.vuejs-clipper-basic__corner3 {
   bottom: 0;
   right: 0;
   border-width: 0px 3px 3px 0px;
   cursor: nwse-resize;
 }
-.corner4 {
+.vuejs-clipper-basic__corner4 {
   bottom: 0;
   left: 0;
   border-width: 0px 0px 3px 3px;
   cursor: nesw-resize;
 }
-.extend {
+.vuejs-clipper-basic__extend {
   color: white;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   cursor: move;
-  &.outer {
+  &--outer {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -577,19 +578,19 @@ $grid-width: 1px; //dive 2
       opacity: 0.3;
     }
   }
-  &.inner {
+  &--inner {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    &:hover .drag-inset {
+    &:hover .vuejs-clipper-basic__drag-inset {
       opacity: 0.3;
     }
-    &:hover .drag-inset:hover.drag-inset {
+    &:hover .vuejs-clipper-basic__drag-inset:hover.vuejs-clipper-basic__drag-inset {
       opacity: 0;
     }
   }
 }
-.drag-inset {
+.vuejs-clipper-basic__drag-inset {
   position: relative;
   box-shadow: 0px 0px 0px 4080px white;
   top: 0;
@@ -600,7 +601,7 @@ $grid-width: 1px; //dive 2
   opacity: 0;
   transition: opacity $hover_sec;
 }
-.grid {
+.vuejs-clipper-basic__grid {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -608,7 +609,7 @@ $grid-width: 1px; //dive 2
   left: 0;
   pointer-events: none;
 }
-.grid-item {
+.vuejs-clipper-basic__grid-item {
   position: absolute;
   border-color: rgba(255, 255, 255, 0.7);
   border-style: dashed;
@@ -616,25 +617,25 @@ $grid-width: 1px; //dive 2
   height: 50%;
   box-sizing: border-box;
 }
-.grid-item:nth-child(1) {
+.vuejs-clipper-basic__grid-item:nth-child(1) {
   top: 0;
   left: 0;
   border-width: 0 $grid-width $grid-width 0;
   transform: translate($grid-width/2,$grid-width/2);
 }
-.grid-item:nth-child(2) {
+.vuejs-clipper-basic__grid-item:nth-child(2) {
   top: 0;
   right: 0;
   border-width: 0 0 $grid-width 0;
   transform: translate(-$grid-width/2,$grid-width/2);
 }
-.grid-item:nth-child(3) {
+.vuejs-clipper-basic__grid-item:nth-child(3) {
   bottom: 0;
   left: 0;
   border-width: 0 $grid-width 0 0;
   transform: translate($grid-width/2,-$grid-width/2);
 }
-.grid-item:nth-child(4) {
+.vuejs-clipper-basic__grid-item:nth-child(4) {
   bottom: 0;
   right: 0;
   border-width: 0;

@@ -1,27 +1,27 @@
 <template>
-  <div class="clipper-fixed">
+  <div class="js-clipper-fixed">
     <div
-      class="wrap"
+      class="vuejs-clipper-fixed__wrap js-wrap"
       :style="wrapStyle"
     >
       <canvas
-        class="stem-outer"
+        class="vuejs-clipper-fixed__stem-outer"
         :width="stemArea.width"
         :height="stemArea.height"
       />
-      <div class="img-center">
-        <canvas class="stem-bg" />
+      <div class="vuejs-clipper-fixed__img-center">
+        <canvas class="vuejs-clipper-fixed__stem-bg js-stem-bg" />
         <div
-          class="img-scale"
+          class="vuejs-clipper-fixed__img-scale js-img-scale"
           :style="scaleStyle"
         >
           <div
-            class="img-translate"
+            class="vuejs-clipper-fixed__img-translate js-img-translate"
             :style="translateStyle"
           >
             <img
               :src="src"
-              class="img"
+              class="vuejs-clipper-fixed__img js-img"
               :style="bgStyle"
               :crossorigin="crossOrigin"
               @load="imgLoaded(); emit('load',$event)"
@@ -30,32 +30,32 @@
           </div>
         </div>
       </div>
-      <div class="cover">
+      <div class="vuejs-clipper-fixed__cover">
         <div
-          class="area"
+          class="vuejs-clipper-fixed__area js-area"
           :style="areaStyle"
         >
           <canvas
-            class="stem-area"
+            class="vuejs-clipper-fixed__stem-area"
             :width="stemArea.width"
             :height="stemArea.height"
             :style="stemStyle"
           />
           <div
             v-if="grid"
-            class="grid"
+            class="vuejs-clipper-fixed__grid"
           >
             <div
               v-for="index in 4"
               :key="'gridItem'+index"
-              class="grid-item"
+              class="vuejs-clipper-fixed__grid-item"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="placeholder"
+      class="vuejs-clipper-fixed__placeholder"
       :style="eptStyle"
     >
       <slot name="placeholder" />
@@ -315,12 +315,12 @@ export default {
     }
   },
   mounted () {
-    this.imgEl = this.$el.querySelector('.img')
-    this.wrapEl = this.$el.querySelector('.wrap')
-    this.areaEl = this.$el.querySelector('.area')
-    this.scaleEl = this.$el.querySelector('.img-scale')
-    this.translateEl = this.$el.querySelector('.img-translate')
-    this.stemEl = this.$el.querySelector('.stem-bg')
+    this.imgEl = this.$el.querySelector('.js-clipper-fixed .js-img')
+    this.wrapEl = this.$el.querySelector('.js-clipper-fixed .js-wrap')
+    this.areaEl = this.$el.querySelector('.js-clipper-fixed .js-area')
+    this.scaleEl = this.$el.querySelector('.js-clipper-fixed .js-img-scale')
+    this.translateEl = this.$el.querySelector('.js-clipper-fixed .js-img-translate')
+    this.stemEl = this.$el.querySelector('.js-clipper-fixed .js-stem-bg')
     this.canvasEl = document.createElement('CANVAS')
     this.$subscribeTo(
       this.onChange$,
@@ -358,55 +358,55 @@ export default {
 <style lang='scss' scoped>
 $grid-width: 1px;
 
-.wrap {
+.vuejs-clipper-fixed__wrap {
   position: relative !important;
   overflow: hidden !important;
   width: 100% !important;
   height: 100% !important;
   cursor: grab;
 }
-.stem-outer {
+.vuejs-clipper-fixed__stem-outer {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   display: block !important;
 }
-.stem-bg {
+.vuejs-clipper-fixed__stem-bg {
   position: relative !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
 }
-.img-center {
+.vuejs-clipper-fixed__img-center {
   width: 100% !important;
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
-.img-scale {
+.vuejs-clipper-fixed__img-scale {
   position: absolute !important;
   top: 0% !important;
   left: 0% !important;
   width: 100% !important;
   height: 100% !important;
 }
-.img-translate {
+.vuejs-clipper-fixed__img-translate {
   position: absolute !important;
   top: 0% !important;
   left: 0% !important;
   width: 100% !important;
   height: 100% !important;
 }
-.img {
+.vuejs-clipper-fixed__img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   display: block !important;
 }
-.cover {
+.vuejs-clipper-fixed__cover {
   pointer-events: none !important;
   position: absolute !important;
   top: 0 !important;
@@ -415,18 +415,18 @@ $grid-width: 1px;
   height: 100% !important;
   overflow: hidden !important;
 }
-.area {
+.vuejs-clipper-fixed__area {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   border-style: solid;
 }
-.stem-area {
+.vuejs-clipper-fixed__stem-area {
   display: block !important;
   position: relative !important;
 }
-.grid {
+.vuejs-clipper-fixed__grid {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -434,7 +434,7 @@ $grid-width: 1px;
   left: 0;
   pointer-events: none;
 }
-.grid-item {
+.vuejs-clipper-fixed__grid-item {
   position: absolute;
   border-color: rgba(255, 255, 255, 0.7);
   border-style: dashed;
@@ -442,25 +442,25 @@ $grid-width: 1px;
   height: 50%;
   box-sizing: border-box;
 }
-.grid-item:nth-child(1) {
+.vuejs-clipper-fixed__grid-item:nth-child(1) {
   top: 0;
   left: 0;
   border-width: 0 $grid-width $grid-width 0;
   transform: translate($grid-width/2, $grid-width/2);
 }
-.grid-item:nth-child(2) {
+.vuejs-clipper-fixed__grid-item:nth-child(2) {
   top: 0;
   right: 0;
   border-width: 0 0 $grid-width 0;
   transform: translate(-$grid-width/2, $grid-width/2);
 }
-.grid-item:nth-child(3) {
+.vuejs-clipper-fixed__grid-item:nth-child(3) {
   bottom: 0;
   left: 0;
   border-width: 0 $grid-width 0 0;
   transform: translate($grid-width/2, -$grid-width/2);
 }
-.grid-item:nth-child(4) {
+.vuejs-clipper-fixed__grid-item:nth-child(4) {
   bottom: 0;
   right: 0;
   border-width: 0;

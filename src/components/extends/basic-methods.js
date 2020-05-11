@@ -39,7 +39,7 @@ const clipperMethods = {
   },
   /* 拖曳drag */
   isDragElement: function (e) {
-    return e.target === this.$el.querySelector('.drag-inset')
+    return e.target === this.dragEl
   },
   dragMoving: function ({ down, move }) {
     const left = this.toX(this.eToArea(move, 'left') - down.left)
@@ -198,7 +198,7 @@ const clipperMethods = {
   },
   /* 拖曳縮放 */
   isZoomElement: function (e) {
-    return this.zoomEl.contains(e.target) && e.target !== this.$el.querySelector('.drag-inset')
+    return this.zoomEl.contains(e.target) && e.target !== this.dragEl
   },
   judgeArea: function (e) {
     const zoom = this.zoomPos()
@@ -275,7 +275,7 @@ const clipperMethods = {
   },
   /* 拖曳重新劃定區域 */
   isCreateElement: function (e) {
-    return e.target === this.$el.querySelector('.clip-area') || e.target === this.$el.querySelector('.img')
+    return e.target === this.areaEl || e.target === this.imgEl
   },
   getFakeDown: function (e) {
     return {
@@ -287,7 +287,7 @@ const clipperMethods = {
   reverseDownPos: function ({ down, move }) {
     if (this.mode === 'normal') return { down, move }
 
-    if (down.target !== null && down.target === this.$el.querySelector('.clip-area')) { // this is dragCreate, first time dont count
+    if (down.target !== null && down.target === this.areaEl) { // this is dragCreate, first time dont count
       down.target = null
       return { down, move }
     }
