@@ -476,7 +476,7 @@ $cover_color: rgba(0, 0, 0, 0.4);
 $border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.vuejs-clipper-basic__clip-area {
+.vertical.vuejs-clipper-basic__clip-area {
   &, .vuejs-clipper-basic__img, .vuejs-clipper-basic__img-scale {
     width: auto !important;
     height: 100% !important;

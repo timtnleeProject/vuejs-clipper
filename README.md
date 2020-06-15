@@ -433,6 +433,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 2.1.0
+  * Fix broken `wrap-ratio`.
 * 2.0.0
   * Change css naming to BEM.
 
