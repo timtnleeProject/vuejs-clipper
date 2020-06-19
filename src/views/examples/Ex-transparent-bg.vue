@@ -6,8 +6,8 @@
             <p>upload a png which has a transparent background,</p>
             <p>set clipper component's "bgColor" to transparent color.</p>
             <!-- <clipper-upload v-model="src">upload</clipper-upload> -->
-            <clipper-fixed class="sample" ref="clipper" :src="src" bgColor="rgba(0,0,0,0)"></clipper-fixed>
-            <button @click="clipToURL">clip to see the result.</button>
+            <clipper-fixed class="sample" ref="clipper" :src="src" bgColor="rgba(255,255,255,0)"></clipper-fixed>
+            <button @click="clipToURL('image/png')">clip to see the result.</button>
             <p>clip result will be put above here, you can see this is a transparent image.</p>
             <div class="imgCon">
                 <div class="text">

@@ -1,7 +1,6 @@
 export default {
   methods: {
-    clipToURL: function () {
-      const type = 'image/jpeg'
+    clipToURL: function (type = 'image/jpeg') {
       const quality = 1
       return new Promise((res, rej) => {
         const canvas = this.$refs.clipper.clip({ maxWPixel: 1920 });
