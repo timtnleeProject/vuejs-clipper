@@ -329,7 +329,7 @@ const clipperMethods = {
   getDrawPos: function (opt) {
     const { wPixel, maxWPixel } = opt || {}
     const zoom = this.zoomPos()
-    const img = this.scaleEl.getBoundingClientRect()
+    const img = this.imgEl.getBoundingClientRect()
     const imgW = this.imgEl.naturalWidth
     const viewW = img.width
     const viewL = zoom.left - img.left + this.border
