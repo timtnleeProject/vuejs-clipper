@@ -433,6 +433,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 2.1.1
+  * Fix `clipper-basic` incorrect layout for verticle images on Firefox.
 * 2.1.0
   * Fix broken `wrap-ratio`.
 * 2.0.0
