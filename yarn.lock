@@ -7328,9 +7328,9 @@ run-queue@^1.0.0, run-queue@^1.0.3:
     aproba "^1.1.1"
 
 rxjs@^6.5.2:
-  version "6.5.5"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.5.tgz#c5c884e3094c8cfee31bf27eb87e54ccfc87f9ec"
-  integrity sha512-WfQI+1gohdf0Dai/Bbmk5L5ItH5tYqm3ki2c5GdWhKjalzjg93N3avFjVStyZZz+A2Em+ZxKH5bNghw9UeylGQ==
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.0.tgz#af2901eedf02e3a83ffa7f886240ff9018bbec84"
+  integrity sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
   dependencies:
     tslib "^1.9.0"
 
@@ -8614,10 +8614,10 @@ vue@^2.6.11:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
 
-vuejs-clipper@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vuejs-clipper/-/vuejs-clipper-2.1.0.tgz#05001c33579d8dfa5925672c8463a19e50b6cc4b"
-  integrity sha512-2vyqcRgPfps4U2+C7xg38ODtKwnhHlG0N7B7+F2C9sly7/rJE7MeOUk0vk4nKUpvY/+Y1PtIqm6zNq/cQWLFkQ==
+vuejs-clipper@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vuejs-clipper/-/vuejs-clipper-2.1.1.tgz#d371fb28b36e5acf208592451200bb645cc6eabb"
+  integrity sha512-rctzXTQm06b8QIsXraA12qVDtdi05aZXGyjTOoo4rX0VEIVwwlr7I3vyoS7I9FZc4otMlQ1LjH0b2dAm0ocYRw==
   dependencies:
     core-js "^3.6.4"
     exif-js "^2.3.0"
