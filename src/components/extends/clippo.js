@@ -49,7 +49,6 @@ const pluginMethods = {
       ctx.translate(drawPos.translate.rotateX, drawPos.translate.rotateY)
       ctx.rotate(this.rotate * Math.PI / 180)
       ctx.translate(drawPos.translate.drawX - drawPos.translate.rotateX, drawPos.translate.drawY - drawPos.translate.rotateY)
-      
       ctx.drawImage(this.imgEl, 0, 0)
       if (opt) {
         const canvas = document.createElement('CANVAS')
