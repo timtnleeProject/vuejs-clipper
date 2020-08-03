@@ -10,6 +10,12 @@ const clipperMethods = {
     const rect = this.zoomEl.getBoundingClientRect()
     return rect
   },
+  scalePos: function () {
+    return this.scaleEl.getBoundingClientRect()
+  },
+  imgPos: function () {
+    return this.imgEl.getBoundingClientRect()
+  },
   eInZoom: function (e) {
     const zoomPos = this.zoomEl.getBoundingClientRect()
     return {
@@ -325,11 +331,33 @@ const clipperMethods = {
     fake[y] = true
     return { down, move }
   },
+  getImgNonRotatePos: function () {
+    // 取得 image 旋轉前的 position
+    const scalePos = this.scalePos()
+    const x = scalePos.left + scalePos.width / 2
+    const y = scalePos.top + scalePos.height / 2
+    let w, h
+    if (this.isVertical) {
+      h = scalePos.height
+      w = h * this.imgRatio
+    } else {
+      w = scalePos.width
+      h = w / this.imgRatio
+    }
+    return {
+      left: x - w / 2,
+      right: x + w / 2,
+      top: y - h / 2,
+      bottom: y + h / 2,
+      width: w,
+      height: h
+    }
+  },
   // DRAW
   getDrawPos: function (opt) {
     const { wPixel, maxWPixel } = opt || {}
     const zoom = this.zoomPos()
-    const img = this.imgEl.getBoundingClientRect()
+    const img = this.getImgNonRotatePos()
     const imgW = this.imgEl.naturalWidth
     const viewW = img.width
     const viewL = zoom.left - img.left + this.border
@@ -346,7 +374,6 @@ const clipperMethods = {
       drawX: (img.left - (zoom.left + this.border)) * rate,
       drawY: (img.top - (zoom.top + this.border)) * rate
     }
-
     const pos = {
       sx: viewL * rate, // sx
       sy: viewT * rate, // sy

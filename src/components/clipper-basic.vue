@@ -439,6 +439,7 @@ export default {
     this.imgEl = this.$el.querySelector('.js-clipper-basic .js-img')
     this.canvasEl = document.createElement('CANVAS')
     this.areaEl = this.$el.querySelector('.js-clipper-basic .js-clip-area')
+    this.scaleEl = this.$el.querySelector('.js-clipper-basic .js-img-scale')
     this.zoomEl = this.$el.querySelector('.js-clipper-basic .js-zoom-area')
     this.dragEl = this.$el.querySelector('.js-clipper-basic .js-drag-inset')
     if (this.preview) {
@@ -506,18 +507,18 @@ $grid-width: 1px; //dive 2
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   box-sizing: border-box !important;
 }
 .vuejs-clipper-basic__img-scale {
   pointer-events: none !important;
-  position: relative !important;
+  position: absolute !important;
   width: 100% !important;
   height: 100% !important;
+  top: 0;
+  left: 0;
   display: flex !important;
   justify-content: center !important;
+  align-items: center;
 }
 .vuejs-clipper-basic__zoom-area {
   position: absolute !important;
