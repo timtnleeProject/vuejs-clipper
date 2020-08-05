@@ -4,13 +4,9 @@ import clipperBasic from './components/clipper-basic.vue'
 import clipperFixed from './components/clipper-fixed.vue'
 import clipperUpload from './components/clipper-upload.vue'
 
-import VueRx from 'vue-rx'
 import np from './namespace'
 
 const install = function (Vue, options) {
-  // vue-rx
-  Vue.use(VueRx)
-
   const components = {
     clipperBasic: {
       component: clipperBasic,

@@ -203,7 +203,7 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"db451844-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-preview.vue?vue&type=template&id=6f79f498&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c582107-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-preview.vue?vue&type=template&id=6f79f498&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"preview"},[_c('div',{staticClass:"wrap",style:(_vm.wrapStyle)},[_c('canvas',{staticClass:"shim",attrs:{"width":_vm.outerWidth,"height":_vm.outerHeight}}),_c('div',{staticClass:"img-pos",style:(_vm.styleObj)},[_c('div',{staticClass:"img-rotate",style:(_vm.rotateStyle)},[_c('img',{staticClass:"img",attrs:{"src":_vm.src},on:{"load":_vm.imgLoaded}})])])]),_c('div',{staticClass:"placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
@@ -790,7 +790,14 @@ var subscribeToIterable = function (iterable) {
     return function (subscriber) {
         var iterator = iterable[symbol_iterator["a" /* iterator */]]();
         do {
-            var item = iterator.next();
+            var item = void 0;
+            try {
+                item = iterator.next();
+            }
+            catch (err) {
+                subscriber.error(err);
+                return subscriber;
+            }
             if (item.done) {
                 subscriber.complete();
                 break;
@@ -1041,7 +1048,7 @@ module.exports = function (METHOD_NAME) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"db451844-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-upload.vue?vue&type=template&id=7ca07d12&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c582107-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-upload.vue?vue&type=template&id=7ca07d12&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{on:{"click":_vm.triggerInput}},[_vm._t("default"),_c('img',{staticClass:"stem",staticStyle:{"display":"none"},attrs:{"src":_vm.DomString}}),_c('input',{staticClass:"upload",staticStyle:{"display":"none"},attrs:{"type":"file","accept":_vm.accept},on:{"change":function($event){return _vm.upload($event)},"click":function($event){return _vm.clear($event)}}})],2)}
 var staticRenderFns = []
 
@@ -2668,10 +2675,9 @@ $({ global: true, forced: !USE_NATIVE_URL, sham: !DESCRIPTORS }, {
 "use strict";
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ Subject_SubjectSubscriber; });
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ Subject_Subject; });
 
-// UNUSED EXPORTS: AnonymousSubject
+// UNUSED EXPORTS: SubjectSubscriber, AnonymousSubject
 
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.js
 var tslib_es6 = __webpack_require__("9ab4");
@@ -3095,38 +3101,6 @@ var rxSubscriber = /*@__PURE__*/ (function () {
 })();
 var $$rxSubscriber = rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
-
-
-/***/ }),
-
-/***/ "3060":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OuterSubscriber; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9ab4");
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1453");
-/** PURE_IMPORTS_START tslib,_Subscriber PURE_IMPORTS_END */
-
-
-var OuterSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](OuterSubscriber, _super);
-    function OuterSubscriber() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    OuterSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
-        this.destination.next(innerValue);
-    };
-    OuterSubscriber.prototype.notifyError = function (error, innerSub) {
-        this.destination.error(error);
-    };
-    OuterSubscriber.prototype.notifyComplete = function (innerSub) {
-        this.destination.complete();
-    };
-    return OuterSubscriber;
-}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
-
-//# sourceMappingURL=OuterSubscriber.js.map
 
 
 /***/ }),
@@ -3780,7 +3754,7 @@ module.exports = function (bitmap, value) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"db451844-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-range.vue?vue&type=template&id=27132352&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c582107-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-range.vue?vue&type=template&id=27132352&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clipper-range"},[_c('div',{directives:[{name:"stream",rawName:"v-stream:mousedown",value:(_vm.mousedown$),expression:"mousedown$",arg:"mousedown"},{name:"stream",rawName:"v-stream:touchstart",value:(_vm.touchstart$),expression:"touchstart$",arg:"touchstart"}],staticClass:"wrap"},[_c('div',{staticClass:"stick"}),_c('div',{staticClass:"bar",style:(_vm.barStyle)})])])}
 var staticRenderFns = []
 
@@ -4307,9 +4281,7 @@ function mergeAll(concurrent) {
 /* harmony import */ var _components_clipper_upload_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("208d");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "e", function() { return _components_clipper_upload_vue__WEBPACK_IMPORTED_MODULE_5__["a"]; });
 
-/* harmony import */ var vue_rx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("ce19");
-/* harmony import */ var _namespace__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("0f53");
-
+/* harmony import */ var _namespace__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("0f53");
 
 
 
@@ -4319,8 +4291,6 @@ function mergeAll(concurrent) {
 
 
 var install = function install(Vue, options) {
-  // vue-rx
-  Vue.use(vue_rx__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"]);
   var components = {
     clipperBasic: {
       component: _components_clipper_basic_vue__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"],
@@ -4349,7 +4319,7 @@ var install = function install(Vue, options) {
   };
 
   options = options || {};
-  _namespace__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"].parentPropName = options.parentPropName || _namespace__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"].parentPropName;
+  _namespace__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"].parentPropName = options.parentPropName || _namespace__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"].parentPropName;
   options.components = options.components === undefined ? components : options.components; // if no components property, register all component
 
   for (var k in options.components) {
@@ -5697,7 +5667,7 @@ module.exports = function (NAME) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"db451844-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=3ef48dcc&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c582107-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=3ef48dcc&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"js-clipper-basic"},[_c('div',{staticClass:"vuejs-clipper-basic__clip-area js-clip-area",class:{ vertical: _vm.isVertical },style:(_vm.areaStyle)},[_c('canvas',{staticClass:"vuejs-clipper-basic__stem-canvas",attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),_c('div',{staticClass:"vuejs-clipper-basic__in-pad",style:({'padding': _vm.areaStyle.padding})},[_c('div',{staticClass:"vuejs-clipper-basic__img-scale js-img-scale",style:(_vm.scaleStyle)},[_c('img',{staticClass:"vuejs-clipper-basic__img js-img",style:(_vm.rotateStyle),attrs:{"src":_vm.src,"crossorigin":_vm.crossOrigin},on:{"load":function($event){_vm.imgLoaded();_vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})])]),_c('div',{staticClass:"vuejs-clipper-basic__zoom-area js-zoom-area",style:(_vm.posObj)},[_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer",style:(_vm.exOuterStyle)}),_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner",style:(_vm.exInnerStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__drag-inset js-drag-inset"})]),(_vm.corner)?_c('div',_vm._l((4),function(index){return _c('div',{key:'corner'+index,staticClass:"vuejs-clipper-basic__corner",class:("vuejs-clipper-basic__corner" + index)})}),0):_vm._e(),(_vm.grid)?_c('div',{staticClass:"vuejs-clipper-basic__grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"vuejs-clipper-basic__grid-item"})}),0):_vm._e(),_vm._t("vuejs-clipper-basic__area")],2)]),_c('div',{staticClass:"vuejs-clipper-basic__placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
@@ -5725,7 +5695,7 @@ var merge = __webpack_require__("4d82");
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/filter.js
 var filter = __webpack_require__("5670");
 
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/tap.js
+// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/tap.js + 1 modules
 var tap = __webpack_require__("c4cc");
 
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/concatMap.js
@@ -6545,7 +6515,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   } else {}
 }(typeof self !== 'undefined' ? self : this, function () {
   function getCurrentScript () {
-    if (document.currentScript) {
+    var descriptor = Object.getOwnPropertyDescriptor(document, 'currentScript')
+    // for chrome
+    if (!descriptor && 'currentScript' in document && document.currentScript) {
+      return document.currentScript
+    }
+
+    // for other browsers with native support for currentScript
+    if (descriptor && descriptor.get !== getCurrentScript && document.currentScript) {
       return document.currentScript
     }
   
@@ -7928,6 +7905,7 @@ module.exports = function (it) {
 /* unused harmony export __metadata */
 /* unused harmony export __awaiter */
 /* unused harmony export __generator */
+/* unused harmony export __createBinding */
 /* unused harmony export __exportStar */
 /* unused harmony export __values */
 /* unused harmony export __read */
@@ -8047,8 +8025,13 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
@@ -8250,10 +8233,8 @@ module.exports = function (IteratorConstructor, NAME, next) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return takeUntil; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9ab4");
-/* harmony import */ var _OuterSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("3060");
-/* harmony import */ var _util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("ce8b");
-/** PURE_IMPORTS_START tslib,_OuterSubscriber,_util_subscribeToResult PURE_IMPORTS_END */
-
+/* harmony import */ var _innerSubscribe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cf86");
+/** PURE_IMPORTS_START tslib,_innerSubscribe PURE_IMPORTS_END */
 
 
 function takeUntil(notifier) {
@@ -8265,7 +8246,7 @@ var TakeUntilOperator = /*@__PURE__*/ (function () {
     }
     TakeUntilOperator.prototype.call = function (subscriber, source) {
         var takeUntilSubscriber = new TakeUntilSubscriber(subscriber);
-        var notifierSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__[/* subscribeToResult */ "a"])(takeUntilSubscriber, this.notifier);
+        var notifierSubscription = Object(_innerSubscribe__WEBPACK_IMPORTED_MODULE_1__[/* innerSubscribe */ "c"])(this.notifier, new _innerSubscribe__WEBPACK_IMPORTED_MODULE_1__[/* SimpleInnerSubscriber */ "a"](takeUntilSubscriber));
         if (notifierSubscription && !takeUntilSubscriber.seenValue) {
             takeUntilSubscriber.add(notifierSubscription);
             return source.subscribe(takeUntilSubscriber);
@@ -8281,14 +8262,14 @@ var TakeUntilSubscriber = /*@__PURE__*/ (function (_super) {
         _this.seenValue = false;
         return _this;
     }
-    TakeUntilSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
+    TakeUntilSubscriber.prototype.notifyNext = function () {
         this.seenValue = true;
         this.complete();
     };
     TakeUntilSubscriber.prototype.notifyComplete = function () {
     };
     return TakeUntilSubscriber;
-}(_OuterSubscriber__WEBPACK_IMPORTED_MODULE_1__[/* OuterSubscriber */ "a"]));
+}(_innerSubscribe__WEBPACK_IMPORTED_MODULE_1__[/* SimpleOuterSubscriber */ "b"]));
 //# sourceMappingURL=takeUntil.js.map
 
 
@@ -8654,19 +8635,10 @@ module.exports = function (argument) {
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ mergeMap; });
 
-// UNUSED EXPORTS: MergeMapOperator, MergeMapSubscriber
+// UNUSED EXPORTS: MergeMapOperator, MergeMapSubscriber, flatMap
 
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.js
 var tslib_es6 = __webpack_require__("9ab4");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/util/subscribeToResult.js
-var subscribeToResult = __webpack_require__("ce8b");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/OuterSubscriber.js
-var OuterSubscriber = __webpack_require__("3060");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/InnerSubscriber.js
-var InnerSubscriber = __webpack_require__("acf8");
 
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/map.js
 var map = __webpack_require__("ebb6");
@@ -8849,10 +8821,11 @@ function from(input, scheduler) {
 }
 //# sourceMappingURL=from.js.map
 
+// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/innerSubscribe.js
+var innerSubscribe = __webpack_require__("cf86");
+
 // CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/mergeMap.js
-/** PURE_IMPORTS_START tslib,_util_subscribeToResult,_OuterSubscriber,_InnerSubscriber,_map,_observable_from PURE_IMPORTS_END */
-
-
+/** PURE_IMPORTS_START tslib,_map,_observable_from,_innerSubscribe PURE_IMPORTS_END */
 
 
 
@@ -8917,13 +8890,13 @@ var mergeMap_MergeMapSubscriber = /*@__PURE__*/ (function (_super) {
             return;
         }
         this.active++;
-        this._innerSub(result, value, index);
+        this._innerSub(result);
     };
-    MergeMapSubscriber.prototype._innerSub = function (ish, value, index) {
-        var innerSubscriber = new InnerSubscriber["a" /* InnerSubscriber */](this, value, index);
+    MergeMapSubscriber.prototype._innerSub = function (ish) {
+        var innerSubscriber = new innerSubscribe["a" /* SimpleInnerSubscriber */](this);
         var destination = this.destination;
         destination.add(innerSubscriber);
-        var innerSubscription = Object(subscribeToResult["a" /* subscribeToResult */])(this, ish, undefined, undefined, innerSubscriber);
+        var innerSubscription = Object(innerSubscribe["c" /* innerSubscribe */])(ish, innerSubscriber);
         if (innerSubscription !== innerSubscriber) {
             destination.add(innerSubscription);
         }
@@ -8935,12 +8908,11 @@ var mergeMap_MergeMapSubscriber = /*@__PURE__*/ (function (_super) {
         }
         this.unsubscribe();
     };
-    MergeMapSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
+    MergeMapSubscriber.prototype.notifyNext = function (innerValue) {
         this.destination.next(innerValue);
     };
-    MergeMapSubscriber.prototype.notifyComplete = function (innerSub) {
+    MergeMapSubscriber.prototype.notifyComplete = function () {
         var buffer = this.buffer;
-        this.remove(innerSub);
         this.active--;
         if (buffer.length > 0) {
             this._next(buffer.shift());
@@ -8950,8 +8922,9 @@ var mergeMap_MergeMapSubscriber = /*@__PURE__*/ (function (_super) {
         }
     };
     return MergeMapSubscriber;
-}(OuterSubscriber["a" /* OuterSubscriber */]));
+}(innerSubscribe["b" /* SimpleOuterSubscriber */]));
 
+var flatMap = mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 
@@ -9003,6 +8976,7 @@ var Subscription_Subscription = /*@__PURE__*/ (function () {
         this._parentOrParents = null;
         this._subscriptions = null;
         if (unsubscribe) {
+            this._ctorUnsubscribe = true;
             this._unsubscribe = unsubscribe;
         }
     }
@@ -9011,7 +8985,7 @@ var Subscription_Subscription = /*@__PURE__*/ (function () {
         if (this.closed) {
             return;
         }
-        var _a = this, _parentOrParents = _a._parentOrParents, _unsubscribe = _a._unsubscribe, _subscriptions = _a._subscriptions;
+        var _a = this, _parentOrParents = _a._parentOrParents, _ctorUnsubscribe = _a._ctorUnsubscribe, _unsubscribe = _a._unsubscribe, _subscriptions = _a._subscriptions;
         this.closed = true;
         this._parentOrParents = null;
         this._subscriptions = null;
@@ -9025,6 +8999,9 @@ var Subscription_Subscription = /*@__PURE__*/ (function () {
             }
         }
         if (Object(isFunction["a" /* isFunction */])(_unsubscribe)) {
+            if (_ctorUnsubscribe) {
+                this._unsubscribe = undefined;
+            }
             try {
                 _unsubscribe.call(this);
             }
@@ -9321,45 +9298,6 @@ module.exports = function (METHOD_NAME) {
     } catch (f) { /* empty */ }
   } return false;
 };
-
-
-/***/ }),
-
-/***/ "acf8":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InnerSubscriber; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9ab4");
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1453");
-/** PURE_IMPORTS_START tslib,_Subscriber PURE_IMPORTS_END */
-
-
-var InnerSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](InnerSubscriber, _super);
-    function InnerSubscriber(parent, outerValue, outerIndex) {
-        var _this = _super.call(this) || this;
-        _this.parent = parent;
-        _this.outerValue = outerValue;
-        _this.outerIndex = outerIndex;
-        _this.index = 0;
-        return _this;
-    }
-    InnerSubscriber.prototype._next = function (value) {
-        this.parent.notifyNext(this.outerValue, value, this.outerIndex, this.index++, this);
-    };
-    InnerSubscriber.prototype._error = function (error) {
-        this.parent.notifyError(error, this);
-        this.unsubscribe();
-    };
-    InnerSubscriber.prototype._complete = function () {
-        this.parent.notifyComplete(this);
-        this.unsubscribe();
-    };
-    return InnerSubscriber;
-}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
-
-//# sourceMappingURL=InnerSubscriber.js.map
 
 
 /***/ }),
@@ -10639,11 +10577,25 @@ module.exports = false;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return tap; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9ab4");
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1453");
-/* harmony import */ var _util_noop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fae9");
-/* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("d817");
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ tap; });
+
+// EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.js
+var tslib_es6 = __webpack_require__("9ab4");
+
+// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subscriber.js
+var Subscriber = __webpack_require__("1453");
+
+// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/util/noop.js
+/** PURE_IMPORTS_START  PURE_IMPORTS_END */
+function noop() { }
+//# sourceMappingURL=noop.js.map
+
+// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/util/isFunction.js
+var isFunction = __webpack_require__("d817");
+
+// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/tap.js
 /** PURE_IMPORTS_START tslib,_Subscriber,_util_noop,_util_isFunction PURE_IMPORTS_END */
 
 
@@ -10661,28 +10613,28 @@ var DoOperator = /*@__PURE__*/ (function () {
         this.complete = complete;
     }
     DoOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new TapSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
+        return source.subscribe(new tap_TapSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
     };
     return DoOperator;
 }());
-var TapSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](TapSubscriber, _super);
+var tap_TapSubscriber = /*@__PURE__*/ (function (_super) {
+    tslib_es6["a" /* __extends */](TapSubscriber, _super);
     function TapSubscriber(destination, observerOrNext, error, complete) {
         var _this = _super.call(this, destination) || this;
-        _this._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-        _this._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-        _this._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-        _this._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-        _this._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-        if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_3__[/* isFunction */ "a"])(observerOrNext)) {
+        _this._tapNext = noop;
+        _this._tapError = noop;
+        _this._tapComplete = noop;
+        _this._tapError = error || noop;
+        _this._tapComplete = complete || noop;
+        if (Object(isFunction["a" /* isFunction */])(observerOrNext)) {
             _this._context = _this;
             _this._tapNext = observerOrNext;
         }
         else if (observerOrNext) {
             _this._context = observerOrNext;
-            _this._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-            _this._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
-            _this._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_2__[/* noop */ "a"];
+            _this._tapNext = observerOrNext.next || noop;
+            _this._tapError = observerOrNext.error || noop;
+            _this._tapComplete = observerOrNext.complete || noop;
         }
         return _this;
     }
@@ -10717,7 +10669,7 @@ var TapSubscriber = /*@__PURE__*/ (function (_super) {
         return this.destination.complete();
     };
     return TapSubscriber;
-}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
+}(Subscriber["a" /* Subscriber */]));
 //# sourceMappingURL=tap.js.map
 
 
@@ -10863,617 +10815,6 @@ module.exports = function (C, x) {
 
 /***/ }),
 
-/***/ "ce19":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subject.js + 2 modules
-var Subject = __webpack_require__("2bd2");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__("a6e8");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/observable/fromEvent.js
-var fromEvent = __webpack_require__("6e77");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Observable.js + 3 modules
-var Observable = __webpack_require__("e9b9");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/util/noop.js
-var noop = __webpack_require__("fae9");
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/observable/never.js
-/** PURE_IMPORTS_START _Observable,_util_noop PURE_IMPORTS_END */
-
-
-var NEVER = /*@__PURE__*/ new Observable["a" /* Observable */](noop["a" /* noop */]);
-function never() {
-    return NEVER;
-}
-//# sourceMappingURL=never.js.map
-
-// EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.js
-var tslib_es6 = __webpack_require__("9ab4");
-
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/Subscriber.js
-var Subscriber = __webpack_require__("1453");
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/refCount.js
-/** PURE_IMPORTS_START tslib,_Subscriber PURE_IMPORTS_END */
-
-
-function refCount() {
-    return function refCountOperatorFunction(source) {
-        return source.lift(new RefCountOperator(source));
-    };
-}
-var RefCountOperator = /*@__PURE__*/ (function () {
-    function RefCountOperator(connectable) {
-        this.connectable = connectable;
-    }
-    RefCountOperator.prototype.call = function (subscriber, source) {
-        var connectable = this.connectable;
-        connectable._refCount++;
-        var refCounter = new refCount_RefCountSubscriber(subscriber, connectable);
-        var subscription = source.subscribe(refCounter);
-        if (!refCounter.closed) {
-            refCounter.connection = connectable.connect();
-        }
-        return subscription;
-    };
-    return RefCountOperator;
-}());
-var refCount_RefCountSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib_es6["a" /* __extends */](RefCountSubscriber, _super);
-    function RefCountSubscriber(destination, connectable) {
-        var _this = _super.call(this, destination) || this;
-        _this.connectable = connectable;
-        return _this;
-    }
-    RefCountSubscriber.prototype._unsubscribe = function () {
-        var connectable = this.connectable;
-        if (!connectable) {
-            this.connection = null;
-            return;
-        }
-        this.connectable = null;
-        var refCount = connectable._refCount;
-        if (refCount <= 0) {
-            this.connection = null;
-            return;
-        }
-        connectable._refCount = refCount - 1;
-        if (refCount > 1) {
-            this.connection = null;
-            return;
-        }
-        var connection = this.connection;
-        var sharedConnection = connectable._connection;
-        this.connection = null;
-        if (sharedConnection && (!connection || sharedConnection === connection)) {
-            sharedConnection.unsubscribe();
-        }
-    };
-    return RefCountSubscriber;
-}(Subscriber["a" /* Subscriber */]));
-//# sourceMappingURL=refCount.js.map
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/observable/ConnectableObservable.js
-/** PURE_IMPORTS_START tslib,_Subject,_Observable,_Subscriber,_Subscription,_operators_refCount PURE_IMPORTS_END */
-
-
-
-
-
-
-var ConnectableObservable_ConnectableObservable = /*@__PURE__*/ (function (_super) {
-    tslib_es6["a" /* __extends */](ConnectableObservable, _super);
-    function ConnectableObservable(source, subjectFactory) {
-        var _this = _super.call(this) || this;
-        _this.source = source;
-        _this.subjectFactory = subjectFactory;
-        _this._refCount = 0;
-        _this._isComplete = false;
-        return _this;
-    }
-    ConnectableObservable.prototype._subscribe = function (subscriber) {
-        return this.getSubject().subscribe(subscriber);
-    };
-    ConnectableObservable.prototype.getSubject = function () {
-        var subject = this._subject;
-        if (!subject || subject.isStopped) {
-            this._subject = this.subjectFactory();
-        }
-        return this._subject;
-    };
-    ConnectableObservable.prototype.connect = function () {
-        var connection = this._connection;
-        if (!connection) {
-            this._isComplete = false;
-            connection = this._connection = new Subscription["a" /* Subscription */]();
-            connection.add(this.source
-                .subscribe(new ConnectableObservable_ConnectableSubscriber(this.getSubject(), this)));
-            if (connection.closed) {
-                this._connection = null;
-                connection = Subscription["a" /* Subscription */].EMPTY;
-            }
-        }
-        return connection;
-    };
-    ConnectableObservable.prototype.refCount = function () {
-        return refCount()(this);
-    };
-    return ConnectableObservable;
-}(Observable["a" /* Observable */]));
-
-var connectableObservableDescriptor = /*@__PURE__*/ (function () {
-    var connectableProto = ConnectableObservable_ConnectableObservable.prototype;
-    return {
-        operator: { value: null },
-        _refCount: { value: 0, writable: true },
-        _subject: { value: null, writable: true },
-        _connection: { value: null, writable: true },
-        _subscribe: { value: connectableProto._subscribe },
-        _isComplete: { value: connectableProto._isComplete, writable: true },
-        getSubject: { value: connectableProto.getSubject },
-        connect: { value: connectableProto.connect },
-        refCount: { value: connectableProto.refCount }
-    };
-})();
-var ConnectableObservable_ConnectableSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib_es6["a" /* __extends */](ConnectableSubscriber, _super);
-    function ConnectableSubscriber(destination, connectable) {
-        var _this = _super.call(this, destination) || this;
-        _this.connectable = connectable;
-        return _this;
-    }
-    ConnectableSubscriber.prototype._error = function (err) {
-        this._unsubscribe();
-        _super.prototype._error.call(this, err);
-    };
-    ConnectableSubscriber.prototype._complete = function () {
-        this.connectable._isComplete = true;
-        this._unsubscribe();
-        _super.prototype._complete.call(this);
-    };
-    ConnectableSubscriber.prototype._unsubscribe = function () {
-        var connectable = this.connectable;
-        if (connectable) {
-            this.connectable = null;
-            var connection = connectable._connection;
-            connectable._refCount = 0;
-            connectable._subject = null;
-            connectable._connection = null;
-            if (connection) {
-                connection.unsubscribe();
-            }
-        }
-    };
-    return ConnectableSubscriber;
-}(Subject["b" /* SubjectSubscriber */]));
-var ConnectableObservable_RefCountOperator = /*@__PURE__*/ (function () {
-    function RefCountOperator(connectable) {
-        this.connectable = connectable;
-    }
-    RefCountOperator.prototype.call = function (subscriber, source) {
-        var connectable = this.connectable;
-        connectable._refCount++;
-        var refCounter = new ConnectableObservable_RefCountSubscriber(subscriber, connectable);
-        var subscription = source.subscribe(refCounter);
-        if (!refCounter.closed) {
-            refCounter.connection = connectable.connect();
-        }
-        return subscription;
-    };
-    return RefCountOperator;
-}());
-var ConnectableObservable_RefCountSubscriber = /*@__PURE__*/ (function (_super) {
-    tslib_es6["a" /* __extends */](RefCountSubscriber, _super);
-    function RefCountSubscriber(destination, connectable) {
-        var _this = _super.call(this, destination) || this;
-        _this.connectable = connectable;
-        return _this;
-    }
-    RefCountSubscriber.prototype._unsubscribe = function () {
-        var connectable = this.connectable;
-        if (!connectable) {
-            this.connection = null;
-            return;
-        }
-        this.connectable = null;
-        var refCount = connectable._refCount;
-        if (refCount <= 0) {
-            this.connection = null;
-            return;
-        }
-        connectable._refCount = refCount - 1;
-        if (refCount > 1) {
-            this.connection = null;
-            return;
-        }
-        var connection = this.connection;
-        var sharedConnection = connectable._connection;
-        this.connection = null;
-        if (sharedConnection && (!connection || sharedConnection === connection)) {
-            sharedConnection.unsubscribe();
-        }
-    };
-    return RefCountSubscriber;
-}(Subscriber["a" /* Subscriber */]));
-//# sourceMappingURL=ConnectableObservable.js.map
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/multicast.js
-/** PURE_IMPORTS_START _observable_ConnectableObservable PURE_IMPORTS_END */
-
-function multicast(subjectOrSubjectFactory, selector) {
-    return function multicastOperatorFunction(source) {
-        var subjectFactory;
-        if (typeof subjectOrSubjectFactory === 'function') {
-            subjectFactory = subjectOrSubjectFactory;
-        }
-        else {
-            subjectFactory = function subjectFactory() {
-                return subjectOrSubjectFactory;
-            };
-        }
-        if (typeof selector === 'function') {
-            return source.lift(new MulticastOperator(subjectFactory, selector));
-        }
-        var connectable = Object.create(source, connectableObservableDescriptor);
-        connectable.source = source;
-        connectable.subjectFactory = subjectFactory;
-        return connectable;
-    };
-}
-var MulticastOperator = /*@__PURE__*/ (function () {
-    function MulticastOperator(subjectFactory, selector) {
-        this.subjectFactory = subjectFactory;
-        this.selector = selector;
-    }
-    MulticastOperator.prototype.call = function (subscriber, source) {
-        var selector = this.selector;
-        var subject = this.subjectFactory();
-        var subscription = selector(subject).subscribe(subscriber);
-        subscription.add(source.subscribe(subject));
-        return subscription;
-    };
-    return MulticastOperator;
-}());
-
-//# sourceMappingURL=multicast.js.map
-
-// CONCATENATED MODULE: ./node_modules/rxjs/_esm5/internal/operators/share.js
-/** PURE_IMPORTS_START _multicast,_refCount,_Subject PURE_IMPORTS_END */
-
-
-
-function shareSubjectFactory() {
-    return new Subject["a" /* Subject */]();
-}
-function share() {
-    return function (source) { return refCount()(multicast(shareSubjectFactory)(source)); };
-}
-//# sourceMappingURL=share.js.map
-
-// CONCATENATED MODULE: ./node_modules/vue-rx/dist/vue-rx.esm.js
-
-
-
-var Vue$1;
-var warn = function () {};
-
-// NOTE(benlesh): the value of this method seems dubious now, but I'm not sure
-// if this is a Vue convention I'm just not familiar with. Perhaps it would
-// be better to just import and use Vue directly?
-function install (_Vue) {
-  Vue$1 = _Vue;
-  warn = Vue$1.util.warn || warn;
-}
-
-// TODO(benlesh): as time passes, this should be updated to use RxJS 6.1's
-// `isObservable` method. But wait until you're ready to drop support for Rx 5
-function isObservable (ob) {
-  return ob && typeof ob.subscribe === 'function'
-}
-
-function isObserver (subject) {
-  return subject && (
-    typeof subject.next === 'function'
-  )
-}
-
-function defineReactive (vm, key, val) {
-  if (key in vm) {
-    vm[key] = val;
-  } else {
-    Vue$1.util.defineReactive(vm, key, val);
-  }
-}
-
-function getKey (binding) {
-  return [binding.arg].concat(Object.keys(binding.modifiers)).join(':')
-}
-
-var rxMixin = {
-  created: function created () {
-    var vm = this;
-    var domStreams = vm.$options.domStreams;
-    if (domStreams) {
-      domStreams.forEach(function (key) {
-        vm[key] = new Subject["a" /* Subject */]();
-      });
-    }
-
-    var observableMethods = vm.$options.observableMethods;
-    if (observableMethods) {
-      if (Array.isArray(observableMethods)) {
-        observableMethods.forEach(function (methodName) {
-          vm[ methodName + '$' ] = vm.$createObservableMethod(methodName);
-        });
-      } else {
-        Object.keys(observableMethods).forEach(function (methodName) {
-          vm[observableMethods[methodName]] = vm.$createObservableMethod(methodName);
-        });
-      }
-    }
-
-    var obs = vm.$options.subscriptions;
-    if (typeof obs === 'function') {
-      obs = obs.call(vm);
-    }
-    if (obs) {
-      vm.$observables = {};
-      vm._subscription = new Subscription["a" /* Subscription */]();
-      Object.keys(obs).forEach(function (key) {
-        defineReactive(vm, key, undefined);
-        var ob = vm.$observables[key] = obs[key];
-        if (!isObservable(ob)) {
-          warn(
-            'Invalid Observable found in subscriptions option with key "' + key + '".',
-            vm
-          );
-          return
-        }
-        vm._subscription.add(obs[key].subscribe(function (value) {
-          vm[key] = value;
-        }, function (error) { throw error }));
-      });
-    }
-  },
-
-  beforeDestroy: function beforeDestroy () {
-    if (this._subscription) {
-      this._subscription.unsubscribe();
-    }
-  }
-}
-
-var streamDirective = {
-  // Example ./example/counter_dir.html
-  bind: function bind (el, binding, vnode) {
-    var handle = binding.value;
-    var event = binding.arg;
-    var streamName = binding.expression;
-    var modifiers = binding.modifiers;
-
-    if (isObserver(handle)) {
-      handle = { subject: handle };
-    } else if (!handle || !isObserver(handle.subject)) {
-      warn(
-        'Invalid Subject found in directive with key "' + streamName + '".' +
-        streamName + ' should be an instance of Subject or have the ' +
-        'type { subject: Subject, data: any }.',
-        vnode.context
-      );
-      return
-    }
-
-    var modifiersFuncs = {
-      stop: function (e) { return e.stopPropagation(); },
-      prevent: function (e) { return e.preventDefault(); }
-    };
-
-    var modifiersExists = Object.keys(modifiersFuncs).filter(
-      function (key) { return modifiers[key]; }
-    );
-
-    var subject = handle.subject;
-    var next = (subject.next || subject.onNext).bind(subject);
-
-    if (!modifiers.native && vnode.componentInstance) {
-      handle.subscription = vnode.componentInstance.$eventToObservable(event).subscribe(function (e) {
-        modifiersExists.forEach(function (mod) { return modifiersFuncs[mod](e); });
-        next({
-          event: e,
-          data: handle.data
-        });
-      });
-    } else {
-      var fromEventArgs = handle.options ? [el, event, handle.options] : [el, event];
-      handle.subscription = fromEvent["a" /* fromEvent */].apply(void 0, fromEventArgs).subscribe(function (e) {
-        modifiersExists.forEach(function (mod) { return modifiersFuncs[mod](e); });
-        next({
-          event: e,
-          data: handle.data
-        });
-      });
-    }
-(el._rxHandles || (el._rxHandles = {}))[getKey(binding)] = handle;
-  },
-
-  update: function update (el, binding) {
-    var handle = binding.value;
-    var _handle = el._rxHandles && el._rxHandles[getKey(binding)];
-    if (_handle && handle && isObserver(handle.subject)) {
-      _handle.data = handle.data;
-    }
-  },
-
-  unbind: function unbind (el, binding) {
-    var key = getKey(binding);
-    var handle = el._rxHandles && el._rxHandles[key];
-    if (handle) {
-      if (handle.subscription) {
-        handle.subscription.unsubscribe();
-      }
-      el._rxHandles[key] = null;
-    }
-  }
-}
-
-function watchAsObservable (expOrFn, options) {
-  var vm = this;
-  var obs$ = new Observable["a" /* Observable */](function (observer) {
-    var _unwatch;
-    var watch = function () {
-      _unwatch = vm.$watch(expOrFn, function (newValue, oldValue) {
-        observer.next({ oldValue: oldValue, newValue: newValue });
-      }, options);
-    };
-
-    // if $watchAsObservable is called inside the subscriptions function,
-    // because data hasn't been observed yet, the watcher will not work.
-    // in that case, wait until created hook to watch.
-    if (vm._data) {
-      watch();
-    } else {
-      vm.$once('hook:created', watch);
-    }
-
-    // Returns function which disconnects the $watch expression
-    return new Subscription["a" /* Subscription */](function () {
-      _unwatch && _unwatch();
-    })
-  });
-
-  return obs$
-}
-
-function fromDOMEvent (selector, event) {
-  if (typeof window === 'undefined') {
-    // TODO(benlesh): I'm not sure if this is really what you want here,
-    // but it's equivalent to what you were doing. You might want EMPTY
-    return NEVER
-  }
-
-  var vm = this;
-  var doc = document.documentElement;
-  var obs$ = new Observable["a" /* Observable */](function (observer) {
-    function listener (e) {
-      if (!vm.$el) { return }
-      if (selector === null && vm.$el === e.target) { return observer.next(e) }
-      var els = vm.$el.querySelectorAll(selector);
-      var el = e.target;
-      for (var i = 0, len = els.length; i < len; i++) {
-        if (els[i] === el) { return observer.next(e) }
-      }
-    }
-    doc.addEventListener(event, listener);
-    // Returns function which disconnects the $watch expression
-    return new Subscription["a" /* Subscription */](function () {
-      doc.removeEventListener(event, listener);
-    })
-  });
-
-  return obs$
-}
-
-function subscribeTo (observable, next, error, complete) {
-  var subscription = observable.subscribe(next, error, complete)
-  ;(this._subscription || (this._subscription = new Subscription["a" /* Subscription */]())).add(subscription);
-  return subscription
-}
-
-/**
- * @see {@link https://vuejs.org/v2/api/#vm-on}
- * @param {String||Array} evtName Event name
- * @return {Observable} Event stream
- */
-function eventToObservable (evtName) {
-  var vm = this;
-  var evtNames = Array.isArray(evtName) ? evtName : [evtName];
-  var obs$ = new Observable["a" /* Observable */](function (observer) {
-    var eventPairs = evtNames.map(function (name) {
-      var callback = function (msg) { return observer.next({ name: name, msg: msg }); };
-      vm.$on(name, callback);
-      return { name: name, callback: callback }
-    });
-    return function () {
-      // Only remove the specific callback
-      eventPairs.forEach(function (pair) { return vm.$off(pair.name, pair.callback); });
-    }
-  });
-
-  return obs$
-}
-
-/**
- * @name Vue.prototype.$createObservableMethod
- * @description Creates an observable from a given function name.
- * @param {String} methodName Function name
- * @param {Boolean} [passContext] Append the call context at the end of emit data?
- * @return {Observable} Hot stream
- */
-function createObservableMethod (methodName, passContext) {
-  var vm = this;
-
-  if (vm[methodName] !== undefined) {
-    warn(
-      'Potential bug: ' +
-      "Method " + methodName + " already defined on vm and has been overwritten by $createObservableMethod." +
-      String(vm[methodName]),
-      vm
-    );
-  }
-
-  var creator = function (observer) {
-    vm[methodName] = function () {
-      var args = Array.from(arguments);
-      if (passContext) {
-        args.push(this);
-        observer.next(args);
-      } else {
-        if (args.length <= 1) {
-          observer.next(args[0]);
-        } else {
-          observer.next(args);
-        }
-      }
-    };
-    return function () {
-      delete vm[methodName];
-    }
-  };
-
-  // Must be a hot stream otherwise function context may overwrite over and over again
-  return new Observable["a" /* Observable */](creator).pipe(share())
-}
-
-/* global Vue */
-
-function VueRx (Vue) {
-  install(Vue);
-  Vue.mixin(rxMixin);
-  Vue.directive('stream', streamDirective);
-  Vue.prototype.$watchAsObservable = watchAsObservable;
-  Vue.prototype.$fromDOMEvent = fromDOMEvent;
-  Vue.prototype.$subscribeTo = subscribeTo;
-  Vue.prototype.$eventToObservable = eventToObservable;
-  Vue.prototype.$createObservableMethod = createObservableMethod;
-  Vue.config.optionMergeStrategies.subscriptions = Vue.config.optionMergeStrategies.data;
-}
-
-// auto install
-if (typeof Vue !== 'undefined') {
-  Vue.use(VueRx);
-}
-
-/* harmony default export */ var vue_rx_esm = __webpack_exports__["a"] = (VueRx);
-
-
-/***/ }),
-
 /***/ "ce4e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11491,31 +10832,112 @@ module.exports = function (key, value) {
 
 /***/ }),
 
-/***/ "ce8b":
+/***/ "cf86":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return subscribeToResult; });
-/* harmony import */ var _InnerSubscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("acf8");
-/* harmony import */ var _subscribeTo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1716");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SimpleInnerSubscriber; });
+/* unused harmony export ComplexInnerSubscriber */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SimpleOuterSubscriber; });
+/* unused harmony export ComplexOuterSubscriber */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return innerSubscribe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9ab4");
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1453");
 /* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("e9b9");
-/** PURE_IMPORTS_START _InnerSubscriber,_subscribeTo,_Observable PURE_IMPORTS_END */
+/* harmony import */ var _util_subscribeTo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("1716");
+/** PURE_IMPORTS_START tslib,_Subscriber,_Observable,_util_subscribeTo PURE_IMPORTS_END */
 
 
 
-function subscribeToResult(outerSubscriber, result, outerValue, outerIndex, innerSubscriber) {
-    if (innerSubscriber === void 0) {
-        innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_0__[/* InnerSubscriber */ "a"](outerSubscriber, outerValue, outerIndex);
+
+var SimpleInnerSubscriber = /*@__PURE__*/ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](SimpleInnerSubscriber, _super);
+    function SimpleInnerSubscriber(parent) {
+        var _this = _super.call(this) || this;
+        _this.parent = parent;
+        return _this;
     }
+    SimpleInnerSubscriber.prototype._next = function (value) {
+        this.parent.notifyNext(value);
+    };
+    SimpleInnerSubscriber.prototype._error = function (error) {
+        this.parent.notifyError(error);
+        this.unsubscribe();
+    };
+    SimpleInnerSubscriber.prototype._complete = function () {
+        this.parent.notifyComplete();
+        this.unsubscribe();
+    };
+    return SimpleInnerSubscriber;
+}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
+
+var ComplexInnerSubscriber = /*@__PURE__*/ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](ComplexInnerSubscriber, _super);
+    function ComplexInnerSubscriber(parent, outerValue, outerIndex) {
+        var _this = _super.call(this) || this;
+        _this.parent = parent;
+        _this.outerValue = outerValue;
+        _this.outerIndex = outerIndex;
+        return _this;
+    }
+    ComplexInnerSubscriber.prototype._next = function (value) {
+        this.parent.notifyNext(this.outerValue, value, this.outerIndex, this);
+    };
+    ComplexInnerSubscriber.prototype._error = function (error) {
+        this.parent.notifyError(error);
+        this.unsubscribe();
+    };
+    ComplexInnerSubscriber.prototype._complete = function () {
+        this.parent.notifyComplete(this);
+        this.unsubscribe();
+    };
+    return ComplexInnerSubscriber;
+}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
+
+var SimpleOuterSubscriber = /*@__PURE__*/ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](SimpleOuterSubscriber, _super);
+    function SimpleOuterSubscriber() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SimpleOuterSubscriber.prototype.notifyNext = function (innerValue) {
+        this.destination.next(innerValue);
+    };
+    SimpleOuterSubscriber.prototype.notifyError = function (err) {
+        this.destination.error(err);
+    };
+    SimpleOuterSubscriber.prototype.notifyComplete = function () {
+        this.destination.complete();
+    };
+    return SimpleOuterSubscriber;
+}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
+
+var ComplexOuterSubscriber = /*@__PURE__*/ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__[/* __extends */ "a"](ComplexOuterSubscriber, _super);
+    function ComplexOuterSubscriber() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ComplexOuterSubscriber.prototype.notifyNext = function (_outerValue, innerValue, _outerIndex, _innerSub) {
+        this.destination.next(innerValue);
+    };
+    ComplexOuterSubscriber.prototype.notifyError = function (error) {
+        this.destination.error(error);
+    };
+    ComplexOuterSubscriber.prototype.notifyComplete = function (_innerSub) {
+        this.destination.complete();
+    };
+    return ComplexOuterSubscriber;
+}(_Subscriber__WEBPACK_IMPORTED_MODULE_1__[/* Subscriber */ "a"]));
+
+function innerSubscribe(result, innerSubscriber) {
     if (innerSubscriber.closed) {
         return undefined;
     }
     if (result instanceof _Observable__WEBPACK_IMPORTED_MODULE_2__[/* Observable */ "a"]) {
         return result.subscribe(innerSubscriber);
     }
-    return Object(_subscribeTo__WEBPACK_IMPORTED_MODULE_1__[/* subscribeTo */ "a"])(result)(innerSubscriber);
+    return Object(_util_subscribeTo__WEBPACK_IMPORTED_MODULE_3__[/* subscribeTo */ "a"])(result)(innerSubscriber);
 }
-//# sourceMappingURL=subscribeToResult.js.map
+//# sourceMappingURL=innerSubscribe.js.map
 
 
 /***/ }),
@@ -12708,7 +12130,7 @@ var MapSubscriber = /*@__PURE__*/ (function (_super) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"db451844-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-fixed.vue?vue&type=template&id=ee4148d6&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6c582107-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-fixed.vue?vue&type=template&id=ee4148d6&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"js-clipper-fixed"},[_c('div',{staticClass:"vuejs-clipper-fixed__wrap js-wrap",style:(_vm.wrapStyle)},[_c('canvas',{staticClass:"vuejs-clipper-fixed__stem-outer",attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),_c('div',{staticClass:"vuejs-clipper-fixed__img-center"},[_c('canvas',{staticClass:"vuejs-clipper-fixed__stem-bg js-stem-bg"}),_c('div',{staticClass:"vuejs-clipper-fixed__img-scale js-img-scale",style:(_vm.scaleStyle)},[_c('div',{staticClass:"vuejs-clipper-fixed__img-translate js-img-translate",style:(_vm.translateStyle)},[_c('img',{staticClass:"vuejs-clipper-fixed__img js-img",style:(_vm.bgStyle),attrs:{"src":_vm.src,"crossorigin":_vm.crossOrigin},on:{"load":function($event){_vm.imgLoaded(); _vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})])])]),_c('div',{staticClass:"vuejs-clipper-fixed__cover"},[_c('div',{staticClass:"vuejs-clipper-fixed__area js-area",style:(_vm.areaStyle)},[_c('canvas',{staticClass:"vuejs-clipper-fixed__stem-area",style:(_vm.stemStyle),attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),(_vm.grid)?_c('div',{staticClass:"vuejs-clipper-fixed__grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"vuejs-clipper-fixed__grid-item"})}),0):_vm._e()])])]),_c('div',{staticClass:"vuejs-clipper-fixed__placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
@@ -12727,7 +12149,7 @@ var clippo = __webpack_require__("bc00");
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/filter.js
 var filter = __webpack_require__("5670");
 
-// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/tap.js
+// EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/tap.js + 1 modules
 var tap = __webpack_require__("c4cc");
 
 // EXTERNAL MODULE: ./node_modules/rxjs/_esm5/internal/operators/map.js
@@ -13187,18 +12609,6 @@ var subscribeToArray = function (array) {
     };
 };
 //# sourceMappingURL=subscribeToArray.js.map
-
-
-/***/ }),
-
-/***/ "fae9":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return noop; });
-/** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function noop() { }
-//# sourceMappingURL=noop.js.map
 
 
 /***/ }),
