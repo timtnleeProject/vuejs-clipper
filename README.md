@@ -30,7 +30,7 @@ You can find the source code of examples under `examples` branch.
 **Before using the plugin & components, here's something you should know :**
 
 * It's based on [**vue-rx**](https://github.com/vuejs/vue-rx).
-* Use vuejs-clipper plugin also add **vue-rx** plugin to vue.
+* [**rxjs**](https://github.com/ReactiveX/rxjs/tree/6.x) and [**vue-rx**](https://github.com/vuejs/vue-rx) are required as peer dependencies.
 * Components are responsive base on **width** instead of height, see [Component Layout](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout).
 * You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image unless the image server set the CORS headers.
 * Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
@@ -39,16 +39,31 @@ You can find the source code of examples under `examples` branch.
 
 ### NPM & ESM
 
-install vuejs-clipper
+Install vuejs-clipper
 
 ```bash
-$npm install vuejs-clipper --save
+npm install vuejs-clipper --save
 ```
 
-need css loader, ex: `sass-loader`, if you haven't installed :
+Install peer dependencies if you haven't.
 
 ```bash
-$npm install -D sass-loader node-sass
+npm install vue-rx rxjs --save
+```
+
+Need css loader, ex: `sass-loader`, if you haven't installed :
+
+```bash
+npm install -D sass-loader node-sass
+```
+
+Vuejs-clipper is based on **vue-rx**, so make sure you have vue-rx plugin installed.
+
+```javascript
+import Vue from 'vue'
+import VueRx from 'vue-rx'
+// install vue-rx
+Vue.use(VueRx)
 ```
 
 #### (1) use vuejs-clipper plugin
@@ -59,8 +74,11 @@ By default it will register **all components** to Vue global scope.
 
 ```javascript
 import Vue from 'vue'
+import VueRx from 'vue-rx'
 import VuejsClipper from 'vuejs-clipper'
-// install
+// install vue-rx
+Vue.use(VueRx)
+// install vuejs-clipper
 Vue.use(VuejsClipper)
 ```
 
@@ -103,14 +121,6 @@ Vue.use(VuejsClipper, {
 
 #### (2) separately import components
 
-install vue-rx and it's peer dependency rxjs
-
-```bash
-$npm install --save vue-rx rx-js
-```
-
-use vue-rx
-
 ```javascript
 import Vue from 'vue'
 import VueRx from 'vue-rx'
@@ -136,7 +146,13 @@ export default {
 Include vuejs-clipper umd script after Vue.js.
 
 ```html
+<!-- rxjs-->
+<script src="https://unpkg.com/rxjs/bundles/rxjs.umd.js"></script>
+<!--vue-->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<!-- vue-rx-->
+<script src="https://unpkg.com/vue-rx@6.2.0/dist/vue-rx.js"></script>
+<!--vuejs-clipper script & style -->
 <script src="./dist/vuejs-clipper.umd.min.js"></script>
 <link rel="stylesheet" href="./dist/vuejs-clipper.css">
 ```
@@ -432,6 +448,11 @@ use `v-model` binding data with `clipper-upload`
 |file|File Object|null|Uploaded file's original File Object.|
 
 ## Changelog
+
+* 3.0.0
+  * Move `rxjs`, `vue-rx` from dependencies to peer dependencies.
+
+---
 
 * 2.1.2
   * Fix `clipper-basic` incorrect layout for scaling & rotation (bug of 2.1.1).
