@@ -68,9 +68,9 @@ Vue.use(VueRx)
 
 #### (1) use vuejs-clipper plugin
 
-Use vuejs-clipper plugin also add **vue-rx** plugin to Vue.
+Make sure to install **vue-rx** plugin first.
 
-By default it will register **all components** to Vue global scope.
+By default vuejs-clipper plugin will register **all components** to Vue global scope.
 
 ```javascript
 import Vue from 'vue'
@@ -112,7 +112,7 @@ Vue.use(VuejsClipper, {
 　parentPropName: 'myCustomerName'
   /*
   　parentPropName:
-    Add property to Vue instance to store `clipper-preview` list.
+    Vuejs-clipper Adds property to Vue instance in order to store `clipper-preview` list.
     You can change the property name
     default: '_imgPreviewLists'
   */
