@@ -170,17 +170,27 @@ const clipperMethods = {
     let height = this.initHeight
     let left = (100 - this.initWidth) / 2
     let top = (100 - this.initHeight) / 2
+    const area = this.areaPos()
+    const pixel = {
+      width: width * area.width / 100,
+      height: height * area.height / 100,
+      border: this.border * 2
+    }
     if (!this.ratio) {
       if (width < this.minWidth) throw new Error('Invalid initWidth, minWidth combination')
       if (height < this.minHeight) throw new Error('Invalid initHeight, minHeight combination')
     } else if (this.ratio) {
       const wrapRatio = this.wrapRatio || this.imgRatio
       const calcH = () => {
-        height = Math.max(width / this.ratio * wrapRatio, this.minHeight)
+        const heightInPixel = (pixel.width - pixel.border) / this.ratio + pixel.border
+        const heightInPercentage = heightInPixel / area.height * 100
+        height = Math.max(heightInPercentage, this.minHeight)
         top = (100 - height) / 2
       }
       const calcW = () => {
-        width = Math.max(height * this.ratio / wrapRatio, this.minWidth)
+        const widthInPixel = (pixel.height - pixel.border) * this.ratio + pixel.border
+        const widthInPercentage = widthInPixel / area.width * 100
+        width = Math.max(widthInPercentage, this.minWidth)
         left = (100 - width) / 2
       }
       if (wrapRatio <= this.ratio) {
@@ -312,23 +322,6 @@ const clipperMethods = {
     } else if (judge.b && move.clientY >= down.clientY) {
       down.clientY = zoom.top
     }
-    return { down, move }
-  },
-  getCreatePos: function ({ down, move }) {
-    // 判斷移動方向
-    let x = (move.clientX > down.clientX) ? 'r' : 'l'
-    let y = (move.clientY > down.clientY) ? 'b' : 't'
-
-    const fake = {
-      top: down.clientY,
-      right: down.clientX,
-      bottom: down.clientY,
-      left: down.clientX,
-      offsetTop: this.eToArea(down, 'top'),
-      offsetLeft: this.eToArea(down, 'left')
-    }
-    fake[x] = true
-    fake[y] = true
     return { down, move }
   },
   getImgNonRotatePos: function () {
