@@ -11,21 +11,23 @@
         :height="stemArea.height"
       />
       <div
-        class="vuejs-clipper-basic__in-pad"
+        class="vuejs-clipper-basic__padding"
         :style="{'padding': areaStyle.padding}"
       >
-        <div
-          class="vuejs-clipper-basic__img-scale js-img-scale"
-          :style="scaleStyle"
-        >
-          <img
-            :src="src"
-            class="vuejs-clipper-basic__img js-img"
-            :style="rotateStyle"
-            :crossorigin="crossOrigin"
-            @load="imgLoaded();emit('load',$event)"
-            @error="emit('error',$event)"
+        <div class="vuejs-clipper-basic__in-pad">
+          <div
+            class="vuejs-clipper-basic__img-scale js-img-scale"
+            :style="scaleStyle"
           >
+            <img
+              :src="src"
+              class="vuejs-clipper-basic__img js-img"
+              :style="rotateStyle"
+              :crossorigin="crossOrigin"
+              @load="imgLoaded();emit('load',$event)"
+              @error="emit('error',$event)"
+            >
+          </div>
         </div>
       </div>
       <div
@@ -235,7 +237,6 @@ export default {
       merge(this.touchdownZoom$), // touch event 1 finger
       merge(this.dragCreateSubject$), // dragCreateSubject$
       map(this.reverseDownPos), // mode 'switch'
-      map(this.getCreatePos), // 根據down, move,創造一個zoom rect (不限於一開始狀態))
       map(this.zoomingPosition), // 用創造的zoom rect去計算拖拉後的位置
       merge(this.touchTwoFingersZoom$), /* touch event 2 fingers(兩指縮放)*  和上面事件分開，算法不同 */
       // { down, move } => { width, height, maxWidth, maxHeight, left, top, right, bottom }
@@ -423,7 +424,9 @@ export default {
       this.resetData()
     },
     wrapRatio () {
-      this.resetData()
+      this.$nextTick(() => {
+        this.resetData()
+      })
     },
     bgColor () {
       this.callPreview('setData', { bgColor: this.bgColor })
@@ -500,7 +503,7 @@ $grid-width: 1px; //dive 2
   display: block !important;
   width: 100% !important;
 }
-.vuejs-clipper-basic__in-pad {
+.vuejs-clipper-basic__padding {
   pointer-events: none !important;
   position: absolute !important;
   top: 0 !important;
@@ -509,9 +512,18 @@ $grid-width: 1px; //dive 2
   height: 100% !important;
   box-sizing: border-box !important;
 }
+.vuejs-clipper-basic__in-pad {
+  pointer-events: none !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
 .vuejs-clipper-basic__img-scale {
   pointer-events: none !important;
-  position: absolute !important;
+  position: relative !important;
   width: 100% !important;
   height: 100% !important;
   top: 0;
