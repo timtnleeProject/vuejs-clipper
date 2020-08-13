@@ -449,6 +449,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 3.1.1
+  * Fix clipper-basic initalize ratio clip-box & wrong border layout.
 * 3.0.0
   * Move `rxjs`, `vue-rx` from dependencies to peer dependencies.
 
