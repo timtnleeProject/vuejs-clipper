@@ -424,9 +424,7 @@ export default {
       this.resetData()
     },
     wrapRatio () {
-      this.$nextTick(() => {
-        this.resetData()
-      })
+      this.resetData()
     },
     bgColor () {
       this.callPreview('setData', { bgColor: this.bgColor })
@@ -468,7 +466,9 @@ export default {
       this.resetData()
     },
     resetData: function () {
-      this.initWHTL$.next(true)
+      this.$nextTick(() => {
+        this.initWHTL$.next(true)
+      })
     }
   }
 }
