@@ -449,7 +449,9 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
-* 3.1.1
+* 3.0.2
+  * Fix: move clipper-basic init/reset position function into `$nextTick` (issue [#71](https://github.com/timtnleeProject/vuejs-clipper/issues/71))
+* 3.0.1
   * Fix clipper-basic initalize ratio clip-box & wrong border layout.
 * 3.0.0
   * Move `rxjs`, `vue-rx` from dependencies to peer dependencies.
