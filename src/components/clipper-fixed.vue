@@ -79,7 +79,7 @@ import {
   merge,
   takeUntil
 } from 'rxjs/operators'
-import { Subject } from 'rxjs'
+import { Subject, merge as mergeObs } from 'rxjs'
 export default {
   extends: {
     methods: fixedMethods,
@@ -154,10 +154,18 @@ export default {
       merge(this.touchTwoFinger$),
       map(this.calcTouchScaling)
     )
+
+    this.zoomFromNativeEvents = mergeObs(
+      this.wheelZoom$,
+      this.touchZoom$
+    )
+      .pipe(
+        map(this.handleZoomEvent)
+      )
+
     this.zoomSubject$ = new Subject().pipe(
       merge(this.setWH$),
-      merge(this.wheelZoom$),
-      merge(this.touchZoom$)
+      merge(this.zoomFromNativeEvents)
     )
     /** Drag Subject */
     this.dragSubject$ = new Subject().pipe(
@@ -239,6 +247,10 @@ export default {
     area: {
       type: Number,
       default: 50
+    },
+    handleZoomEvent: {
+      type: Function,
+      default: val => val
     }
   },
   data () {
