@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "rxjs": "^6.6.2",
     "vue": "^2.6.11",
+    "vue-code-highlight": "^0.7.5",
     "vue-router": "^3.2.0",
     "vue-rx": "^6.2.0",
     "vuejs-clipper": "^3.0.1",

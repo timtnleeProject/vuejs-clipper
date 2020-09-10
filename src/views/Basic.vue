@@ -1,0 +1,111 @@
+<template>
+  <div class="basic">
+    <h1 class="text-h1 my-10">Clipper Basic</h1>
+    <v-row class="text-body-2">
+      <v-col cols="12" sm="6">
+        <clipper-basic
+          :src="src"
+          :border="border"
+          :outline="outline"
+          :ratio="ratio"
+          :wrap-ratio="wrapRatio"
+          :rotate="rotate"
+          :scale="scale"
+          :bg-color="bg"
+        />
+        <vue-code-highlight language="html">
+          {{ this.sampleCode }}
+        </vue-code-highlight>
+      </v-col>
+      <v-col cols="12" sm="6">
+        <v-row dense>
+          <v-col>
+            <v-text-field
+              label="border"
+              type="number"
+              v-model.number="border"
+            ></v-text-field>
+          </v-col>
+          <v-col>
+            <v-text-field
+              label="outline"
+              type="number"
+              v-model.number="outline"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-radio-group label="ratio" row v-model="ratio">
+          <v-radio label="none" :value="0"></v-radio>
+          <v-radio label="1" :value="1"></v-radio>
+          <v-radio label="4/3" :value="4 / 3"></v-radio>
+        </v-radio-group>
+        <v-radio-group label="wrap-ratio" row v-model="wrapRatio">
+          <v-radio label="none" :value="0"></v-radio>
+          <v-radio label="1" :value="1"></v-radio>
+          <v-radio label="4/3" :value="4 / 3"></v-radio>
+        </v-radio-group>
+        <v-slider
+          label="rotate"
+          v-model="rotate"
+          min="-180"
+          max="180"
+          :thumb-size="24"
+          thumb-label="always"
+        >
+          <template v-slot:thumb-label="{ value }">
+            {{ value + "ﾟ" }}
+          </template>
+        </v-slider>
+        <v-slider
+          label="scale"
+          v-model="scale"
+          :min="0.5"
+          :max="3"
+          :step="0.02"
+          :thumb-size="24"
+          thumb-label="always"
+        >
+        </v-slider>
+        <div class="text-subtitle-1 label--text">bg-color</div>
+        <v-color-picker v-model="bg"></v-color-picker>
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script>
+import pic from "@/assets/sea.jpg";
+import { component as VueCodeHighlight } from "vue-code-highlight";
+
+export default {
+  name: "Home",
+  components: {
+    VueCodeHighlight
+  },
+  data: () => ({
+    src: pic,
+    code: '<h2 class="text-h2 mt-10 mb-5">clipper-basic</h2>',
+    border: 1,
+    outline: 5,
+    ratio: 0,
+    wrapRatio: 0,
+    rotate: 0,
+    scale: 1,
+    bg: "#ffffff"
+  }),
+  computed: {
+    sampleCode() {
+      return `<clipper-basic
+  :src="${this.src}"
+  :border="${this.border}"
+  :outline="${this.outline}"
+  :ratio="${this.ratio}"
+  :wrap-ratio="${this.wrapRatio}"
+  :rotate="${this.rotate}"
+  :scale="${this.scale}"
+  :bg-color="${this.bg}"
+/>`;
+    }
+  }
+};
+</script>

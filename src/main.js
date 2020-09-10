@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 import "./plugins/vuejsClipper";
+import "vue-code-highlight/themes/duotone-sea.css";
 
 Vue.config.productionTip = false;
 
