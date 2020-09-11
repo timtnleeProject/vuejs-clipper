@@ -323,6 +323,7 @@ import { clipperFixed } from 'vuejs-clipper'
 |rotate | number | 0 | rotate degree |
 | area | number | 50 | width or height (%) of clipping box(depends on ratio). |
 |cross-origin|string|undefined|`crossorigin` attribute of `<img />` inside clipper. ex: `anonymous`|
+|handle-zoom-event|function|`(scale) => scale`|handle zooming, accept the calculated scale value, return the scale value.|
 
 * Method
 
