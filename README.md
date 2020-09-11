@@ -449,6 +449,8 @@ use `v-model` binding data with `clipper-upload`
 
 ## Changelog
 
+* 3.0.3
+  * Feature: Add `handleZoomEvent` to `clipper-fixed` for controlling zoom behavior. (issue [#54](https://github.com/timtnleeProject/vuejs-clipper/issues/54)
 * 3.0.2
   * Fix: move clipper-basic init/reset position function into `$nextTick` (issue [#71](https://github.com/timtnleeProject/vuejs-clipper/issues/71))
 * 3.0.1
