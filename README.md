@@ -35,9 +35,7 @@ You can find the source code of examples under `examples` branch.
 * You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image unless the image server set the CORS headers.
 * Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
 
-## Installation
-
-### NPM & ESM
+## Installation (NPM & ESM)
 
 Install vuejs-clipper
 
@@ -51,12 +49,6 @@ Install peer dependencies if you haven't.
 npm install vue-rx rxjs --save
 ```
 
-Need css loader, ex: `sass-loader`, if you haven't installed :
-
-```bash
-npm install -D sass-loader node-sass
-```
-
 Vuejs-clipper is based on **vue-rx**, so make sure you have vue-rx plugin installed.
 
 ```javascript
@@ -65,12 +57,32 @@ import VueRx from 'vue-rx'
 // install vue-rx
 Vue.use(VueRx)
 ```
-
-#### (1) use vuejs-clipper plugin
-
 Make sure to install **vue-rx** plugin first.
 
-By default vuejs-clipper plugin will register **all components** to Vue global scope.
+### Import
+
+#### use dist files
+
+```javascript
+import Vue from "vue";
+import VueRx from "vue-rx";
+// Use build files
+import VuejsClipper from "vuejs-clipper/dist/vuejs-clipper.umd";
+import "vuejs-clipper/dist/vuejs-clipper.css";
+
+Vue.use(VueRx);
+Vue.use(VuejsClipper);
+```
+
+#### use vuejs-clipper soruce
+
+You are using `vuejs-clipper` directly with your build proccess(webpack etc).
+
+So make sure you have css loader, ex: `sass-loader`, if you haven't installed :
+
+```bash
+npm install -D sass-loader node-sass
+```
 
 ```javascript
 import Vue from 'vue'
@@ -81,6 +93,10 @@ Vue.use(VueRx)
 // install vuejs-clipper
 Vue.use(VuejsClipper)
 ```
+
+### Config
+
+By default vuejs-clipper plugin will register **all components** to Vue global scope.
 
 register some components to global with default component name
 
@@ -119,7 +135,7 @@ Vue.use(VuejsClipper, {
 })
 ```
 
-#### (2) separately import components
+#### separately import components
 
 ```javascript
 import Vue from 'vue'
@@ -141,7 +157,7 @@ export default {
 }
 ```
 
-### Script
+## Installation (Script)
 
 Include vuejs-clipper umd script after Vue.js.
 
