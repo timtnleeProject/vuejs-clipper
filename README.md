@@ -21,7 +21,8 @@ You can find the source code of examples under `examples` branch.
 ## Table of Contents
 
 * [Notice](#notice)
-* [Installation](#installation)
+* [Installation (NPM & ESM)](#installation-npm--esm)
+* [Installation (Script)](#installation-script)
 * [Components](#components)
 * [Changelog](#changelog)
 
@@ -135,7 +136,7 @@ Vue.use(VuejsClipper, {
 })
 ```
 
-#### separately import components
+#### separately import components (need css loader)
 
 ```javascript
 import Vue from 'vue'
