@@ -12,12 +12,24 @@
           :rotate="rotate"
           :scale="scale"
           :bg-color="bg"
+          :shadow="shadow"
+          preview="preview"
         />
-        <vue-code-highlight language="html">
-          {{ this.sampleCode }}
-        </vue-code-highlight>
       </v-col>
       <v-col cols="12" sm="6">
+        <div class="text-subtitle-1">Preview</div>
+        <v-row dense>
+          <v-col cols="6">
+            <clipper-preview name="preview" />
+          </v-col>
+          <v-col cols="4"><clipper-preview name="preview"/></v-col>
+          <v-col cols="2"><clipper-preview name="preview"/></v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col sm="6">
+        <div class="text-subtitle-1">Props</div>
         <v-row dense>
           <v-col>
             <v-text-field
@@ -38,11 +50,13 @@
           <v-radio label="none" :value="0"></v-radio>
           <v-radio label="1" :value="1"></v-radio>
           <v-radio label="4/3" :value="4 / 3"></v-radio>
+          <v-radio label="16/9" :value="16 / 9"></v-radio>
         </v-radio-group>
         <v-radio-group label="wrap-ratio" row v-model="wrapRatio">
           <v-radio label="none" :value="0"></v-radio>
           <v-radio label="1" :value="1"></v-radio>
           <v-radio label="4/3" :value="4 / 3"></v-radio>
+          <v-radio label="16/9" :value="16 / 9"></v-radio>
         </v-radio-group>
         <v-slider
           label="rotate"
@@ -66,8 +80,22 @@
           thumb-label="always"
         >
         </v-slider>
-        <div class="text-subtitle-1 label--text">bg-color</div>
-        <v-color-picker v-model="bg"></v-color-picker>
+        <v-row>
+          <v-col md="6">
+            <div class="text-subtitle-1 label--text">bg-color</div>
+            <v-color-picker v-model="bg" hide-inputs></v-color-picker>
+          </v-col>
+          <v-col md="6">
+            <div class="text-subtitle-1 label--text">shadow</div>
+            <v-color-picker v-model="shadow" hide-inputs></v-color-picker
+          ></v-col>
+        </v-row>
+      </v-col>
+      <v-col sm="6">
+        <div class="text-subtitle-1">Code</div>
+        <vue-code-highlight language="html">
+          {{ this.sampleCode }}
+        </vue-code-highlight>
       </v-col>
     </v-row>
   </div>
@@ -91,7 +119,8 @@ export default {
     wrapRatio: 0,
     rotate: 0,
     scale: 1,
-    bg: "#ffffff"
+    bg: "#ffffff",
+    shadow: "#00000040"
   }),
   computed: {
     sampleCode() {
@@ -104,6 +133,7 @@ export default {
   :rotate="${this.rotate}"
   :scale="${this.scale}"
   :bg-color="${this.bg}"
+  :shadow="${this.shadow}"
 />`;
     }
   }

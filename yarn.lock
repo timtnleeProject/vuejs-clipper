@@ -8679,10 +8679,10 @@ vue@^2.6.11:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
 
-vuejs-clipper@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vuejs-clipper/-/vuejs-clipper-3.0.1.tgz#27a2e75ae400a26b74e0a36bb849593b6b9f2403"
-  integrity sha512-9PoY3K8zewjkomb6th72HOWIgyJUCmn1b1vLHFSUvAP4olbq0LrbL2N1Q2r1lULTlEzQN6LO/3MrePKBA+t/Rw==
+vuejs-clipper@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/vuejs-clipper/-/vuejs-clipper-3.0.3.tgz#8b3824e0c7d25e4f96aadae94c36a47759b7a215"
+  integrity sha512-O1Vc8dECfgBD7SAyG1rJssTFeidIgS3z4mlajTE0LDBNIvcTFLILr9IebCRPjeEVE1o3a0kBEsbU/6dBdGQAnA==
   dependencies:
     core-js "^3.6.4"
     exif-js "^2.3.0"
