@@ -1,9 +1,25 @@
 <template>
   <div class="basic">
     <h1 class="text-h1 my-10">Clipper Basic</h1>
+    <v-row>
+      <v-col cols="12" sm="6">
+        <div class="text-subtitle-1">Select Image</div>
+        <gallary ref="gallary" @select="handleSelect"></gallary>
+      </v-col>
+      <v-col cols="12" sm="6">
+        <div class="text-subtitle-1">Action</div>
+        <div class="d-flex">
+          <clipper-upload @input="uploadImage" class="mr-1">
+            <v-btn color="secondary">upload Image</v-btn>
+          </clipper-upload>
+          <v-btn color="primary" @click="clipImage">Clip Image</v-btn>
+        </div>
+      </v-col>
+    </v-row>
     <v-row class="text-body-2">
       <v-col cols="12" sm="6">
         <clipper-basic
+          ref="clipper"
           :src="src"
           :border="border"
           :outline="outline"
@@ -98,16 +114,35 @@
         </vue-code-highlight>
       </v-col>
     </v-row>
+    <v-overlay :value="overlay" :opacity="0.8">
+      <div class="result-wrap">
+        <v-row>
+          <v-col>
+            <div class="text-subtitle-1">Result Canvas</div>
+            <canvas ref="canvas"></canvas>
+          </v-col>
+          <v-col>
+            <div class="text-subtitle-1">Result Image</div>
+            <img :src="resultSrc" alt="" />
+          </v-col>
+        </v-row>
+        <div class="text-right">
+          <v-btn @click="closeOverlay">Close</v-btn>
+        </div>
+      </div>
+    </v-overlay>
   </div>
 </template>
 
 <script>
 import pic from "@/assets/sea.jpg";
+import Gallary from "@/components/Gallary";
 import { component as VueCodeHighlight } from "vue-code-highlight";
 
 export default {
   name: "Home",
   components: {
+    Gallary,
     VueCodeHighlight
   },
   data: () => ({
@@ -120,7 +155,9 @@ export default {
     rotate: 0,
     scale: 1,
     bg: "#ffffff",
-    shadow: "#00000040"
+    shadow: "#00000040",
+    overlay: false,
+    resultSrc: ""
   }),
   computed: {
     sampleCode() {
@@ -136,6 +173,42 @@ export default {
   :shadow="${this.shadow}"
 />`;
     }
+  },
+  methods: {
+    uploadImage(domString) {
+      this.src = domString;
+      this.$refs.gallary.append(domString);
+    },
+    handleSelect(src) {
+      this.src = src;
+    },
+    clipImage() {
+      this.overlay = true;
+      this.$nextTick(() => {
+        const canvas = this.$refs.clipper.clip();
+        // this.$el.drawImage(canvas);
+        const el = this.$refs.canvas;
+        el.width = canvas.width;
+        el.height = canvas.height;
+        const context = el.getContext("2d");
+        context.drawImage(canvas, 0, 0);
+        this.resultSrc = canvas.toDataURL("image/png", 1); //to png
+      });
+    },
+    closeOverlay() {
+      this.overlay = false;
+    }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.result-wrap {
+  width: 100vw;
+  max-width: 600px;
+  img,
+  canvas {
+    width: 100%;
+  }
+}
+</style>
