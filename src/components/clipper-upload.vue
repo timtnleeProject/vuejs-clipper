@@ -9,6 +9,7 @@
     <input
       type="file"
       class="upload"
+      :id="id"
       :accept="accept"
       style="display:none"
       @change="upload($event)"
@@ -31,6 +32,10 @@ export default {
       default: true
     },
     value: {
+      type: String,
+      default: ''
+    },
+    id: {
       type: String,
       default: ''
     },
