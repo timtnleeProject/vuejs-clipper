@@ -468,6 +468,8 @@ Props that are not defined below will apply to the file input as attributes, for
 
 ## Changelog
 
+* 3.0.4
+  * `clipper-upload` accept rest props as input attributes.
 * 3.0.3
   * Feature: Add `handleZoomEvent` to `clipper-fixed` for controlling zoom behavior. (issue [#54](https://github.com/timtnleeProject/vuejs-clipper/issues/54)
 * 3.0.2
