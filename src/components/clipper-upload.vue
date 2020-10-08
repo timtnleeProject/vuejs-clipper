@@ -9,8 +9,8 @@
     <input
       type="file"
       class="upload"
-      :accept="accept"
       style="display:none"
+      v-bind="$attrs"
       @change="upload($event)"
       @click="clear($event)"
     >
@@ -22,10 +22,6 @@ import exif from 'exif-js'
 
 export default {
   props: {
-    accept: {
-      type: String,
-      default: '*'
-    },
     exif: {
       type: Boolean,
       default: true

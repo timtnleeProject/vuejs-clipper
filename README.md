@@ -447,10 +447,11 @@ use `v-model` binding data with `clipper-upload`
 
 * Props
 
+Props that are not defined below will apply to the file input as attributes, for example: `accept`, `id` and `name`.
+
 | Prop|Type|default|description |
 |-|-:|-:|:-|
 |check|boolean|true|Check if upload file is an image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
-|accept|string|'*'|Bind `accept` attribute to file input tag.|
 |exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
 
 * Event
