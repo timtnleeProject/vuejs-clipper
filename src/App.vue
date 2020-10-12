@@ -2,29 +2,31 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" app>
       <v-list>
-        <v-list-item class="title">
-          Vuejs Clipper
-        </v-list-item>
-        <v-list-item link>Quick Start</v-list-item>
-        <v-list-item link to="/basic">Clipper Basic</v-list-item>
-        <v-list-item link>Clipper Fixed</v-list-item>
-        <!-- <v-list-item link>
-          <v-list-group></v-list-group>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item> -->
+        <template v-for="group in groups">
+          <v-subheader :key="group.name + 'name'">{{ group.name }}</v-subheader>
+          <v-list-item
+            v-for="link in group.links"
+            :key="link.name + 'link'"
+            link
+            :to="link.to"
+            dense
+            ><v-list-item-content>
+              <v-list-item-title>
+                {{ link.name }}
+              </v-list-item-title>
+            </v-list-item-content></v-list-item
+          >
+        </template>
+        <!-- 
+        <v-list-group no-action :ripple="false">
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title>Playground</v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item link to="/basic">Clipper Basic</v-list-item>
+          <v-list-item link to="/fixed">Clipper Fixed</v-list-item>
+        </v-list-group> -->
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
@@ -54,7 +56,61 @@ export default {
   name: "App",
 
   data: () => ({
-    drawer: false
+    drawer: false,
+    groups: [
+      {
+        name: "Introduction",
+        links: [
+          {
+            name: "Features",
+            to: "/introduction/features"
+          },
+          {
+            name: "Concept",
+            to: "/introduction/concept"
+          }
+        ]
+      },
+      {
+        name: "Getting Start",
+        links: [
+          {
+            name: "Installation",
+            to: "/installation"
+          },
+          {
+            name: "Basic Usage",
+            to: "/start"
+          }
+        ]
+      },
+      {
+        name: "Playground",
+        links: [
+          {
+            name: "Clipper Basic",
+            to: "/playground/basic"
+          },
+          {
+            name: "Clipper Fixed",
+            to: "/playground/fixed"
+          }
+        ]
+      },
+      {
+        name: "Examples",
+        links: [
+          {
+            name: "Transparent Image",
+            to: "/examples/transpaent-image"
+          },
+          {
+            name: "Vertical Image",
+            to: "/examples/vertical-image"
+          }
+        ]
+      }
+    ]
   })
 };
 </script>

@@ -1,3 +1,8 @@
 module.exports = {
-  transpileDependencies: ["vuetify"]
+  transpileDependencies: ["vuetify"],
+  configureWebpack: {
+    resolve: {
+      symlinks: false // 使用npm link
+    }
+  }
 };

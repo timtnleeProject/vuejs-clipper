@@ -1,6 +1,6 @@
 <template>
   <div class="basic">
-    <h1 class="text-h1 my-10">Clipper Basic</h1>
+    <h1 class="text-h1 my-10">Clipper Fixed</h1>
     <v-row>
       <v-col cols="12" sm="6">
         <div class="text-subtitle-1">Select Image</div>
@@ -18,17 +18,15 @@
     </v-row>
     <v-row class="text-body-2">
       <v-col cols="12" sm="6">
-        <clipper-basic
+        <clipper-fixed
           ref="clipper"
           :src="src"
           :border="border"
-          :outline="outline"
+          :area="area"
           :ratio="ratio"
-          :corner="corner"
+          :round="round"
           :grid="grid"
-          :wrap-ratio="wrapRatio"
           :rotate="rotate"
-          :scale="scale"
           :bg-color="bg"
           :shadow="shadow"
           preview="preview"
@@ -58,27 +56,21 @@
           </v-col>
           <v-col>
             <v-text-field
-              label="outline"
+              label="area"
               type="number"
-              v-model.number="outline"
+              max="100"
+              v-model.number="area"
             ></v-text-field>
           </v-col>
         </v-row>
         <v-radio-group label="ratio" row v-model="ratio">
-          <v-radio label="none" :value="0"></v-radio>
-          <v-radio label="1" :value="1"></v-radio>
-          <v-radio label="4/3" :value="4 / 3"></v-radio>
-          <v-radio label="16/9" :value="16 / 9"></v-radio>
-        </v-radio-group>
-        <v-radio-group label="wrap-ratio" row v-model="wrapRatio">
-          <v-radio label="none" :value="0"></v-radio>
           <v-radio label="1" :value="1"></v-radio>
           <v-radio label="4/3" :value="4 / 3"></v-radio>
           <v-radio label="16/9" :value="16 / 9"></v-radio>
         </v-radio-group>
         <v-row class="mb-6">
           <v-col>
-            <v-checkbox v-model="corner" label="corner" hide-details></v-checkbox>
+            <v-checkbox v-model="round" label="round" hide-details></v-checkbox>
           </v-col>
           <v-col>
             <v-checkbox v-model="grid" label="grid" hide-details></v-checkbox>
@@ -95,16 +87,6 @@
           <template v-slot:thumb-label="{ value }">
             {{ value + "ﾟ" }}
           </template>
-        </v-slider>
-        <v-slider
-          label="scale"
-          v-model="scale"
-          :min="0.5"
-          :max="3"
-          :step="0.02"
-          :thumb-size="24"
-          thumb-label="always"
-        >
         </v-slider>
         <v-row>
           <v-col md="6">
@@ -158,14 +140,12 @@ export default {
   data: () => ({
     src: pic,
     border: 1,
-    outline: 5,
-    ratio: 0,
-    corner: true,
+    area: 50,
+    ratio: 1,
+    round: false,
     grid: true,
-    wrapRatio: 0,
     rotate: 0,
-    scale: 1,
-    bg: "#ffffff",
+    bg: "#000000",
     shadow: "#00000040",
     overlay: false,
     resultSrc: ""
@@ -175,13 +155,11 @@ export default {
       return `<clipper-basic
   :src="${this.src}"
   :border="${this.border}"
-  :outline="${this.outline}"
+  :area="${this.area}"
   :ratio="${this.ratio}"
-  :corner="${this.corner}"
+  :round="${this.round}"
   :grid="${this.grid}"
-  :wrap-ratio="${this.wrapRatio}"
   :rotate="${this.rotate}"
-  :scale="${this.scale}"
   :bg-color="${this.bg}"
   :shadow="${this.shadow}"
 />`;

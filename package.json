@@ -14,7 +14,7 @@
     "vue-code-highlight": "^0.7.5",
     "vue-router": "^3.2.0",
     "vue-rx": "^6.2.0",
-    "vuejs-clipper": "^3.0.3",
+    "vuejs-clipper": "^3.0.4",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {

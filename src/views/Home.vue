@@ -15,7 +15,7 @@
       <v-col cols="12" sm="6">
         <div class="text-subtitle mb-3">Component</div>
         <clipper-basic :src="src" preview="preview-basic"></clipper-basic>
-        <router-link to="/basic">Go to Playground</router-link>
+        <router-link to="/playground/basic">Go to Playground</router-link>
       </v-col>
       <v-col cols="12" sm="6">
         <div class="text-subtitle mb-3">Preview</div>
@@ -30,7 +30,7 @@
           bg-color="black"
           preview="preview-fixed"
         ></clipper-fixed>
-        <router-link to="/fixed">Go to Playground</router-link>
+        <router-link to="/playground/fixed">Go to Playground</router-link>
       </v-col>
       <v-col cols="12" sm="6">
         <clipper-preview name="preview-fixed"></clipper-preview>
