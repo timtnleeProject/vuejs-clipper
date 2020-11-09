@@ -429,6 +429,9 @@ export default {
     bgColor () {
       this.callPreview('setData', { bgColor: this.bgColor })
     },
+    border () {
+      this.change$.next(0)
+    },
     scaleStyle () {
       this.change$.next(0)
     },
