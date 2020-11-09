@@ -214,6 +214,7 @@ import { clipperBasic } from 'vuejs-clipper'
 | wrap-ratio | number | NaN |ratio of clipping container (width/height). ex: `1`, `4/3` .|
 | mode   | 'normal'/'switch' | 'normal' | if ratio is set, this prop will affect how clipping area zoom.|
 |bg-color |string  | 'white' | background color|
+|lineColor|string|'#1baae8'|clip box line color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 |scale  | number | 1 | transform scale |
@@ -467,6 +468,11 @@ Props that are not defined below will apply to the file input as attributes, for
 |file|File Object|null|Uploaded file's original File Object.|
 
 ## Changelog
+
+* 3.1.0
+  * Fix `clipper-basic` ratio is not correct.
+
+> !Before v3.1.0, `clipper-basic` with `ratio` prop has bug that the clip area is not caculate correctly with `border` prop, so the ratio of the clip result isn't precise. (issue [#80](https://github.com/timtnleeProject/vuejs-clipper/issues/80))
 
 * 3.0.4
   * `clipper-upload` accept rest props as input attributes.
