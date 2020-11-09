@@ -4,6 +4,7 @@ import router from "./router";
 import vuetify from "./plugins/vuetify";
 import "./plugins/vuejsClipper";
 import "vue-code-highlight/themes/duotone-sea.css";
+import "./override.scss";
 
 Vue.config.productionTip = false;
 
