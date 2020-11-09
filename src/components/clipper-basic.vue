@@ -1,9 +1,8 @@
 <template>
   <div class="js-clipper-basic">
     <div
-      class="vuejs-clipper-basic__clip-area js-clip-area"
-      :class="{ vertical: isVertical }"
-      :style="areaStyle"
+      class="vuejs-clipper-basic__padding"
+      :style="padStyle"
     >
       <canvas
         class="vuejs-clipper-basic__stem-canvas"
@@ -11,10 +10,13 @@
         :height="stemArea.height"
       />
       <div
-        class="vuejs-clipper-basic__padding"
-        :style="{'padding': areaStyle.padding}"
+        class="vuejs-clipper-basic__in-pad"
+        :style="inPadStyle"
       >
-        <div class="vuejs-clipper-basic__in-pad">
+        <div
+          class="vuejs-clipper-basic__img-wrap"
+          :class="{ vertical: isVertical }"
+        >
           <div
             class="vuejs-clipper-basic__img-scale js-img-scale"
             :style="scaleStyle"
@@ -31,40 +33,48 @@
         </div>
       </div>
       <div
-        class="vuejs-clipper-basic__zoom-area js-zoom-area"
-        :style="posObj"
+        class="vuejs-clipper-basic__in-pad"
+        :style="inPadStyle"
       >
-        <div
-          class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer"
-          :style="exOuterStyle"
-        />
-        <div
-          class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner"
-          :style="exInnerStyle"
-        >
-          <div class="vuejs-clipper-basic__drag-inset js-drag-inset" />
-        </div>
-        <div v-if="corner">
+        <div class="vuejs-clipper-basic__clip-area js-clip-area">
           <div
-            v-for="index in 4"
-            :key="'corner'+index"
-            class="vuejs-clipper-basic__corner"
-            :class="`vuejs-clipper-basic__corner${index}`"
-          />
+            class="vuejs-clipper-basic__zoom-area js-zoom-area"
+            :style="posObj"
+          >
+            <div
+              class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer"
+              :style="exOuterStyle"
+            />
+            <div
+              class="vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner"
+              :style="exInnerStyle"
+            >
+              <div class="vuejs-clipper-basic__drag-inset js-drag-inset" />
+            </div>
+            <div v-if="corner">
+              <div
+                v-for="index in 4"
+                :key="'corner'+index"
+                class="vuejs-clipper-basic__corner"
+                :class="`vuejs-clipper-basic__corner${index}`"
+              />
+            </div>
+            <div
+              v-if="grid"
+              class="vuejs-clipper-basic__grid"
+            >
+              <div
+                v-for="index in 4"
+                :key="'gridItem'+index"
+                class="vuejs-clipper-basic__grid-item"
+              />
+            </div>
+            <slot name="vuejs-clipper-basic__area" />
+          </div>
         </div>
-        <div
-          v-if="grid"
-          class="vuejs-clipper-basic__grid"
-        >
-          <div
-            v-for="index in 4"
-            :key="'gridItem'+index"
-            class="vuejs-clipper-basic__grid-item"
-          />
-        </div>
-        <slot name="vuejs-clipper-basic__area" />
       </div>
     </div>
+
     <div
       class="vuejs-clipper-basic__placeholder"
       :style="eptStyle"
@@ -313,6 +323,10 @@ export default {
       type: String,
       default: 'white'
     },
+    lineColor: {
+      type: String,
+      default: '#1baae8'
+    },
     shadow: {
       type: String,
       default: 'rgba(0, 0, 0, 0.4)'
@@ -350,16 +364,29 @@ export default {
   computed: {
     posObj: function () {
       let style = {
-        'border-width': `${this.border}px !important`,
         'width': `${this.zoomWH$.width}% !important`,
         'height': `${this.zoomWH$.height}% !important`,
         'color': `${this.shadow} !important`,
-        'box-shadow': `0 0 0 ${this._shadow} !important`
+        'box-shadow': ` 0 0 0 ${this.border}px ${this.lineColor}, 0 0 0 ${this._shadow}`
       }
       for (let k in this.zoomTL$) {
         if (typeof this.zoomTL$[k] === 'number') { style[k] = `${this.zoomTL$[k]}% !important` }
       }
       return style
+    },
+    padStyle: function () {
+      const display = `${(this.src) ? 'block' : 'none'} !important`
+      const backgroundColor = `${this.bgColor} !important`
+      return {
+        display,
+        padding: `${this.border}px`,
+        'background-color': backgroundColor
+      }
+    },
+    inPadStyle: function () {
+      return {
+        padding: `${this.border}px`
+      }
     },
     scaleStyle: function () {
       return {
@@ -369,16 +396,6 @@ export default {
     rotateStyle: function () {
       return {
         transform: `rotate(${this.rotate}deg) !important`
-      }
-    },
-    areaStyle: function () {
-      const _border = `${this.border}px !important`
-      const display = `${(this.src) ? 'block' : 'none'} !important`
-      const backgroundColor = `${this.bgColor} !important`
-      return {
-        padding: _border,
-        display,
-        'background-color': backgroundColor
       }
     },
     eptStyle: function () {
@@ -478,22 +495,20 @@ export default {
 </script>
 <style lang="scss" scoped>
 $hover_sec: 0.5s;
-$cover_color: rgba(0, 0, 0, 0.4);
-$border-color: #1baae8;
 $grid-width: 1px; //dive 2
 
-.vertical.vuejs-clipper-basic__clip-area {
+.vertical.vuejs-clipper-basic__img-wrap {
   &, .vuejs-clipper-basic__img {
     width: auto !important;
     height: 100% !important;
   }
 }
-.vuejs-clipper-basic__clip-area {
+.vuejs-clipper-basic__img-wrap {
   position: relative !important;
   width: 100% !important;
+  height: 100% !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
-  cursor: crosshair;
   & .vuejs-clipper-basic__img {
     position: relative !important;
     width: 100% !important;
@@ -507,17 +522,13 @@ $grid-width: 1px; //dive 2
   width: 100% !important;
 }
 .vuejs-clipper-basic__padding {
-  pointer-events: none !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  position: relative !important;
   width: 100% !important;
-  height: 100% !important;
   box-sizing: border-box !important;
+  overflow: hidden;
 }
 .vuejs-clipper-basic__in-pad {
-  pointer-events: none !important;
-  position: relative !important;
+  position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
@@ -535,11 +546,15 @@ $grid-width: 1px; //dive 2
   justify-content: center !important;
   align-items: center;
 }
+.vuejs-clipper-basic__clip-area {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: crosshair;
+}
 .vuejs-clipper-basic__zoom-area {
   position: absolute !important;
   box-sizing: border-box !important; //! don't change
-  border-style: solid;
-  border-color: $border_color;
   overflow: visible !important;
 }
 .vuejs-clipper-basic__corner {
