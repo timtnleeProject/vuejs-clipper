@@ -10,7 +10,7 @@ Vue.js image clipping components using Vue-Rx.
 
 ## Demo/Document
 
-You can find the source code of examples under `examples` branch.
+You can find the source code of examples under the `examples` branch.
 
 * [Live demo & examples](https://timtnleeproject.github.io/vuejs-clipper)
 * [Quick Start](https://timtnleeproject.github.io/vuejs-clipper/#/examples/quick-start)
@@ -28,13 +28,14 @@ You can find the source code of examples under `examples` branch.
 
 ## Notice
 
-**Before using the plugin & components, here's something you should know :**
+**Before using the plugin & components, here's something you should know:**
 
 * It's based on [**vue-rx**](https://github.com/vuejs/vue-rx).
 * [**rxjs**](https://github.com/ReactiveX/rxjs/tree/6.x) and [**vue-rx**](https://github.com/vuejs/vue-rx) are required as peer dependencies.
 * Components are responsive base on **width** instead of height, see [Component Layout](https://github.com/timtnleeProject/vuejs-clipper/wiki/Component-layout).
-* You can clip your own images (local uploaded images or images served on your site), but you cannot clip a cross-origin image unless the image server set the CORS headers.
+* You can clip your images (local uploaded images or images served on your site), but you cannot clip a cross-origin image unless the image server sets the CORS headers.
 * Components' **input** is an image URL, **output** is a canvas element, they only help you clip images to canvas, you need to handle other things like *transform file input to image URL* or *transform output canvas to image* by yourself.
+* If you set the clipper to be *responsive*, for example: put it in a `Row, Col` system or set its width based on the container's width, *you will lose a little bit of precision*. The result of the clipper and the clip box position might not be that accurate. If you cannot tolerate the slippage, use fixed width `${width + border*2}px` on the clipper component like `width: 502px`.
 
 ## Installation (NPM & ESM)
 
@@ -50,7 +51,7 @@ Install peer dependencies if you haven't.
 npm install vue-rx rxjs --save
 ```
 
-Vuejs-clipper is based on **vue-rx**, so make sure you have vue-rx plugin installed.
+Vuejs-clipper is based on **vue-rx**, so make sure you have the vue-rx plugin installed.
 
 ```javascript
 import Vue from 'vue'
@@ -77,9 +78,9 @@ Vue.use(VuejsClipper);
 
 #### use vuejs-clipper soruce
 
-You are using `vuejs-clipper` directly with your build proccess(webpack etc).
+You are using `vuejs-clipper` directly with your build process(webpack etc).
 
-So make sure you have css loader, ex: `sass-loader`, if you haven't installed :
+So make sure you have css loader, ex: `sass-loader` if you haven't installed :
 
 ```bash
 npm install -D sass-loader node-sass
@@ -103,21 +104,21 @@ register some components to global with default component name
 
 ```javascript
 Vue.use(VuejsClipper, {
-　components: {
+ components: {
     clipperBasic: true,
     clipperPreview: true
-　}
+ }
 })
 ```
 
-with customized component name
+with the customized component name
 
 ```javascript
 Vue.use(VuejsClipper, {
-　components: {
-　　clipperBasic: 'image-clipper-basic',
-　　clipperPreview: 'my-preview'
-　}
+ components: {
+  clipperBasic: 'image-clipper-basic',
+  clipperPreview: 'my-preview'
+ }
 })
 ```
 
@@ -126,9 +127,9 @@ not register any components, but with some plugin options
 ```javascript
 Vue.use(VuejsClipper, {
   components: null,
-　parentPropName: 'myCustomerName'
+ parentPropName: 'myCustomerName'
   /*
-  　parentPropName:
+   parentPropName:
     Vuejs-clipper Adds property to Vue instance in order to store `clipper-preview` list.
     You can change the property name
     default: '_imgPreviewLists'
@@ -214,6 +215,7 @@ import { clipperBasic } from 'vuejs-clipper'
 | wrap-ratio | number | NaN |ratio of clipping container (width/height). ex: `1`, `4/3` .|
 | mode   | 'normal'/'switch' | 'normal' | if ratio is set, this prop will affect how clipping area zoom.|
 |bg-color |string  | 'white' | background color|
+|lineColor|string|'#1baae8'|clip box line color|
 |shadow|string|'rgba(0,0,0,0.4)'|shadow color|
 |rotate | number | 0 | rotate degree |
 |scale  | number | 1 | transform scale |
@@ -300,7 +302,7 @@ this.$refs.clipper.zoomWH$.width
 |-|-|
 |setTL$|Set the position of the zooming area.|
 |setWH$|Set the width and height of the zooming area.|
-|onChange$|Subject that subscribe to zooming, moving and rotating subjects.|
+|onChange$|Subject that subscribes to zooming, moving, and rotating subjects.|
 
 usage:
 
@@ -310,7 +312,7 @@ this.$refs.clipper.setTL$.next({ right: 0, bottom: 10 })
 this.$refs.clipper.setWH$.next({ width: 100, height: 100 }) // percentage 100%
 
 this.$refs.clipper.onChange$.subscribe(() => {
-  // This happens whenever zooming, moving and rotating occur.
+  // This happens whenever zooming, moving, and rotating occur.
 })
 ```
 
@@ -383,7 +385,7 @@ import { clipperFixed } from 'vuejs-clipper'
 |-|-|
 |setTL$|Set the top and left of the image.|
 |setWH$|Set the sizing(scaling) of the image.|
-|onChange$|Subject that subscribe to zooming, moving and rotating subjects.|
+|onChange$|Subject that subscribes to zooming, moving, and rotating subjects.|
 
 usage:
 
@@ -392,7 +394,7 @@ this.$refs.clipper.setTL$.next({ left: 50, top: 50 }) // percentage 0%
 this.$refs.clipper.setWH$.next(0.6) // transform scale(0.6)
 
 this.$refs.clipper.onChange$.subscribe(() => {
-  // This happens whenever zooming, moving and rotating occur.
+  // This happens whenever zooming, moving, and rotating occur.
 })
 ```
 
@@ -437,7 +439,7 @@ use `v-model` binding data with `clipper-range`
 
 a new component in 0.2.0
 
-an upload button that transform image files to URL
+an upload button that transforms image files to URL
 
 ```javascript
 import { clipperUpload } from 'vuejs-clipper'
@@ -447,11 +449,11 @@ use `v-model` binding data with `clipper-upload`
 
 * Props
 
-Props that are not defined below will apply to the file input as attributes, for example: `accept`, `id` and `name`.
+Props that are not defined below will apply to the file input as attributes, for example: `accept`, `id`, and `name`.
 
 | Prop|Type|default|description |
 |-|-:|-:|:-|
-|check|boolean|true|Check if upload file is an image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on clipping component.|
+|check|boolean|true|Check if upload file is an image. If set to `true`, when upload files that are not images, it will do nothing, so you will not get an error event on the clipping component.|
 |exif|boolean|true|Transform EXIF image to correct orientation when uploading.|
 
 * Event
@@ -467,6 +469,11 @@ Props that are not defined below will apply to the file input as attributes, for
 |file|File Object|null|Uploaded file's original File Object.|
 
 ## Changelog
+
+* 3.1.0
+  * Fix `clipper-basic` ratio is not correct.
+
+> !Before v3.1.0, `clipper-basic` with `ratio` prop has a bug that the clip area is not calculated correctly with `border` prop, so the ratio of the clipping result isn't precise. (issue [#80](https://github.com/timtnleeProject/vuejs-clipper/issues/80))
 
 * 3.0.4
   * `clipper-upload` accept rest props as input attributes.

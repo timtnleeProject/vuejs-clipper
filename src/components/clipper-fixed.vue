@@ -324,6 +324,9 @@ export default {
     },
     bgStyle () {
       this.change$.next(0)
+    },
+    border () {
+      this.change$.next(0)
     }
   },
   mounted () {
