@@ -23,4 +23,5 @@ deploy:
   on:
     repo: timtnleeProject/vuejs-clipper
     branch: master
-  skip_cleanup: true
+  cleanup: false
+  edge: true
