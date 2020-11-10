@@ -14,7 +14,7 @@ const clipperMethods = {
     return this.scaleEl.getBoundingClientRect()
   },
   imgPos: function () {
-    return this.imgEl.getBoundingClientRect()
+    return this.imgPosEl.getBoundingClientRect()
   },
   eInZoom: function (e) {
     const zoomPos = this.zoomEl.getBoundingClientRect()
@@ -102,7 +102,6 @@ const clipperMethods = {
 
     const originTop = getTop()
     const originLeft = getLeft()
-
     const area = this.areaPos()
     let left, top, right, bottom
     let width = 0
@@ -378,33 +377,41 @@ const clipperMethods = {
     }
     return { down, move }
   },
-  getImgNonRotatePos: function () {
-    // 取得 image 旋轉前的 position
-    const scalePos = this.scalePos()
-    const x = scalePos.left + scalePos.width / 2
-    const y = scalePos.top + scalePos.height / 2
-    let w, h
-    if (this.isVertical) {
-      h = scalePos.height
-      w = h * this.imgRatio
-    } else {
-      w = scalePos.width
-      h = w / this.imgRatio
-    }
-    return {
-      left: x - w / 2,
-      right: x + w / 2,
-      top: y - h / 2,
-      bottom: y + h / 2,
-      width: w,
-      height: h
-    }
-  },
+  // getImgNonRotatePos: function () {
+  // 取得 image 旋轉前的 position
+  // const scalePos = this.scalePos()
+  // const x = scalePos.left + scalePos.width / 2
+  // const y = scalePos.top + scalePos.height / 2
+  // let w, h, l, r, t, b
+  // if (this.isVertical) {
+  //   h = scalePos.height
+  //   w = h * this.imgRatio
+  //   l = x - w / 2
+  //   r = x + w / 2
+  //   t = scalePos.top
+  //   b = scalePos.bottom
+  // } else {
+  //   w = scalePos.width
+  //   h = w / this.imgRatio
+  //   l = scalePos.left
+  //   r = scalePos.right
+  //   t = y - h / 2
+  //   b = y + h / 2
+  // }
+  // return {
+  //   left: l,
+  //   right: r,
+  //   top: t,
+  //   bottom: b,
+  //   width: w,
+  //   height: h
+  // }
+  // },
   // DRAW
   getDrawPos: function (opt) {
     const { wPixel, maxWPixel } = opt || {}
     const zoom = this.zoomPos()
-    const img = this.getImgNonRotatePos()
+    const img = this.imgPos()
     const imgW = this.imgEl.naturalWidth
     const viewW = img.width
     const viewL = zoom.left - img.left
