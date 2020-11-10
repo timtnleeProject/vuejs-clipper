@@ -1,6 +1,10 @@
 .DS_Store
 node_modules
-dist
+dist/demo.html
+dist/vuejs-clipper.common.js
+dist/vuejs-clipper.common.js.map
+dist/vuejs-clipper.umd.js.map
+dist/vuejs-clipper.umd.min.js.map
 docs
 # local env files
 .env.local

@@ -15,13 +15,3 @@ install:
 - yarn install
 script:
 - yarn run build
-deploy:
-  provider: npm
-  email: litingen1995@gmail.com
-  api_token:
-    secure: Fs5c/XVnr9+T/io3OZcLoyym3pzBJftGiG1h/DPzi99GvuSAv3ruzoLXfptx7PjDNz+3qdWWR4UGWLys/wPQ3c40j2CEvcRVyV1KDkKys/Pjla00UDysg3xI+yxr3/WYbWyltu6ynkub/pFBgjNKVAqk9v6jfouXK0aypy9jkMtVmE+S7heywG4AaP4vWcIuQbudM5YADTZNRUW6In2Hp49V6CqIpdEIxseTCbu1FcPrp4LUmqw7zQlrDoD4juppcDzxdlPcayzVjc4HvNWBG5r016rby6ipWLd19vQsOqlc5BmP9n4RTbq/s5ACfoeY4AsFyhot2HVjQ3ICsa+jdHqlFz7P2WFvVoMa7JXoH3+AHWfYVokJDfnlhYFKSzGuvXmFZ1W13GgmRsuDxNXVeUcBBlyqhY0PUipUeRlKdiJGfE5T9SPLNKjP5QghuvnKeomoQpC/N7HcYvVJmRX3PaRLy5QiRHPeRkhgQzAUngy6WImJQu7kFZoqCPybktFnh8h3TMRLXtGOWj5kaA9xtc8i1COCtMj5HIaHo5S/NMn3SN50I3zkqywmzOYu0u1QwvLe/qpeOE+WDyM4KNU09cv0iQ2cGMaB8CfmrQCKgvuLZFCDqWut6wnYNK8sFw/p+Y1lBfyxMLq4Y0sMfh1Wq35eiUOxYD1AeX5d4tSfBT4=
-  on:
-    repo: timtnleeProject/vuejs-clipper
-    branch: master
-  cleanup: false
-  edge: true
