@@ -47,7 +47,8 @@
           :shadow="shadow"
           :round="round"
           @load="imgLoad"
-          preview="preview">
+          preview="preview"
+        >
     </clipper-fixed>
       </div>
       <div class="settings">
