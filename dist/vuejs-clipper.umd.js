@@ -4125,6 +4125,13 @@ module.exports = !nativeAssign || fails(function () {
 
 /***/ }),
 
+/***/ "6245":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "6547":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5614,12 +5621,12 @@ module.exports = function (NAME) {
 
 "use strict";
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ed39bd1-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=68a2e348&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"js-clipper-basic"},[_c('div',{staticClass:"vuejs-clipper-basic__padding",style:(_vm.padStyle)},[_c('canvas',{staticClass:"vuejs-clipper-basic__stem-canvas",attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),_c('div',{staticClass:"vuejs-clipper-basic__in-pad",style:(_vm.inPadStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__img-wrap",class:{ vertical: _vm.isVertical }},[_c('div',{staticClass:"vuejs-clipper-basic__img-scale js-img-scale",style:(_vm.scaleStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__img-pos js-img-pos"},[_c('img',{staticClass:"vuejs-clipper-basic__img js-img",style:(_vm.rotateStyle),attrs:{"src":_vm.src,"crossorigin":_vm.crossOrigin},on:{"load":function($event){_vm.imgLoaded();_vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})])])])]),_c('div',{staticClass:"vuejs-clipper-basic__in-pad",style:(_vm.inPadStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__clip-area js-clip-area"},[_c('div',{staticClass:"vuejs-clipper-basic__zoom-area js-zoom-area",style:(_vm.posObj)},[_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer",style:(_vm.exOuterStyle)}),_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner",style:(_vm.exInnerStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__drag-inset js-drag-inset"})]),(_vm.corner)?_c('div',_vm._l((4),function(index){return _c('div',{key:'corner'+index,staticClass:"vuejs-clipper-basic__corner",class:("vuejs-clipper-basic__corner" + index)})}),0):_vm._e(),(_vm.grid)?_c('div',{staticClass:"vuejs-clipper-basic__grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"vuejs-clipper-basic__grid-item"})}),0):_vm._e(),_vm._t("vuejs-clipper-basic__area")],2)])])]),_c('div',{staticClass:"vuejs-clipper-basic__placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5ed39bd1-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=template&id=63cebb22&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"js-clipper-basic"},[_c('div',{staticClass:"vuejs-clipper-basic__padding",style:(_vm.padStyle)},[_c('canvas',{staticClass:"vuejs-clipper-basic__stem-canvas",attrs:{"width":_vm.stemArea.width,"height":_vm.stemArea.height}}),_c('div',{staticClass:"vuejs-clipper-basic__in-pad",style:(_vm.inPadStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__img-wrap",class:{ vertical: _vm.isVertical }},[_c('div',{staticClass:"vuejs-clipper-basic__img-scale js-img-scale",style:(_vm.scaleStyle)},[_c('img',{staticClass:"vuejs-clipper-basic__img js-img",style:(_vm.rotateStyle),attrs:{"src":_vm.src,"crossorigin":_vm.crossOrigin},on:{"load":function($event){_vm.imgLoaded();_vm.emit('load',$event)},"error":function($event){return _vm.emit('error',$event)}}})])])]),_c('div',{staticClass:"vuejs-clipper-basic__in-pad",style:(_vm.inPadStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__clip-area js-clip-area"},[_c('div',{staticClass:"vuejs-clipper-basic__zoom-area js-zoom-area",style:(_vm.posObj)},[_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--outer",style:(_vm.exOuterStyle)}),_c('div',{staticClass:"vuejs-clipper-basic__extend vuejs-clipper-basic__extend--inner",style:(_vm.exInnerStyle)},[_c('div',{staticClass:"vuejs-clipper-basic__drag-inset js-drag-inset"})]),(_vm.corner)?_c('div',_vm._l((4),function(index){return _c('div',{key:'corner'+index,staticClass:"vuejs-clipper-basic__corner",class:("vuejs-clipper-basic__corner" + index)})}),0):_vm._e(),(_vm.grid)?_c('div',{staticClass:"vuejs-clipper-basic__grid"},_vm._l((4),function(index){return _c('div',{key:'gridItem'+index,staticClass:"vuejs-clipper-basic__grid-item"})}),0):_vm._e(),_vm._t("vuejs-clipper-basic__area")],2)])])]),_c('div',{staticClass:"vuejs-clipper-basic__placeholder",style:(_vm.eptStyle)},[_vm._t("placeholder")],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=template&id=68a2e348&scoped=true&
+// CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=template&id=63cebb22&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("99af");
@@ -5657,8 +5664,6 @@ var startWith = __webpack_require__("a744");
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/clipper-basic.vue?vue&type=script&lang=js&
 
 
-//
-//
 //
 //
 //
@@ -6117,8 +6122,6 @@ var startWith = __webpack_require__("a744");
     var _this2 = this;
 
     this.imgEl = this.$el.querySelector('.js-clipper-basic .js-img');
-    this.imgPosEl = this.$el.querySelector('.js-img-pos'); // to get the image position without rotation
-
     this.canvasEl = document.createElement('CANVAS');
     this.areaEl = this.$el.querySelector('.js-clipper-basic .js-clip-area');
     this.scaleEl = this.$el.querySelector('.js-clipper-basic .js-img-scale');
@@ -6160,8 +6163,8 @@ var startWith = __webpack_require__("a744");
 });
 // CONCATENATED MODULE: ./src/components/clipper-basic.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_clipper_basicvue_type_script_lang_js_ = (clipper_basicvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/clipper-basic.vue?vue&type=style&index=0&id=68a2e348&lang=scss&scoped=true&
-var clipper_basicvue_type_style_index_0_id_68a2e348_lang_scss_scoped_true_ = __webpack_require__("d7d9");
+// EXTERNAL MODULE: ./src/components/clipper-basic.vue?vue&type=style&index=0&id=63cebb22&lang=scss&scoped=true&
+var clipper_basicvue_type_style_index_0_id_63cebb22_lang_scss_scoped_true_ = __webpack_require__("a5b2");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
@@ -6181,7 +6184,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   null,
-  "68a2e348",
+  "63cebb22",
   null
   
 )
@@ -8569,6 +8572,17 @@ hiddenKeys[HIDDEN] = true;
 
 /***/ }),
 
+/***/ "a5b2":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_63cebb22_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6245");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_63cebb22_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_63cebb22_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_63cebb22_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "a640":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9750,7 +9764,44 @@ var clipperMethods = {
     return this.scaleEl.getBoundingClientRect();
   },
   imgPos: function imgPos() {
-    return this.imgPosEl.getBoundingClientRect();
+    // original image position (without rotation)
+
+    /* Because of the firefox bug https://codepen.io/timtnlee/pen/JjYQXzx
+    I cannot use element that auto width based on specific height.
+    So need to calculate by wrapped element.
+    */
+    var _this$scalePos = this.scalePos(),
+        width = _this$scalePos.width,
+        height = _this$scalePos.height,
+        top = _this$scalePos.top,
+        left = _this$scalePos.left;
+
+    if (this.wrapRatio) {
+      if (this.isVertical) {
+        var w = height * this.imgRatio;
+        return {
+          width: w,
+          height: height,
+          left: left + (width - w) / 2,
+          top: top
+        };
+      } else {
+        var h = width / this.imgRatio;
+        return {
+          width: width,
+          height: h,
+          left: left,
+          top: top + (height - h) / 2
+        };
+      }
+    }
+
+    return {
+      width: width,
+      height: height,
+      left: left,
+      top: top
+    };
   },
   eInZoom: function eInZoom(e) {
     var zoomPos = this.zoomEl.getBoundingClientRect();
@@ -10836,13 +10887,6 @@ module.exports = function (C, x) {
 
 /***/ }),
 
-/***/ "ce2c":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "ce4e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11105,17 +11149,6 @@ module.exports = function (it, TAG, STATIC) {
   }
 };
 
-
-/***/ }),
-
-/***/ "d7d9":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_68a2e348_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ce2c");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_68a2e348_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_68a2e348_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_clipper_basic_vue_vue_type_style_index_0_id_68a2e348_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
