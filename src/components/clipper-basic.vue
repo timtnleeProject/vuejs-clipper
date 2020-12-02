@@ -21,16 +21,14 @@
             class="vuejs-clipper-basic__img-scale js-img-scale"
             :style="scaleStyle"
           >
-            <div class="vuejs-clipper-basic__img-pos js-img-pos">
-              <img
-                :src="src"
-                class="vuejs-clipper-basic__img js-img"
-                :style="rotateStyle"
-                :crossorigin="crossOrigin"
-                @load="imgLoaded();emit('load',$event)"
-                @error="emit('error',$event)"
-              >
-            </div>
+            <img
+              :src="src"
+              class="vuejs-clipper-basic__img js-img"
+              :style="rotateStyle"
+              :crossorigin="crossOrigin"
+              @load="imgLoaded();emit('load',$event)"
+              @error="emit('error',$event)"
+            >
           </div>
         </div>
       </div>
@@ -460,7 +458,6 @@ export default {
   },
   mounted () {
     this.imgEl = this.$el.querySelector('.js-clipper-basic .js-img')
-    this.imgPosEl = this.$el.querySelector('.js-img-pos') // to get the image position without rotation
     this.canvasEl = document.createElement('CANVAS')
     this.areaEl = this.$el.querySelector('.js-clipper-basic .js-clip-area')
     this.scaleEl = this.$el.querySelector('.js-clipper-basic .js-img-scale')
@@ -501,13 +498,10 @@ $hover_sec: 0.5s;
 $grid-width: 1px; //dive 2
 
 .vertical.vuejs-clipper-basic__img-wrap {
-  &, .vuejs-clipper-basic__img, .vuejs-clipper-basic__img-pos {
+  .vuejs-clipper-basic__img {
     width: auto !important;
     height: 100% !important;
   }
-}
-.vuejs-clipper-basic__img-pos {
-  width: 100% !important;
 }
 .vuejs-clipper-basic__img-wrap {
   position: relative !important;

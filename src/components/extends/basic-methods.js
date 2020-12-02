@@ -13,8 +13,37 @@ const clipperMethods = {
   scalePos: function () {
     return this.scaleEl.getBoundingClientRect()
   },
-  imgPos: function () {
-    return this.imgPosEl.getBoundingClientRect()
+  imgPos: function () { // original image position (without rotation)
+    /* Because of the firefox bug https://codepen.io/timtnlee/pen/JjYQXzx
+    I cannot use element that auto width based on specific height.
+    So need to calculate by wrapped element.
+    */
+    const { width, height, top, left } = this.scalePos()
+    if (this.wrapRatio) {
+      if (this.isVertical) {
+        const w = height * this.imgRatio
+        return {
+          width: w,
+          height,
+          left: left + (width - w) / 2,
+          top
+        }
+      } else {
+        const h = width / this.imgRatio
+        return {
+          width,
+          height: h,
+          left,
+          top: top + (height - h) / 2
+        }
+      }
+    }
+    return {
+      width,
+      height,
+      left,
+      top
+    }
   },
   eInZoom: function (e) {
     const zoomPos = this.zoomEl.getBoundingClientRect()
