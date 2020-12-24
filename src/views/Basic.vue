@@ -120,6 +120,9 @@
             <span>
               <input type="radio" name="ratio" :value="4/3" v-model.number="ratio">4:3
             </span>
+             <span>
+              <input type="radio" name="ratio" :value="16/9" v-model.number="ratio">16:9
+            </span>
             <span>
               <input type="radio" name="ratio" :value="2/3" v-model.number="ratio">2:3
             </span>
