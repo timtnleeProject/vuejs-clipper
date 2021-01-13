@@ -154,6 +154,7 @@ export default {
       filter(this.isZoomElement),
       filter(e => e.touches.length === 1),
       tap(this.prevent),
+      map(e => e.touches[0]),
       map(this.setDownPosition),
       concatMap(
         () =>
