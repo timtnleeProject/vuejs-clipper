@@ -470,6 +470,8 @@ Props that are not defined below will apply to the file input as attributes, for
 
 ## Changelog
 
+* 3.1.2
+  * Fix touch devices zooming bug: [#91](https://github.com/timtnleeProject/vuejs-clipper/issues/91)
 * 3.1.1
   * Fix [#82](https://github.com/timtnleeProject/vuejs-clipper/issues/82)
 * 3.1.0
