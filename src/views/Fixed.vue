@@ -31,8 +31,6 @@
           :shadow="shadow"
           preview="preview"
         />
-      </v-col>
-      <v-col cols="12" sm="6">
         <div class="text-subtitle-1">Preview</div>
         <v-row dense>
           <v-col cols="6">
@@ -41,10 +39,12 @@
           <v-col cols="4"><clipper-preview name="preview"/></v-col>
           <v-col cols="2"><clipper-preview name="preview"/></v-col>
         </v-row>
+        <div class="text-subtitle-1">Code</div>
+        <vue-code-highlight language="html">
+          {{ this.sampleCode }}
+        </vue-code-highlight>
       </v-col>
-    </v-row>
-    <v-row>
-      <v-col sm="6">
+      <v-col cols="12" sm="6">
         <div class="text-subtitle-1">Props</div>
         <v-row dense>
           <v-col>
@@ -98,12 +98,6 @@
             <v-color-picker v-model="shadow" hide-inputs></v-color-picker
           ></v-col>
         </v-row>
-      </v-col>
-      <v-col sm="6">
-        <div class="text-subtitle-1">Code</div>
-        <vue-code-highlight language="html">
-          {{ this.sampleCode }}
-        </vue-code-highlight>
       </v-col>
     </v-row>
     <v-overlay :value="overlay" :opacity="0.8">
