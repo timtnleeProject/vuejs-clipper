@@ -63,7 +63,7 @@ Make sure to install **vue-rx** plugin first.
 
 ### Import
 
-#### use dist files
+#### use dist files (Recommanded)
 
 ```javascript
 import Vue from "vue";
@@ -83,7 +83,7 @@ You are using `vuejs-clipper` directly with your build process(webpack etc).
 So make sure you have css loader, ex: `sass-loader` if you haven't installed :
 
 ```bash
-npm install -D sass-loader node-sass
+npm install -D sass-loader sass
 ```
 
 ```javascript
