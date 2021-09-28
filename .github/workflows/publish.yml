@@ -1,0 +1,16 @@
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm build
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          check-version: true
+          token: ${{ secrets.NPM_TOKEN }}
