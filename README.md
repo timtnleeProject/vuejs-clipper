@@ -470,6 +470,10 @@ Props that are not defined below will apply to the file input as attributes, for
 
 ## Changelog
 
+* 3.2.0
+  * Use dart-sass instead of node-sass.
+  * update sass syntax: use `math.div` instead of `/`
+
 * 3.1.2
   * Fix touch devices zooming bug: [#91](https://github.com/timtnleeProject/vuejs-clipper/issues/91)
 * 3.1.1
