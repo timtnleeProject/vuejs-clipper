@@ -461,24 +461,24 @@ $grid-width: 1px;
   top: 0;
   left: 0;
   border-width: 0 $grid-width $grid-width 0;
-  transform: translate($grid-width/2, $grid-width/2);
+  transform: translate(math.div($grid-width, 2), math.div($grid-width, 2));
 }
 .vuejs-clipper-fixed__grid-item:nth-child(2) {
   top: 0;
   right: 0;
   border-width: 0 0 $grid-width 0;
-  transform: translate(-$grid-width/2, $grid-width/2);
+  transform: translate(math.div(-$grid-width, 2), math.div($grid-width, 2));
 }
 .vuejs-clipper-fixed__grid-item:nth-child(3) {
   bottom: 0;
   left: 0;
   border-width: 0 $grid-width 0 0;
-  transform: translate($grid-width/2, -$grid-width/2);
+  transform: translate(math.div($grid-width, 2), math.div(-$grid-width, 2));
 }
 .vuejs-clipper-fixed__grid-item:nth-child(4) {
   bottom: 0;
   right: 0;
   border-width: 0;
-  transform: translate(-$grid-width/2, -$grid-width/2);
+  transform: translate(math.div(-$grid-width, 2), math.div(-$grid-width, 2));
 }
 </style>
