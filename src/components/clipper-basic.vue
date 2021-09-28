@@ -495,6 +495,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@use "sass:math";
 $hover_sec: 0.5s;
 $grid-width: 1px; //dive 2
 

@@ -371,6 +371,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+@use "sass:math";
 $grid-width: 1px;
 
 .vuejs-clipper-fixed__wrap {
