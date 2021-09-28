@@ -78,9 +78,13 @@ Vue.use(VuejsClipper);
 
 #### use vuejs-clipper soruce
 
+> Not Recommanded, through this way you need to make sure your project' sass and sass-loader version is supported
+
 You are using `vuejs-clipper` directly with your build process(webpack etc).
 
 So make sure you have css loader, ex: `sass-loader` if you haven't installed :
+
+> vuejs-clipper@4 only support `sass` (not `node-sass`) for this approach
 
 ```bash
 npm install -D sass-loader sass
@@ -470,9 +474,12 @@ Props that are not defined below will apply to the file input as attributes, for
 
 ## Changelog
 
-* 3.2.0
+* 4.0.0
   * Use dart-sass instead of node-sass.
   * update sass syntax: use `math.div` instead of `/`
+
+* 3.2.0
+  * [Deprecated] should be `4.0.0`
 
 * 3.1.2
   * Fix touch devices zooming bug: [#91](https://github.com/timtnleeProject/vuejs-clipper/issues/91)
