@@ -1,7 +1,7 @@
 /*
-    * methods for calculating position layout,
-    * extended by clipper-basic-component
-*/
+ * methods for calculating position layout,
+ * extended by clipper-basic-component
+ */
 import _commonMethods from './common-methods'
 import _basicMethods from './basic-methods'
 import _fixedMethods from './fixed-methods'
@@ -18,7 +18,7 @@ export { fixedMethods }
 
 /**  Listeners */
 const rxEventListeners = {
-  beforeCreate () {
+  beforeCreate() {
     this.mousedown$ = fromEvent(window, 'mousedown')
     this.mousemove$ = fromEvent(window, 'mousemove')
     this.mouseup$ = fromEvent(window, 'mouseup')
@@ -29,7 +29,7 @@ const rxEventListeners = {
 }
 
 const rxWheelListeners = {
-  beforeCreate () {
+  beforeCreate() {
     this.wheel$ = fromEvent(window, 'wheel', { passive: false })
   }
 }
@@ -37,19 +37,39 @@ export { rxEventListeners }
 export { rxWheelListeners }
 const pluginMethods = {
   methods: {
-    clip: function (opt) {
+    clip: function(opt) {
       const drawPos = this.getDrawPos(opt)
       const ctx = this.canvasEl.getContext('2d')
       const width = drawPos.pos.swidth // dw
-      const height = drawPos.pos.sheight// dh
+      const height = drawPos.pos.sheight // dh
       this.canvasEl.width = width
       this.canvasEl.height = height
+      ctx.save()
       ctx.fillStyle = this.bgColor
       ctx.fillRect(0, 0, width, height)
       ctx.translate(drawPos.translate.rotateX, drawPos.translate.rotateY)
-      ctx.rotate(this.rotate * Math.PI / 180)
-      ctx.translate(drawPos.translate.drawX - drawPos.translate.rotateX, drawPos.translate.drawY - drawPos.translate.rotateY)
+      ctx.rotate((this.rotate * Math.PI) / 180)
+      ctx.translate(
+        drawPos.translate.drawX - drawPos.translate.rotateX,
+        drawPos.translate.drawY - drawPos.translate.rotateY
+      )
       ctx.drawImage(this.imgEl, 0, 0)
+      // round bg
+      if (this.round) {
+        ctx.restore()
+        ctx.globalCompositeOperation = 'destination-in'
+        ctx.ellipse(
+          drawPos.pos.dwidth / 2,
+          drawPos.pos.dheight / 2,
+          drawPos.pos.dwidth / 2,
+          drawPos.pos.dheight / 2,
+          0,
+          0,
+          2 * Math.PI
+        )
+        ctx.fill()
+      }
+
       if (opt) {
         const canvas = document.createElement('CANVAS')
         canvas.width = drawPos.pos.dwidth
@@ -60,7 +80,7 @@ const pluginMethods = {
         return this.canvasEl
       }
     },
-    callPreview: function (method, ...arg) {
+    callPreview: function(method, ...arg) {
       const parentPropName = np.parentPropName
       if (!this.preview) return
       if (!this.$parent[parentPropName]) return // "You register to use clipper-preview But No clipper-view Component detected.";
@@ -70,7 +90,7 @@ const pluginMethods = {
         p[method](...arg)
       })
     },
-    emit: function (name, arg) {
+    emit: function(name, arg) {
       this.$emit(name, arg)
     }
   }
