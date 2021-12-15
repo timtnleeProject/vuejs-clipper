@@ -482,6 +482,8 @@ Props that are not defined below will apply to the file input as attributes, for
   - Use dart-sass instead of node-sass.
   - update sass syntax: use `math.div` instead of `/`
 
+---
+
 - 3.2.0
 
   - [Deprecated] should be `4.0.0`
